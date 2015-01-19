@@ -1,0 +1,272 @@
+%\listfiles
+
+%% Tipo de documento e a classe a ser usada para sua formatação.
+\documentclass[tese]{UFRuralRJ}
+
+%% Um tipo específico de monografia pode ser informado como parâmetro opcional:
+%\documentclass[tese]{UFRuralRJ}
+
+%% A opção 'openright' força inícios de capítulos em páginas ímpares
+%\documentclass[openright]{UFRuralRJ}
+
+%% Use a opção 'twoside' para gerar uma versão frente-e-verso
+%\documentclass[twoside]{UFRuralRJ}
+
+%%==============================================================================
+%% Pacotes - língua, codificação e fonte
+%%==============================================================================
+
+\usepackage[brazilian]{babel}
+\usepackage[T1]{fontenc}              %% Conjunto de caracteres correto
+\usepackage{times, color, xcolor}     %% Usar fonte Adobe Times e cores
+\usepackage[utf8]{inputenc}           %% Acentuação
+
+%%==============================================================================
+%% Pacotes - formatação de equações e números
+%%==============================================================================
+
+\usepackage{amsmath,latexsym,amssymb}
+\usepackage{siunitx}                  %% Sistema Internacional de Unidades
+
+%%==============================================================================
+%% Pacotes - formatação de figuras
+%%==============================================================================
+
+\usepackage{graphicx}                 %% Importar figuras
+\graphicspath{{capitulos/figuras/}}   %% Diretório onde estão as figuras
+\usepackage{float}
+\usepackage{wrapfig}
+
+%%==============================================================================
+%% Pacotes - formatação de hyperlinks
+%%==============================================================================
+%% Opção 'hidelinks' disponível no pacote 'hyperref' a partir da versão 
+%% 2011-02-05  6.82a. 'hidelinks' retira os retângulos do entorno das palavras
+%% com links.
+
+\usepackage[%hidelinks%, 
+            bookmarksopen=true,linktoc=none,colorlinks=true,
+            linkcolor=blue,citecolor=blue,filecolor=magenta,urlcolor=blue,
+            pdftitle={Este título é muito legal},
+            pdfauthor={Nome do Melhor Estudante da Rural},
+            pdfsubject={Tese de Doutorado},
+            pdfkeywords={LaTeX, UFRuralRJ, Documentos acadêmicos}
+            ]{hyperref}
+
+%%TODO: Margens conforme MDT UFSM 7ª edição. Corrigir no arquivo UFRuralRJ.cls 
+%%      para funcionar a opção twoside *PENDENTE*
+\usepackage[inner = 30mm, outer = 20mm, top = 30mm, bottom = 20mm]{geometry}
+%% Se o pacote 'hyperref' acima foi carregado, a linha abaixo corrige um bug na 
+%% hora de montar o sumário da lista de figuras e tabelas. Comente a linha se o
+%% pacote 'hyperref' não foi carregado.
+\input{macros/bugcaption}
+
+%%==============================================================================
+%% Pacotes - formatação de verbatim
+%%==============================================================================
+%% O ambiente verbatim é o ambiente onde são inseridos exemplos de código fonte.
+%% Está opção adiciona cor de fundo ao ambiente verbatim.
+%% Comente para desabilitar.
+
+\usepackage{color}
+\let\oldv\verbatim
+\let\oldendv\endverbatim
+\def\verbatim{\par\setbox0\vbox\bgroup\oldv}
+\def\endverbatim{\oldendv\egroup\fboxsep0pt 
+                 \noindent\colorbox[gray]{0.8}{\usebox0}\par}
+
+%%==============================================================================
+%% Pacotes - outros
+%%==============================================================================
+
+\usepackage{blindtext}                %% Amostra de texto (\blindtext[1])
+\usepackage{fix-cm}                   %% Tamanho das fontes da capa
+
+%%==============================================================================
+%% Identificação do trabalho
+%%==============================================================================
+
+\title{Este título é muito legal}                              %% Título em português
+\titleENG{This is a cool title}                                %% Título em inglês
+\author{Rural}{Nome do Melhor Estudante da}                    %% Autor: sobrenome, nome
+%\autoratrue                                                   %% Descomentar se for uma AUTORA
+\institute{Instituto da Agronomia}                             %% Instituto
+\course{Curso de Pós-Graduação em Agronomia - Ciência do Solo} %% Curso de pós-graduação
+\departamento{Departamento de Solos}                           %% Departamento
+\altcourse{Curso de Pós-Graduação em Agronomia}                %% Curso de pós-graduação sem a área de concentração
+\concentra{Ciência do Solo}                                    %% Área de concentração
+\degree{Doutor em Ciências}                                    %% Grau obtido (geral)
+\altdegree{Doutorado em Agronomia, Ciência do Solo}            %% Grau obtido (específico)
+\altdegreeENG{Doctor of Science in Agronomy, Soil Science}     %% Grau obtido (específico) em inglês
+\trabalhoNumero{}                                              %% Número do TG - deixar em branco para mestrado
+
+%%==============================================================================
+%% Identificação dos orientadores
+%%==============================================================================
+
+\advisor[Professor]{Dr.}{Rural}{Nome do Melhor Orientador da}{UFRRJ}  %% Orientador
+%\orientadoratrue                                                     %% Descomentar se for uma ORIENTADORA
+\coadvisor[Professor]{Dr.}{Rural}{Nome do Melhor Co-orientador da}    %% Co-orientador
+\coadvisor[Professora]{Dra.}{Rural}{Nome da Melhor Co-orientadora da} %% Co-orientadora
+%% Descomentar o comando abaixo se for UMA CO-ORIENTADORA
+%% No caso de DOIS OU MAIS co-orientadores, descomentar apenas quando TODOS forem CO-ORIENTADORAS
+%\coorientadoratrue
+\coorientadorestrue                                                   %% Descomentar se forem DOIS OU MAIS CO-ORIENTADOR(A)
+%%==============================================================================
+%% Informações sobre a defesa
+%%==============================================================================
+\committee[Dra.]{Rural}{Nome da Melhor Examinadora da}{UFRRJ}          %% Examinador 1
+\committee[Dr.]{Rural}{Nome do Melhor Examinador da}{UFRRJ}            %% Examinador 2
+\committee[Dra.]{Rural}{Nome da Melhor Examinadora de Fora da}{MEFR}   %% Examinador 3
+\committee[Dr.]{Rural}{Nome do Melhor Examinador de Fora da}{MEFR}     %% Examinador 4
+\date{30}{Fevereiro}{2016}                                             %% Data da defesa
+%%==============================================================================
+%% Outros itens
+%%==============================================================================
+\keyword{LaTeX}                 %% Palavra chave 1 (português)
+\keyword{UFRuralRJ}             %% Palavra chave 2 (português)
+\keyword{Documentos acadêmicos} %% Palavra chave 3 (português)
+%%==============================================================================
+%% Início do documento
+%%==============================================================================
+\begin{document}
+%%==============================================================================
+%% Capa e folha de rosto
+%%==============================================================================
+\maketitle
+%%==============================================================================
+%% Ficha catalográfica
+%%==============================================================================
+%% Como a CIP vai ser impressa atrás da página de rosto, as margens 'inner' e 
+%% 'outer' devem ser invertidas.
+%\newgeometry{inner=20mm,outer=30mm,top=30mm,bottom=20mm}
+%\makeCIP{alessandrosamuel@yahoo.com.br} %% email do autor		
+%\restoregeometry
+%Se for usar a catalogação gerada pelo gerador do site da biblioteca comentar as linhas
+%acima e utilizar o comando abaixo
+%\includeCIP{CIP.pdf}
+
+%%=============================================================================
+% Folha de aprovação
+%%=============================================================================
+
+\makeapprove
+
+%%=============================================================================
+%% Dedicatória (opcional)
+%%=============================================================================
+
+\clearpage\mbox{}\vfill\hspace{80mm}
+\begin{minipage}{76mm}
+  \begin{flushright}
+    {\em
+    Àqueles que financiaram meus estudos...
+    \par
+    ...DEDICO!
+    }
+  \end{flushright}
+\end{minipage}
+
+%%=============================================================================
+%% Agradecimentos (opcional)
+%%=============================================================================
+
+\chapter*{Agradecimentos}
+
+Ao Curso de Pós-Graduação em Agronomia-Ciência do Solo (CPGA-CS) e ao 
+Departamento de Solos da Universidade Federal Rural do Rio de Janeiro 
+(UFRuralRJ).
+
+Às agências de fomento.
+
+Aos orientadores.
+
+À todos que, direta ou indiretamente, contribuíram para a construção deste 
+trabalho.
+
+%%=============================================================================
+%% Biografia (opcional)
+%%=============================================================================
+
+\chapter*{Biografia}
+O autor nasceu, cresceu e escreveu uma tese.
+
+%%=============================================================================
+%% Epígrafe (opcional)
+%%=============================================================================
+
+\clearpage\mbox{}\vfill\hspace{80mm}\begin{minipage}{76mm}\begin{flushright}{\em
+``Fazer é a melhor forma de dizer.''
+\par
+Autor desconhecido
+}\end{flushright}\end{minipage}
+
+%%==============================================================================
+%% Resumo geral (português)
+%%==============================================================================
+
+\generalabstracttrue
+\begin{abstract}
+Este é o resumo em português de minha tese. Claramente, este é o melhor resumo
+que já foi escrito em um documento acadêmico produzido na UFRuralRJ.
+\end{abstract}
+
+%%==============================================================================
+%% General abstract (inglês)
+%%==============================================================================
+\generalabstracttrue
+\begin{englishabstract}
+{This is a cool title}                                   %% Título do trabalho
+{Curso de Pós-Graduação em Agronomia - Ciência do Solo}  %% Curso de pós-graduação
+{LaTeX, UFRuralRJ, Academical documents}                 %% Palavras-chave
+{November}                                               %% Mês
+{th}                                                     %% Sigla do dia
+This is the English abstract of my thesis. Obviously this is the best abstract 
+that has ever been written in an academic document produced at UFRuralRJ.
+\end{englishabstract}
+%%=============================================================================
+%% Listas (comentar se não houver) e sumário
+%%=============================================================================
+\listoffigures                         %% Lista de figuras
+%\listoftables                         %% Lista de tabelas
+\listofappendix                        %% Lista de apêndices
+%\listofannex                          %% Lista de anexos
+%\begin{listofabbrv}{UbiComp}          %% Lista de abreviaturas e siglas
+%   \item [DSM] Digital Soil Mapping
+%   \item [UbiComp] Computação Ubíqua
+%\end{listofabbrv}
+%\begin{listofsymbols}{teste}          %% Lista de simbolos (opcional)
+%  \item [$\varnothing$] vazio         %% Simbolos devem aparecer conforme a ordem em que aparecem no texto
+%  \item [$\Gamma$]  Gama              %% O parâmetro deve ser o símbolo mais longo
+%  \item [$\forall$] Para todo
+%\end{listofsymbols}
+\tableofcontents                       %% Sumário
+%%=============================================================================
+%% Início da tese
+%%=============================================================================
+\setlength{\baselineskip}{1.5\baselineskip}
+\include{capitulos/chapter00} %% Incluir capítulo 00
+\include{capitulos/chapter01} %% Incluir capítulo 01
+\include{capitulos/chapter02} %% Incluir capítulo 02
+\include{capitulos/chapter03} %% Incluir capítulo 03
+\include{capitulos/chapter04} %% Incluir capítulo 04
+\include{capitulos/chapter05} %% Incluir capítulo 05
+\setlength{\baselineskip}{\baselineskip}
+%%=============================================================================
+%% Referências
+%%=============================================================================
+\bibliographystyle{abnt}
+\bibliography{referencias/biblio}
+%%=============================================================================
+%% Apêndices e anexos
+%% Se precisar usar alguma seção ou subseção dentro dos apêndices ou
+%% anexos, utilizar o comando \tocless para não adicionar no Sumário
+%% Exemplos: 
+%% \tocless\section{Histórico}
+%%=============================================================================
+\appendix                      %% Apêndices
+\include{capitulos/apendicea}  %% Incluir apêndice A
+%\include{capitulos/apendiceb} %% Incluir apêndice B
+%\annex                        %% Anexos
+%\include{capitulos/anexoa}    %% Incluir anexo A
+\end{document}

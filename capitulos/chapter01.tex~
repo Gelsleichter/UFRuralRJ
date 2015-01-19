@@ -1,0 +1,40 @@
+\chapter{On the Uncertainty of Digital Soil Mapping - Co-variate Accuracy}
+\label{chap:chapter01}
+
+\section{Introduction}
+
+\section{Database}
+
+\subsection{Soil data}
+
+
+\subsection{Environmental co-variates}
+
+Two sets of ground control points (GCPs) were used to validate the data layers: $n=14$ GCPs located in easily identifiable geographic markers and $n=60$ GCPs located along twelve transects obtained through probabilistic sampling.
+
+After validation and correction of the data layers, a suite of 34 environmental co-variates was derived (Table __).
+
+%\include{/home/alessandro/Documentos/doutorado/phd-thesis/rabbitVCS/chapter01/list-covars.tex}
+
+\section{Quality of environmental co-variates}
+
+\subsubsection{Digital elevation models}
+
+
+\subsubsection{Geological maps}
+
+\subsubsection{Land use maps}
+
+\subsubsection{Orbital images}
+
+The 5-m spatial resolution orbital image 
+
+\begin{table}[ht]
+ \caption{Error statistics}
+ \label{tab:error-rapideye}
+\begin{tabular}{rrrrr}
+ \input{stats-RapidEye}
+\end{tabular}
+\end{table}
+
+
