@@ -75,6 +75,7 @@
 
 # Kile
 *.kilepr
+*.tex.backup
 
 # listings
 *.lol
