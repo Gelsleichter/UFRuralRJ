@@ -30,6 +30,9 @@
 *.synctex.gz(busy)
 *.pdfsync
 
+## Código fonte usado como exemplo
+*.zip
+
 ## Auxiliary and intermediate files from other packages:
 
 # algorithms
@@ -110,7 +113,4 @@ sympy-plots-for-*.tex/
 
 # xindy
 *.xdy
-
-# zip files
-*.zip
 
