@@ -107,6 +107,7 @@
   }
 }
 
+
 \DeclareOption{english}{\@englishtrue\OptionNotUsed}\newif\if@english\@englishfalse
 
 %% TODO: incluir opção 'twoside'
@@ -158,14 +159,13 @@
 \newcommand{\nocontentsline}[3]{}
 \newcommand{\tocless}[2]{\bgroup\let\addcontentsline=\nocontentsline#1{#2}\egroup}
 
-%%==============================================================================
+%%=============================================================================
 %% Herança da classe 'report' e inclusão de pacotes e arquivos necessários
-%%==============================================================================
-
+%%=============================================================================
 \LoadClass[12pt,a4paper,oneside]{report}
 \RequirePackage[english,brazilian]{babel}
-\input{brazilian.babel} %% definições para textos em português
-\input{english.babel}   %% definições para textos em inglês
+\input{brazilian.babel} % definições para textos em português
+\input{english.babel}   % definições para textos em inglês
 \if@english
         \selectlanguage{english}
         \AtBeginDocument{\selectlanguage{english}}
@@ -180,43 +180,42 @@
 %%=============================================================================
 %% Margens do texto
 %%=============================================================================
-
 \newlength{\mdt@topmargin}\setlength{\mdt@topmargin}{30mm}
 \newlength{\mdt@pagenummargin}\setlength{\mdt@pagenummargin}{20mm}
 \newlength{\mdt@bottommargin}\setlength{\mdt@bottommargin}{20mm}
 \newlength{\mdt@sidemargin}\setlength{\mdt@sidemargin}{30mm}
 \setlength{\marginparwidth}{25mm}
 
-%% Ajuste das medidas verticais
+% ajuste das medidas verticais
 \setlength{\topmargin}{\mdt@pagenummargin}
-\addtolength{\topmargin}{-1em} % altura do número da página (quando no topo)
-\addtolength{\topmargin}{-1in}
+        \addtolength{\topmargin}{-1em} % isto é +- a altura do núm. da página (quando no topo)
+        \addtolength{\topmargin}{-1in}
 \setlength{\headheight}{1em}
 \setlength{\headsep}{\mdt@topmargin}
-\addtolength{\headsep}{-\mdt@pagenummargin}
+        \addtolength{\headsep}{-\mdt@pagenummargin}
 \setlength{\textheight}{\paperheight}
-\addtolength{\textheight}{-\mdt@topmargin}
-\addtolength{\textheight}{-\mdt@bottommargin}
+        \addtolength{\textheight}{-\mdt@topmargin}
+        \addtolength{\textheight}{-\mdt@bottommargin}
 \setlength{\footskip}{\mdt@bottommargin}
 
-%% Ajuste das medidas horizontais
+% ajuste das medidas horizontais
 \setlength{\oddsidemargin}{\mdt@sidemargin}
-\addtolength{\oddsidemargin}{-1in}
+        \addtolength{\oddsidemargin}{-1in}
 \setlength{\evensidemargin}{\oddsidemargin}
 \setlength{\textwidth}{\paperwidth}
-\addtolength{\textwidth}{-2\mdt@sidemargin}
+        \addtolength{\textwidth}{-2\mdt@sidemargin}
 \setlength{\marginparsep}{\mdt@sidemargin}
-\addtolength{\marginparsep}{-\marginparwidth}
-\setlength{\marginparsep}{.5\marginparsep}
+        \addtolength{\marginparsep}{-\marginparwidth}
+        \setlength{\marginparsep}{.5\marginparsep}
 
 %indentar em 1,25 o primeiro parágrafo
 \setlength{\parindent}{1.25cm}%
 
-%%==============================================================================
+%%=============================================================================
 %% Numeração das páginas
-%%==============================================================================
+%%=============================================================================
 
-%% Canto direito superior
+% canto direito superior
 \def\ps@UFRuralRJ{
         \let\@oddfoot\@empty
         \let\@evenfoot\@empty
@@ -224,14 +223,13 @@
         \def\@oddhead{\hspace*{\fill}{\small\thepage}}
 }
 
-%% Canto direito inferior
+% canto direito inferior
 %\def\ps@UFRuralRJ{
 %        \let\@oddhead\@empty
 %        \let\@evenhean\@empty
 %        \def\@evenfoot{{\small\thepage}}
 %        \def\@oddfoot{\hspace*{\fill}{\small\thepage}}
 %}
-
 \pagestyle{empty}
 \let\ps@plain\ps@empty
 

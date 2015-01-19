@@ -18,7 +18,7 @@
 
 \usepackage[brazilian]{babel}
 \usepackage[T1]{fontenc}              %% Conjunto de caracteres correto
-\usepackage{times, color, xcolor}     %% Usar fonte Adobe Times e cores
+\usepackage{times}                    %% Usar fonte Adobe Times
 \usepackage[utf8]{inputenc}           %% Acentuação
 
 %%==============================================================================
@@ -68,7 +68,6 @@
 %% Está opção adiciona cor de fundo ao ambiente verbatim.
 %% Comente para desabilitar.
 
-\usepackage{color}
 \let\oldv\verbatim
 \let\oldendv\endverbatim
 \def\verbatim{\par\setbox0\vbox\bgroup\oldv}
@@ -80,7 +79,7 @@
 %%==============================================================================
 
 \usepackage{blindtext}                %% Amostra de texto (\blindtext[1])
-\usepackage{fix-cm}                   %% Tamanho das fontes da capa
+%\usepackage{fix-cm} %% Tamanho das fontes da capa (já é carregado pelo pacote)
 
 %%==============================================================================
 %% Identificação do trabalho
@@ -90,15 +89,16 @@
 \titleENG{This is a cool title}                                %% Título em inglês
 \author{Rural}{Nome do Melhor Estudante da}                    %% Autor: sobrenome, nome
 %\autoratrue                                                   %% Descomentar se for uma AUTORA
-\institute{Instituto da Agronomia}                             %% Instituto
-\course{Curso de Pós-Graduação em Agronomia - Ciência do Solo} %% Curso de pós-graduação
+\instituto{Instituto de Agronomia}                             %% Instituto
+\curso{Curso de Pós-Graduação em Agronomia - Ciência do Solo}  %% Curso de pós-graduação
 \departamento{Departamento de Solos}                           %% Departamento
-\altcourse{Curso de Pós-Graduação em Agronomia}                %% Curso de pós-graduação sem a área de concentração
-\concentra{Ciência do Solo}                                    %% Área de concentração
-\degree{Doutor em Ciências}                                    %% Grau obtido (geral)
-\altdegree{Doutorado em Agronomia, Ciência do Solo}            %% Grau obtido (específico)
-\altdegreeENG{Doctor of Science in Agronomy, Soil Science}     %% Grau obtido (específico) em inglês
+\altCurso{Curso de Pós-Graduação em Agronomia}                 %% Curso de pós-graduação sem a área de concentração
+\area{Ciência do Solo}                                         %% Área de concentração
+\grau{Doutor em Ciências}                                    %% Grau obtido (geral)
+\altGrau{Doutorado em Agronomia, Ciência do Solo}            %% Grau obtido (específico)
+\altGrauENG{Doctor of Science in Agronomy, Soil Science}     %% Grau obtido (específico) em inglês
 \trabalhoNumero{}                                              %% Número do TG - deixar em branco para mestrado
+\local{Serop\'edica}{RJ}{Brasil}                            %% Cidade, estado, país
 
 %%==============================================================================
 %% Identificação dos orientadores
@@ -111,10 +111,12 @@
 %% Descomentar o comando abaixo se for UMA CO-ORIENTADORA
 %% No caso de DOIS OU MAIS co-orientadores, descomentar apenas quando TODOS forem CO-ORIENTADORAS
 %\coorientadoratrue
-\coorientadorestrue                                                   %% Descomentar se forem DOIS OU MAIS CO-ORIENTADOR(A)
+\coorientadorestrue                                                   %% dois ou mais co-orientadores(as)
+
 %%==============================================================================
 %% Informações sobre a defesa
 %%==============================================================================
+
 \committee[Dra.]{Rural}{Nome da Melhor Examinadora da}{UFRRJ}          %% Examinador 1
 \committee[Dr.]{Rural}{Nome do Melhor Examinador da}{UFRRJ}            %% Examinador 2
 \committee[Dra.]{Rural}{Nome da Melhor Examinadora de Fora da}{MEFR}   %% Examinador 3
