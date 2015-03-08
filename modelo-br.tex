@@ -16,10 +16,10 @@
 %% Pacotes - língua, codificação e fonte
 %%==============================================================================
 
-\usepackage[brazilian]{babel}
-\usepackage[T1]{fontenc}              %% Conjunto de caracteres correto
-\usepackage{times}                    %% Usar fonte Adobe Times
-\usepackage[utf8]{inputenc}           %% Acentuação
+\usepackage[brazilian]{babel} %% use 'english' ao invés de 'brazilian' para documento escrito em inglês
+\usepackage[T1]{fontenc} %% Conjunto de caracteres correto
+%\usepackage{times} %% Usar fonte Adobe Times Roman, equivalente à Times New Roman
+\usepackage[utf8]{inputenc} %% Para acentuação correta
 
 %%==============================================================================
 %% Pacotes - formatação de equações e números
@@ -47,7 +47,7 @@
 \usepackage[%hidelinks%, 
             bookmarksopen=true,linktoc=none,colorlinks=true,
             linkcolor=blue,citecolor=blue,filecolor=magenta,urlcolor=blue,
-            pdftitle={Este título é muito legal},
+            pdftitle={Este título é muito legal para uma tese escrita em português},
             pdfauthor={Nome do Melhor Estudante da Rural},
             pdfsubject={Tese de Doutorado},
             pdfkeywords={LaTeX, UFRuralRJ, Documentos acadêmicos}
@@ -85,49 +85,55 @@
 %% Identificação do trabalho
 %%==============================================================================
 
-\title{Este título é muito legal}                              %% Título em português
-\titleENG{This is a cool title}                                %% Título em inglês
-\author{Rural}{Nome do Melhor Estudante da}                    %% Autor: sobrenome, nome
-%\autoratrue                                                   %% Descomentar se for uma AUTORA
-\instituto{Instituto de Agronomia}                             %% Instituto
-\curso{Curso de Pós-Graduação em Agronomia - Ciência do Solo}  %% Curso de pós-graduação
-\departamento{Departamento de Solos}                           %% Departamento
-\altCurso{Curso de Pós-Graduação em Agronomia}                 %% Curso de pós-graduação sem a área de concentração
-\area{Ciência do Solo}                                         %% Área de concentração
-\grau{Doutor em Ciências}                                    %% Grau obtido (geral)
-\altGrau{Doutorado em Agronomia, Ciência do Solo}            %% Grau obtido (específico)
-\altGrauENG{Doctor of Science in Agronomy, Soil Science}     %% Grau obtido (específico) em inglês
-\trabalhoNumero{}                                              %% Número do TG - deixar em branco para mestrado
-\local{Serop\'edica}{RJ}{Brasil}                            %% Cidade, estado, país
+\title{Este título é muito legal para uma tese escrita em português} %% Título em português
+\titleENG{This is a cool title for a thesis written in Portuguese} %% Título em inglês
+\author{Rural}{Nome do Melhor Estudante da} %% Autor: sobrenome, nome
+%\autoratrue %% Descomentar se for uma AUTORA
+\instituto{Instituto da Rural} %% Instituto
+\curso{Curso de Pós-Graduação da Rural} %% Curso de pós-graduação com a área de concentração.
+                                        %% Ex.: Curso de Pós-Graduação em Agronomia - Ciência do Solo
+\altCurso{Curso de Pós-Graduação da Rural} %% Curso de pós-graduação sem a área de concentração
+\area{Ciências} %% Área de concentração.
+\grau{Doutor em Ciências} %% Grau obtido (geral)
+\altGrau{Doutorado em Ciências} %% Grau obtido (específico). Ex.: Doutorado em Agronomia, Ciência do Solo
+\altGrauENG{Doctor of Science} %% Grau obtido (específico) em inglês. Ex.: Doctor of Science in Agronomy, Soil Science
+\trabalhoNumero{} %% Número do trabalho de graduação - deixar em branco para mestrado
+\local{Serop\'edica}{RJ}{Brasil} %% Cidade, estado, país
 
 %%==============================================================================
 %% Identificação dos orientadores
 %%==============================================================================
 
 \advisor[Professor]{Dr.}{Rural}{Nome do Melhor Orientador da}{UFRRJ}  %% Orientador
-%\orientadoratrue                                                     %% Descomentar se for uma ORIENTADORA
-\coadvisor[Professor]{Dr.}{Rural}{Nome do Melhor Co-orientador da}    %% Co-orientador
+%\orientadoratrue %% Descomentar se for uma ORIENTADORA
+\coadvisor[Pesquisador]{Dr.}{Rural}{Nome do Melhor Co-orientador da}    %% Co-orientador
 \coadvisor[Professora]{Dra.}{Rural}{Nome da Melhor Co-orientadora da} %% Co-orientadora
+
+%% COMANDOS OBSOLETOS
 %% Descomentar o comando abaixo se for UMA CO-ORIENTADORA
-%% No caso de DOIS OU MAIS co-orientadores, descomentar apenas quando TODOS forem CO-ORIENTADORAS
-%\coorientadoratrue
-\coorientadorestrue                                                   %% dois ou mais co-orientadores(as)
+%% No caso de DOIS OU MAIS co-orientadores, descomentar apenas quando todos forem CO-ORIENTADORAS
+%\coorientadoratrue 
+%\coorientadorestrue %% dois ou mais co-orientadores(as)
 
 %%==============================================================================
 %% Informações sobre a defesa
 %%==============================================================================
 
-\committee[Dra.]{Rural}{Nome da Melhor Examinadora da}{UFRRJ}          %% Examinador 1
-\committee[Dr.]{Rural}{Nome do Melhor Examinador da}{UFRRJ}            %% Examinador 2
-\committee[Dra.]{Rural}{Nome da Melhor Examinadora de Fora da}{MEFR}   %% Examinador 3
-\committee[Dr.]{Rural}{Nome do Melhor Examinador de Fora da}{MEFR}     %% Examinador 4
-\date{30}{Fevereiro}{2016}                                             %% Data da defesa
+% Ex.: \committee[Título]{Sobrenome}{Nome}{Instituição}
+\committee[Dra.]{Rural}{Nome da Melhor Examinadora da}{UFRRJ} %% Examinador 1
+\committee[Dr.]{Rural}{Nome do Melhor Examinador da}{UFRRJ} %% Examinador 2
+\committee[Dra.]{Rural}{Nome da Melhor Examinadora de Fora da}{MEFR} %% Examinador 3
+\committee[Dr.]{Rural}{Nome do Melhor Examinador de Fora da}{MEFR} %% Examinador 4
+\date{30}{Fevereiro}{2016} %% Data da defesa
+
 %%==============================================================================
 %% Outros itens
 %%==============================================================================
+
 \keyword{LaTeX}                 %% Palavra chave 1 (português)
 \keyword{UFRuralRJ}             %% Palavra chave 2 (português)
 \keyword{Documentos acadêmicos} %% Palavra chave 3 (português)
+
 %%==============================================================================
 %% Início do documento
 %%==============================================================================
@@ -175,9 +181,7 @@
 
 \chapter*{Agradecimentos}
 
-Ao Curso de Pós-Graduação em Agronomia-Ciência do Solo (CPGA-CS) e ao 
-Departamento de Solos da Universidade Federal Rural do Rio de Janeiro 
-(UFRuralRJ).
+À Universidade Federal Rural do Rio de Janeiro (UFRuralRJ).
 
 Às agências de fomento.
 
@@ -209,8 +213,9 @@ Autor desconhecido
 
 \generalabstracttrue
 \begin{abstract}
-Este é o resumo em português de minha tese. Claramente, este é o melhor resumo
-que já foi escrito em um documento acadêmico produzido na UFRuralRJ.
+Este é o resumo em português de minha tese escrita em português. Claramente, 
+este é o melhor resumo que já foi escrito em um documento acadêmico produzido na
+UFRuralRJ.
 \end{abstract}
 
 %%==============================================================================
@@ -218,13 +223,14 @@ que já foi escrito em um documento acadêmico produzido na UFRuralRJ.
 %%==============================================================================
 \generalabstracttrue
 \begin{englishabstract}
-{This is a cool title}                                   %% Título do trabalho
-{Curso de Pós-Graduação em Agronomia - Ciência do Solo}  %% Curso de pós-graduação
-{LaTeX, UFRuralRJ, Academical documents}                 %% Palavras-chave
-{November}                                               %% Mês
-{th}                                                     %% Sigla do dia
-This is the English abstract of my thesis. Obviously this is the best abstract 
-that has ever been written in an academic document produced at UFRuralRJ.
+{This is a cool title for a thesis written in Portuguese} %% Título do trabalho
+{Curso de Pós-Graduação da Rural - Ciências} %% Curso de pós-graduação
+{LaTeX, UFRuralRJ, Academical documents} %% Palavras-chave
+{November} %% Mês
+{th} %% Sigla do dia
+This is the English abstract of my thesis written in Portuguese. Obviously this
+is the best abstract that has ever been written in an academic document produced
+at UFRuralRJ.
 \end{englishabstract}
 %%=============================================================================
 %% Listas (comentar se não houver) e sumário
