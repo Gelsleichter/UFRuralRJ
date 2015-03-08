@@ -39,7 +39,7 @@
 %% Identificação
 %%==============================================================================
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{UFRuralRJ}[19/01/2015 v.0.1 Formatação de documentos acadêmicos 
+\ProvidesClass{UFRuralRJ}[08/03/2015 v.0.2 Formatação de documentos acadêmicos 
                           da UFRuralRJ]
 
 %%==============================================================================
@@ -51,7 +51,7 @@
   \AtEndOfClass{
     \newcommand{\titlepagespecificinfo}{
     Tese submetida como requisito parcial para obten\c{c}{\~a}o do grau de
-    \textbf{\@grau}, no \@altCurso, {\'A}rea de Concentra\c{c}{\~a}o em
+    \textbf{\@grau}, \@altCurso, {\'A}rea de Concentra\c{c}{\~a}o em
     \@area.
     }
     \def\doctypename{Tese}
@@ -65,8 +65,8 @@
 \DeclareOption{espec}{
   \AtEndOfClass{
     \newcommand{\titlepagespecificinfo}{
-      Monografia submetida como requisito parcial para obten{\c{c}}{\~a}o do grau de
-      \textbf{\@grau}, no \@altCurso, {\'A}rea de Concentra\c{c}{\~a}o em
+      Monografia submetida como requisito parcial para obten{\c{c}}{\~a}o do 
+      grau de \textbf{\@grau}, \@altCurso, {\'A}rea de Concentra\c{c}{\~a}o em
       \@area.
     }
     \def\doctypename{Monografia de Especializa{\c{c}}{\~a}o}
@@ -97,7 +97,7 @@
   \AtEndOfClass{
     \newcommand{\titlepagespecificinfo}{
         Disserta{\c{c}}{\~a}o submetida como requisito parcial para
-        obten{\c{c}}{\~a}o do grau de \textbf{\@grau}, no \@altCurso,
+        obten{\c{c}}{\~a}o do grau de \textbf{\@grau}, \@altCurso,
         \'{A}rea de Concentra{\c{c}}{\~a}o em \@area.
     }
     \def\doctypename{Disserta{\c{c}}{\~a}o}
@@ -107,7 +107,8 @@
   }
 }
 
-\DeclareOption{english}{\@englishtrue\OptionNotUsed}\newif\if@english\@englishfalse
+\DeclareOption{english}{
+ \@englishtrue\OptionNotUsed}\newif\if@english\@englishfalse
 
 %% TODO: incluir opção 'twoside'
 \DeclareOption{oneside}{\AtEndOfClass{\@twosidefalse}\OptionNotUsed}
@@ -122,7 +123,6 @@
 \def\ufrrjENG{Federal Rural University of Rio de Janeiro} 
 \def\ufrrjSigla{UFRRJ}
 
-\newcommand{\departamento}[1]{\gdef\@departamento{#1}}
 \newcommand{\curso}[1]{\gdef\@curso{#1}}
 \newcommand{\altCurso}[1]{\gdef\@altCurso{#1}}
 \newcommand{\area}[1]{\gdef\@area{#1}}
@@ -143,9 +143,9 @@
 \newcommand\LargeF{\@setfontsize\LargeF{12pt}{12.1pt}}
 
 %% Definições de gênero
-\newif\ifautora        %% 'autora' em vez de 'autor'
-\newif\iforientadora   %% 'orientadora' em vez de 'orientador'
-\newif\ifcoorientadora %% 'co-orientadora' em vez de 'co-orientador'
+\newif\ifautora %% 'autora' em vez de 'autor'
+\newif\iforientadora %% 'orientadora' em vez de 'orientador'
+%\newif\ifcoorientadora %% 'co-orientadora' em vez de 'co-orientador'.
 
 %% Definições de capítulo
 \newif\ifchap\chaptrue %% capítulo
@@ -156,7 +156,8 @@
 \AtBeginDocument{\@ifpackageloaded{hyperref}{\@hyperLoadedtrue}{}}
 
 \newcommand{\nocontentsline}[3]{}
-\newcommand{\tocless}[2]{\bgroup\let\addcontentsline=\nocontentsline#1{#2}\egroup}
+\newcommand{\tocless}[2]{
+ \bgroup\let\addcontentsline=\nocontentsline#1{#2}\egroup}
 
 %%==============================================================================
 %% Herança da classe 'report' e inclusão de pacotes e arquivos necessários
@@ -238,6 +239,7 @@
 %%=============================================================================
 %% Definição de autor(es), orientador, co-orientador e banca examinadora
 %%=============================================================================
+
 \newcounter{ii@authorcount}
 \renewcommand{\author}[2]{
         \addtocounter{ii@authorcount}{1}
@@ -260,9 +262,12 @@
 \newcounter{ii@coadvisorcount}
 \DeclareRobustCommand{\coadvisor}[4][]{
 	\addtocounter{ii@coadvisorcount}{1}
-	\expandafter\gdef\csname @coadvisor\alph{ii@coadvisorcount}last\endcsname{#3}
-	\expandafter\gdef\csname @coadvisor\alph{ii@coadvisorcount}first\endcsname{#4}
-	\expandafter\gdef\csname @coadvisor\alph{ii@coadvisorcount}\endcsname{#4 #3}
+	\expandafter
+	 \gdef\csname @coadvisor\alph{ii@coadvisorcount}last\endcsname{#3}
+	\expandafter
+	 \gdef\csname @coadvisor\alph{ii@coadvisorcount}first\endcsname{#4}
+	\expandafter
+	 \gdef\csname @coadvisor\alph{ii@coadvisorcount}\endcsname{#4 #3}
 	%\gdef\@coadvisorlast{#3}
         %\gdef\@coadvisorfirst{#4}
         %\gdef\@coadvisor{#1~#2~#4 #3}
@@ -272,12 +277,16 @@
 }
 
 % Definição da formatação das informações do comitê de avaliação do documento
+% Ex.: \committee[Título]{Sobrenome}{Nome}{Instituição}
 \newcounter{ii@committeecount}
 \DeclareRobustCommand{\committee}[4][]{
   \addtocounter{ii@committeecount}{1}
-  \expandafter\gdef\csname @committee\alph{ii@committeecount}last\endcsname{#2}
-  \expandafter\gdef\csname @committee\alph{ii@committeecount}first\endcsname{#3}
-  \expandafter\gdef\csname @committee\alph{ii@committeecount}\endcsname{#3 #2. #1 #4}
+  \expandafter
+   \gdef\csname @committee\alph{ii@committeecount}last\endcsname{#2}
+  \expandafter
+   \gdef\csname @committee\alph{ii@committeecount}first\endcsname{#3}
+  \expandafter
+   \gdef\csname @committee\alph{ii@committeecount}\endcsname{#3 #2. #1 #4}
 }
 
 %%=============================================================================
@@ -346,7 +355,6 @@
 %\newlength{\titlepagewinvoffset}\setlength{\titlepagewinvoffset}{70mm}
 %\newlength{\titlepagewinvoffset}\setlength{\titlepagewinvoffset}{112mm}
 
-
 \renewcommand{\maketitle}{ % capa e folha de rosto
         \begin{titlepage}
                 \thetitlepage
@@ -359,28 +367,30 @@
 %%=============================================================================
 %% Capa
 %%=============================================================================
+
 \newcommand{\thetitlepage}{ 
   \noindent
   \parbox[t]{\textwidth}{
     \centering
-    \setlength{\baselineskip}{2.0\baselineskip}		% Define espaçamento duplo.
-    \vspace{6mm}						% Espaço vertical de 6 mm.
-    {\LargeA\textbf{\MakeUppercase{\ufrrjSigla}}}\\	% Identificação da Universidade. Fonte 24 pontos.
-    {\LargeC\textbf{\MakeUppercase{\@instituto}}}\\	% Identificação do Instituto. Fonte 18 pontos.
-    {\LargeC\textbf{\MakeUppercase{\@curso}}}\\ 		% Identificação do Curso de Pós-Graduação. Fonte 18 pontos.
-    \setlength{\baselineskip}{0.5\baselineskip}		% Define espaçamento simples.
-    \vspace{28mm}					% Espaço vertical de 28 mm.
+    \setlength{\baselineskip}{2.0\baselineskip} % Espaçamento duplo.
+    \vspace{6mm} % Espaço vertical de 6 mm.
+    {\LargeA\textbf{\MakeUppercase{\ufrrjSigla}}}\\ % Universidade, fonte 24 pts
+    {\LargeC\textbf{\MakeUppercase{\@instituto}}}\\ % Instituto, fonte 18 pts
+    {\LargeC\textbf{\MakeUppercase{\@curso}}}\\ % Curso, fonte 18 pts
+    \setlength{\baselineskip}{0.5\baselineskip} % Espaçamento simples
+    \vspace{28mm} % Espaço vertical de 28 mm
       \parbox[t]{\textwidth}{
 	\centering
-	\centerline{\LargeC\textbf{\MakeUppercase{\doctypename}}}% Identificação do tipo de documento colocado 28 mm abaixo do cabeçalho.
-	\vspace{14mm}						% Espaço vertical de 14 mm.
-	\setlength{\baselineskip}{2.0\baselineskip}		% Define espaçamento duplo.
-	{\LargeB\textbf{\@title}}\\				% Título do documento
-	\setlength{\baselineskip}{0.5\baselineskip}		% Define espaçamento simples.
-	\vspace{35mm}						% Espaço vertical de 35 mm.
-	\centerline{\LargeC\textbf{\@authora}}			% Autor do documento. Fonte 18 pontos.
-	\vspace{20mm}						% Espaço vertical de 20 mm.
-	\centerline{\LargeD\textbf{\@publyear}}			% Ano de publicação do documento.
+	% Identificação do tipo de documento colocado 28 mm abaixo do cabeçalho
+	\centerline{\LargeC\textbf{\MakeUppercase{\doctypename}}}
+	\vspace{14mm} % Espaço vertical de 14 mm
+	\setlength{\baselineskip}{2.0\baselineskip} % Espaçamento duplo
+	{\LargeB\textbf{\@title}}\\ % Título do documento
+	\setlength{\baselineskip}{0.5\baselineskip} % Espaçamento simples
+	\vspace{35mm} % Espaço vertical de 35 mm
+	\centerline{\LargeC\textbf{\@authora}} % Autor, Fonte 18 pontos
+	\vspace{20mm} % Espaço vertical de 20 mm
+	\centerline{\LargeD\textbf{\@publyear}} % Ano de publicação
       }
   }
 }
@@ -394,46 +404,66 @@
 
 %% Definição do texto de apresentação do(a) orientador(a) e do(s) 
 %% co-orientador(es)
-\def\soborienta{\textit{Sob orienta\c{c}{\~a}o {\iforientadora{da}\else{do}\fi} \@advisorprof}}
-\gdef\sobcoorienta{\ifcoorientadores\textit{e sob co-orienta\c{c}{\~a}o \ifcoorientadora{da}
-		  \else{do}\fi{s}~\@coadvisorprof\ifcoorientadora{as}\else{es}\fi}
-		  \else\textit{e sob co-orienta\c{c}{\~a}o \ifcoorientadora{da}\else{do}\fi~\@coadvisorprof}\fi}
+% \def
+%  \soborienta{
+%   \textit{Sob orienta\c{c}{\~a}o~{
+%    \iforientadora{da}\else{do}\fi} \@advisorprof}
+%  }
+% \gdef
+%  \sobcoorienta{
+%   \ifcoorientadores
+%    \textit{e sob co-orienta\c{c}{\~a}o~\ifcoorientadora{da}\else{do}\fi{s}~
+%     \@coadvisorprof\ifcoorientadora{as}\else{es}\fi}
+%    \ifcoorientadora{a}\else{}\fi}
+%   \else
+%    \textit{e sob co-orienta\c{c}{\~a}o \ifcoorientadora{da}\else{do}\fi~
+%     \@coadvisorprof}\fi
+%  }
+\def
+ \soborienta{
+  \textit{Sob orienta\c{c}{\~a}o~de}
+ }
+\gdef
+ \sobcoorienta{
+  \textit{e co-orienta\c{c}{\~a}o~de}
+ }
 
 \newcommand{\secondtitlepage}{
   \noindent
   \parbox[t]{\textwidth}{
     \centering
-    {\includegraphics[width=25mm]{logomarca}}\\                      %% Logomarca colorida com largura de 25 mm.
-    {\LargeE\textbf{\MakeUppercase{\ufrrj}}}\\                       %% Universidade. Fonte Times, 14 pts.
-    {\LargeE\textbf{\MakeUppercase{\@instituto}}}\\                  %% Instituto. Fonte Times, 14 pts.
-    {\LargeE\textbf{\MakeUppercase{\@curso}}}\\                      %% Curso de Pós-Graduação. Fonte Times, 14 pts.
+    {\includegraphics[width=25mm]{logomarca}}\\ %% Logomarca cor, largura 25 mm
+    {\LargeE\textbf{\MakeUppercase{\ufrrj}}}\\ %% Universidade, fonte 14 pts
+    {\LargeE\textbf{\MakeUppercase{\@instituto}}}\\ %% Instituto, fonte 14 pts
+    {\LargeE\textbf{\MakeUppercase{\@curso}}}\\ %% Curso, fonte 14 pts
     \vspace{25mm}
     {\LargeE\textbf{\MakeUppercase{\@title}}}\par
     \vspace{25mm}
-    {\LargeE\textbf{\MakeUppercase{\@authora}}}\\                    %% Autor do documento.
+    {\LargeE\textbf{\MakeUppercase{\@authora}}}\\ %% Autor do documento
     \vspace{15mm}
     \soborienta\par
     \@ifundefined{@advisor}{}{
-      \vfill{\LargeE\textbf{\@advisor}}}\\                           %% Orientador(a).
+      \vfill{\LargeE\textbf{\@advisor}}}\\ %% Orientador(a)
     \@ifundefined{@coadvisora}{}{
-      \\[2ex]\sobcoorienta\par{\LargeE\textbf{\@coadvisora}}}        %% Primeiro(a) co-orientador(a).
-    \@ifundefined{@coadvisorb}{}{{\LargeE{e}\textbf{~\@coadvisorb}}} %% Segundo(a) co-orientador(a).  
+      \\[2ex]\sobcoorienta\par{\LargeE\textbf{\@coadvisora}}} %% Co-orientador 1
+    \@ifundefined{@coadvisorb}{}{
+     \par\textit{e}\par\textbf{\LargeE\@coadvisorb}} %% Co-orientador 2
     \vspace{15mm}
     \begin{flushright}
     \hspace{80mm}
     \begin{minipage}{76mm}
-	{\LargeE\titlepagespecificinfo}                              %% Área de concentração e grau obtido.
+	{\LargeE\titlepagespecificinfo} %% Área de concentração e grau obtido
     \end{minipage} 
     \end{flushright}
     \vspace{15mm}
-    \centerline{\LargeE \@city, \@state, \@country}                  %% Cidade, estado e país.
-    \centerline{\LargeE \@publmonth~{de}~\@publyear}                 %% Mês e ano.
+    \centerline{\LargeE \@city, \@state, \@country} %% Cidade, estado e país
+    \centerline{\LargeE \@publmonth~{de}~\@publyear} %% Mês e ano
   } 
 }
 
-%%=============================================================================
+%%==============================================================================
 %% Definição padrão da folha de aprovação e CIP
-%%=============================================================================
+%%==============================================================================
 
 \newcommand{\makeapprove}{%
   \clearpage
@@ -466,7 +496,8 @@
   \@cipwindow
 	\vspace{2ex}
   \nominata{#1}
-  %se for impresso, não deve contar a página, pois será impressa no verso da folha de aprovação
+  %% se for impresso, não deve contar a página, pois será impressa no verso da
+  %% folha de aprovação
   %\setcounter{page}{2}
 }
 
@@ -480,10 +511,17 @@
                 \noindent \@authoralast, \@authorafirst\par
                 \@title\ / por \@authora.\ -- \@publyear.\\
                 \indent\pageref{LastPage}~f.: il.; 30 cm. \par
-				\indent\iforientadora\advisornamef\else\advisorname\fi: \@advisorfirst\ \@advisorlast
-				\@ifundefined{@coadvisor}{}{\\ \indent\ifcoorientadora\coadvisornamef\else\coadvisorname\fi: \@coadvisorfirst\ \@coadvisorlast} \\
-				\indent \doctypenameCIP \ - \ufrrj, \@instituto, \@altCurso, RJ, \@publyear. \par
-                \@cipkw I.~\@advisorlast, \@advisorfirst. \@ifundefined{@coadvisorfirst}{II.~T\'{\i}tulo.}{II.~\@coadvisorlast, \@coadvisorfirst. III.~T\'{\i}tulo.}\par
+				\indent\iforientadora\advisornamef\else
+				 \advisorname\fi: \@advisorfirst\ \@advisorlast
+				\@ifundefined{@coadvisor}{}{\\ \indent
+				 \ifcoorientadora\coadvisornamef\else
+				 \coadvisorname\fi: \@coadvisorfirst\ 
+				 \@coadvisorlast} \\
+				\indent \doctypenameCIP \ - \ufrrj, \@instituto,
+				\@altCurso, RJ, \@publyear. \par
+                \@cipkw I.~\@advisorlast, \@advisorfirst. 
+                \@ifundefined{@coadvisorfirst}{II.~T\'{\i}tulo.}{II.~
+                \@coadvisorlast, \@coadvisorfirst. III.~T\'{\i}tulo.}\par
         \vspace{4ex}
         \end{minipage}%
         }%
@@ -498,7 +536,9 @@
   \hrule
   \vskip 10\p@
   \noindent \copyright \ \@publyear \\
-  Todos os direitos autorais reservados a \@authora. A reprodu{\c{c}}{\~a}o de partes ou do todo deste trabalho s\'{o} poder\'{a} ser feita mediante a cita{\c{c}}{\~a}o da fonte. \\
+  Todos os direitos autorais reservados a \@authora. A reprodu{\c{c}}{\~a}o de
+  partes ou do todo deste trabalho s\'{o} poder\'{a} ser feita mediante a 
+  cita{\c{c}}{\~a}o da fonte. \\
   E-mail: {#1}
 }
 
@@ -531,42 +571,49 @@
   }
 }
 
-% Informações do comitê de avaliação do trabalho.
+%%==============================================================================
+%% Informações do comitê de avaliação do trabalho
+%%==============================================================================
 
-% Comando para adicionar linha para assinatura acima do nome dos membros da banca.
-\newcommand{\assina}{\centering\rule{100mm}{0.4pt}\vfill\vspace{-2mm}}
+%% Adicionar linha para assinatura acima do nome dos membros da banca
+%% Largura = 100 mm, Espessura = 0.4 pts, Espaçamento até nome = 1 mm
+\newcommand{\assina}{\centering\rule{100mm}{0.4pt}\vfill\vspace{-1mm}}
 
 \newcommand{\approvecommitteeinfo}{%
   \vfill
   \parbox[t]{\textwidth}{
-    \MakeUppercase{\doctypename} APROVADA EM \MakeUppercase{\@date.}% Informa a data em que o trabalho foi aprovado.
+    \MakeUppercase{\doctypename} APROVADA EM \MakeUppercase{\@date.}
     }
     \vfill
     \vspace{18mm}
-    \@ifundefined{@advisorcommittee}{}{
-      \normalsize\centerline{\parbox[t]{\textwidth}{\assina\@advisorcommittee}}}		% A identificação do(a) co-orientador(a) e presidente
-		\iforientadora								% da banca é colocada 20 mm abaixo da data em que o
-      \normalsize\centerline{(Orientadora)}						% trabalho foi aprovado. O comando também identifica
-		\else									% o gênero do orientador, ou seja, se masculino
-		  \normalsize\centerline{(Orientador)}					% ou feminino.
-		\fi
-    \vspace{11mm}
+%     \@ifundefined{@advisorcommittee}{}{
+%       \normalsize\centerline{
+%        \parbox[t]{\textwidth}{\assina\@advisorcommittee}}} % Presidente
+%         \vspace{1mm}
+%         \iforientadora\normalsize\centerline{(Presidente/Orientadora)}
+% 	\else\normalsize\centerline{(Presidente/Orientador)}\fi
     \@ifundefined{@committeea}{}{
-      \normalsize\centerline{\parbox[t]{\textwidth}{\assina\@committeea}}}		% A identificação dos membros da banca é colocada
-    \vspace{18mm}									% 20 mm abaixo da identificação do(a) orientador(a).
+      \normalsize\centerline{\parbox[t]{\textwidth}{\assina\@committeea}}}
+      \vspace{1mm}
+      \normalsize\centerline{(Presidente)}
+    \vspace{11mm}
     \@ifundefined{@committeeb}{}{
-      \normalsize\centerline{\parbox[t]{\textwidth}{\assina\@committeeb}}}		% A identificação de cada novo membro da banca é
-    \vspace{18mm}									% colocada 20 mm abaixo da identificação do membro
-    \@ifundefined{@committeec}{}{							% anterior.
-      \normalsize\centerline{\parbox[t]{\textwidth}{\assina\@committeec}}}		
+      \normalsize\centerline{\parbox[t]{\textwidth}{\assina\@committeeb}}}
+    \vspace{18mm}
+    \@ifundefined{@committeec}{}{
+      \normalsize\centerline{\parbox[t]{\textwidth}{\assina\@committeec}}}
     \vspace{18mm}
     \@ifundefined{@committeed}{}{
-      \normalsize\centerline{\parbox[t]{\textwidth}{\assina\@committeed}}}
+      \normalsize\centerline{\parbox[t]{\textwidth}{\assina\@committeed}}}		
+    \vspace{18mm}
+    \@ifundefined{@committeee}{}{
+      \normalsize\centerline{\parbox[t]{\textwidth}{\assina\@committeee}}}
   }
 
 %%=============================================================================
 %% Ajuste do sumário (sem indentação) 
 %%=============================================================================
+
 \newlength{\ii@chapnumindent}\setlength{\ii@chapnumindent}{1 em}
 \renewcommand\@dotsep{1.5}
 \renewcommand*{\l@chapter}[2]{
@@ -600,6 +647,7 @@
 %%==============================================================================
 %% Adicionar todos os tipos de seção, subseção, etc no sumário
 %%==============================================================================
+
 %\part            | -1 (book and report) 0 (article)
 %\chapter         | 0 (book and report only)
 %\section         | 1
@@ -613,6 +661,7 @@
 %%==============================================================================
 %% Definição das listas de abreviaturas e siglas e de símbolos
 %%==============================================================================
+
 \newenvironment{listofabbrv}[1]{
         \chapter*{\LargeF\listabbrvname}
         \begin{list}{\textbf{??}}{
@@ -647,7 +696,8 @@
 %%=============================================================================
 %% Resumo (abstract) e Abstract (englishabstract)
 %%=============================================================================
-%% TODO: opções de resumo em outras línglas
+
+%% TODO: opções de resumo em outras línguas
 
 % Comando para formatação do corpo do resumo em português. Está definido para
 % não conter indentação na primeira linha e ser apresentado com espaçamento
@@ -671,7 +721,7 @@
 
 \newcommand{\abstractheaderbox}{%
   \parbox[t]{\textwidth}{
-    \MakeUppercase{\@authoralast},~\@authorafirst.~\textbf{\@title}.~\@publyear.~\pageref{LastPage}f.~\doctypename~(\@altGrau).~\@instituto,~\@departamento,~\ufrrj,~\@city,~RJ,~\@publyear.
+    \MakeUppercase{\@authoralast},~\@authorafirst.~\textbf{\@title}.~\@publyear.~\pageref{LastPage}f.~\doctypename~(\@altGrau).~\@instituto,~\ufrrj,~\@city,~RJ,~\@publyear.
     \vfill\vspace{13mm}
   }
 }
@@ -734,7 +784,7 @@
 
 \newcommand{\englishabstractheaderbox}[4]{%
   \parbox[t]{\textwidth}{
-    \MakeUppercase{\@authoralast},~\@authorafirst.~\textbf{\@titleENG}.~\@publyear.~\pageref{LastPage}p.~\doctypenameIngles~(\@altGrauENG).~\@instituto,~\@departamento,~\ufrrj,~\@city,~RJ,~\@publyear.
+    \MakeUppercase{\@authoralast},~\@authorafirst.~\textbf{\@titleENG}.~\@publyear.~\pageref{LastPage}p.~\doctypenameIngles~(\@altGrauENG).~\@instituto,~\ufrrj,~\@city,~RJ,~\@publyear.
     \vfill\vspace{13mm}
   }
 }

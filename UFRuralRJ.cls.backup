@@ -39,7 +39,7 @@
 %% Identificação
 %%==============================================================================
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{UFRuralRJ}[19/01/2015 v.0.1 Formatação de documentos acadêmicos 
+\ProvidesClass{UFRuralRJ}[08/03/2015 v.0.2 Formatação de documentos acadêmicos 
                           da UFRuralRJ]
 
 %%==============================================================================
@@ -65,8 +65,8 @@
 \DeclareOption{espec}{
   \AtEndOfClass{
     \newcommand{\titlepagespecificinfo}{
-      Monografia submetida como requisito parcial para obten{\c{c}}{\~a}o do grau de
-      \textbf{\@grau}, \@altCurso, {\'A}rea de Concentra\c{c}{\~a}o em
+      Monografia submetida como requisito parcial para obten{\c{c}}{\~a}o do 
+      grau de \textbf{\@grau}, \@altCurso, {\'A}rea de Concentra\c{c}{\~a}o em
       \@area.
     }
     \def\doctypename{Monografia de Especializa{\c{c}}{\~a}o}
@@ -107,7 +107,8 @@
   }
 }
 
-\DeclareOption{english}{\@englishtrue\OptionNotUsed}\newif\if@english\@englishfalse
+\DeclareOption{english}{
+ \@englishtrue\OptionNotUsed}\newif\if@english\@englishfalse
 
 %% TODO: incluir opção 'twoside'
 \DeclareOption{oneside}{\AtEndOfClass{\@twosidefalse}\OptionNotUsed}
@@ -142,9 +143,9 @@
 \newcommand\LargeF{\@setfontsize\LargeF{12pt}{12.1pt}}
 
 %% Definições de gênero
-\newif\ifautora        %% 'autora' em vez de 'autor'
-\newif\iforientadora   %% 'orientadora' em vez de 'orientador'
-\newif\ifcoorientadora %% 'co-orientadora' em vez de 'co-orientador'
+\newif\ifautora %% 'autora' em vez de 'autor'
+\newif\iforientadora %% 'orientadora' em vez de 'orientador'
+%\newif\ifcoorientadora %% 'co-orientadora' em vez de 'co-orientador'.
 
 %% Definições de capítulo
 \newif\ifchap\chaptrue %% capítulo
@@ -155,7 +156,8 @@
 \AtBeginDocument{\@ifpackageloaded{hyperref}{\@hyperLoadedtrue}{}}
 
 \newcommand{\nocontentsline}[3]{}
-\newcommand{\tocless}[2]{\bgroup\let\addcontentsline=\nocontentsline#1{#2}\egroup}
+\newcommand{\tocless}[2]{
+ \bgroup\let\addcontentsline=\nocontentsline#1{#2}\egroup}
 
 %%==============================================================================
 %% Herança da classe 'report' e inclusão de pacotes e arquivos necessários
@@ -237,6 +239,7 @@
 %%=============================================================================
 %% Definição de autor(es), orientador, co-orientador e banca examinadora
 %%=============================================================================
+
 \newcounter{ii@authorcount}
 \renewcommand{\author}[2]{
         \addtocounter{ii@authorcount}{1}
@@ -259,9 +262,12 @@
 \newcounter{ii@coadvisorcount}
 \DeclareRobustCommand{\coadvisor}[4][]{
 	\addtocounter{ii@coadvisorcount}{1}
-	\expandafter\gdef\csname @coadvisor\alph{ii@coadvisorcount}last\endcsname{#3}
-	\expandafter\gdef\csname @coadvisor\alph{ii@coadvisorcount}first\endcsname{#4}
-	\expandafter\gdef\csname @coadvisor\alph{ii@coadvisorcount}\endcsname{#4 #3}
+	\expandafter
+	 \gdef\csname @coadvisor\alph{ii@coadvisorcount}last\endcsname{#3}
+	\expandafter
+	 \gdef\csname @coadvisor\alph{ii@coadvisorcount}first\endcsname{#4}
+	\expandafter
+	 \gdef\csname @coadvisor\alph{ii@coadvisorcount}\endcsname{#4 #3}
 	%\gdef\@coadvisorlast{#3}
         %\gdef\@coadvisorfirst{#4}
         %\gdef\@coadvisor{#1~#2~#4 #3}
@@ -271,12 +277,16 @@
 }
 
 % Definição da formatação das informações do comitê de avaliação do documento
+% Ex.: \committee[Título]{Sobrenome}{Nome}{Instituição}
 \newcounter{ii@committeecount}
 \DeclareRobustCommand{\committee}[4][]{
   \addtocounter{ii@committeecount}{1}
-  \expandafter\gdef\csname @committee\alph{ii@committeecount}last\endcsname{#2}
-  \expandafter\gdef\csname @committee\alph{ii@committeecount}first\endcsname{#3}
-  \expandafter\gdef\csname @committee\alph{ii@committeecount}\endcsname{#3 #2. #1 #4}
+  \expandafter
+   \gdef\csname @committee\alph{ii@committeecount}last\endcsname{#2}
+  \expandafter
+   \gdef\csname @committee\alph{ii@committeecount}first\endcsname{#3}
+  \expandafter
+   \gdef\csname @committee\alph{ii@committeecount}\endcsname{#3 #2. #1 #4}
 }
 
 %%=============================================================================
@@ -345,7 +355,6 @@
 %\newlength{\titlepagewinvoffset}\setlength{\titlepagewinvoffset}{70mm}
 %\newlength{\titlepagewinvoffset}\setlength{\titlepagewinvoffset}{112mm}
 
-
 \renewcommand{\maketitle}{ % capa e folha de rosto
         \begin{titlepage}
                 \thetitlepage
@@ -358,28 +367,30 @@
 %%=============================================================================
 %% Capa
 %%=============================================================================
+
 \newcommand{\thetitlepage}{ 
   \noindent
   \parbox[t]{\textwidth}{
     \centering
-    \setlength{\baselineskip}{2.0\baselineskip}		% Define espaçamento duplo.
-    \vspace{6mm}						% Espaço vertical de 6 mm.
-    {\LargeA\textbf{\MakeUppercase{\ufrrjSigla}}}\\	% Identificação da Universidade. Fonte 24 pontos.
-    {\LargeC\textbf{\MakeUppercase{\@instituto}}}\\	% Identificação do Instituto. Fonte 18 pontos.
-    {\LargeC\textbf{\MakeUppercase{\@curso}}}\\ 		% Identificação do Curso de Pós-Graduação. Fonte 18 pontos.
-    \setlength{\baselineskip}{0.5\baselineskip}		% Define espaçamento simples.
-    \vspace{28mm}					% Espaço vertical de 28 mm.
+    \setlength{\baselineskip}{2.0\baselineskip} % Espaçamento duplo.
+    \vspace{6mm} % Espaço vertical de 6 mm.
+    {\LargeA\textbf{\MakeUppercase{\ufrrjSigla}}}\\ % Universidade, fonte 24 pts
+    {\LargeC\textbf{\MakeUppercase{\@instituto}}}\\ % Instituto, fonte 18 pts
+    {\LargeC\textbf{\MakeUppercase{\@curso}}}\\ % Curso, fonte 18 pts
+    \setlength{\baselineskip}{0.5\baselineskip} % Espaçamento simples
+    \vspace{28mm} % Espaço vertical de 28 mm
       \parbox[t]{\textwidth}{
 	\centering
-	\centerline{\LargeC\textbf{\MakeUppercase{\doctypename}}}% Identificação do tipo de documento colocado 28 mm abaixo do cabeçalho.
-	\vspace{14mm}						% Espaço vertical de 14 mm.
-	\setlength{\baselineskip}{2.0\baselineskip}		% Define espaçamento duplo.
-	{\LargeB\textbf{\@title}}\\				% Título do documento
-	\setlength{\baselineskip}{0.5\baselineskip}		% Define espaçamento simples.
-	\vspace{35mm}						% Espaço vertical de 35 mm.
-	\centerline{\LargeC\textbf{\@authora}}			% Autor do documento. Fonte 18 pontos.
-	\vspace{20mm}						% Espaço vertical de 20 mm.
-	\centerline{\LargeD\textbf{\@publyear}}			% Ano de publicação do documento.
+	% Identificação do tipo de documento colocado 28 mm abaixo do cabeçalho
+	\centerline{\LargeC\textbf{\MakeUppercase{\doctypename}}}
+	\vspace{14mm} % Espaço vertical de 14 mm
+	\setlength{\baselineskip}{2.0\baselineskip} % Espaçamento duplo
+	{\LargeB\textbf{\@title}}\\ % Título do documento
+	\setlength{\baselineskip}{0.5\baselineskip} % Espaçamento simples
+	\vspace{35mm} % Espaço vertical de 35 mm
+	\centerline{\LargeC\textbf{\@authora}} % Autor, Fonte 18 pontos
+	\vspace{20mm} % Espaço vertical de 20 mm
+	\centerline{\LargeD\textbf{\@publyear}} % Ano de publicação
       }
   }
 }
@@ -391,18 +402,22 @@
 %% Para saber se há mais de um(a) co-orientador(a)
 \newif\ifcoorientadores
 
-%% Definição do texto de apresentação do(a) orientador(a) e do(s) co-orientador(es)
+%% Definição do texto de apresentação do(a) orientador(a) e do(s) 
+%% co-orientador(es)
 % \def
 %  \soborienta{
-%   \textit{Sob orienta\c{c}{\~a}o~{\iforientadora{da}\else{do}\fi} \@advisorprof}
+%   \textit{Sob orienta\c{c}{\~a}o~{
+%    \iforientadora{da}\else{do}\fi} \@advisorprof}
 %  }
 % \gdef
 %  \sobcoorienta{
 %   \ifcoorientadores
-%    \textit{e sob co-orienta\c{c}{\~a}o~\ifcoorientadora{da}\else{do}\fi{s}~\@coadvisorprof\ifcoorientadora{as}\else{es}\fi}
+%    \textit{e sob co-orienta\c{c}{\~a}o~\ifcoorientadora{da}\else{do}\fi{s}~
+%     \@coadvisorprof\ifcoorientadora{as}\else{es}\fi}
 %    \ifcoorientadora{a}\else{}\fi}
 %   \else
-%    \textit{e sob co-orienta\c{c}{\~a}o \ifcoorientadora{da}\else{do}\fi~\@coadvisorprof}\fi
+%    \textit{e sob co-orienta\c{c}{\~a}o \ifcoorientadora{da}\else{do}\fi~
+%     \@coadvisorprof}\fi
 %  }
 \def
  \soborienta{
@@ -412,7 +427,7 @@
  \sobcoorienta{
   \textit{e co-orienta\c{c}{\~a}o~de}
  }
- 
+
 \newcommand{\secondtitlepage}{
   \noindent
   \parbox[t]{\textwidth}{
