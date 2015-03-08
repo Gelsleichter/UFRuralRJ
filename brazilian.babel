@@ -26,6 +26,7 @@
 \def\theoremname{Teorema}%
 %\def\proofname{Prova}%
 \def\figurename{Figura}%
+\def\chaptername{Cap\'{\i}tulo}%
 \def\tablename{Tabela}%
 \def\authorname{Autor}%
 \def\authornamef{Autora}%
