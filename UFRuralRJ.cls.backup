@@ -51,7 +51,7 @@
   \AtEndOfClass{
     \newcommand{\titlepagespecificinfo}{
     Tese submetida como requisito parcial para obten\c{c}{\~a}o do grau de
-    \textbf{\@grau}, no \@altCurso, {\'A}rea de Concentra\c{c}{\~a}o em
+    \textbf{\@grau}, \@altCurso, {\'A}rea de Concentra\c{c}{\~a}o em
     \@area.
     }
     \def\doctypename{Tese}
@@ -66,7 +66,7 @@
   \AtEndOfClass{
     \newcommand{\titlepagespecificinfo}{
       Monografia submetida como requisito parcial para obten{\c{c}}{\~a}o do grau de
-      \textbf{\@grau}, no \@altCurso, {\'A}rea de Concentra\c{c}{\~a}o em
+      \textbf{\@grau}, \@altCurso, {\'A}rea de Concentra\c{c}{\~a}o em
       \@area.
     }
     \def\doctypename{Monografia de Especializa{\c{c}}{\~a}o}
@@ -97,7 +97,7 @@
   \AtEndOfClass{
     \newcommand{\titlepagespecificinfo}{
         Disserta{\c{c}}{\~a}o submetida como requisito parcial para
-        obten{\c{c}}{\~a}o do grau de \textbf{\@grau}, no \@altCurso,
+        obten{\c{c}}{\~a}o do grau de \textbf{\@grau}, \@altCurso,
         \'{A}rea de Concentra{\c{c}}{\~a}o em \@area.
     }
     \def\doctypename{Disserta{\c{c}}{\~a}o}
@@ -106,7 +106,6 @@
 	  \def\doctypenameCIP{Disserta{\c{c}}{\~a}o (Mestrado)}
   }
 }
-
 
 \DeclareOption{english}{\@englishtrue\OptionNotUsed}\newif\if@english\@englishfalse
 
@@ -123,7 +122,6 @@
 \def\ufrrjENG{Federal Rural University of Rio de Janeiro} 
 \def\ufrrjSigla{UFRRJ}
 
-\newcommand{\departamento}[1]{\gdef\@departamento{#1}}
 \newcommand{\curso}[1]{\gdef\@curso{#1}}
 \newcommand{\altCurso}[1]{\gdef\@altCurso{#1}}
 \newcommand{\area}[1]{\gdef\@area{#1}}
@@ -159,13 +157,14 @@
 \newcommand{\nocontentsline}[3]{}
 \newcommand{\tocless}[2]{\bgroup\let\addcontentsline=\nocontentsline#1{#2}\egroup}
 
-%%=============================================================================
+%%==============================================================================
 %% Herança da classe 'report' e inclusão de pacotes e arquivos necessários
-%%=============================================================================
+%%==============================================================================
+
 \LoadClass[12pt,a4paper,oneside]{report}
 \RequirePackage[english,brazilian]{babel}
-\input{brazilian.babel} % definições para textos em português
-\input{english.babel}   % definições para textos em inglês
+\input{brazilian.babel} %% definições para textos em português
+\input{english.babel}   %% definições para textos em inglês
 \if@english
         \selectlanguage{english}
         \AtBeginDocument{\selectlanguage{english}}
@@ -180,42 +179,43 @@
 %%=============================================================================
 %% Margens do texto
 %%=============================================================================
+
 \newlength{\mdt@topmargin}\setlength{\mdt@topmargin}{30mm}
 \newlength{\mdt@pagenummargin}\setlength{\mdt@pagenummargin}{20mm}
 \newlength{\mdt@bottommargin}\setlength{\mdt@bottommargin}{20mm}
 \newlength{\mdt@sidemargin}\setlength{\mdt@sidemargin}{30mm}
 \setlength{\marginparwidth}{25mm}
 
-% ajuste das medidas verticais
+%% Ajuste das medidas verticais
 \setlength{\topmargin}{\mdt@pagenummargin}
-        \addtolength{\topmargin}{-1em} % isto é +- a altura do núm. da página (quando no topo)
-        \addtolength{\topmargin}{-1in}
+\addtolength{\topmargin}{-1em} % altura do número da página (quando no topo)
+\addtolength{\topmargin}{-1in}
 \setlength{\headheight}{1em}
 \setlength{\headsep}{\mdt@topmargin}
-        \addtolength{\headsep}{-\mdt@pagenummargin}
+\addtolength{\headsep}{-\mdt@pagenummargin}
 \setlength{\textheight}{\paperheight}
-        \addtolength{\textheight}{-\mdt@topmargin}
-        \addtolength{\textheight}{-\mdt@bottommargin}
+\addtolength{\textheight}{-\mdt@topmargin}
+\addtolength{\textheight}{-\mdt@bottommargin}
 \setlength{\footskip}{\mdt@bottommargin}
 
-% ajuste das medidas horizontais
+%% Ajuste das medidas horizontais
 \setlength{\oddsidemargin}{\mdt@sidemargin}
-        \addtolength{\oddsidemargin}{-1in}
+\addtolength{\oddsidemargin}{-1in}
 \setlength{\evensidemargin}{\oddsidemargin}
 \setlength{\textwidth}{\paperwidth}
-        \addtolength{\textwidth}{-2\mdt@sidemargin}
+\addtolength{\textwidth}{-2\mdt@sidemargin}
 \setlength{\marginparsep}{\mdt@sidemargin}
-        \addtolength{\marginparsep}{-\marginparwidth}
-        \setlength{\marginparsep}{.5\marginparsep}
+\addtolength{\marginparsep}{-\marginparwidth}
+\setlength{\marginparsep}{.5\marginparsep}
 
 %indentar em 1,25 o primeiro parágrafo
 \setlength{\parindent}{1.25cm}%
 
-%%=============================================================================
+%%==============================================================================
 %% Numeração das páginas
-%%=============================================================================
+%%==============================================================================
 
-% canto direito superior
+%% Canto direito superior
 \def\ps@UFRuralRJ{
         \let\@oddfoot\@empty
         \let\@evenfoot\@empty
@@ -223,13 +223,14 @@
         \def\@oddhead{\hspace*{\fill}{\small\thepage}}
 }
 
-% canto direito inferior
+%% Canto direito inferior
 %\def\ps@UFRuralRJ{
 %        \let\@oddhead\@empty
 %        \let\@evenhean\@empty
 %        \def\@evenfoot{{\small\thepage}}
 %        \def\@oddfoot{\hspace*{\fill}{\small\thepage}}
 %}
+
 \pagestyle{empty}
 \let\ps@plain\ps@empty
 
@@ -390,13 +391,28 @@
 %% Para saber se há mais de um(a) co-orientador(a)
 \newif\ifcoorientadores
 
-%% Definição do texto de apresentação do(a) orientador(a) e do(s) 
-%% co-orientador(es)
-\def\soborienta{\textit{Sob orienta\c{c}{\~a}o {\iforientadora{da}\else{do}\fi} \@advisorprof}}
-\gdef\sobcoorienta{\ifcoorientadores\textit{e sob co-orienta\c{c}{\~a}o \ifcoorientadora{da}
-		  \else{do}\fi{s}~\@coadvisorprof\ifcoorientadora{as}\else{es}\fi}
-		  \else\textit{e sob co-orienta\c{c}{\~a}o \ifcoorientadora{da}\else{do}\fi~\@coadvisorprof}\fi}
-
+%% Definição do texto de apresentação do(a) orientador(a) e do(s) co-orientador(es)
+% \def
+%  \soborienta{
+%   \textit{Sob orienta\c{c}{\~a}o~{\iforientadora{da}\else{do}\fi} \@advisorprof}
+%  }
+% \gdef
+%  \sobcoorienta{
+%   \ifcoorientadores
+%    \textit{e sob co-orienta\c{c}{\~a}o~\ifcoorientadora{da}\else{do}\fi{s}~\@coadvisorprof\ifcoorientadora{as}\else{es}\fi}
+%    \ifcoorientadora{a}\else{}\fi}
+%   \else
+%    \textit{e sob co-orienta\c{c}{\~a}o \ifcoorientadora{da}\else{do}\fi~\@coadvisorprof}\fi
+%  }
+\def
+ \soborienta{
+  \textit{Sob orienta\c{c}{\~a}o~de}
+ }
+\gdef
+ \sobcoorienta{
+  \textit{e co-orienta\c{c}{\~a}o~de}
+ }
+ 
 \newcommand{\secondtitlepage}{
   \noindent
   \parbox[t]{\textwidth}{
@@ -415,7 +431,7 @@
       \vfill{\LargeE\textbf{\@advisor}}}\\                           %% Orientador(a).
     \@ifundefined{@coadvisora}{}{
       \\[2ex]\sobcoorienta\par{\LargeE\textbf{\@coadvisora}}}        %% Primeiro(a) co-orientador(a).
-    \@ifundefined{@coadvisorb}{}{{\LargeE{e}\textbf{~\@coadvisorb}}} %% Segundo(a) co-orientador(a).  
+    \@ifundefined{@coadvisorb}{}{\par\textit{e}\par\textbf{\LargeE\@coadvisorb}} %% Segundo(a) co-orientador(a).  
     \vspace{15mm}
     \begin{flushright}
     \hspace{80mm}
@@ -669,7 +685,7 @@
 
 \newcommand{\abstractheaderbox}{%
   \parbox[t]{\textwidth}{
-    \MakeUppercase{\@authoralast},~\@authorafirst.~\textbf{\@title}.~\@publyear.~\pageref{LastPage}f.~\doctypename~(\@altGrau).~\@instituto,~\@departamento,~\ufrrj,~\@city,~RJ,~\@publyear.
+    \MakeUppercase{\@authoralast},~\@authorafirst.~\textbf{\@title}.~\@publyear.~\pageref{LastPage}f.~\doctypename~(\@altGrau).~\@instituto,~\ufrrj,~\@city,~RJ,~\@publyear.
     \vfill\vspace{13mm}
   }
 }
@@ -732,7 +748,7 @@
 
 \newcommand{\englishabstractheaderbox}[4]{%
   \parbox[t]{\textwidth}{
-    \MakeUppercase{\@authoralast},~\@authorafirst.~\textbf{\@titleENG}.~\@publyear.~\pageref{LastPage}p.~\doctypenameIngles~(\@altGrauENG).~\@instituto,~\@departamento,~\ufrrj,~\@city,~RJ,~\@publyear.
+    \MakeUppercase{\@authoralast},~\@authorafirst.~\textbf{\@titleENG}.~\@publyear.~\pageref{LastPage}p.~\doctypenameIngles~(\@altGrauENG).~\@instituto,~\ufrrj,~\@city,~RJ,~\@publyear.
     \vfill\vspace{13mm}
   }
 }
