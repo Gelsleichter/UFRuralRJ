@@ -88,7 +88,7 @@
 \title{Este título é muito legal para uma tese escrita em português} %% Título em português
 \titleENG{This is a cool title for a thesis written in Portuguese} %% Título em inglês
 \author{Rural}{Nome do Melhor Estudante da} %% Autor: sobrenome, nome
-%\autoratrue %% Descomentar se for uma AUTORA
+\autoratrue %% Descomentar se for uma AUTORA
 \instituto{Instituto da Rural} %% Instituto
 \curso{Curso de Pós-Graduação da Rural} %% Curso de pós-graduação com a área de concentração.
                                         %% Ex.: Curso de Pós-Graduação em Agronomia - Ciência do Solo
@@ -120,10 +120,11 @@
 %%==============================================================================
 
 % Ex.: \committee[Título]{Sobrenome}{Nome}{Instituição}
-\committee[Dra.]{Rural}{Nome da Melhor Examinadora da}{UFRRJ} %% Examinador 1
-\committee[Dr.]{Rural}{Nome do Melhor Examinador da}{UFRRJ} %% Examinador 2
-\committee[Dra.]{Rural}{Nome da Melhor Examinadora de Fora da}{MEFR} %% Examinador 3
-\committee[Dr.]{Rural}{Nome do Melhor Examinador de Fora da}{MEFR} %% Examinador 4
+\committee[Dr.]{Banca}{Nome do Melhor Presidente da}{UFRRJ} %% Presidente
+\committee[Dra.]{Banca}{Nome da Melhor Integrante da}{UFRRJ} %% Examinador
+\committee[Dr.]{Banca}{Nome do Melhor Integrante da}{UFRRJ} %% Examinador
+\committee[Dra.]{Banca}{Nome da Outra Melhor Integrante da}{MEFR} %% Examinador
+\committee[Dr.]{Banca}{Nome do Outro Melhor Integrante da}{MEFR} %% Examinador
 \date{30}{Fevereiro}{2016} %% Data da defesa
 
 %%==============================================================================
@@ -150,8 +151,8 @@
 %\newgeometry{inner=20mm,outer=30mm,top=30mm,bottom=20mm}
 %\makeCIP{alessandrosamuel@yahoo.com.br} %% email do autor		
 %\restoregeometry
-%Se for usar a catalogação gerada pelo gerador do site da biblioteca comentar as linhas
-%acima e utilizar o comando abaixo
+%Se for usar a catalogação gerada pelo gerador do site da biblioteca comentar as
+%linhas acima e utilizar o comando abaixo
 %\includeCIP{CIP.pdf}
 
 %%=============================================================================
@@ -221,6 +222,7 @@ UFRuralRJ.
 %%==============================================================================
 %% General abstract (inglês)
 %%==============================================================================
+
 \generalabstracttrue
 \begin{englishabstract}
 {This is a cool title for a thesis written in Portuguese} %% Título do trabalho
@@ -232,39 +234,45 @@ This is the English abstract of my thesis written in Portuguese. Obviously this
 is the best abstract that has ever been written in an academic document produced
 at UFRuralRJ.
 \end{englishabstract}
+
 %%=============================================================================
 %% Listas (comentar se não houver) e sumário
 %%=============================================================================
-\listoffigures                         %% Lista de figuras
-%\listoftables                         %% Lista de tabelas
-\listofappendix                        %% Lista de apêndices
-%\listofannex                          %% Lista de anexos
-%\begin{listofabbrv}{UbiComp}          %% Lista de abreviaturas e siglas
-%   \item [DSM] Digital Soil Mapping
-%   \item [UbiComp] Computação Ubíqua
-%\end{listofabbrv}
-%\begin{listofsymbols}{teste}          %% Lista de simbolos (opcional)
-%  \item [$\varnothing$] vazio         %% Simbolos devem aparecer conforme a ordem em que aparecem no texto
-%  \item [$\Gamma$]  Gama              %% O parâmetro deve ser o símbolo mais longo
-%  \item [$\forall$] Para todo
-%\end{listofsymbols}
-\tableofcontents                       %% Sumário
+
+\listoffigures %% Lista de figuras
+\listoftables %% Lista de tabelas
+\listofappendix %% Lista de apêndices
+\listofannex %% Lista de anexos
+
+\begin{listofabbrv}{UbiComp} %% Lista de abreviaturas e siglas
+ \item [RJ] Rio de Janeiro
+ \item [UFRuralRJ] Universidade Federal Rural do Rio de Janeiro
+\end{listofabbrv}
+
+\begin{listofsymbols}{teste} %% Lista de simbolos
+ \item [$\varnothing$] vazio %% Simbolos devem aparecer conforme a ordem em que aparecem no texto
+ \item [$\Gamma$]  Gama      %% O parâmetro deve ser o símbolo mais longo
+ \item [$\forall$] Para todo
+\end{listofsymbols}
+
+\tableofcontents %% Sumário
 %%=============================================================================
 %% Início da tese
 %%=============================================================================
+
 \setlength{\baselineskip}{1.5\baselineskip}
 \include{capitulos/chapter00} %% Incluir capítulo 00
 \include{capitulos/chapter01} %% Incluir capítulo 01
 \include{capitulos/chapter02} %% Incluir capítulo 02
-\include{capitulos/chapter03} %% Incluir capítulo 03
-\include{capitulos/chapter04} %% Incluir capítulo 04
-\include{capitulos/chapter05} %% Incluir capítulo 05
 \setlength{\baselineskip}{\baselineskip}
+
 %%=============================================================================
 %% Referências
 %%=============================================================================
+
 \bibliographystyle{abnt}
 \bibliography{referencias/biblio}
+
 %%=============================================================================
 %% Apêndices e anexos
 %% Se precisar usar alguma seção ou subseção dentro dos apêndices ou

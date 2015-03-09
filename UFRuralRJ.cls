@@ -659,29 +659,34 @@
 \setcounter{tocdepth}{5}
 
 %%==============================================================================
-%% Definição das listas de abreviaturas e siglas e de símbolos
+%% Lista de abreviaturas e siglas
 %%==============================================================================
 
 \newenvironment{listofabbrv}[1]{
-        \chapter*{\LargeF\listabbrvname}
-        \begin{list}{\textbf{??}}{
-                \settowidth{\labelwidth}{#1}
-                \setlength{\labelsep}{1em}
-                \setlength{\itemindent}{0mm}
-                \setlength{\leftmargin}{\labelwidth}
-                \addtolength{\leftmargin}{\labelsep}
-                \setlength{\rightmargin}{0mm}
-                \setlength{\itemsep}{.1\baselineskip}
-                \renewcommand{\makelabel}[1]{\makebox[\labelwidth][l]{##1}}
-        }
+ \chapter*{\LargeF\listabbrvname}
+  \begin{list}{\textbf{??}}{
+   \settowidth{\labelwidth}{#1}
+   \setlength{\labelsep}{2em}
+   \setlength{\itemindent}{0mm}
+   \setlength{\leftmargin}{\labelwidth}
+   \addtolength{\leftmargin}{\labelsep}
+   \setlength{\rightmargin}{0mm}
+   \setlength{\itemsep}{.1\baselineskip}
+   \renewcommand{\makelabel}[1]{\makebox[\labelwidth][l]{##1}}
+  }
 }{
-        \end{list}
+  \end{list}
 }
+
+%%==============================================================================
+%% Lista de símbolos
+%%==============================================================================
+
 \newenvironment{listofsymbols}[1]{
         \chapter*{\LargeF\listsymbolname}
         \begin{list}{\textbf{??}}{
                 \settowidth{\labelwidth}{#1}
-                \setlength{\labelsep}{1em}
+                \setlength{\labelsep}{2em}
                 \setlength{\itemindent}{0mm}
                 \setlength{\leftmargin}{\labelwidth}
                 \addtolength{\leftmargin}{\labelsep}
@@ -706,9 +711,9 @@
 \newif\ifgeneralabstract
 \renewenvironment{abstract}{
   \ifgeneralabstract
-    \chapter*{\LargeF\generalabstractname}% resumo geral
+    \chapter*{\LargeF\generalabstractname} %% resumo geral
   \else
-    \chapter*{\LargeF\abstractname}% resumo
+    \chapter*{\LargeF\abstractname} %% resumo
   \fi
   \noindent\abstractheaderbox
   \noindent
@@ -716,51 +721,58 @@
   \noindent\textbf{\keywordsname:} \@abstractkw.
 }
 
-% Comando para formatação do cabeçalho do resumo em português. O corpo do
-% resumo é colocado 15 mm abaixo do cabeçalho.
+%% Formatação do cabeçalho do resumo em português.
+%% O corpo do resumo é colocado 15 mm abaixo do cabeçalho.
 
 \newcommand{\abstractheaderbox}{%
-  \parbox[t]{\textwidth}{
-    \MakeUppercase{\@authoralast},~\@authorafirst.~\textbf{\@title}.~\@publyear.~\pageref{LastPage}f.~\doctypename~(\@altGrau).~\@instituto,~\ufrrj,~\@city,~RJ,~\@publyear.
-    \vfill\vspace{13mm}
-  }
+ \parbox[t]{\textwidth}{
+  \MakeUppercase{\@authoralast},~\@authorafirst.~\textbf{\@title}.~\@publyear.
+   ~\pageref{LastPage}f.~\doctypename~(\@altGrau).~\@instituto,~\ufrrj,~\@city,
+   ~RJ,~\@publyear.
+   \vfill\vspace{13mm}
+ }
 }
+
+%% Formatação do cabeçalho do resumo em inglês (abstract)
 
 \newenvironment{englishabstract}[5]{
-        \if@openright\cleardoublepage\else\clearpage\fi%
-        \gdef\@englishkeywords{#3}
-        \begin{otherlanguage}{english}
-        \ifgeneralabstract
-	  \chapter*{\LargeF\generalabstractname}% general abstract
-	\else
-          \chapter*{\LargeF\abstractname}% abstract
-        \fi  
-          \noindent\englishabstractheaderbox
-          \hspace*{}
-          \noindent
-	  }{\par\vspace{8mm}
-	    \noindent\textbf{\keywordsname:} \@englishkeywords.
-	\end{otherlanguage}
+ \if@openright\cleardoublepage\else\clearpage\fi%
+  \gdef\@englishkeywords{#3}
+  \begin{otherlanguage}{english}
+   \ifgeneralabstract
+    \chapter*{\LargeF\generalabstractname} %% general abstract
+   \else
+    \chapter*{\LargeF\abstractname} %% abstract
+   \fi  
+  \noindent\englishabstractheaderbox
+  \hspace*{}
+  \noindent
+}{\par\vspace{8mm}
+  \noindent\textbf{\keywordsname:} \@englishkeywords.
+  \end{otherlanguage}
 }
 
-% Novos ambientes 'chapterabstractPOR' e 'chapterabstractENG' para definição
-% do 'resumo' e 'abstract' dos capítulos individuais. % Estes ambientes são
-% úteis quando o documento é composto por artigos ou % capítulos individuais.
-% O resumo e o abstract não recebem numeração e não aparecem como itens do
-% sumário. O corpo do texto fica 10 mm abaixo do título, e as palavras-chave
-% e as keywords ficam 10 mm abaixo do corpo do texto.
+%% Novos ambientes 'chapterabstractPOR' e 'chapterabstractENG'
+%% Resumo e abstract dos capítulos individuais.
+%% Estes ambientes são úteis quando o documento é composto por artigos ou 
+%% capítulos individuais.
+%% O resumo e o abstract não recebem numeração e não aparecem como itens do
+%% sumário. O corpo do texto fica 10 mm abaixo do título, e as palavras-chave
+%% e as keywords ficam 10 mm abaixo do corpo do texto.
+
 \newenvironment{chapterabstractPOR}[1]{
   \if@openright\cleardoublepage\else\clearpage\fi
   \gdef\@portuguesekeywords{#1}
-  \setlength{\baselineskip}{0.67\baselineskip}		% Define espaçamento simples.
-  \vspace*{-14mm}					% Ajusta o alinhamento superior do resumo.
-  \vspace*{10mm}						% Coloca o resumo a 10 mm da margem superior.
-  \addcontentsline{toc}{section}{\MakeUppercase{\abstractname}}% adiciona o 'resumo' ao sumário sem numerar seção
-  \section*{\centering\MakeUppercase{\abstractname}}	% Título do resumo centralizado.
-  \vspace{2mm}						% Define espaço do título até o corpo do texto.
-  \hspace*{-14.5mm}					% Garante que a primeira linha não será indentada.
-}{\par\vspace{6mm}					% Define espaço do corpo do texto até as palavras-chave.
-  \noindent\textbf{\keywordsname:} \@portuguesekeywords.	% Insere as palavras-chave.
+  \setlength{\baselineskip}{0.67\baselineskip} %% Espaçamento simples
+  \vspace*{-14mm} %% Alinhamento superior do resumo
+  \vspace*{10mm} %% Coloca o resumo a 10 mm da margem superior
+  %% Adicionar o 'resumo' ao sumário sem numerar seção
+  \addcontentsline{toc}{section}{\MakeUppercase{\abstractname}}
+  \section*{\centering\MakeUppercase{\abstractname}} %% Título centralizado
+  \vspace{2mm} %% Definir espaço do título até o corpo do texto
+  \hspace*{-14.5mm} %% Garantir que a primeira linha não será indentada
+}{\par\vspace{6mm} %% Definir espaço do corpo do texto até as palavras-chave
+  \noindent\textbf{\keywordsname:} \@portuguesekeywords. %% Palavras-chave
 }
 
 \newenvironment{chapterabstractENG}[1]{
@@ -784,7 +796,9 @@
 
 \newcommand{\englishabstractheaderbox}[4]{%
   \parbox[t]{\textwidth}{
-    \MakeUppercase{\@authoralast},~\@authorafirst.~\textbf{\@titleENG}.~\@publyear.~\pageref{LastPage}p.~\doctypenameIngles~(\@altGrauENG).~\@instituto,~\ufrrj,~\@city,~RJ,~\@publyear.
+    \MakeUppercase{\@authoralast},~\@authorafirst.~\textbf{\@titleENG}.~
+    \@publyear.~\pageref{LastPage}p.~\doctypenameIngles~(\@altGrauENG).~
+    \@instituto,~\ufrrj,~\@city,~RJ,~\@publyear.
     \vfill\vspace{13mm}
   }
 }
@@ -793,8 +807,7 @@
 %% Formatação dos capítulos.
 %% Os comandos \@chapter e \@schapter são redefinidos para que a
 %% numeração de páginas seja correta (deve aparecer somente a partir do
-%% primeiro capítulo do texto, mas não nas páginas iniciais de
-%% capítulos).
+%% primeiro capítulo do texto, mas não nas páginas iniciais de capítulos).
 %% Os comandos \@makechapterhead e \@makeschapterhead fazem a
 %% formatação dos títulos propriamente ditos.
 %%=============================================================================
@@ -805,80 +818,104 @@
 \def\@chapapp{}
 \def\@chapter[#1]#2{%
         \refstepcounter{chapter}%
-        \ifchap\addcontentsline{toc}{chapter}{\protect\numberline{\@chapapp\thechapter}#1}\fi%
+        \ifchap\addcontentsline{toc}{chapter}{
+          \protect\numberline{\@chapapp\thechapter}#1}\fi%
         \addtocontents{lof}{\protect\addvspace{0\p@}}%original = 10\p@ 
         \addtocontents{lot}{\protect\addvspace{0\p@}}%
         \pagestyle{UFRuralRJ}\let\ps@plain\ps@UFRuralRJ%
         \@makechapterhead{#2}\@afterheading
 }
-\newif\ifartigo% colocar o título de capítulos no formato de artigo 20 mm abaixo da margem superior
+
+%% Colocar título de capítulos no formato de artigo 
+%% Posição: 20 mm abaixo da margem superior
+\newif\ifartigo 
+
 \def\@makechapterhead#1{%
-      \vspace*{5.5mm}% Coloca o título dos itens principais do corpo da documento a 10 mm da margem superior.
-       \ifchap
-        \ifartigo\vspace*{8mm}\else\vspace*{0mm}\fi% Coloca a palavra CAPÍTULO 20 mm abaixo da margem superior.
-         \reset@font\noindent{\ifartigo
-         % Esta é uma solução rápida e suja para ajustar a numeração dos capítulos conforme o Manual da UFRuralRJ.
-         % Segundo o Manual, os capítulos ou artigos devem receber a numeração sequencial do sumário, mas também
-         % a palavra 'CAPÍTULO' seguida do número do capítulo ou artigo usando algarismos romanos.
-				\ii@chapterfont
-				\centering\textbf{\@chapapp\thechapter~\MakeUppercase{\chaptername}~\addtocounter{chapter}{-1}\Roman{chapter}\\
-				\addtocounter{chapter}{+1}
-				\vspace*{20mm}
-				\hspace{0.5em}\MakeUppercase{#1}}
-			     \else
-				\LargeF\centering\textbf{\@chapapp\thechapter\hspace{0.5em}\MakeUppercase{#1}}\fi
-			     \par}
-				\else
-				                      %\@setfontsize\Large{12}{20} se for o padrão da seção
-				  \reset@font\noindent{\ii@chapterfont\centering\textbf{\MakeUppercase{\@chapapp}\thechapter\hspace{0.5em}-- #1}\par}
-				\fi
-				\ifappendix
- 		      \addcontentsline{loap}{section}{\MakeUppercase{\@chapapp}\thechapter\hspace{0.5em}-- #1}
-				\fi
-				\ifannex
-					\addcontentsline{loan}{section}{\MakeUppercase{\@chapapp}\thechapter\hspace{0.5em}-- #1}
-				\fi
-        \addvspace{25pt}
+  %% Colocar título dos itens principais do documento a 10 mm da margem superior
+  \vspace*{5.5mm} 
+  \ifchap
+  %% Colocar o termo 'CAPÍTULO' 20 mm abaixo da margem superior
+  \ifartigo\vspace*{8mm}\else\vspace*{0mm}\fi
+  \reset@font\noindent{\ifartigo
+  %% Esta é uma solução rápida e suja para ajustar a numeração dos capítulos 
+  %% conforme o Manual da UFRuralRJ. Segundo o Manual, os capítulos ou artigos 
+  %% devem receber a numeração sequencial do sumário, mas também a palavra
+  %% 'CAPÍTULO' seguida do número do capítulo ou artigo usando algarismos 
+  %% romanos.
+  \ii@chapterfont
+  \centering\textbf{\@chapapp\thechapter~\MakeUppercase{\chaptername}~
+  \addtocounter{chapter}{-1}\Roman{chapter}\\
+  \addtocounter{chapter}{+1}
+  \vspace*{20mm}
+  \hspace{0.5em}\MakeUppercase{#1}}
+  \else
+    \LargeF\centering\textbf{\@chapapp\thechapter\hspace{0.5em}
+      \MakeUppercase{#1}}
+  \fi
+  \par}
+  \else
+    %\@setfontsize\Large{12}{20} se for o padrão da seção
+    \reset@font\noindent{\ii@chapterfont\centering\textbf{
+      \MakeUppercase{\@chapapp}\thechapter\hspace{0.5em}-- #1}\par}
+  \fi
+  \ifappendix
+    \addcontentsline{loap}{section}{
+      \MakeUppercase{\@chapapp}\thechapter\hspace{0.5em}-- #1}
+  \fi
+  \ifannex
+    \addcontentsline{loan}{section}{
+      \MakeUppercase{\@chapapp}\thechapter\hspace{0.5em}-- #1}
+  \fi
+  \addvspace{25pt}
 }
-% Formatação da versão estrelada (*) dos capítulos
+
+%% Formatação da versão estrelada (*) dos capítulos
 \def\@schapter#1{%
         \ifchap\if@aftertoc\addcontentsline{toc}{chapter}{#1}\fi\fi%
         \addtocontents{lof}{\protect\addvspace{0\p@}}%Original = 10\p@
         \addtocontents{lot}{\protect\addvspace{0\p@}}%
         \@makeschapterhead{#1}\@afterheading
 }
+
 \def\@makeschapterhead#1{%
 	\vspace*{5mm}
 	\reset@font\centerline{\LargeF\centering\textbf{\MakeUppercase{#1}}}
         \addvspace{25pt}
 }
 
-%%=============================================================================
+%%==============================================================================
 %% Formatação das seções
-%%=============================================================================
+%%==============================================================================
+
 %\renewcommand{\section}{%name, level, indent, beforeskip, afterskip,style
 %        \@startsection{section}{1}{0pt}{18pt}{18pt}{\reset@font\bfseries\@setfontsize\Large{12}{20}}
 %}
+
 \renewcommand\section{\@startsection{section}{1}{0pt}%
                                    {18pt}%
                                    {18pt}%
-                                   {\centering\reset@font\bfseries\@setfontsize\Large{12}{20}}}
+                                   {\centering\reset@font\bfseries\@setfontsize
+                                      \Large{12}{20}}}
 \renewcommand\subsection{\@startsection{subsection}{2}{0pt}%
                                    {12pt}%
                                    {18pt}%
-                                   {\reset@font\bfseries\@setfontsize\Large{12}{20}}}																	
+                                   {\reset@font\bfseries\@setfontsize
+                                      \Large{12}{20}}}
 \renewcommand\subsubsection{\@startsection{subsubsection}{3}{0pt}%
                                    {12pt}%
                                    {18pt}%
-                                   {\reset@font\bfseries\@setfontsize\Large{12}{20}}}																																		
+                                   {\reset@font\bfseries\@setfontsize
+                                      \Large{12}{20}}}
 \renewcommand\paragraph{\@startsection{paragraph}{4}{0pt}%
                                    {12pt}%
                                    {18pt}%
-                                   {\reset@font\bfseries\@setfontsize\Large{12}{20}}}	
+                                   {\reset@font\bfseries\@setfontsize
+                                      \Large{12}{20}}}	
 \renewcommand\subparagraph{\@startsection{subparagraph}{5}{0pt}%
                                    {1ex}%
                                    {-1em}%
-                                   {\reset@font\bfseries\@setfontsize\Large{12}{20}}}
+                                   {\reset@font\bfseries\@setfontsize
+                                      \Large{12}{20}}}
 
 %%=============================================================================
 %% TODO: Lista de quadros
@@ -898,9 +935,10 @@
 
 
 
-%%=============================================================================
+%%==============================================================================
 %% Redefinição do conteúdo das listas de figuras e tabelas
-%%=============================================================================
+%%==============================================================================
+
 \long\def\@makecaption#1#2{%
   \vskip\abovecaptionskip
   \sbox\@tempboxa{#1~-- #2}%
@@ -931,22 +969,25 @@
 \renewcommand*{\l@figure}{\@dottedtocline{1}{0em}{5.5em}}
 \let\l@table\l@figure
 
-%%=============================================================================
+%%==============================================================================
 %% Redefinição do formato de citações longas
-%%=============================================================================
+%%==============================================================================
+
 \renewenvironment{quote}{
-        \footnotesize
-        \begin{list}{}{\setlength{\leftmargin}{40mm}\item\relax}
+  \footnotesize
+  \begin{list}{}{\setlength{\leftmargin}{40mm}\item\relax}
 }{
-        \end{list}
+  \end{list}
 }
 
 %%=============================================================================
 %% Ajuste do formato das citações e referências
 %%=============================================================================
+
 \setlength{\bibhang}{0pt}
 \let\cite\citep
 {}
+
 %%=============================================================================
 %% Formatação dos Apêndices 
 %%=============================================================================
@@ -1006,9 +1047,10 @@
     \if@restonecol\twocolumn\fi
 }
 
-%%=============================================================================
+%%==============================================================================
 %% Formatação dos Anexos
-%%=============================================================================
+%%==============================================================================
+
 \newcommand{\annexpage}{%
   \if@openright\cleardoublepage\else\clearpage\fi
   \thispagestyle{plain}%
