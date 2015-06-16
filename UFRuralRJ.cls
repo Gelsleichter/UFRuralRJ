@@ -344,7 +344,7 @@
 }
 \date{\monthname}{\number\year}
 
-\newcommand{\dateingles}[2]{{#1} $\text{\@publday}^{\text{#2}}$, \@publyear}
+\newcommand{\dateingles}[2]{{#1}~$\text{\@publday}^{\text{#2}}$,~\@publyear}
 
 %%=============================================================================
 %% Definições comuns à capa e à folha de rosto.
