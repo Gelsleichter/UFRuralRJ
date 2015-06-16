@@ -39,7 +39,7 @@
 %% Identificação
 %%==============================================================================
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{UFRuralRJ}[08/03/2015 v.0.2 Formatação de documentos acadêmicos 
+\ProvidesClass{UFRuralRJ}[15/06/2015 v.0.2 Formatação de documentos acadêmicos 
                           da UFRuralRJ]
 
 %%==============================================================================
