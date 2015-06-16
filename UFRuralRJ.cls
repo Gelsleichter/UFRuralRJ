@@ -721,7 +721,7 @@
   \noindent\abstractheaderbox
   \noindent
 }{\par\vspace{8mm}
-  \noindent\textbf{\keywordsname:} \@abstractkw.
+  \noindent\textbf{\keywordsname:}~\@abstractkw.
 }
 
 %% Formatação do cabeçalho do resumo em português.
@@ -751,7 +751,7 @@
   \hspace*{}
   \noindent
 }{\par\vspace{8mm}
-  \noindent\textbf{\keywordsname:} \@englishkeywords.
+  \noindent\textbf{\keywordsname:}~\@englishkeywords.
   \end{otherlanguage}
 }
 
