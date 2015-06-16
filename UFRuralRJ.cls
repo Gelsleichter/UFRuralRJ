@@ -39,7 +39,7 @@
 %% Identificação
 %%==============================================================================
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{UFRuralRJ}[15/06/2015 v.0.2 Formatação de documentos acadêmicos 
+\ProvidesClass{UFRuralRJ}[16/06/2015 v.0.2 Formatação de documentos acadêmicos 
                           da UFRuralRJ]
 
 %%==============================================================================
@@ -701,11 +701,11 @@
         \end{list}
 }
 
-%%=============================================================================
+%%==============================================================================
 %% Resumo (abstract) e Abstract (englishabstract)
-%%=============================================================================
+%%==============================================================================
 
-%% TODO: opções de resumo em outras línguas
+%% TODO: construir um único comando para inserir os resumos em qualquer língua
 
 % Comando para formatação do corpo do resumo em português. Está definido para
 % não conter indentação na primeira linha e ser apresentado com espaçamento
@@ -738,6 +738,15 @@
 
 %% Formatação do cabeçalho do resumo em inglês (abstract)
 
+\newcommand{\englishabstractheaderbox}[4]{%
+  \parbox[t]{\textwidth}{
+    \MakeUppercase{\@authoralast}, \@authorafirst. \textbf{\@titleENG}.
+    \@publyear. \pageref{LastPage}p. \doctypenameIngles~(\@altGrauENG).
+    \@instituto, \ufrrj, \@city, RJ, \@publyear.
+    \vfill\vspace{13mm}
+  }
+}
+
 \newenvironment{englishabstract}[5]{
  \if@openright\cleardoublepage\else\clearpage\fi%
   \gdef\@englishkeywords{#3}
@@ -755,55 +764,69 @@
   \end{otherlanguage}
 }
 
-%% Novos ambientes 'chapterabstractPOR' e 'chapterabstractENG'
-%% Resumo e abstract dos capítulos individuais.
-%% Estes ambientes são úteis quando o documento é composto por artigos ou 
-%% capítulos individuais.
-%% O resumo e o abstract não recebem numeração e não aparecem como itens do
-%% sumário. O corpo do texto fica 10 mm abaixo do título, e as palavras-chave
-%% e as keywords ficam 10 mm abaixo do corpo do texto.
+%% Novo ambiente 'chapterabstract' para adicionar o resumo dos capítulos 
+%% individuais em diferentes línguas. Este ambiente é útel quando o documento 
+%% é composto por artigos ou capítulos individuais. O resumo não recebe 
+%% numeração mas aparece como item do sumário. O corpo do texto fica 10 mm 
+%% abaixo do título, e as palavras-chave ficam 10 mm abaixo do corpo do texto.
+%% A fim de evitar que a primeira linha do resumo seja indentada, é preciso 
+%% usar o comando '\noindent{...}' no corpo do texto. O commando 
+%% '\formatchapter', inserido após o ambiente 'chapterabstract', garante que o
+%% texto do artigo/capítulo inicia na próxima página, e que o título da 
+%% primeira seção primária ficará 10 mm abaixo da margem superior.
 
-\newenvironment{chapterabstractPOR}[1]{
+% \newenvironment{chapterabstractPOR}[1]{
+%   \if@openright\cleardoublepage\else\clearpage\fi
+%   \gdef\@portuguesekeywords{#1}
+%   \setlength{\baselineskip}{0.67\baselineskip} %% Espaçamento simples
+%   \vspace*{-14mm} %% Alinhamento superior do resumo
+%   \vspace*{10mm} %% Coloca o resumo a 10 mm da margem superior
+%   %% Adicionar o 'resumo' ao sumário sem numerar seção
+%   \addcontentsline{toc}{section}{\MakeUppercase{\abstractname}}
+%   \section*{\centering\MakeUppercase{\abstractname}} %% Título centralizado
+%   \vspace{2mm} %% Definir espaço do título até o corpo do texto
+%   %\hspace*{-14.5mm} %% Garantir que a primeira linha não será indentada
+% }{\par\vspace{6mm} %% Definir espaço do corpo do texto até as palavras-chave
+%   \noindent\textbf{\keywordsname:}~\@portuguesekeywords. %% Palavras-chave
+% }
+
+% \newenvironment{chapterabstractENG}[1]{
+%   \if@openright\cleardoublepage\else\clearpage\fi
+%   \gdef\@englishkeywords{#1}
+%   \begin{otherlanguage}{english}
+%   \setlength{\baselineskip}{0.67\baselineskip} %% Espaçamento simples
+%   \vspace*{-14mm} %% Alinhamento superior do resumo
+%   \vspace*{10mm}  %% Coloca o 'abstract' a 10 mm da margem superior
+%   \section*{\centering\MakeUppercase{\abstractname}} %% Título centralizado
+%   %% Adiciona o 'abstract' ao sumário sem numerar seção
+%   \addcontentsline{toc}{section}{\MakeUppercase{\abstractname}}
+%   \vspace{2mm} %% Espaço do título até o corpo do texto
+%   %\hspace*{-14.5mm} %% Garantir que a primeira linha não será indentada
+% }{\par\vspace{6mm} %% Espaço do corpo do texto até as 'keywords'
+%   \noindent\textbf{\keywordsname:}~\@englishkeywords. %% 'keywords'
+%   \end{otherlanguage}
+% }
+
+\newenvironment{chapterabstract}[2]{
   \if@openright\cleardoublepage\else\clearpage\fi
-  \gdef\@portuguesekeywords{#1}
+  \gdef\@mykeywords{#2}
+  \begin{otherlanguage}{#1}
   \setlength{\baselineskip}{0.67\baselineskip} %% Espaçamento simples
-  \vspace*{-14mm} %% Alinhamento superior do resumo
-  \vspace*{10mm} %% Coloca o resumo a 10 mm da margem superior
-  %% Adicionar o 'resumo' ao sumário sem numerar seção
-  \addcontentsline{toc}{section}{\MakeUppercase{\abstractname}}
+  \vspace*{-14mm} %% Alinhamento superior
+  \vspace*{10mm}  %% Coloca o resumo a 10 mm da margem superior
   \section*{\centering\MakeUppercase{\abstractname}} %% Título centralizado
-  \vspace{2mm} %% Definir espaço do título até o corpo do texto
-  %\hspace*{-14.5mm} %% Garantir que a primeira linha não será indentada
-}{\par\vspace{6mm} %% Definir espaço do corpo do texto até as palavras-chave
-  \noindent\textbf{\keywordsname:}~\@portuguesekeywords. %% Palavras-chave
-}
-
-\newenvironment{chapterabstractENG}[1]{
-  \if@openright\cleardoublepage\else\clearpage\fi
-  \gdef\@englishkeywords{#1}
-  \begin{otherlanguage}{english}
-  \setlength{\baselineskip}{0.67\baselineskip}		% Define espaçamento simples.
-  \vspace*{-14mm}					% Coloca o abstract a 30 mm da borda superior.
-  \vspace*{10mm}						% Coloca o abstract a 10 mm da margem superior.
-  \section*{\centering\MakeUppercase{\abstractname}}	% Título do abstract centralizado.
-  \addcontentsline{toc}{section}{\MakeUppercase{\abstractname}}% adiciona o 'abstract' ao sumário sem numerar seção
-  \vspace{2mm}						% Define espaço do título até o corpo do texto.
-  %\hspace*{-14.5mm}					% Garante que a primeira linha não será indentada.
-}{\par\vspace{6mm}					% Define espaço do corpo do texto até as keywords.
-  \noindent\textbf{\keywordsname:}~\@englishkeywords.	% Insere as keywords.
+  %% Adiciona o resumo ao sumário sem numerar seção
+  \addcontentsline{toc}{section}{\MakeUppercase{\abstractname}}
+  \vspace{2mm} %% Espaço do título até o corpo do texto
+}{\par\vspace{6mm} %% Espaço do corpo do texto até as palavras-chave
+  \noindent\textbf{\keywordsname:}~\@mykeywords. %% Inserir as palavras-chave
   \end{otherlanguage}
-  \if@openright\cleardoublepage\else\clearpage\fi% inicia o texto do artigo na próxima página
-  \vspace*{-13.5mm}
-  \vspace*{10mm}% coloca o título da primeira seção primária 10mm abaixo da margem superior
 }
 
-\newcommand{\englishabstractheaderbox}[4]{%
-  \parbox[t]{\textwidth}{
-    \MakeUppercase{\@authoralast}, \@authorafirst. \textbf{\@titleENG}.
-    \@publyear. \pageref{LastPage}p. \doctypenameIngles~(\@altGrauENG).
-    \@instituto, \ufrrj, \@city, RJ, \@publyear.
-    \vfill\vspace{13mm}
-  }
+\newcommand{\formatchapter}{
+  \if@openright\cleardoublepage\else\clearpage\fi
+  \vspace*{-13.5mm}
+  \vspace*{10mm}
 }
 
 %%=============================================================================
