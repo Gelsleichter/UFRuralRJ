@@ -773,7 +773,7 @@
   \addcontentsline{toc}{section}{\MakeUppercase{\abstractname}}
   \section*{\centering\MakeUppercase{\abstractname}} %% Título centralizado
   \vspace{2mm} %% Definir espaço do título até o corpo do texto
-  \hspace*{-14.5mm} %% Garantir que a primeira linha não será indentada
+  %\hspace*{-14.5mm} %% Garantir que a primeira linha não será indentada
 }{\par\vspace{6mm} %% Definir espaço do corpo do texto até as palavras-chave
   \noindent\textbf{\keywordsname:}~\@portuguesekeywords. %% Palavras-chave
 }
@@ -788,7 +788,7 @@
   \section*{\centering\MakeUppercase{\abstractname}}	% Título do abstract centralizado.
   \addcontentsline{toc}{section}{\MakeUppercase{\abstractname}}% adiciona o 'abstract' ao sumário sem numerar seção
   \vspace{2mm}						% Define espaço do título até o corpo do texto.
-  \hspace*{-14.5mm}					% Garante que a primeira linha não será indentada.
+  %\hspace*{-14.5mm}					% Garante que a primeira linha não será indentada.
 }{\par\vspace{6mm}					% Define espaço do corpo do texto até as keywords.
   \noindent\textbf{\keywordsname:}~\@englishkeywords.	% Insere as keywords.
   \end{otherlanguage}
