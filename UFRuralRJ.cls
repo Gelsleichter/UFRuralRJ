@@ -729,9 +729,9 @@
 
 \newcommand{\abstractheaderbox}{%
  \parbox[t]{\textwidth}{
-  \MakeUppercase{\@authoralast},~\@authorafirst.~\textbf{\@title}.~\@publyear.
-   ~\pageref{LastPage}f.~\doctypename~(\@altGrau).~\@instituto,~\ufrrj,~\@city,
-   ~RJ,~\@publyear.
+  \MakeUppercase{\@authoralast}, \@authorafirst. \textbf{\@title}. \@publyear. 
+   \pageref{LastPage}f. \doctypename~(\@altGrau). \@instituto, \ufrrj, \@city, 
+   RJ, \@publyear.
    \vfill\vspace{13mm}
  }
 }
@@ -775,7 +775,7 @@
   \vspace{2mm} %% Definir espaço do título até o corpo do texto
   \hspace*{-14.5mm} %% Garantir que a primeira linha não será indentada
 }{\par\vspace{6mm} %% Definir espaço do corpo do texto até as palavras-chave
-  \noindent\textbf{\keywordsname:} \@portuguesekeywords. %% Palavras-chave
+  \noindent\textbf{\keywordsname:}~\@portuguesekeywords. %% Palavras-chave
 }
 
 \newenvironment{chapterabstractENG}[1]{
@@ -790,7 +790,7 @@
   \vspace{2mm}						% Define espaço do título até o corpo do texto.
   \hspace*{-14.5mm}					% Garante que a primeira linha não será indentada.
 }{\par\vspace{6mm}					% Define espaço do corpo do texto até as keywords.
-  \noindent\textbf{\keywordsname:} \@englishkeywords.	% Insere as keywords.
+  \noindent\textbf{\keywordsname:}~\@englishkeywords.	% Insere as keywords.
   \end{otherlanguage}
   \if@openright\cleardoublepage\else\clearpage\fi% inicia o texto do artigo na próxima página
   \vspace*{-13.5mm}
@@ -799,9 +799,9 @@
 
 \newcommand{\englishabstractheaderbox}[4]{%
   \parbox[t]{\textwidth}{
-    \MakeUppercase{\@authoralast},~\@authorafirst.~\textbf{\@titleENG}.~
-    \@publyear.~\pageref{LastPage}p.~\doctypenameIngles~(\@altGrauENG).~
-    \@instituto,~\ufrrj,~\@city,~RJ,~\@publyear.
+    \MakeUppercase{\@authoralast}, \@authorafirst. \textbf{\@titleENG}.
+    \@publyear. \pageref{LastPage}p. \doctypenameIngles~(\@altGrauENG).
+    \@instituto, \ufrrj, \@city, RJ, \@publyear.
     \vfill\vspace{13mm}
   }
 }
