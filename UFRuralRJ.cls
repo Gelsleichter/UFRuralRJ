@@ -320,20 +320,19 @@
 
 % Novo comando para formatação do texto de apresentação das palavras-chave
 % do 'resumo' do trabalho acadêmico. O número máximo de palavras-chave
-% aceito é de n=10.
+% aceito é de n=10. As palavras-chave são separadas por vírgula.
 \newcommand{\@abstractkw}{%
         \@ifundefined{keywa}{}{\expandafter\MakeUppercase\keywa}%
-        \@ifundefined{keywb}{}{. \keywb}%
-        \@ifundefined{keywc}{}{. \keywc}%
-        \@ifundefined{keywd}{}{. \keywd}%
-        \@ifundefined{keywe}{}{. \keywe}%
-        \@ifundefined{keywf}{}{. \keywf}%
-        \@ifundefined{keywg}{}{. \keywg}%
-        \@ifundefined{keywh}{}{. \keywh}%
-        \@ifundefined{keywi}{}{. \keywi}%
-        \@ifundefined{keywj}{}{. \keywj}%
+        \@ifundefined{keywb}{}{, \keywb}%
+        \@ifundefined{keywc}{}{, \keywc}%
+        \@ifundefined{keywd}{}{, \keywd}%
+        \@ifundefined{keywe}{}{, \keywe}%
+        \@ifundefined{keywf}{}{, \keywf}%
+        \@ifundefined{keywg}{}{, \keywg}%
+        \@ifundefined{keywh}{}{, \keywh}%
+        \@ifundefined{keywi}{}{, \keywi}%
+        \@ifundefined{keywj}{}{, \keywj}%
 }
-
 
 %%=============================================================================
 %% Redefinição da data (para ter dia, mês e ano separados)
