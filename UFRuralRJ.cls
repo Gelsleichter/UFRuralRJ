@@ -51,7 +51,8 @@
   \AtEndOfClass{
     \newcommand{\titlepagespecificinfo}{
     Tese submetida como requisito parcial para obten\c{c}{\~a}o do grau de
-    \textbf{\@grau}, \@altCurso, {\'A}rea de Concentra\c{c}{\~a}o em
+    %\textbf{\@grau}, \@altCurso, {\'A}rea de Concentra\c{c}{\~a}o em
+    \textbf{\@grau}, \@curso, {\'A}rea de Concentra\c{c}{\~a}o em 
     \@area.
     }
     \def\doctypename{Tese}
@@ -66,7 +67,8 @@
   \AtEndOfClass{
     \newcommand{\titlepagespecificinfo}{
       Monografia submetida como requisito parcial para obten{\c{c}}{\~a}o do 
-      grau de \textbf{\@grau}, \@altCurso, {\'A}rea de Concentra\c{c}{\~a}o em
+      %grau de \textbf{\@grau}, \@altCurso, {\'A}rea de Concentra\c{c}{\~a}o em
+      grau de \textbf{\@grau}, \@curso, {\'A}rea de Concentra\c{c}{\~a}o em
       \@area.
     }
     \def\doctypename{Monografia de Especializa{\c{c}}{\~a}o}
@@ -79,7 +81,8 @@
 \DeclareOption{tg}{
   \AtEndOfClass{
     \newcommand{\titlepagespecificinfo}{
-      Trabalho de Gradua{\c{c}}{\~a}o apresentado ao \@altCurso{} da \ufrrj{}
+      %Trabalho de Gradua{\c{c}}{\~a}o apresentado ao \@altCurso{} da \ufrrj{}
+      Trabalho de Gradua{\c{c}}{\~a}o apresentado ao \@curso{} da \ufrrj{}
       (UFRRJ, RJ), como requisito parcial para a obten{\c{c}}{\~a}o do grau de
       %\\[6pt]
       \textbf{\@grau}
@@ -97,7 +100,8 @@
   \AtEndOfClass{
     \newcommand{\titlepagespecificinfo}{
         Disserta{\c{c}}{\~a}o submetida como requisito parcial para
-        obten{\c{c}}{\~a}o do grau de \textbf{\@grau}, \@altCurso,
+        %obten{\c{c}}{\~a}o do grau de \textbf{\@grau}, \@altCurso,
+        obten{\c{c}}{\~a}o do grau de \textbf{\@grau}, \@curso,
         \'{A}rea de Concentra{\c{c}}{\~a}o em \@area.
     }
     \def\doctypename{Disserta{\c{c}}{\~a}o}
@@ -124,7 +128,7 @@
 \def\ufrrjSigla{UFRRJ}
 
 \newcommand{\curso}[1]{\gdef\@curso{#1}}
-\newcommand{\altCurso}[1]{\gdef\@altCurso{#1}}
+%\newcommand{\altCurso}[1]{\gdef\@altCurso{#1}}
 \newcommand{\area}[1]{\gdef\@area{#1}}
 \newcommand{\instituto}[1]{\gdef\@instituto{#1}}
 \newcommand{\grau}[1]{\gdef\@grau{#1}}
