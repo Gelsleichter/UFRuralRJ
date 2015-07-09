@@ -65,8 +65,6 @@ com dois capítulos, e um apêndice. Os resumos na língua estrangeira são
 redigidos em inglês. O documento ainda contém listas de figuras, tabelas, 
 apêndices, abreviaturas e símbolos.
 
-
-
 ## Como contribuir
 
 A classe `UFRuralRJ.cls` é um projeto em desenvolvimento. Muito ainda pode ser

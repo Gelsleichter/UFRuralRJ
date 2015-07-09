@@ -632,8 +632,7 @@
   \hskip -\leftskip
   % esta é a definicao original da classe report:
   %#1\nobreak\hfil \nobreak\hb@xt@\@pnumwidth{\hss #2}\par
-  \@dottedtocline{0}{-1.5mm}{\ii@chapnumindent}{\MakeUppercase{#1}}{#2}
-  %\@dottedtocline{0}{0em}{\ii@chapnumindent}{\MakeUppercase{#1}}{#2}
+  \@dottedtocline{0}{0em}{\ii@chapnumindent}{\MakeUppercase{#1}}{#2}
   \penalty\@highpenalty
   \endgroup
 }
