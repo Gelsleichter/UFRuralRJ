@@ -790,6 +790,7 @@
   %\addcontentsline{toc}{section}{\MakeUppercase{\abstractname}}
   \addcontentsline{toc}{section}{\uppercase{\abstractname}}
   \vspace{2mm} %% Espaço do título até o corpo do texto
+  \parindent0em
 }{\par\vspace{6mm} %% Espaço do corpo do texto até as palavras-chave
   \noindent\textbf{\keywordsname:}~\@mykeywords. %% Inserir as palavras-chave
   \end{otherlanguage}
