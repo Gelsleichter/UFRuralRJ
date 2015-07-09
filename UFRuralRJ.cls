@@ -427,13 +427,14 @@
   \noindent
   \parbox[t]{\textwidth}{
     \centering
-    {\includegraphics[width=25mm]{logomarca}}\\ %% Logomarca cor, largura 25 mm
+    \includegraphics[width=25mm]{logomarca}\\ %% Logomarca cor, largura 25 mm
     {\LargeE\textbf{\MakeUppercase{\ufrrj}}}\\ %% Universidade, fonte 14 pts
     {\LargeE\textbf{\MakeUppercase{\@instituto}}}\\ %% Instituto, fonte 14 pts
     {\LargeE\textbf{\MakeUppercase{\@curso}}}\\[25mm] %% Curso, fonte 14 pts
     %\vspace{25mm}
     {\LargeE\textbf{\MakeUppercase{\@title}}}\par
     \vspace{25mm}
+    %
     {\LargeE\textbf{\MakeUppercase{\@authora}}}\\[15mm] %% Autor do documento
     %\vspace{15mm}
     \soborienta\par
@@ -444,6 +445,7 @@
       % co-orientadores(as)
       \vspace{2ex}
       \sobcoorienta\par{\LargeE\textbf{\@coadvisora}}} %% Co-orientador 1
+
     \@ifundefined{@coadvisorb}{}{
      \par\textit{e}\par\textbf{\LargeE\@coadvisorb}} %% Co-orientador 2
     \vspace{15mm}
@@ -456,7 +458,7 @@
     \vspace{15mm}
     \centerline{\LargeE \@city, \@state, \@country} %% Cidade, estado e país
     \centerline{\LargeE \@publmonth~{de}~\@publyear} %% Mês e ano
-  } 
+  }
 }
 
 %%==============================================================================
@@ -472,7 +474,7 @@
   \parbox[t]{\textwidth}{%
     {\textbf{\MakeUppercase{\ufrrj}}}\\
     {\textbf{\MakeUppercase{\@instituto}}}\\
-    {\textbf{\MakeUppercase{\@curso}}}
+    {\textbf{\MakeUppercase{\@curso}}}\\
     \vspace{15mm}
     \noindent
     \begin{center}
