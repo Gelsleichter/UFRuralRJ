@@ -430,12 +430,12 @@
     {\includegraphics[width=25mm]{logomarca}}\\ %% Logomarca cor, largura 25 mm
     {\LargeE\textbf{\MakeUppercase{\ufrrj}}}\\ %% Universidade, fonte 14 pts
     {\LargeE\textbf{\MakeUppercase{\@instituto}}}\\ %% Instituto, fonte 14 pts
-    {\LargeE\textbf{\MakeUppercase{\@curso}}}\\ %% Curso, fonte 14 pts
-    \vspace{25mm}
+    {\LargeE\textbf{\MakeUppercase{\@curso}}}\\[25mm] %% Curso, fonte 14 pts
+    %\vspace{25mm}
     {\LargeE\textbf{\MakeUppercase{\@title}}}\par
     \vspace{25mm}
-    {\LargeE\textbf{\MakeUppercase{\@authora}}}\\ %% Autor do documento
-    \vspace{15mm}
+    {\LargeE\textbf{\MakeUppercase{\@authora}}}\\[15mm] %% Autor do documento
+    %\vspace{15mm}
     \soborienta\par
     \@ifundefined{@advisor}{}{
       \vfill{\LargeE\textbf{\@advisor}}}\\ %% Orientador(a)
@@ -554,10 +554,10 @@
     \centering
     \vspace{2cm}
     \LargeC{A Comiss\~{a}o Examinadora, abaixo assinada,} \\
-	  {aprova \doctypearticle~\doctypename} \\
-	  \vspace{2cm}
-	  \MakeUppercase{\LargeC\textbf{\@title}}\\
-	  \vspace{1,5cm}
+	  {aprova \doctypearticle~\doctypename} \\[2cm]
+	  %\vspace{2cm}
+	  \MakeUppercase{\LargeC\textbf{\@title}}\\[1,5cm]
+	  %\vspace{1,5cm}
 	  elaborad\doctypearticle~por\\
 	  \textbf{\@authora}\\
 	  \@ifundefined{@authorb}{}{\textbf{\@authorb}\\}%
@@ -760,7 +760,7 @@
 }
 
 %% Novo ambiente 'chapterabstract' para adicionar o resumo dos capítulos 
-%% individuais em diferentes línguas. Este ambiente é útel quando o documento 
+%% individuais em diferentes línguas. Este ambiente é útil quando o documento 
 %% é composto por artigos ou capítulos individuais. O resumo não recebe 
 %% numeração mas aparece como item do sumário. O corpo do texto fica 10 mm 
 %% abaixo do título, e as palavras-chave ficam 10 mm abaixo do corpo do texto.
@@ -802,6 +802,7 @@
 %   \end{otherlanguage}
 % }
 
+
 \newenvironment{chapterabstract}[2]{
   \if@openright\cleardoublepage\else\clearpage\fi
   \gdef\@mykeywords{#2}
@@ -811,7 +812,9 @@
   \vspace*{10mm}  %% Coloca o resumo a 10 mm da margem superior
   \section*{\centering\MakeUppercase{\abstractname}} %% Título centralizado
   %% Adiciona o resumo ao sumário sem numerar seção
-  \addcontentsline{toc}{section}{\MakeUppercase{\abstractname}}
+  % NOTA: Há incompatibilidade entre \MakeUppercase e \addcontentsline
+  %\addcontentsline{toc}{section}{\MakeUppercase{\abstractname}}
+  \addcontentsline{toc}{section}{\uppercase{\abstractname}}
   \vspace{2mm} %% Espaço do título até o corpo do texto
 }{\par\vspace{6mm} %% Espaço do corpo do texto até as palavras-chave
   \noindent\textbf{\keywordsname:}~\@mykeywords. %% Inserir as palavras-chave
