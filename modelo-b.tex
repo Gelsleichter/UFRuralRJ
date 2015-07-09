@@ -32,8 +32,12 @@
 %% Pacotes - formatação de figuras
 %%==============================================================================
 
-\usepackage{graphicx}                 %% Importar figuras
-\graphicspath{{capitulos/figuras/}}   %% Diretório onde estão as figuras
+%% Importar figuras corretamente
+\usepackage{graphicx}
+
+%% Diretório onde estão as figuras dos capítulos
+\graphicspath{{capitulos/figuras/}}
+
 \usepackage{float}
 \usepackage{wrapfig}
 
@@ -104,10 +108,10 @@
 %% Identificação dos orientadores
 %%==============================================================================
 
-\advisor[Professor]{Dr.}{Rural}{Nome do Melhor Orientador da}{UFRRJ}  %% Orientador
+\advisor[Professor]{Dr.}{Rural}{Melhor Orientador da}{UFRRJ} %% Orientador
 %\orientadoratrue %% Descomentar se for uma ORIENTADORA
-\coadvisor[Pesquisador]{Dr.}{Rural}{Nome do Melhor Co-orientador da}    %% Co-orientador
-\coadvisor[Professora]{Dra.}{Rural}{Nome da Melhor Co-orientadora da} %% Co-orientadora
+\coadvisor[Pesquisador]{Dr.}{Rural}{Melhor Co-orientador da} %% Co-orientador
+\coadvisor[Professora]{Dra.}{Rural}{Melhor Co-orientadora da} %% Co-orientadora
 
 %% COMANDOS OBSOLETOS
 %% Descomentar o comando abaixo se for UMA CO-ORIENTADORA
@@ -120,11 +124,11 @@
 %%==============================================================================
 
 % Ex.: \committee[Título]{Sobrenome}{Nome}{Instituição}
-\committee[Dr.]{Banca}{Nome do Melhor Presidente da}{UFRRJ} %% Presidente
-\committee[Dra.]{Banca}{Nome da Melhor Integrante da}{UFRRJ} %% Examinador
-\committee[Dr.]{Banca}{Nome do Melhor Integrante da}{UFRRJ} %% Examinador
-\committee[Dra.]{Banca}{Nome da Outra Melhor Integrante da}{MEFR} %% Examinador
-\committee[Dr.]{Banca}{Nome do Outro Melhor Integrante da}{MEFR} %% Examinador
+\committee[Dr.]{Banca}{Melhor Presidente da}{UFRRJ} %% Presidente
+\committee[Dra.]{Banca}{Melhor Integrante da}{UFRRJ} %% Examinador
+\committee[Dr.]{Banca}{Melhor Integrante da}{UFRRJ} %% Examinador
+\committee[Dra.]{Banca}{Outra Melhor Integrante da}{MEFR} %% Examinador
+\committee[Dr.]{Banca}{Outro Melhor Integrante da}{MEFR} %% Examinador
 \date{30}{Fevereiro}{2016} %% Data da defesa
 
 %%==============================================================================
@@ -143,6 +147,7 @@
 %% Capa e folha de rosto
 %%==============================================================================
 \maketitle
+
 %%==============================================================================
 %% Ficha catalográfica
 %%==============================================================================
@@ -154,6 +159,7 @@
 %Se for usar a catalogação gerada pelo gerador do site da biblioteca comentar as
 %linhas acima e utilizar o comando abaixo
 %\includeCIP{CIP.pdf}
+
 %%=============================================================================
 % Folha de aprovação
 %%=============================================================================
@@ -240,7 +246,7 @@ at UFRuralRJ.
 \listoffigures %% Lista de figuras
 \listoftables %% Lista de tabelas
 \listofappendix %% Lista de apêndices
-\listofannex %% Lista de anexos
+%\listofannex %% Lista de anexos
 
 \begin{listofabbrv}{UbiComp} %% Lista de abreviaturas e siglas
  \item [RJ] Rio de Janeiro
