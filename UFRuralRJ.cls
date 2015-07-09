@@ -632,7 +632,9 @@
   \hskip -\leftskip
   % esta é a definicao original da classe report:
   %#1\nobreak\hfil \nobreak\hb@xt@\@pnumwidth{\hss #2}\par
-  \@dottedtocline{0}{0em}{\ii@chapnumindent}{\MakeUppercase{#1}}{#2}
+  %% ASR: -0.35em é uma solução rápida e suja para deixar todo 
+  %%      mundo alinhado na toc
+  \@dottedtocline{0}{-0.35em}{\ii@chapnumindent}{\MakeUppercase{#1}}{#2}
   \penalty\@highpenalty
   \endgroup
 }
@@ -869,7 +871,9 @@
 
 %% Formatação da versão estrelada (*) dos capítulos
 \def\@schapter#1{%
-        \ifchap\if@aftertoc\addcontentsline{toc}{chapter}{#1}\fi\fi%
+        %% ASR: \hspace*{0.35em} é uma solução rápida e suja para deixar todo 
+        %%      mundo alinhado na toc
+        \ifchap\if@aftertoc\addcontentsline{toc}{chapter}{\hspace*{0.35em}#1}\fi\fi%
         \addtocontents{lof}{\protect\addvspace{0\p@}}%Original = 10\p@
         \addtocontents{lot}{\protect\addvspace{0\p@}}%
         \@makeschapterhead{#1}\@afterheading
@@ -1003,7 +1007,9 @@
    \interlinepenalty \@M
    \normalfont
    \LargeF \bfseries \MakeUppercase\appendixsname\par}%
-	 \addcontentsline{toc}{chapter}{\appendixsname}	
+   %% ASR: \hspace*{0.35em} é uma solução rápida e suja para deixar todo 
+   %%      mundo alinhado na toc
+   \addcontentsline{toc}{chapter}{\hspace*{0.35em}\appendixsname}	
   \vfil\newpage
   \if@twoside
     \if@openright
@@ -1020,11 +1026,11 @@
 
 \renewcommand{\appendix}[1][\appendixname]{%
         \chapfalse
-				\appendixtrue
-				\annexfalse
-				\appendixpage
+	\appendixtrue
+	\annexfalse
+	\appendixpage
         \setcounter{chapter}{0}%
-				\setcounter{section}{0}%
+	\setcounter{section}{0}%
         \renewcommand{\thechapter}{\LargeF\Alph{chapter}}%
         \setcounter{tocdepth}{0}%
         \@captionlistingfalse%
@@ -1062,7 +1068,9 @@
    \interlinepenalty \@M
    \normalfont
    \LargeF \bfseries \MakeUppercase\annexsname\par}%
-	 \addcontentsline{toc}{chapter}{\annexsname} 
+   %% ASR: \hspace*{0.35em} é uma solução rápida e suja para deixar todo 
+   %%      mundo alinhado na toc
+   \addcontentsline{toc}{chapter}{\hspace*{0.35em}\annexsname}
   \vfil\newpage
   \if@twoside
     \if@openright
