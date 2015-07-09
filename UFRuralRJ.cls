@@ -229,14 +229,6 @@
         \def\@oddhead{\hspace*{\fill}{\small\thepage}}
 }
 
-%% Canto direito inferior
-%\def\ps@UFRuralRJ{
-%        \let\@oddhead\@empty
-%        \let\@evenhean\@empty
-%        \def\@evenfoot{{\small\thepage}}
-%        \def\@oddfoot{\hspace*{\fill}{\small\thepage}}
-%}
-
 \pagestyle{empty}
 \let\ps@plain\ps@empty
 
@@ -448,7 +440,10 @@
     \@ifundefined{@advisor}{}{
       \vfill{\LargeE\textbf{\@advisor}}}\\ %% Orientador(a)
     \@ifundefined{@coadvisora}{}{
-      \\[2ex]\sobcoorienta\par{\LargeE\textbf{\@coadvisora}}} %% Co-orientador 1
+      % adicionar espaço entre o nome do(a) orientador(a) e os nomes dos(as)
+      % co-orientadores(as)
+      \vspace{2ex}
+      \sobcoorienta\par{\LargeE\textbf{\@coadvisora}}} %% Co-orientador 1
     \@ifundefined{@coadvisorb}{}{
      \par\textit{e}\par\textbf{\LargeE\@coadvisorb}} %% Co-orientador 2
     \vspace{15mm}
