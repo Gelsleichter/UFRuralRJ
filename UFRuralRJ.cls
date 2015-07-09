@@ -772,39 +772,6 @@
 %% texto do artigo/capítulo inicia na próxima página, e que o título da 
 %% primeira seção primária ficará 10 mm abaixo da margem superior.
 
-% \newenvironment{chapterabstractPOR}[1]{
-%   \if@openright\cleardoublepage\else\clearpage\fi
-%   \gdef\@portuguesekeywords{#1}
-%   \setlength{\baselineskip}{0.67\baselineskip} %% Espaçamento simples
-%   \vspace*{-14mm} %% Alinhamento superior do resumo
-%   \vspace*{10mm} %% Coloca o resumo a 10 mm da margem superior
-%   %% Adicionar o 'resumo' ao sumário sem numerar seção
-%   \addcontentsline{toc}{section}{\MakeUppercase{\abstractname}}
-%   \section*{\centering\MakeUppercase{\abstractname}} %% Título centralizado
-%   \vspace{2mm} %% Definir espaço do título até o corpo do texto
-%   %\hspace*{-14.5mm} %% Garantir que a primeira linha não será indentada
-% }{\par\vspace{6mm} %% Definir espaço do corpo do texto até as palavras-chave
-%   \noindent\textbf{\keywordsname:}~\@portuguesekeywords. %% Palavras-chave
-% }
-
-% \newenvironment{chapterabstractENG}[1]{
-%   \if@openright\cleardoublepage\else\clearpage\fi
-%   \gdef\@englishkeywords{#1}
-%   \begin{otherlanguage}{english}
-%   \setlength{\baselineskip}{0.67\baselineskip} %% Espaçamento simples
-%   \vspace*{-14mm} %% Alinhamento superior do resumo
-%   \vspace*{10mm}  %% Coloca o 'abstract' a 10 mm da margem superior
-%   \section*{\centering\MakeUppercase{\abstractname}} %% Título centralizado
-%   %% Adiciona o 'abstract' ao sumário sem numerar seção
-%   \addcontentsline{toc}{section}{\MakeUppercase{\abstractname}}
-%   \vspace{2mm} %% Espaço do título até o corpo do texto
-%   %\hspace*{-14.5mm} %% Garantir que a primeira linha não será indentada
-% }{\par\vspace{6mm} %% Espaço do corpo do texto até as 'keywords'
-%   \noindent\textbf{\keywordsname:}~\@englishkeywords. %% 'keywords'
-%   \end{otherlanguage}
-% }
-
-
 \newenvironment{chapterabstract}[2]{
   \if@openright\cleardoublepage\else\clearpage\fi
   \gdef\@mykeywords{#2}
