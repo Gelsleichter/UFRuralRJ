@@ -614,8 +614,12 @@
 %% Ajuste do sumário (sem indentação) 
 %%=============================================================================
 
-\newlength{\ii@chapnumindent}\setlength{\ii@chapnumindent}{1 em}
+%% Espaço entre o número e o título dos itens de primeiro nível
+\newlength{\ii@chapnumindent}\setlength{\ii@chapnumindent}{1em}
+
+%% Espaço entre os pontos na linha pontilhada
 \renewcommand\@dotsep{1.5}
+
 \renewcommand*{\l@chapter}[2]{
   \addpenalty{-\@highpenalty}
   \vskip -2.5ex \@plus\p@
@@ -626,13 +630,14 @@
   \leavevmode\bfseries
   \advance\leftskip\@tempdima
   \hskip -\leftskip
-  %      esta é a definicao original da classe report:
-  %      #1\nobreak\hfil \nobreak\hb@xt@\@pnumwidth{\hss #2}\par
-  \@dottedtocline{0}{0em}{\ii@chapnumindent}{\MakeUppercase{#1}}{#2}
-  %        \@dottedtocline{0}{0em}{\ii@chapnumindent}{\MakeUppercase{#1}}{#2}
+  % esta é a definicao original da classe report:
+  %#1\nobreak\hfil \nobreak\hb@xt@\@pnumwidth{\hss #2}\par
+  \@dottedtocline{0}{-1.5mm}{\ii@chapnumindent}{\MakeUppercase{#1}}{#2}
+  %\@dottedtocline{0}{0em}{\ii@chapnumindent}{\MakeUppercase{#1}}{#2}
   \penalty\@highpenalty
   \endgroup
 }
+
 \renewcommand*{\l@section}[2]{\@dottedtocline{1}{0em}{1.7em}{\textbf{#1}}{\hss #2}}
 \renewcommand*{\l@subsection}{\@dottedtocline{2}{0em}{2.4em}}
 \renewcommand*{\l@subsubsection}{\@dottedtocline{3}{0em}{3em}}
