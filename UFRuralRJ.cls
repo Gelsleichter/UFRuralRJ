@@ -869,7 +869,7 @@
 
 %% Formatação da versão estrelada (*) dos capítulos
 \def\@schapter#1{%
-        \ifchap\if@aftertoc\addcontentsline{toc}{chapter}{#1}\fi\fi%
+        \ifchap\if@aftertoc\addcontentsline{toc}{chapter}{\hspace*{0.35em}#1}\fi\fi%
         \addtocontents{lof}{\protect\addvspace{0\p@}}%Original = 10\p@
         \addtocontents{lot}{\protect\addvspace{0\p@}}%
         \@makeschapterhead{#1}\@afterheading
@@ -1003,7 +1003,7 @@
    \interlinepenalty \@M
    \normalfont
    \LargeF \bfseries \MakeUppercase\appendixsname\par}%
-	 \addcontentsline{toc}{chapter}{\appendixsname}	
+	 \addcontentsline{toc}{chapter}{{\hspace*{0.35em}}\appendixsname}%
   \vfil\newpage
   \if@twoside
     \if@openright
