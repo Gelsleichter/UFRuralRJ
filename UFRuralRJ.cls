@@ -982,9 +982,9 @@
 %% Ajuste do formato das citações e referências
 %%=============================================================================
 
-\setlength{\bibhang}{0pt}
-\let\cite\citep
-{}
+%\setlength{\bibhang}{0pt}
+%\let\cite\citep
+%{}
 
 %%=============================================================================
 %% Formatação dos Apêndices 
