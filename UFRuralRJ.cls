@@ -1009,7 +1009,7 @@
    \LargeF \bfseries \MakeUppercase\appendixsname\par}%
    %% ASR: \hspace*{0.35em} é uma solução rápida e suja para deixar todo 
    %%      mundo alinhado na toc
-   \addcontentsline{toc}{chapter}{\hspace*{0.35em}\appendixsname}	
+   \addcontentsline{toc}{chapter}{\hspace*{0.35em}\appendixsname}
   \vfil\newpage
   \if@twoside
     \if@openright
