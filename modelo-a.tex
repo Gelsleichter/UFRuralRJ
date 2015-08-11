@@ -1,6 +1,6 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Modelo para dissertação - Humanas
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Modelo de dissertação - Humanas
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\listfiles
 
 %% Tipo de documento e a classe a ser usada para sua formatação.
@@ -42,7 +42,7 @@
 \usepackage{graphicx}
 
 %% Diretório onde estão as figuras dos capítulos
-\graphicspath{{capitulos/figuras/}}
+\graphicspath{{capitulos-a/figuras/}}
 
 \usepackage{float}
 \usepackage{wrapfig}
@@ -271,9 +271,9 @@ The dissertation presents and discusses the ideas developed by Crispin Wright in
 %%=============================================================================
 
 \setlength{\baselineskip}{1.5\baselineskip}
-\include{capitulosmodelA/chapter00} %% Incluir capítulo 00
-\include{capitulosmodelA/chapter01} %% Incluir capítulo 01
-\include{capitulosmodelA/chapter02} %% Incluir capítulo 02
+\include{capitulos-a/chapter00} %% Incluir capítulo 00
+\include{capitulos-a/chapter01} %% Incluir capítulo 01
+\include{capitulos-a/chapter02} %% Incluir capítulo 02
 \setlength{\baselineskip}{\baselineskip}
 
 %%=============================================================================
@@ -283,7 +283,7 @@ The dissertation presents and discusses the ideas developed by Crispin Wright in
 %% O arquivo 'biblio' com as referências bibliográficas deve estar no formato
 %% BibTeX.
 
-\bibliography{referencias/mybib}
+\bibliography{referencias-a/biblio}
 \bibliographystyle{abnt}
 %%=============================================================================
 %% Apêndices e anexos
@@ -294,9 +294,9 @@ The dissertation presents and discusses the ideas developed by Crispin Wright in
 %%=============================================================================
 
 \appendix %% Apêndices
-\include{capitulos/apendicea} %% Incluir apêndice A
-%\include{capitulos/apendiceb} %% Incluir apêndice B
+\include{capitulos-a/apendicea} %% Incluir apêndice A
+%\include{capitulos-a/apendiceb} %% Incluir apêndice B
 
 %\annex %% Anexos
-%\include{capitulos/anexoa} %% Incluir anexo A
+%\include{capitulos-a/anexoa} %% Incluir anexo A
 \end{document}
