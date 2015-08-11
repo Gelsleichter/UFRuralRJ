@@ -25,14 +25,14 @@ alguns exemplos simulando diversos tipos de documentos acadêmicos e diferentes
 necessidades de formatação. Os exemplos são descritos abaixo, sendo nomeados de
 acordo com o respectivo arquivo `*.tex`.
 
-### modelo-a.tex (texto corrido)
+### modelo-a (texto corrido)
 
 
-### modelo-b.tex (capítulos)
+### modelo-b (capítulos)
 
 O modelo ***b*** constitui uma documento acadêmico cuja forma de organização do 
 corpo principal é aquela de *capítulos*. Segundo o MANUAL, o corpo principal
-de um o documento acadêmico organizado na forma de *capítulos* deve conter, no 
+de um documento acadêmico organizado na forma de *capítulos* deve conter, no 
 mínimo, três itens:
 
 * Introdução Geral;
@@ -47,10 +47,10 @@ para publicação.
 
 A organização interna de cada capítulo pode seguir os mesmos critérios usados
 para organização de documentos acadêmicos cujo corpo principal está na forma 
-de texto corrido (veja acima). A diferença aqui é a necessidade de incluir um
-resumo em português e em outro idioma, geralmente o inglês. Caso os capítulos 
-correspondam a artigos publicados ou submetidos para publicação, a organização
-interna pode ser a mesma daqueles.
+de texto corrido (veja o modelo ***a*** acima). A diferença aqui é a necessidade
+de incluir um resumo em português e em outro idioma, geralmente o inglês. Caso 
+os capítulos correspondam a artigos publicados ou submetidos para publicação, a
+organização interna pode ser a mesma daqueles.
 
 As conclusões de cada capítulo podem ser inseridas nos itens que apresentam os
 resultados e fazem a sua discussão, como em algumas publicações científicas, 
