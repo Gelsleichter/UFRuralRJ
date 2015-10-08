@@ -147,7 +147,7 @@
 
 \newcommand{\nocontentsline}[3]{}
 \newcommand{\tocless}[2]{
- \bgroup\let\addcontentsline=\nocontentsline#1{#2}\egroup}
+  \bgroup\let\addcontentsline=\nocontentsline#1{#2}\egroup}
 
 %%==============================================================================
 %% Herança da classe 'report' e inclusão de pacotes e arquivos necessários
@@ -158,8 +158,8 @@
 \input{brazilian.babel} %% definições para textos em português
 \input{english.babel}   %% definições para textos em inglês
 \if@english
-        \selectlanguage{english}
-        \AtBeginDocument{\selectlanguage{english}}
+  \selectlanguage{english}
+  \AtBeginDocument{\selectlanguage{english}}
 \fi
 \RequirePackage{lastpage}
 \RequirePackage{indentfirst} 
@@ -209,10 +209,10 @@
 
 %% Canto direito superior
 \def\ps@UFRuralRJ{
-        \let\@oddfoot\@empty
-        \let\@evenfoot\@empty
-        \def\@evenhead{{\small\thepage}}
-        \def\@oddhead{\hspace*{\fill}{\small\thepage}}
+  \let\@oddfoot\@empty
+  \let\@evenfoot\@empty
+  \def\@evenhead{{\small\thepage}}
+  \def\@oddhead{\hspace*{\fill}{\small\thepage}}
 }
 
 \pagestyle{empty}
@@ -224,38 +224,38 @@
 
 \newcounter{ii@authorcount}
 \renewcommand{\author}[2]{
-        \addtocounter{ii@authorcount}{1}
-        \expandafter\gdef\csname @author\alph{ii@authorcount}last\endcsname{#1}
-        \expandafter\gdef\csname @author\alph{ii@authorcount}first\endcsname{#2}
-        \expandafter\gdef\csname @author\alph{ii@authorcount}\endcsname{#2 #1}
+  \addtocounter{ii@authorcount}{1}
+  \expandafter\gdef\csname @author\alph{ii@authorcount}last\endcsname{#1}
+  \expandafter\gdef\csname @author\alph{ii@authorcount}first\endcsname{#2}
+  \expandafter\gdef\csname @author\alph{ii@authorcount}\endcsname{#2 #1}
 }
 
 % Definição da formatação das informações do(a) orientador(a)
 \DeclareRobustCommand{\advisor}[5][]{
-        \gdef\@advisorlast{#3}
-        \gdef\@advisorfirst{#4}
-        \gdef\@advisor{#4 #3}
-        \gdef\@advisorprof{#1}
-		\gdef\@advisorcommittee{#4 #3. #2 #5}
-		\gdef\@advisorwithouttitle{#4 #3}
+  \gdef\@advisorlast{#3}
+  \gdef\@advisorfirst{#4}
+  \gdef\@advisor{#4 #3}
+  \gdef\@advisorprof{#1}
+  \gdef\@advisorcommittee{#4 #3. #2 #5}
+  \gdef\@advisorwithouttitle{#4 #3}
 }
 
 % Definição da formatação das informações do(s) co-orientador(es)
 \newcounter{ii@coadvisorcount}
 \DeclareRobustCommand{\coadvisor}[4][]{
-	\addtocounter{ii@coadvisorcount}{1}
-	\expandafter
-	 \gdef\csname @coadvisor\alph{ii@coadvisorcount}last\endcsname{#3}
-	\expandafter
-	 \gdef\csname @coadvisor\alph{ii@coadvisorcount}first\endcsname{#4}
-	\expandafter
-	 \gdef\csname @coadvisor\alph{ii@coadvisorcount}\endcsname{#4 #3}
-	%\gdef\@coadvisorlast{#3}
-        %\gdef\@coadvisorfirst{#4}
-        %\gdef\@coadvisor{#1~#2~#4 #3}
-        \gdef\@coadvisorprof{#1}
-		\gdef\@coadvisorcommittee{#4 #3}
-		\gdef\@coadvisorwithouttitle{#4 #3}
+  \addtocounter{ii@coadvisorcount}{1}
+  \expandafter
+  \gdef\csname @coadvisor\alph{ii@coadvisorcount}last\endcsname{#3}
+  \expandafter
+  \gdef\csname @coadvisor\alph{ii@coadvisorcount}first\endcsname{#4}
+  \expandafter
+  \gdef\csname @coadvisor\alph{ii@coadvisorcount}\endcsname{#4 #3}
+  %\gdef\@coadvisorlast{#3}
+  %\gdef\@coadvisorfirst{#4}
+  %\gdef\@coadvisor{#1~#2~#4 #3}
+  \gdef\@coadvisorprof{#1}
+  \gdef\@coadvisorcommittee{#4 #3}
+  \gdef\@coadvisorwithouttitle{#4 #3}
 }
 
 % Definição da formatação das informações do comitê de avaliação do documento
@@ -264,11 +264,11 @@
 \DeclareRobustCommand{\committee}[4][]{
   \addtocounter{ii@committeecount}{1}
   \expandafter
-   \gdef\csname @committee\alph{ii@committeecount}last\endcsname{#2}
+  \gdef\csname @committee\alph{ii@committeecount}last\endcsname{#2}
   \expandafter
-   \gdef\csname @committee\alph{ii@committeecount}first\endcsname{#3}
+  \gdef\csname @committee\alph{ii@committeecount}first\endcsname{#3}
   \expandafter
-   \gdef\csname @committee\alph{ii@committeecount}\endcsname{#3 #2. #1 #4}
+  \gdef\csname @committee\alph{ii@committeecount}\endcsname{#3 #2. #1 #4}
 }
 
 %%=============================================================================
@@ -279,37 +279,37 @@
 % do trabalho acadêmico.
 \newcounter{kwcounter}
 \newcommand{\keyword}[1]{
-        \addtocounter{kwcounter}{1}
-        \expandafter\gdef\csname keyw\alph{kwcounter}\endcsname{#1}
+  \addtocounter{kwcounter}{1}
+  \expandafter\gdef\csname keyw\alph{kwcounter}\endcsname{#1}
 }
 
 \newcommand{\@cipkw}{%
-        \@ifundefined{keywa}{}{1.~\expandafter\MakeUppercase\keywa\@. }%
-        \@ifundefined{keywb}{}{2.~\expandafter\MakeUppercase\keywb\@. }%
-        \@ifundefined{keywc}{}{3.~\expandafter\MakeUppercase\keywc\@. }%
-        \@ifundefined{keywd}{}{4.~\expandafter\MakeUppercase\keywd\@. }%
-        \@ifundefined{keywe}{}{5.~\expandafter\MakeUppercase\keywe\@. }%
-        \@ifundefined{keywf}{}{6.~\expandafter\MakeUppercase\keywf\@. }%
-        \@ifundefined{keywg}{}{7.~\expandafter\MakeUppercase\keywg\@. }%
-        \@ifundefined{keywh}{}{8.~\expandafter\MakeUppercase\keywh\@. }%
-        \@ifundefined{keywi}{}{9.~\expandafter\MakeUppercase\keywi\@. }%
-        \@ifundefined{keywj}{}{10.~\expandafter\MakeUppercase\keywj\@. }%
+  \@ifundefined{keywa}{}{1.~\expandafter\MakeUppercase\keywa\@. }%
+  \@ifundefined{keywb}{}{2.~\expandafter\MakeUppercase\keywb\@. }%
+  \@ifundefined{keywc}{}{3.~\expandafter\MakeUppercase\keywc\@. }%
+  \@ifundefined{keywd}{}{4.~\expandafter\MakeUppercase\keywd\@. }%
+  \@ifundefined{keywe}{}{5.~\expandafter\MakeUppercase\keywe\@. }%
+  \@ifundefined{keywf}{}{6.~\expandafter\MakeUppercase\keywf\@. }%
+  \@ifundefined{keywg}{}{7.~\expandafter\MakeUppercase\keywg\@. }%
+  \@ifundefined{keywh}{}{8.~\expandafter\MakeUppercase\keywh\@. }%
+  \@ifundefined{keywi}{}{9.~\expandafter\MakeUppercase\keywi\@. }%
+  \@ifundefined{keywj}{}{10.~\expandafter\MakeUppercase\keywj\@. }%
 }
 
 % Novo comando para formatação do texto de apresentação das palavras-chave
 % do 'resumo' do trabalho acadêmico. O número máximo de palavras-chave
 % aceito é de n=10. As palavras-chave são separadas por vírgula.
 \newcommand{\@abstractkw}{%
-        \@ifundefined{keywa}{}{\expandafter\MakeUppercase\keywa}%
-        \@ifundefined{keywb}{}{, \keywb}%
-        \@ifundefined{keywc}{}{, \keywc}%
-        \@ifundefined{keywd}{}{, \keywd}%
-        \@ifundefined{keywe}{}{, \keywe}%
-        \@ifundefined{keywf}{}{, \keywf}%
-        \@ifundefined{keywg}{}{, \keywg}%
-        \@ifundefined{keywh}{}{, \keywh}%
-        \@ifundefined{keywi}{}{, \keywi}%
-        \@ifundefined{keywj}{}{, \keywj}%
+  \@ifundefined{keywa}{}{\expandafter\MakeUppercase\keywa}%
+  \@ifundefined{keywb}{}{, \keywb}%
+  \@ifundefined{keywc}{}{, \keywc}%
+  \@ifundefined{keywd}{}{, \keywd}%
+  \@ifundefined{keywe}{}{, \keywe}%
+  \@ifundefined{keywf}{}{, \keywf}%
+  \@ifundefined{keywg}{}{, \keywg}%
+  \@ifundefined{keywh}{}{, \keywh}%
+  \@ifundefined{keywi}{}{, \keywi}%
+  \@ifundefined{keywj}{}{, \keywj}%
 }
 
 %%=============================================================================
@@ -337,12 +337,12 @@
 %\newlength{\titlepagewinvoffset}\setlength{\titlepagewinvoffset}{112mm}
 
 \renewcommand{\maketitle}{ % capa e folha de rosto
-        \begin{titlepage}
-                \thetitlepage
-        \end{titlepage}
-        \clearpage
-        \secondtitlepage
-        \setcounter{page}{2}
+  \begin{titlepage}
+    \thetitlepage
+  \end{titlepage}
+  \clearpage
+  \secondtitlepage
+  \setcounter{page}{2}
 }
 
 %%=============================================================================
@@ -464,16 +464,16 @@
     \vspace{15mm}
     \noindent
     \begin{center}
-    {\textbf{\MakeUppercase{\@authora}}}
+      {\textbf{\MakeUppercase{\@authora}}}
     \end{center}
-    \vspace{15mm}
-    \noindent
-    \parbox[t]{\textwidth}{
-    \titlepagespecificinfo
-    }
-    \vspace{15mm}
-    {\approvecommitteeinfo}
-   }
+      \vspace{15mm}
+      \noindent
+      \parbox[t]{\textwidth}{
+      \titlepagespecificinfo
+      }
+      \vspace{15mm}
+      \approvecommitteeinfo
+  }
 }
 
 \newcommand{\makeCIP}[1]{
@@ -632,8 +632,8 @@
 \newif\if@aftertoc
 \@aftertocfalse
 \renewcommand{\tableofcontents}{%
-        \chapter*{\LargeF\contentsname}
-        \@starttoc{toc}\@aftertoctrue%
+  \chapter*{\LargeF\contentsname}
+  \@starttoc{toc}\@aftertoctrue%
 }
 
 %%==============================================================================
