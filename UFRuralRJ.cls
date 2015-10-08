@@ -112,10 +112,9 @@
 %% Comandos e definições gerais
 %%==============================================================================
 
-\def\ufrrj{Universidade Federal Rural do Rio de Janeiro}
-\def\ufrrjENG{Federal Rural University of Rio de Janeiro} 
-\def\ufrrjSigla{UFRRJ}
-
+\def\ufrrjlongo{Universidade Federal Rural do Rio de Janeiro}
+\def\ufrrjcurto{UFRRJ}
+\newcommand{\titulo}[1]{\gdef\@titulo{#1}}
 \newcommand{\curso}[1]{\gdef\@curso{#1}}
 %\newcommand{\altCurso}[1]{\gdef\@altCurso{#1}}
 \newcommand{\area}[1]{\gdef\@area{#1}}
