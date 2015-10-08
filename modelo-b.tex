@@ -1,10 +1,9 @@
-%\listfiles
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Modelo de tese com capítulos individuais
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %% Tipo de documento e a classe a ser usada para sua formatação.
 \documentclass[tese]{UFRuralRJ}
-
-%% Um tipo específico de monografia pode ser informado como parâmetro opcional:
-%\documentclass[tese]{UFRuralRJ}
 
 %% A opção 'openright' força inícios de capítulos em páginas ímpares
 %\documentclass[openright]{UFRuralRJ}
@@ -15,10 +14,9 @@
 %%==============================================================================
 %% Pacotes - língua, codificação e fonte
 %%==============================================================================
-
-\usepackage[brazilian]{babel} %% use 'english' ao invés de 'brazilian' para documento escrito em inglês
+\usepackage[brazilian]{babel} %% use 'english' para documento escrito em inglês
 \usepackage[T1]{fontenc} %% Conjunto de caracteres correto
-%\usepackage{times} %% Usar fonte Adobe Times Roman, equivalente à Times New Roman
+%\usepackage{times} %% Usar fonte Adobe Times Roman
 \usepackage[utf8]{inputenc} %% Para acentuação correta
 
 %%==============================================================================
@@ -150,20 +148,20 @@
 %%=============================================================================
 \chapter*{Agradecimentos}
 
-À Universidade Federal Rural do Rio de Janeiro (UFRuralRJ).
+\noindent{À Universidade Federal Rural do Rio de Janeiro (UFRuralRJ).}
 
-Às agências de fomento.
+\noindent{Às agências de fomento.}
 
-Aos orientadores.
+\noindent{Aos orientadores.}
 
-À todos que, direta ou indiretamente, contribuíram para a construção deste 
-trabalho.
+\noindent{À todos que, direta ou indiretamente, contribuíram para a construção 
+deste trabalho.}
 
 %%=============================================================================
 %% Biografia (opcional)
 %%=============================================================================
 \chapter*{Biografia}
-O autor nasceu, cresceu e escreveu uma tese.
+\noindent{O autor nasceu, cresceu e escreveu uma tese.}
 
 %%=============================================================================
 %% Epígrafe (opcional)
@@ -206,7 +204,7 @@ Autor desconhecido
 
 \listoffigures %% Lista de figuras
 % \listoftables %% Lista de tabelas
-\listofappendix %% Lista de apêndices
+% \listofappendix %% Lista de apêndices
 % \listofannex %% Lista de anexos
 
 \begin{listofabbrv}{UbiComp} %% Lista de abreviaturas e siglas
@@ -249,9 +247,9 @@ Autor desconhecido
 %% \tocless\section{Histórico}
 %%=============================================================================
 
-\appendix %% Apêndices
-\include{capitulos-b/apendicea} %% Incluir apêndice A
-%\include{capitulos-b/apendiceb} %% Incluir apêndice B
+% \appendix %% Apêndices
+% \include{capitulos-b/apendicea} %% Incluir apêndice A
+% \include{capitulos-b/apendiceb} %% Incluir apêndice B
 
 %\annex %% Anexos
 %\include{capitulos-b/anexoa} %% Incluir anexo A
