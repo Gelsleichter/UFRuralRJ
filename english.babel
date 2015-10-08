@@ -2,7 +2,7 @@
 % definições para textos em inglês
 %
 \@namedef{captionsenglish}{%
-\def\bibname{References}%
+\def\bibname{Bibliographic References}%
 \def\abstractname{Abstract}%
 \def\generalabstractname{General abstract}%
 \def\appendixname{Appendix}%
@@ -11,6 +11,8 @@
 \def\listtablename{List of Tables}%
 \def\listdefname{List of Definitions}%
 \def\listtheoremsname{List of Theorems}%
+\def\listappendixname{List de Appendices}%
+\def\listannexname{List of Annexes}%
 \def\corollaryname{Corollary}%
 \def\propositionname{Proposition}%
 \def\definitionname{Definition}%
@@ -23,31 +25,41 @@
 \def\theoremname{Theorem}%
 \def\proofname{Proof}%
 \def\figurename{Figure}%
+\def\chaptername{Chapter}%
 \def\tablename{Table}%
 \def\authorname{Author}%
 \def\authornamef{Author}%
 \def\advisorname{Advisor}%
 \def\advisornamef{Advisor}%
-\def\coadvisorname{Coadvisor}%
-\def\coadvisornamef{Coadvisor}%
+\def\coadvisorname{Co-advisor}%
+\def\coadvisornamef{Co-advisor}%
 \def\listabbrvname{List of Abbreviations and Acronyms}%
 \def\listsymbolname{List of Symbols}%
 \def\annexname{Annex}%
+\def\annexsname{Annex}%
 \def\keywordsname{Keywords}%
 \def\cipcaption{CIP -- CATALOGING-IN-PUBLICATION}%
 \def\byname{by}%
-\def\dissname{Thesis (Master)}%
-\def\dissspecificinfo{%
-Thesis presented in partial fulfillment\\
-of the requirements for the degree of\\
-Master of Computer Science
-}%
-\def\tesename{Thesis (Ph.D.)}%
+\def\aprovadaem{approved in}%
+\def\soborienta{\textit{Under~the~supervision~of}}%
+\def\sobcoorienta{\textit{and~co-supervision~of}}%
+\def\and{and}%
+\def\of{of}%
+\def\folhas{p}%
+\def\presidente{President}%
+\def\dissname{Dissertation}%
+\def\tesename{Thesis}%
 \def\tesespecificinfo{%
-Thesis presented in partial fulfillment\\
-of the requirements for the degree of\\
-Doctor of Computer Science
+Thesis presented in partial fulfilment of the requirements for the degree of
+\textbf{\@grau}, \@curso, {\'A}rea de Concentra\c{c}{\~a}o em \@area.
 }%
+\def\dissspecificinfo{%
+Dissertation presented in partial fulfilment of the requirements for the degree
+of \textbf{\@grau}, \@curso, {\'A}rea de Concentra\c{c}{\~a}o em \@area.
+}%
+
+
+
 \def\planodoutoradospecificinfo{PhD Work Plan}%
 \def\proptesename{Ph.D. Thesis Proposal}%
 \def\proptesespecificinfo{Ph.D. Thesis Proposal}%

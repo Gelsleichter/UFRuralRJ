@@ -6,7 +6,7 @@
 \def\abstractname{Resumo}%
 \def\generalabstractname{Resumo geral}%
 \def\appendixname{Ap{\^e}ndice}%
-\def\appendixsname{Ap{\^e}ndices}%
+% \def\appendixsname{Ap{\^e}ndices}%
 \def\contentsname{Sum{\'a}rio}%
 \def\listfigurename{Lista de Figuras}%
 \def\listtablename{Lista de Tabelas}%
@@ -24,7 +24,7 @@
 \def\remarknamek{Observa\c{c}\~{a}o}%
 \def\lemmaname{Lema}%
 \def\theoremname{Teorema}%
-%\def\proofname{Prova}%
+\def\proofname{Prova}%
 \def\figurename{Figura}%
 \def\chaptername{Cap\'{\i}tulo}%
 \def\tablename{Tabela}%
@@ -41,18 +41,29 @@
 \def\keywordsname{Palavras-chave}%
 \def\cipcaption{CIP -- CATALOGA{\c{C}}{\~A}O NA PUBLICA{\c{C}}{\~A}O}%
 \def\byname{por}%
+\def\aprovadaem{aprovado(a) em}%
+\def\soborienta{\textit{Sob orienta\c{c}{\~a}o~de}}%
+\def\sobcoorienta{\textit{e co-orienta\c{c}{\~a}o~de}}%
+\def\and{e}%
+\def\of{de}%
+\def\folhas{f}%
+\def\presidente{Presidente}%
 \def\dissname{Disserta{\c{c}}{\~a}o}%
-\def\dissspecificinfo{%
-Disserta{\c{c}}{\~a}o apresentada como requisito parcial\\
-para a obten{\c{c}}{\~a}o do grau de\\
-Mestre em Ci{\^e}ncia da Computa{\c{c}}{\~a}o
-}%
-\def\tesename{Tese)}%
+\def\tesename{Tese}%
 \def\tesespecificinfo{%
-Tese apresentada como requisito parcial\\
-para a obten{\c{c}}{\~a}o do grau de\\
-Doutor em Ci{\^e}ncia da Computa{\c{c}}{\~a}o
+Tese submetida como requisito parcial para obten\c{c}{\~a}o do grau de 
+\textbf{\@grau}, \@curso, {\'A}rea de Concentra\c{c}{\~a}o em \@area.
 }%
+\def\dissspecificinfo{%
+Disserta{\c{c}}{\~a}o submetida como requisito parcial para obten{\c{c}}{\~a}o 
+do grau de \textbf{\@grau}, \@curso, \'{A}rea de Concentra{\c{c}}{\~a}o em 
+\@area.
+}%
+
+
+
+
+
 \def\planodoutoradospecificinfo{Plano de Curso para Doutorado}%
 \def\proptesespecificinfo{Proposta de Tese de Doutorado}%
 \def\tgname{Trabalho de Graduação}%
