@@ -76,7 +76,7 @@
   \AtEndOfClass{
     \newcommand{\titlepagespecificinfo}{
       %Trabalho de Gradua{\c{c}}{\~a}o apresentado ao \@altCurso{} da \ufrrj{}
-      Trabalho de Gradua{\c{c}}{\~a}o apresentado ao \@curso{} da \ufrrj{}
+      Trabalho de Gradua{\c{c}}{\~a}o apresentado ao \@curso{} da \ufrrjlongo{}
       (UFRRJ, RJ), como requisito parcial para a obten{\c{c}}{\~a}o do grau de
       %\\[6pt]
       \textbf{\@grau}
