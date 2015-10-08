@@ -179,6 +179,7 @@ Autor desconhecido
 %%==============================================================================
 \def\tituloportugues{Este título é muito legal para uma tese escrita em português} %% Título em português
 \def\chavesportugues{LaTeX, UFRuralRJ, Documentos acadêmicos} %% Palavras-chave em português
+
 \generalabstracttrue %% Usar para o caso de um RESUMO GERAL
 \begin{generalabstract}{brazilian}{\tituloportugues}{\chavesportugues} %% Resumo geral em português
   Este é o resumo em português de minha tese escrita em português. Claramente, 
@@ -189,18 +190,15 @@ Autor desconhecido
 %%==============================================================================
 %% General abstract (inglês)
 %%==============================================================================
+\def\tituloingles{This is a cool title for a thesis written in Portuguese} %% Título em inglês
+\def\chavesingles{LaTeX, UFRuralRJ, Academical documents} %% Palavras-chave em inglês
 
 \generalabstracttrue
-\begin{englishabstract}
-{This is a cool title for a thesis written in Portuguese} %% Título do trabalho
-{Curso de Pós-Graduação da Rural - Ciências} %% Curso de pós-graduação
-{LaTeX, UFRuralRJ, Academical documents} %% Palavras-chave
-{November} %% Mês
-{th} %% Sigla do dia
-This is the English abstract of my thesis written in Portuguese. Obviously this
-is the best abstract that has ever been written in an academic document produced
-at UFRuralRJ.
-\end{englishabstract}
+\begin{generalabstract}{english}{\tituloingles}{\chavesingles} %% Resumo geral em inglês
+  This is the English abstract of my thesis written in Portuguese. Obviously this
+  is the best abstract that has ever been written in an academic document produced
+  at UFRuralRJ.
+\end{generalabstract}
 
 %%=============================================================================
 %% Listas (comentar se não houver) e sumário
