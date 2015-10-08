@@ -120,9 +120,7 @@
 \newcommand{\area}[1]{\gdef\@area{#1}}
 \newcommand{\instituto}[1]{\gdef\@instituto{#1}}
 \newcommand{\grau}[1]{\gdef\@grau{#1}}
-\newcommand{\altGrau}[1]{\gdef\@altGrau{#1}}
-\newcommand{\altGrauENG}[1]{\gdef\@altGrauENG{#1}}
-\newcommand{\titleENG}[1]{\gdef\@titleENG{#1}}
+\newcommand{\nivel}[1]{\gdef\@nivel{#1}}
 \newcommand{\trabalhoNumero}[1] {\gdef\@trabalhoNumero{#1}}
 \newcommand{\local}[3]{\gdef\@city{#1}\gdef\@state{#2}\gdef\@country{#3}}
 
