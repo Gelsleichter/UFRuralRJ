@@ -400,29 +400,21 @@
 %    \textit{e sob co-orienta\c{c}{\~a}o \ifcoorientadora{da}\else{do}\fi~
 %     \@coadvisorprof}\fi
 %  }
-\def
- \soborienta{
-  \textit{Sob orienta\c{c}{\~a}o~de}
- }
-\gdef
- \sobcoorienta{
-  \textit{e co-orienta\c{c}{\~a}o~de}
- }
+% \def\soborienta{\textit{Sob orienta\c{c}{\~a}o~de}}
+% \gdef\sobcoorienta{\textit{e co-orienta\c{c}{\~a}o~de}}
+% \def\sobcoorienta{\textit{e co-orienta\c{c}{\~a}o~de}}
 
 \newcommand{\secondtitlepage}{
   \noindent
   \parbox[t]{\textwidth}{
     \centering
-    \includegraphics[width=25mm]{logomarca}\\ %% Logomarca cor, largura 25 mm
-    {\LargeE\textbf{\MakeUppercase{\ufrrj}}}\\ %% Universidade, fonte 14 pts
-    {\LargeE\textbf{\MakeUppercase{\@instituto}}}\\ %% Instituto, fonte 14 pts
-    {\LargeE\textbf{\MakeUppercase{\@curso}}}\\[25mm] %% Curso, fonte 14 pts
-    %\vspace{25mm}
-    {\LargeE\textbf{\MakeUppercase{\@title}}}\par
+    \includegraphics[width=25mm]{logomarca}\\         % Logomarca colorida
+    {\LargeE\textbf{\MakeUppercase{\ufrrjlongo}}}\\        % Universidade
+    {\LargeE\textbf{\MakeUppercase{\@instituto}}}\\   % Instituto
+    {\LargeE\textbf{\MakeUppercase{\@curso}}}\\[25mm] % Curso
+    {\LargeE\textbf{\MakeUppercase{\@titulo}}}\par    % Título
     \vspace{25mm}
-    %
-    {\LargeE\textbf{\MakeUppercase{\@authora}}}\\[15mm] %% Autor do documento
-    %\vspace{15mm}
+    {\LargeE\textbf{\MakeUppercase{\@authora}}}\\[15mm] % Autor do documento
     \soborienta\par
     \@ifundefined{@advisor}{}{
       \vfill{\LargeE\textbf{\@advisor}}}\\ %% Orientador(a)
@@ -433,17 +425,17 @@
       \sobcoorienta\par{\LargeE\textbf{\@coadvisora}}} %% Co-orientador 1
 
     \@ifundefined{@coadvisorb}{}{
-     \par\textit{e}\par\textbf{\LargeE\@coadvisorb}} %% Co-orientador 2
+      \par\textit{\and}\par\textbf{\LargeE\@coadvisorb}} %% Co-orientador 2
     \vspace{15mm}
     \begin{flushright}
-    \hspace{80mm}
-    \begin{minipage}{76mm}
-	{\LargeE\titlepagespecificinfo} %% Área de concentração e grau obtido
-    \end{minipage} 
+      \hspace{80mm}
+      \begin{minipage}{76mm}
+        {\LargeE\titlepagespecificinfo} %% Área de concentração e grau obtido
+      \end{minipage} 
     \end{flushright}
     \vspace{15mm}
-    \centerline{\LargeE \@city, \@state, \@country} %% Cidade, estado e país
-    \centerline{\LargeE \@publmonth~{de}~\@publyear} %% Mês e ano
+    \centerline{\LargeE\@city,~\@state,~\@country} %% Cidade, estado e país
+    \centerline{\LargeE\@publmonth~\of~\@publyear} %% Mês e ano
   }
 }
 
@@ -458,7 +450,7 @@
 \newcommand{\theapprovepage}{%
   \noindent
   \parbox[t]{\textwidth}{%
-    {\textbf{\MakeUppercase{\ufrrj}}}\\
+    {\textbf{\MakeUppercase{\ufrrjlongo}}}\\
     {\textbf{\MakeUppercase{\@instituto}}}\\
     {\textbf{\MakeUppercase{\@curso}}}\\
     \vspace{15mm}
@@ -488,22 +480,23 @@
 }
 
 \def\@cipwindow{%
-        \noindent
-        \framebox[140mm]{
-        \begin{minipage}{120mm}%
-                \vspace*{2ex}
-                \setlength{\parindent}{2em}%
-                \setlength{\parskip}{1.4ex}%
-                \noindent \@authoralast, \@authorafirst\par
-                \@title\ / por \@authora.\ -- \@publyear.\\
-                \indent\pageref{LastPage}~f.: il.; 30 cm. \par
+  \noindent
+  \framebox[140mm]{
+  \begin{minipage}{120mm}%
+    \vspace*{2ex}
+    \setlength{\parindent}{2em}%
+    \setlength{\parskip}{1.4ex}%
+    \noindent \@authoralast, \@authorafirst\par
+    %\@title\ / por \@authora.\ -- \@publyear.\\
+    \@titulo\ / \byname \@authora.\ -- \@publyear.\\            
+                \indent\pageref{LastPage}~f.: il.; 30~cm. \par
 				\indent\iforientadora\advisornamef\else
 				 \advisorname\fi: \@advisorfirst\ \@advisorlast
 				\@ifundefined{@coadvisor}{}{\\ \indent
 				 \ifcoorientadora\coadvisornamef\else
 				 \coadvisorname\fi: \@coadvisorfirst\ 
 				 \@coadvisorlast} \\
-				\indent \doctypenameCIP \ - \ufrrj, \@instituto,
+				\indent \doctypenameCIP \ - \ufrrjlongo, \@instituto,
 				\@altCurso, RJ, \@publyear. \par
                 \@cipkw I.~\@advisorlast, \@advisorfirst. 
                 \@ifundefined{@coadvisorfirst}{II.~T\'{\i}tulo.}{II.~
@@ -543,9 +536,7 @@
     \vspace{2cm}
     \LargeC{A Comiss\~{a}o Examinadora, abaixo assinada,} \\
 	  {aprova \doctypearticle~\doctypename} \\[2cm]
-	  %\vspace{2cm}
-	  \MakeUppercase{\LargeC\textbf{\@title}}\\[1,5cm]
-	  %\vspace{1,5cm}
+	  \MakeUppercase{\LargeC\textbf{\@titulo}}\\[1,5cm]
 	  elaborad\doctypearticle~por\\
 	  \textbf{\@authora}\\
 	  \@ifundefined{@authorb}{}{\textbf{\@authorb}\\}%
@@ -568,7 +559,7 @@
 \newcommand{\approvecommitteeinfo}{%
   \vfill
   \parbox[t]{\textwidth}{
-    \MakeUppercase{\doctypename} APROVADA EM \MakeUppercase{\@date.}
+    \MakeUppercase{\doctypename~\aprovadaem~\@date.}
     }
     \vfill
     \vspace{18mm}
@@ -581,7 +572,7 @@
     \@ifundefined{@committeea}{}{
       \normalsize\centerline{\parbox[t]{\textwidth}{\assina\@committeea}}}
       \vspace{1mm}
-      \normalsize\centerline{(Presidente)}
+      \normalsize\centerline{(\presidente)}
     \vspace{11mm}
     \@ifundefined{@committeeb}{}{
       \normalsize\centerline{\parbox[t]{\textwidth}{\assina\@committeeb}}}
