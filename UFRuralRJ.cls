@@ -116,7 +116,7 @@
 \def\ufrrjcurto{UFRRJ}
 \newcommand{\titulo}[1]{\gdef\@titulo{#1}}
 \newcommand{\curso}[1]{\gdef\@curso{#1}}
-%\newcommand{\altCurso}[1]{\gdef\@altCurso{#1}}
+% \newcommand{\altCurso}[1]{\gdef\@altCurso{#1}} %% Obsoleto
 \newcommand{\area}[1]{\gdef\@area{#1}}
 \newcommand{\instituto}[1]{\gdef\@instituto{#1}}
 \newcommand{\grau}[1]{\gdef\@grau{#1}}
@@ -133,9 +133,9 @@
 \newcommand\LargeF{\@setfontsize\LargeF{12pt}{12.1pt}}
 
 %% Definições de gênero
-\newif\ifautora %% 'autora' em vez de 'autor'
+\newif\ifautora      %% 'autora' em vez de 'autor'
 \newif\iforientadora %% 'orientadora' em vez de 'orientador'
-%\newif\ifcoorientadora %% 'co-orientadora' em vez de 'co-orientador'.
+% \newif\ifcoorientadora %% 'co-orientadora' em vez de 'co-orientador'. Obsoleto
 
 %% Definições de capítulo
 \newif\ifchap\chaptrue %% capítulo
@@ -250,9 +250,9 @@
   \gdef\csname @coadvisor\alph{ii@coadvisorcount}first\endcsname{#4}
   \expandafter
   \gdef\csname @coadvisor\alph{ii@coadvisorcount}\endcsname{#4 #3}
-  %\gdef\@coadvisorlast{#3}
-  %\gdef\@coadvisorfirst{#4}
-  %\gdef\@coadvisor{#1~#2~#4 #3}
+  %\gdef\@coadvisorlast{#3} %% Obsoleto
+  %\gdef\@coadvisorfirst{#4} %% Obsoleto
+  %\gdef\@coadvisor{#1~#2~#4 #3} %% Obsoleto
   \gdef\@coadvisorprof{#1}
   \gdef\@coadvisorcommittee{#4 #3}
   \gdef\@coadvisorwithouttitle{#4 #3}
@@ -299,18 +299,18 @@
 % Novo comando para formatação do texto de apresentação das palavras-chave
 % do 'resumo' do trabalho acadêmico. O número máximo de palavras-chave
 % aceito é de n=10. As palavras-chave são separadas por vírgula.
-\newcommand{\@abstractkw}{%
-  \@ifundefined{keywa}{}{\expandafter\MakeUppercase\keywa}%
-  \@ifundefined{keywb}{}{, \keywb}%
-  \@ifundefined{keywc}{}{, \keywc}%
-  \@ifundefined{keywd}{}{, \keywd}%
-  \@ifundefined{keywe}{}{, \keywe}%
-  \@ifundefined{keywf}{}{, \keywf}%
-  \@ifundefined{keywg}{}{, \keywg}%
-  \@ifundefined{keywh}{}{, \keywh}%
-  \@ifundefined{keywi}{}{, \keywi}%
-  \@ifundefined{keywj}{}{, \keywj}%
-}
+% \newcommand{\@abstractkw}{% %% Obsoleto
+%   \@ifundefined{keywa}{}{\expandafter\MakeUppercase\keywa}%
+%   \@ifundefined{keywb}{}{, \keywb}%
+%   \@ifundefined{keywc}{}{, \keywc}%
+%   \@ifundefined{keywd}{}{, \keywd}%
+%   \@ifundefined{keywe}{}{, \keywe}%
+%   \@ifundefined{keywf}{}{, \keywf}%
+%   \@ifundefined{keywg}{}{, \keywg}%
+%   \@ifundefined{keywh}{}{, \keywh}%
+%   \@ifundefined{keywi}{}{, \keywi}%
+%   \@ifundefined{keywj}{}{, \keywj}%
+% }
 
 %%=============================================================================
 %% Redefinição da data (para ter dia, mês e ano separados)
@@ -322,7 +322,7 @@
 }
 \date{\monthname}{\number\year}
 
-\newcommand{\dateingles}[2]{{#1}~$\text{\@publday}^{\text{#2}}$,~\@publyear}
+% \newcommand{\dateingles}[2]{{#1}~$\text{\@publday}^{\text{#2}}$,~\@publyear} %% Obsoleto
 
 %%=============================================================================
 %% Definições comuns à capa e à folha de rosto.
@@ -362,7 +362,6 @@
     \vspace{28mm}
       \parbox[t]{\textwidth}{
 	\centering
-	% Identificação do tipo de documento colocado 28 mm abaixo do cabeçalho
 	\centerline{\LargeC\textbf{\MakeUppercase{\doctypename}}}
 	\vspace{14mm}
 	\setlength{\baselineskip}{2.0\baselineskip} % Espaçamento duplo
@@ -419,8 +418,6 @@
     \@ifundefined{@advisor}{}{
       \vfill{\LargeE\textbf{\@advisor}}}\\ %% Orientador(a)
     \@ifundefined{@coadvisora}{}{
-      % adicionar espaço entre o nome do(a) orientador(a) e os nomes dos(as)
-      % co-orientadores(as)
       \vspace{2ex}
       \sobcoorienta\par{\LargeE\textbf{\@coadvisora}}} %% Co-orientador 1
 
@@ -488,7 +485,7 @@
     \setlength{\parskip}{1.4ex}%
     \noindent \@authoralast, \@authorafirst\par
     %\@title\ / por \@authora.\ -- \@publyear.\\
-    \@titulo\ / \byname \@authora.\ -- \@publyear.\\            
+    \@titulo\ / \byname \@authora.\ -- \@publyear.\\
                 \indent\pageref{LastPage}~f.: il.; 30~cm. \par
 				\indent\iforientadora\advisornamef\else
 				 \advisorname\fi: \@advisorfirst\ \@advisorlast
