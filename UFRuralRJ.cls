@@ -691,56 +691,54 @@
 % não conter indentação na primeira linha e ser apresentado com espaçamento
 % simples. As palavras-chave são colocadas 10 mm abaixo do final do corpo do
 % resumo.
-\newif\ifgeneralabstract
-\renewenvironment{abstract}{
-  \ifgeneralabstract
-    \chapter*{\LargeF\generalabstractname} %% resumo geral
-  \else
-    \chapter*{\LargeF\abstractname} %% resumo
-  \fi
-  \noindent\abstractheaderbox
-  \noindent
-}{\par\vspace{8mm}
-  \noindent\textbf{\keywordsname:}~\@abstractkw.
-}
+% \renewenvironment{abstract}{
+%   \ifgeneralabstract
+%     \chapter*{\LargeF\generalabstractname} %% resumo geral
+%   \else
+%     \chapter*{\LargeF\abstractname} %% resumo
+%   \fi
+%   \noindent\abstractheaderbox
+%   \noindent
+% }{\par\vspace{8mm}
+%   \noindent\textbf{\keywordsname:}~\@abstractkw.
+% }
 
 %% Formatação do cabeçalho do resumo em português.
 %% O corpo do resumo é colocado 15 mm abaixo do cabeçalho.
 
-\newcommand{\abstractheaderbox}{%
- \parbox[t]{\textwidth}{
-  \MakeUppercase{\@authoralast}, \@authorafirst. \textbf{\@title}. \@publyear. 
-   \pageref{LastPage}f. \doctypename~(\@altGrau). \@instituto, \ufrrj, \@city, 
-   RJ, \@publyear.
-   \vfill\vspace{13mm}
- }
-}
+% \newcommand{\abstractheaderbox}{%
+%   \parbox[t]{\textwidth}{ 
+%     \MakeUppercase{\@authoralast}, \@authorafirst. \textbf{\@titulo}.
+%     \@publyear. \pageref{LastPage}f. \doctypename~(\@grau). 
+%     \@instituto, \ufrrj, \@city, RJ, \@publyear.
+%     \vfill\vspace{13mm}
+%  }
+% }
 
-%% Formatação do cabeçalho do resumo em inglês (abstract)
-
-\newcommand{\englishabstractheaderbox}[4]{%
+\newif\ifgeneralabstract
+\newcommand{\generalabstractbheaderbox}[1]{%
   \parbox[t]{\textwidth}{
-    \MakeUppercase{\@authoralast}, \@authorafirst. \textbf{\@titleENG}.
-    \@publyear. \pageref{LastPage}p. \doctypenameIngles~(\@altGrauENG).
-    \@instituto, \ufrrj, \@city, RJ, \@publyear.
+    \MakeUppercase{\@authoralast}, \@authorafirst. \textbf{\@generalabstracttitulo}.
+    \@publyear. \pageref{LastPage}\folhas. \doctypename~(\@nivel).
+    \@instituto, \ufrrjlongo, \@city, RJ, \@publyear.
     \vfill\vspace{13mm}
   }
 }
-
-\newenvironment{englishabstract}[5]{
- \if@openright\cleardoublepage\else\clearpage\fi%
-  \gdef\@englishkeywords{#3}
-  \begin{otherlanguage}{english}
-   \ifgeneralabstract
-    \chapter*{\LargeF\generalabstractname} %% general abstract
-   \else
-    \chapter*{\LargeF\abstractname} %% abstract
-   \fi  
-  \noindent\englishabstractheaderbox
-  \hspace*{}
-  \noindent
+\newenvironment{generalabstract}[3]{
+  \if@openright\cleardoublepage\else\clearpage\fi%
+    \gdef\@generalabstractbkeywords{#3}
+    \gdef\@generalabstracttitulo{#2}
+  \begin{otherlanguage}{#1}
+    \ifgeneralabstract
+      \chapter*{\LargeF\generalabstractname} %% general abstract
+    \else
+      \chapter*{\LargeF\abstractname}        %% abstract
+    \fi  
+    \noindent\generalabstractbheaderbox
+    \hspace{}
+    \noindent
 }{\par\vspace{8mm}
-  \noindent\textbf{\keywordsname:}~\@englishkeywords.
+  \noindent\textbf{\keywordsname:}~\@generalabstractbkeywords.
   \end{otherlanguage}
 }
 
