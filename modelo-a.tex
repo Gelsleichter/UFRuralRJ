@@ -1,23 +1,15 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Modelo de dissertação - Humanas
+% Modelo de dissertação com texto corrido
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\listfiles
 
 %% Tipo de documento e a classe a ser usada para sua formatação.
 \documentclass[diss]{UFRuralRJ}
-
-%% Um tipo específico de monografia pode ser informado como parâmetro opcional:
-%\documentclass[tese]{UFRuralRJ}
-%% A opção 'openright' força inícios de capítulos em páginas ímpares
-%\documentclass[openright]{UFRuralRJ}
-
-%% Use a opção 'twoside' para gerar uma versão frente-e-verso
-%\documentclass[twoside]{UFRuralRJ}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Pacote para gerar bibliografia segundo NBR6023
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\usepackage[alf]{abntex2cite}
+
 %%==============================================================================
 %% Pacotes - língua, codificação e fonte
 %%==============================================================================
@@ -54,8 +46,6 @@
 %% 2011-02-05  6.82a. 'hidelinks' retira os retângulos do entorno das palavras
 %% com links.
 
-
-
 \usepackage[%hidelinks%, 
            bookmarksopen=true,linktoc=none,colorlinks=true,
            linkcolor=blue,citecolor=blue,filecolor=magenta,urlcolor=blue,
@@ -65,9 +55,9 @@
             pdfkeywords={LaTeX, UFRuralRJ, Documentos acadêmicos}
             ]{hyperref}
 
-%%TODO: Margens conforme MDT UFSM 7ª edição. Corrigir no arquivo UFRuralRJ.cls 
-%%      para funcionar a opção twoside *PENDENTE*
+%% Definição das margens
 \usepackage[inner = 30mm, outer = 20mm, top = 30mm, bottom = 20mm]{geometry}
+
 %% Se o pacote 'hyperref' acima foi carregado, a linha abaixo corrige um bug na 
 %% hora de montar o sumário da lista de figuras e tabelas. Comente a linha se o
 %% pacote 'hyperref' não foi carregado.
@@ -96,21 +86,14 @@
 %%==============================================================================
 %% Identificação do trabalho
 %%==============================================================================
-
-\title{Princípio de Hume: Possibilidade de uma Filosofia (Neo) Fregeana da Aritmética?} %% Título em português
-\titleENG{Hume's Principle: Possibility of a (Neo) Fregean Philosophy of Arithmetic?} %% Título em inglês
+\titulo{Princípio de Hume: Possibilidade de uma Filosofia (Neo) Fregeana da Aritmética?} %% Título em português
 \author{Duarte}{Alessandro Bandeira} %% Autor: sobrenome, nome
-%\autoratrue %% No caso de uma AUTORA
 \instituto{Instituto de Ciências Humanas e Sociais} %% Instituto
-\curso{Curso de Pós-Graduação em Filosofia} %% Curso de pós-graduação (com a área de concentração?)
-                                        %% Ex.: Curso de Pós-Graduação em Agronomia - Ciência do Solo
-%\altCurso{Curso de Pós-Graduação em Filosofia} %% Curso de pós-graduação sem a área de concentração
-\area{Filosofia} %% Área de concentração.
-\grau{Mestre em Filosofia} %% Grau obtido (geral)
-\altGrau{Mestrado em Filosofia} %% Grau obtido (específico). Ex.: Doutorado em Agronomia, Ciência do Solo
-\altGrauENG{Master of Philosophy} %% Grau obtido (específico) em inglês. Ex.: Doctor of Science in Agronomy, Soil Science
-\trabalhoNumero{} %% Número do trabalho de graduação - deixar em branco para mestrado
-\local{Serop\'edica}{RJ}{Brasil} %% Cidade, estado, país
+\curso{Curso de Pós-Graduação em Filosofia} %% Curso de pós-graduação
+\area{Filosofia} %% Área de concentração
+\grau{Mestre em Filosofia} %% Grau obtido
+\nivel{Mestrado em Filosofia} %% Nível do curso
+\local{Serop\'edica}{RJ}{Brasil} %% Local da defesa
 
 %%==============================================================================
 %% Identificação dos orientadores
@@ -139,14 +122,6 @@
 %\committee[Dr.]{Banca}{Outro Melhor Integrante da}{MEFR} %% Examinador
 \date{30}{Fevereiro}{2016} %% Data da defesa
 
-%%==============================================================================
-%% Outros itens
-%%==============================================================================
-
-\keyword{Frege}                 %% Palavra chave 1 (português)
-\keyword{Princípios de Abstração}             %% Palavra chave 2 (português)
-\keyword{Princípio de Hume} %% Palavra chave 3 (português)
-%\keyword{teste}
 %%==============================================================================
 %% Início do documento
 %%==============================================================================
@@ -196,13 +171,17 @@
 
 \noindent Agradeço à minha família que me apoiou em todos os momentos difíceis;\\ 
 à Eleonora, pela paciência e carinho; \\
-a Stefano Stival, Michael Pontes e Luciano da Silva pelas nossas conversas informais que edificaram muitas idéias; \\
+a Stefano Stival, Michael Pontes e Luciano da Silva pelas nossas conversas 
+informais que edificaram muitas idéias; \\
 a Flávio Esteves, por sua grande amizade; \\
 ao meu grande amigo José Rubens que mesmo distante sempre teve uma palavra amiga; \\
-aos Profs. Drs. Luiz Carlos P. D. Pereira e Danilo Marcondes de Souza Filho que se dispuseram a participar da Banca Examinadora; \\
+aos Profs. Drs. Luiz Carlos P. D. Pereira e Danilo Marcondes de Souza Filho que
+se dispuseram a participar da Banca Examinadora; \\
 ao Prof. Dr. Marco Ruffino, pela sua amizade; \\
-aos Profs. Drs. Richard Heck, Christian Thiel e Gottfried Gabriel pela colaboração e atenção sobre a tradução da carta de Frege a Russell (28/7/1902); \\
-finalmente, ao meu orientador Prof. Dr. Oswaldo Chateaubriand pela sua pela orientação e paciência.
+aos Profs. Drs. Richard Heck, Christian Thiel e Gottfried Gabriel pela 
+colaboração e atenção sobre a tradução da carta de Frege a Russell (28/7/1902); \\
+finalmente, ao meu orientador Prof. Dr. Oswaldo Chateaubriand pela sua pela 
+orientação e paciência.
 
 %%=============================================================================
 %% Biografia (opcional)
@@ -224,25 +203,40 @@ Autor desconhecido
 %%==============================================================================
 %% Resumo geral (português)
 %%==============================================================================
+\def\tituloportugues{Princípio de Hume: Possibilidade de uma Filosofia (Neo) Fregeana da Aritmética?}
+\def\chavesportugues{Frege, Princípios de Abstração, Princípio de Hume} %% Palavras-chave em português
 
 %\generalabstracttrue
-\begin{abstract}
-A dissertação apresenta e discute as idéias desenvolvidas por Crispin Wright no livro \textit{Frege’s Conception of Numbers as Objects} (1983), em particular, a tese segundo a qual a aritmética é analítica. Wright deposita toda sua força argumentativa (em relação à analiticidade da aritmética) na derivação dos axiomas da aritmética de segunda ordem de Dedekind-Peano a partir do Princípio de Hume. Assim, é nosso principal objetivo apresentar e discutir em que medida o Princípio de Hume é capaz de fornecer, segundo Wright, um relato da analiticidade da aritmética, assim como, as objeções a esse relato.
-\end{abstract}
+\begin{generalabstract}{brazilian}{\tituloportugues}{\chavesportugues} %% Resumo geral em português
+  A dissertação apresenta e discute as idéias desenvolvidas por Crispin Wright 
+  no livro \textit{Frege’s Conception of Numbers as Objects} (1983), em 
+  particular, a tese segundo a qual a aritmética é analítica. Wright deposita 
+  toda sua força argumentativa (em relação à analiticidade da aritmética) na 
+  derivação dos axiomas da aritmética de segunda ordem de Dedekind-Peano a 
+  partir do Princípio de Hume. Assim, é nosso principal objetivo apresentar e 
+  discutir em que medida o Princípio de Hume é capaz de fornecer, segundo 
+  Wright, um relato da analiticidade da aritmética, assim como, as objeções a 
+  esse relato.
+\end{generalabstract}
 
 %%==============================================================================
 %% General abstract (inglês)
 %%==============================================================================
+\def\tituloingles{Hume's Principle: Possibility of a (Neo) Fregean Philosophy 
+  of Arithmetic?} %% Título em inglês
+\def\chavesingles{Frege, Abstraction Principles, Hume's Principle} %% Palavras-chave em inglês
 
 %\generalabstracttrue
-\begin{englishabstract}
-{Hume's Principle: Possibility of a (Neo) Fregean Philosophy of Arithmetic?} %% Título do trabalho
-{Curso de Pós-Graduação em Filosofia} %% Curso de pós-graduação
-{Frege, Abstraction Principles, Hume's Principle} %% Palavras-chave
-{November} %% Mês
-{th} %% Sigla do dia
-The dissertation presents and discusses the ideas developed by Crispin Wright in his book \textit{Frege's Conception of Numbers as Objects} (1983), in particular his thesis that arithmetic is analytic. Wright concentrates all his argumentative efforts (in relation to the analyticity of arithmetic) on the derivation of the axioms of Dedekind-Peano's second order arithmetic from Hume's Principle. Thus, it is our main goal to present and discuss how Hume's Principle provides, according to Wright, an explanation of the analytic character of arithmetic as well as some objections to this account.
-\end{englishabstract}
+\begin{generalabstract}{english}{\tituloingles}{\chavesingles} %% Resumo geral em inglês
+  The dissertation presents and discusses the ideas developed by Crispin Wright
+  in his book \textit{Frege's Conception of Numbers as Objects} (1983), in 
+  particular his thesis that arithmetic is analytic. Wright concentrates all 
+  his argumentative efforts (in relation to the analyticity of arithmetic) on 
+  the derivation of the axioms of Dedekind-Peano's second order arithmetic from
+  Hume's Principle. Thus, it is our main goal to present and discuss how Hume's 
+  Principle provides, according to Wright, an explanation of the analytic 
+  character of arithmetic as well as some objections to this account.
+\end{generalabstract}
 
 %%=============================================================================
 %% Listas (comentar se não houver) e sumário
