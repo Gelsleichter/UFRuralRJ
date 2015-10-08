@@ -57,9 +57,9 @@
             pdfkeywords={LaTeX, UFRuralRJ, Documentos acadêmicos}
             ]{hyperref}
 
-%%TODO: Margens conforme MDT UFSM 7ª edição. Corrigir no arquivo UFRuralRJ.cls 
-%%      para funcionar a opção twoside *PENDENTE*
+%% Definição das margens
 \usepackage[inner = 30mm, outer = 20mm, top = 30mm, bottom = 20mm]{geometry}
+
 %% Se o pacote 'hyperref' acima foi carregado, a linha abaixo corrige um bug na 
 %% hora de montar o sumário da lista de figuras e tabelas. Comente a linha se o
 %% pacote 'hyperref' não foi carregado.
@@ -82,27 +82,21 @@
 %% Pacotes - outros
 %%==============================================================================
 
-\usepackage{blindtext}                %% Amostra de texto (\blindtext[1])
-%\usepackage{fix-cm} %% Tamanho das fontes da capa (já é carregado pelo pacote)
+\usepackage{blindtext} %% Amostra de texto (\blindtext[1])
 
 %%==============================================================================
 %% Identificação do trabalho
 %%==============================================================================
 
-\title{Este título é muito legal para uma tese escrita em português} %% Título em português
-\titleENG{This is a cool title for a thesis written in Portuguese} %% Título em inglês
-\author{Rural}{Nome do Melhor Estudante da} %% Autor: sobrenome, nome
+\titulo{Este título é muito legal para uma tese escrita em português} %% Título
+\author{Rural}{Nome da Melhor Estudante da} %% Autor: sobrenome, nome
 \autoratrue %% No caso de uma AUTORA
 \instituto{Instituto da Rural} %% Instituto
-\curso{Curso de Pós-Graduação da Rural} %% Curso de pós-graduação (com a área de concentração?)
-                                        %% Ex.: Curso de Pós-Graduação em Agronomia - Ciência do Solo
-%\altCurso{Curso de Pós-Graduação da Rural} %% Curso de pós-graduação sem a área de concentração
-\area{Ciências} %% Área de concentração.
-\grau{Doutor em Ciências} %% Grau obtido (geral)
-\altGrau{Doutorado em Ciências} %% Grau obtido (específico). Ex.: Doutorado em Agronomia, Ciência do Solo
-\altGrauENG{Doctor of Science} %% Grau obtido (específico) em inglês. Ex.: Doctor of Science in Agronomy, Soil Science
-\trabalhoNumero{} %% Número do trabalho de graduação - deixar em branco para mestrado
-\local{Serop\'edica}{RJ}{Brasil} %% Cidade, estado, país
+\curso{Curso de Pós-Graduação da Rural} %% Curso de pós-graduação
+\area{Ciências} %% Área de concentração
+\grau{Doutor em Ciências} %% Grau obtido
+\nivel{Doutorado em Ciências} %% Nível do curso de pós-graduação
+\local{Serop\'edica}{RJ}{Brasil} %% Local da defesa
 
 %%==============================================================================
 %% Identificação dos orientadores
@@ -215,7 +209,7 @@ Autor desconhecido
 %%==============================================================================
 %% Resumo geral (português)
 %%==============================================================================
-
+\titleENG{This is a cool title for a thesis written in Portuguese} %% Título em inglês
 \generalabstracttrue
 \begin{abstract}
 Este é o resumo em português de minha tese escrita em português. Claramente, 
