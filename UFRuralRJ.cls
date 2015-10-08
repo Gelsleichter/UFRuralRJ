@@ -755,20 +755,22 @@
 
 \newenvironment{chapterabstract}[2]{
   \if@openright\cleardoublepage\else\clearpage\fi
-  \gdef\@mykeywords{#2}
+    \gdef\@mykeywords{#2}
   \begin{otherlanguage}{#1}
-  \setlength{\baselineskip}{0.67\baselineskip} %% Espaçamento simples
-  \vspace*{-14mm} %% Alinhamento superior
-  \vspace*{10mm}  %% Coloca o resumo a 10 mm da margem superior
-  \section*{\centering\MakeUppercase{\abstractname}} %% Título centralizado
-  %% Adiciona o resumo ao sumário sem numerar seção
-  % NOTA: Há incompatibilidade entre \MakeUppercase e \addcontentsline
-  %\addcontentsline{toc}{section}{\MakeUppercase{\abstractname}}
-  \addcontentsline{toc}{section}{\uppercase{\abstractname}}
-  \vspace{2mm} %% Espaço do título até o corpo do texto
-  \parindent0em
+    \setlength{\baselineskip}{0.67\baselineskip} %% Espaçamento simples
+    \vspace*{-14mm} %% Alinhamento superior
+    \vspace*{10mm}  %% Coloca o resumo a 10 mm da margem superior
+    \section*{\centering\MakeUppercase{\abstractname}} %% Título centralizado
+    %% Adiciona o resumo ao sumário sem numerar seção
+    % NOTA: Há incompatibilidade entre \MakeUppercase e \addcontentsline
+    %\addcontentsline{toc}{section}{\MakeUppercase{\abstractname}}
+    \addcontentsline{toc}{section}{\uppercase{\abstractname}}
+    \vspace{2mm} %% Espaço do título até o corpo do texto
+    \parindent0em
 }{\par\vspace{6mm} %% Espaço do corpo do texto até as palavras-chave
-  \noindent\textbf{\keywordsname:}~\@mykeywords. %% Inserir as palavras-chave
+  \begin{minipage}{\textwidth}
+    \noindent\textbf{\keywordsname:}~\@mykeywords. %% Inserir as palavras-chave
+  \end{minipage}
   \end{otherlanguage}
 }
 
