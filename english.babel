@@ -40,7 +40,7 @@
 \def\keywordsname{Keywords}%
 \def\cipcaption{CIP -- CATALOGING-IN-PUBLICATION}%
 \def\byname{by}%
-\def\aprovadaem{approved in}%
+\def\aprovadoem{Document approved in}%
 \def\soborienta{\textit{Under~the~supervision~of}}%
 \def\sobcoorienta{\textit{and~co-supervision~of}}%
 \def\and{and}%

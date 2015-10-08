@@ -41,7 +41,7 @@
 \def\keywordsname{Palavras-chave}%
 \def\cipcaption{CIP -- CATALOGA{\c{C}}{\~A}O NA PUBLICA{\c{C}}{\~A}O}%
 \def\byname{por}%
-\def\aprovadaem{aprovado(a) em}%
+\def\aprovadoem{Documento aprovado em}%
 \def\soborienta{\textit{Sob orienta\c{c}{\~a}o~de}}%
 \def\sobcoorienta{\textit{e co-orienta\c{c}{\~a}o~de}}%
 \def\and{e}%
