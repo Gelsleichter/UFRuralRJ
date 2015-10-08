@@ -556,7 +556,8 @@
 \newcommand{\approvecommitteeinfo}{%
   \vfill
   \parbox[t]{\textwidth}{
-    \MakeUppercase{\doctypename~\aprovadaem~\@date.}
+%     \MakeUppercase{\doctypename~\aprovadaem~\@date.}
+    \MakeUppercase{\aprovadoem~\@date.}
     }
     \vfill
     \vspace{18mm}
@@ -996,7 +997,6 @@
     \twocolumn
   \fi
 }
-
 
 \renewcommand{\appendix}[1][\appendixname]{%
         \chapfalse
