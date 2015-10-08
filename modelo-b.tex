@@ -117,33 +117,14 @@
 \date{30}{Fevereiro}{2016} %% Data da defesa
 
 %%==============================================================================
-%% Outros itens
-%%==============================================================================
-
-\keyword{LaTeX}                 %% Palavra chave 1 (português)
-\keyword{UFRuralRJ}             %% Palavra chave 2 (português)
-\keyword{Documentos acadêmicos} %% Palavra chave 3 (português)
-
-%%==============================================================================
 %% Início do documento
 %%==============================================================================
 \begin{document}
+
 %%==============================================================================
 %% Capa e folha de rosto
 %%==============================================================================
 \maketitle
-
-%%==============================================================================
-%% Ficha catalográfica
-%%==============================================================================
-%% Como a CIP vai ser impressa atrás da página de rosto, as margens 'inner' e 
-%% 'outer' devem ser invertidas.
-%\newgeometry{inner=20mm,outer=30mm,top=30mm,bottom=20mm}
-%\makeCIP{alessandrosamuel@yahoo.com.br} %% email do autor		
-%\restoregeometry
-%Se for usar a catalogação gerada pelo gerador do site da biblioteca comentar as
-%linhas acima e utilizar o comando abaixo
-%\includeCIP{CIP.pdf}
 
 %%=============================================================================
 % Folha de aprovação
@@ -153,7 +134,6 @@
 %%=============================================================================
 %% Dedicatória (opcional)
 %%=============================================================================
-
 \clearpage\mbox{}\vfill\hspace{80mm}
 \begin{minipage}{76mm}
   \begin{flushright}
@@ -168,7 +148,6 @@
 %%=============================================================================
 %% Agradecimentos (opcional)
 %%=============================================================================
-
 \chapter*{Agradecimentos}
 
 À Universidade Federal Rural do Rio de Janeiro (UFRuralRJ).
@@ -183,14 +162,12 @@ trabalho.
 %%=============================================================================
 %% Biografia (opcional)
 %%=============================================================================
-
 \chapter*{Biografia}
 O autor nasceu, cresceu e escreveu uma tese.
 
 %%=============================================================================
 %% Epígrafe (opcional)
 %%=============================================================================
-
 \clearpage\mbox{}\vfill\hspace{80mm}\begin{minipage}{76mm}\begin{flushright}{\em
 ``Fazer é a melhor forma de dizer.''
 \par
@@ -200,13 +177,14 @@ Autor desconhecido
 %%==============================================================================
 %% Resumo geral (português)
 %%==============================================================================
-\titleENG{This is a cool title for a thesis written in Portuguese} %% Título em inglês
-\generalabstracttrue
-\begin{abstract}
-Este é o resumo em português de minha tese escrita em português. Claramente, 
-este é o melhor resumo que já foi escrito em um documento acadêmico produzido na
-UFRuralRJ.
-\end{abstract}
+\def\tituloportugues{Este título é muito legal para uma tese escrita em português} %% Título em português
+\def\chavesportugues{LaTeX, UFRuralRJ, Documentos acadêmicos} %% Palavras-chave em português
+\generalabstracttrue %% Usar para o caso de um RESUMO GERAL
+\begin{generalabstract}{brazilian}{\tituloportugues}{\chavesportugues} %% Resumo geral em português
+  Este é o resumo em português de minha tese escrita em português. Claramente, 
+  este é o melhor resumo que já foi escrito em um documento acadêmico produzido
+  na UFRuralRJ.
+\end{generalabstract}
 
 %%==============================================================================
 %% General abstract (inglês)
