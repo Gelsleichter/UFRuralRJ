@@ -349,29 +349,29 @@
 %% Capa
 %%=============================================================================
 
-\newcommand{\thetitlepage}{ 
+\newcommand{\thetitlepage}{
   \noindent
   \parbox[t]{\textwidth}{
     \centering
-    \setlength{\baselineskip}{2.0\baselineskip} % Espaçamento duplo.
-    \vspace{6mm} % Espaço vertical de 6 mm.
-    {\LargeA\textbf{\MakeUppercase{\ufrrjSigla}}}\\ % Universidade, fonte 24 pts
-    {\LargeC\textbf{\MakeUppercase{\@instituto}}}\\ % Instituto, fonte 18 pts
-    {\LargeC\textbf{\MakeUppercase{\@curso}}}\\ % Curso, fonte 18 pts
-    \setlength{\baselineskip}{0.5\baselineskip} % Espaçamento simples
-    \vspace{28mm} % Espaço vertical de 28 mm
+    \setlength{\baselineskip}{2.0\baselineskip}     % Espaçamento duplo.
+    \vspace{6mm}
+    {\LargeA\textbf{\MakeUppercase{\ufrrjcurto}}}\\ % Universidade
+    {\LargeC\textbf{\MakeUppercase{\@instituto}}}\\ % Instituto
+    {\LargeC\textbf{\MakeUppercase{\@curso}}}\\     % Curso
+    \setlength{\baselineskip}{0.5\baselineskip}     % Espaçamento simples
+    \vspace{28mm}
       \parbox[t]{\textwidth}{
 	\centering
 	% Identificação do tipo de documento colocado 28 mm abaixo do cabeçalho
 	\centerline{\LargeC\textbf{\MakeUppercase{\doctypename}}}
-	\vspace{14mm} % Espaço vertical de 14 mm
+	\vspace{14mm}
 	\setlength{\baselineskip}{2.0\baselineskip} % Espaçamento duplo
-	{\LargeB\textbf{\@title}}\\ % Título do documento
+	{\LargeB\textbf{\@titulo}}\\                % Título do documento
 	\setlength{\baselineskip}{0.5\baselineskip} % Espaçamento simples
-	\vspace{35mm} % Espaço vertical de 35 mm
-	\centerline{\LargeC\textbf{\@authora}} % Autor, Fonte 18 pontos
-	\vspace{20mm} % Espaço vertical de 20 mm
-	\centerline{\LargeD\textbf{\@publyear}} % Ano de publicação
+	\vspace{35mm}
+	\centerline{\LargeC\textbf{\@authora}}      % Autor, Fonte 18 pontos
+	\vspace{20mm}
+	\centerline{\LargeD\textbf{\@publyear}}     % Ano de publicação
       }
   }
 }
