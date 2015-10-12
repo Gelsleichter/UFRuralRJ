@@ -156,7 +156,7 @@
 \LoadClass[12pt,a4paper,oneside]{report}
 \RequirePackage[english,brazilian]{babel}
 \input{brazilian.babel} %% definições para textos em português
-\input{english.babel}   %% definições para textos em inglês
+\input{english.babel} %% definições para textos em inglês
 \if@english
   \selectlanguage{english}
   \AtBeginDocument{\selectlanguage{english}}
@@ -164,9 +164,9 @@
 \RequirePackage{lastpage}
 \RequirePackage{indentfirst} 
 \RequirePackage{natbib}
-\RequirePackage{eso-pic}%para importar arquivos .pdf (catalogação \includeCIP{})
+\RequirePackage{eso-pic} % para importar arquivos .pdf (catalogação \includeCIP{})
 \RequirePackage{color, xcolor}
-\RequirePackage{fix-cm}%para funcionar corretamente o tamanho das fontes da capa
+\RequirePackage{fix-cm} % para funcionar corretamente o tamanho das fontes da capa
 
 %%=============================================================================
 %% Margens do texto
@@ -214,6 +214,14 @@
   \def\@evenhead{{\small\thepage}}
   \def\@oddhead{\hspace*{\fill}{\small\thepage}}
 }
+
+%% Canto direito inferior
+% \def\ps@UFRuralRJ{
+%   \def\@oddfoot{\hspace*{\fill}{\small\thepage}}
+%   \def\@evenfoot{{\small\thepage}}
+%   \let\@evenhead\@empty
+%   \let\@oddhead\@empty
+% }
 
 \pagestyle{empty}
 \let\ps@plain\ps@empty
