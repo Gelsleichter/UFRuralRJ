@@ -1,3 +1,14 @@
+# Versão 0.3 (08-Out-2015)
+* Novo ambiente `\generalabstract` para construir o resumo geral usando 
+  informações sobre a língua escolhida para o documento (pacote babel);
+* Informações sobre os diferentes tipos de documentos acadêmicos agora são 
+  definidas automaticamente conforme a língua escolhida usando o pacote babel;
+* Alguns comandos foram redefinidos usando uma escrita em língua portuguesa
+  para facilitar o uso da classe por alunos que não dominam a língua inglesa,
+  comumente usada para a definição dos comandos.
+* Dois exemplos estão disponíveis: um em texto corrido, o outro com capítulos
+  individuais.
+
 # Versão 0.2 (16-Jun-2015)
 * As palavras-chave em português são separadas por vírgula;
 * O comando `\altCurso{}`, usado para fornecer um nome alternativo para o curso,
