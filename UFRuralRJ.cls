@@ -133,7 +133,7 @@
 \newcommand\LargeF{\@setfontsize\LargeF{12pt}{12.1pt}}
 
 %% Definições de gênero
-\newif\ifautora      %% 'autora' em vez de 'autor'
+\newif\ifautora %% 'autora' em vez de 'autor'
 \newif\iforientadora %% 'orientadora' em vez de 'orientador'
 % \newif\ifcoorientadora %% 'co-orientadora' em vez de 'co-orientador'. Obsoleto
 
@@ -408,7 +408,7 @@
   \parbox[t]{\textwidth}{
     \centering
     \includegraphics[width=25mm]{logomarca}\\         % Logomarca colorida
-    {\LargeE\textbf{\MakeUppercase{\ufrrjlongo}}}\\        % Universidade
+    {\LargeE\textbf{\MakeUppercase{\ufrrjlongo}}}\\   % Universidade
     {\LargeE\textbf{\MakeUppercase{\@instituto}}}\\   % Instituto
     {\LargeE\textbf{\MakeUppercase{\@curso}}}\\[25mm] % Curso
     {\LargeE\textbf{\MakeUppercase{\@titulo}}}\par    % Título
@@ -809,55 +809,58 @@
   %% Colocar título dos itens principais do documento a 10 mm da margem superior
   \vspace*{5.5mm} 
   \ifchap
-  %% Colocar o termo 'CAPÍTULO' 20 mm abaixo da margem superior
-  \ifartigo\vspace*{8mm}\else\vspace*{0mm}\fi
-  \reset@font\noindent{\ifartigo
-  %% Esta é uma solução rápida e suja para ajustar a numeração dos capítulos 
-  %% conforme o Manual da UFRuralRJ. Segundo o Manual, os capítulos ou artigos 
-  %% devem receber a numeração sequencial do sumário, mas também a palavra
-  %% 'CAPÍTULO' seguida do número do capítulo ou artigo usando algarismos 
-  %% romanos.
-  \ii@chapterfont
-  \centering\textbf{\@chapapp\thechapter~\MakeUppercase{\chaptername}~
-  \addtocounter{chapter}{-1}\Roman{chapter}\\
-  \addtocounter{chapter}{+1}
-  \vspace*{20mm}
-  \hspace{0.5em}\MakeUppercase{#1}}
-  \else
-    \LargeF\centering\textbf{\@chapapp\thechapter\hspace{0.5em}
-      \MakeUppercase{#1}}
-  \fi
-  \par}
+    %% Colocar o termo 'CAPÍTULO' 20 mm abaixo da margem superior
+    \ifartigo\vspace*{8mm}\else\vspace*{0mm}\fi
+    \reset@font\noindent{
+    \ifartigo
+      %% Esta é uma solução rápida e suja para ajustar a numeração dos capítulos 
+      %% conforme o Manual da UFRuralRJ. Segundo o Manual, os capítulos ou artigos 
+      %% devem receber a numeração sequencial do sumário, mas também a palavra
+      %% 'CAPÍTULO' seguida do número do capítulo ou artigo usando algarismos 
+      %% romanos.
+      \ii@chapterfont
+      \centering\textbf{\@chapapp\thechapter~\MakeUppercase{\chaptername}~
+      \addtocounter{chapter}{-1}\Roman{chapter}\\
+      \addtocounter{chapter}{+1}
+      \vspace*{20mm}
+      \hspace{0.5em}\MakeUppercase{#1}}
+    \else
+      \LargeF\centering\textbf{\@chapapp\thechapter\hspace{0.5em}\MakeUppercase{#1}}
+    \fi
+    \par}
   \else
     %\@setfontsize\Large{12}{20} se for o padrão da seção
     \reset@font\noindent{\ii@chapterfont\centering\textbf{
-      \MakeUppercase{\@chapapp}\thechapter\hspace{0.5em}-- #1}\par}
+      \MakeUppercase{\@chapapp}
+        \thechapter\hspace{0.5em}--\hspace{0.5em}\MakeUppercase{#1}}\par}
   \fi
   \ifappendix
     \addcontentsline{loap}{section}{
-      \MakeUppercase{\@chapapp}\thechapter\hspace{0.5em}-- #1}
+      \MakeUppercase{\@chapapp}
+        \thechapter\hspace{0.5em}--\hspace{0.5em}\MakeUppercase{#1}}
   \fi
   \ifannex
     \addcontentsline{loan}{section}{
-      \MakeUppercase{\@chapapp}\thechapter\hspace{0.5em}-- #1}
+      \MakeUppercase{\@chapapp}
+        \thechapter\hspace{0.5em}--\hspace{0.5em}\MakeUppercase{#1}}
   \fi
   \addvspace{25pt}
 }
 
 %% Formatação da versão estrelada (*) dos capítulos
 \def\@schapter#1{%
-        %% ASR: \hspace*{0.35em} é uma solução rápida e suja para deixar todo 
-        %%      mundo alinhado na toc
-        \ifchap\if@aftertoc\addcontentsline{toc}{chapter}{\hspace*{0.35em}#1}\fi\fi%
-        \addtocontents{lof}{\protect\addvspace{0\p@}}%Original = 10\p@
-        \addtocontents{lot}{\protect\addvspace{0\p@}}%
-        \@makeschapterhead{#1}\@afterheading
+  %% ASR: \hspace*{0.35em} é uma solução rápida e suja para deixar todo 
+  %%      mundo alinhado na toc
+  \ifchap\if@aftertoc\addcontentsline{toc}{chapter}{\hspace*{0.35em}#1}\fi\fi%
+  \addtocontents{lof}{\protect\addvspace{0\p@}}%Original = 10\p@
+  \addtocontents{lot}{\protect\addvspace{0\p@}}%
+  \@makeschapterhead{#1}\@afterheading
 }
 
 \def\@makeschapterhead#1{%
-	\vspace*{5mm}
-	\reset@font\centerline{\LargeF\centering\textbf{\MakeUppercase{#1}}}
-        \addvspace{25pt}
+  \vspace*{5mm}
+  \reset@font\centerline{\LargeF\centering\textbf{\MakeUppercase{#1}}}
+  \addvspace{25pt}
 }
 
 %%==============================================================================
@@ -973,18 +976,16 @@
   \if@openright\cleardoublepage\else\clearpage\fi
   \thispagestyle{plain}%
   \if@twocolumn\onecolumn\@tempswatrue\else\@tempswafalse\fi
-	\if@hyperLoaded
-	  \phantomsection
-	\fi
+  \if@hyperLoaded\phantomsection\fi
   \null\vfil
   \markboth{}{}%
   {\centering
    \interlinepenalty \@M
    \normalfont
-   \LargeF \bfseries \MakeUppercase\appendixsname\par}%
-   %% ASR: \hspace*{0.35em} é uma solução rápida e suja para deixar todo 
-   %%      mundo alinhado na toc
-   \addcontentsline{toc}{chapter}{\hspace*{0.35em}\appendixsname}	
+   \LargeE\bfseries\MakeUppercase\appendixname\par}%
+  %% ASR: \hspace*{0.35em} é uma solução rápida e suja para deixar todo 
+  %%      mundo alinhado na toc
+  \addcontentsline{toc}{chapter}{\hspace*{0.35em}\appendixname}	
   \vfil\newpage
   \if@twoside
     \if@openright
@@ -999,30 +1000,30 @@
 }
 
 \renewcommand{\appendix}[1][\appendixname]{%
-        \chapfalse
-	\appendixtrue
-	\annexfalse
-	\appendixpage
-        \setcounter{chapter}{0}%
-	\setcounter{section}{0}%
-        \renewcommand{\thechapter}{\LargeF\Alph{chapter}}%
-        \setcounter{tocdepth}{0}%
-        \@captionlistingfalse%
-        \gdef\@chapapp{#1\space}%
+  \chapfalse
+  \appendixtrue
+  \annexfalse
+  \appendixpage
+  \setcounter{chapter}{0}%
+  \setcounter{section}{0}%
+  \renewcommand{\thechapter}{\LargeF\Alph{chapter}}%
+  \setcounter{tocdepth}{0}%
+  \@captionlistingfalse%
+  \gdef\@chapapp{\LargeF#1\space}%
 }
 
 \newcommand\listofappendix{%
-    \if@twocolumn
-      \@restonecoltrue\onecolumn
-    \else
-      \@restonecolfalse
-    \fi
-    \chapter*{\LargeF\listappendixname}%
-      \@mkboth{%
-          \MakeUppercase\listappendixname}%
-         {\MakeUppercase\listappendixname}%
-    \@starttoc{loap}%
-    \if@restonecol\twocolumn\fi
+  \if@twocolumn
+    \@restonecoltrue\onecolumn
+  \else
+    \@restonecolfalse
+  \fi
+  \chapter*{\LargeF\listappendixname}%
+    \@mkboth{%
+        \MakeUppercase\listappendixname}%
+       {\MakeUppercase\listappendixname}%
+  \@starttoc{loap}%
+  \if@restonecol\twocolumn\fi
 }
 
 %%==============================================================================
@@ -1041,10 +1042,10 @@
   {\centering
    \interlinepenalty \@M
    \normalfont
-   \LargeF \bfseries \MakeUppercase\annexsname\par}%
+   \LargeF \bfseries \MakeUppercase\annexname\par}%
    %% ASR: \hspace*{0.35em} é uma solução rápida e suja para deixar todo 
    %%      mundo alinhado na toc
-   \addcontentsline{toc}{chapter}{\hspace*{0.35em}\annexsname}
+   \addcontentsline{toc}{chapter}{\hspace*{0.35em}\annexname}
   \vfil\newpage
   \if@twoside
     \if@openright
