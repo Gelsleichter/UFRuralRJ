@@ -58,8 +58,6 @@ Dissertation presented in partial fulfilment of the requirements for the degree
 of \textbf{\@grau}, \@curso, {\'A}rea de Concentra\c{c}{\~a}o em \@area.
 }%
 
-
-
 \def\planodoutoradospecificinfo{PhD Work Plan}%
 \def\proptesename{Ph.D. Thesis Proposal}%
 \def\proptesespecificinfo{Ph.D. Thesis Proposal}%

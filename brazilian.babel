@@ -60,10 +60,6 @@ do grau de \textbf{\@grau}, \@curso, \'{A}rea de Concentra{\c{c}}{\~a}o em
 \@area.
 }%
 
-
-
-
-
 \def\planodoutoradospecificinfo{Plano de Curso para Doutorado}%
 \def\proptesespecificinfo{Proposta de Tese de Doutorado}%
 \def\tgname{Trabalho de Graduação}%
