@@ -56,7 +56,7 @@
             ]{hyperref}
 
 %% Definição das margens
-\usepackage[inner = 30mm, outer = 20mm, top = 30mm, bottom = 20mm]{geometry}
+% \usepackage[inner = 30mm, outer = 20mm, top = 30mm, bottom = 20mm]{geometry}
 
 %% Se o pacote 'hyperref' acima foi carregado, a linha abaixo corrige um bug na 
 %% hora de montar o sumário da lista de figuras e tabelas. Comente a linha se o
@@ -79,6 +79,8 @@
 %%==============================================================================
 %% Pacotes - outros
 %%==============================================================================
+
+% \usepackage{showframe}
 
 \usepackage{blindtext} %% Amostra de texto (\blindtext[1])
 
@@ -132,16 +134,15 @@
 %%=============================================================================
 %% Dedicatória (opcional)
 %%=============================================================================
-\clearpage\mbox{}\vfill\hspace{80mm}
-\begin{minipage}{76mm}
-  \begin{flushright}
-    {\em
-    Àqueles que financiaram meus estudos...
-    \par
-    ...DEDICO!
-    }
-  \end{flushright}
-\end{minipage}
+\chapter*{}
+\vfill
+\begin{flushright}
+  {\em
+  Àqueles que financiaram meus estudos...
+  \par
+  ...DEDICO!
+  }
+\end{flushright}
 
 %%=============================================================================
 %% Agradecimentos (opcional)
@@ -166,11 +167,15 @@ deste trabalho.}
 %%=============================================================================
 %% Epígrafe (opcional)
 %%=============================================================================
-\clearpage\mbox{}\vfill\hspace{80mm}\begin{minipage}{76mm}\begin{flushright}{\em
-``Fazer é a melhor forma de dizer.''
-\par
-Autor desconhecido
-}\end{flushright}\end{minipage}
+\chapter*{}
+\vfill
+\begin{flushright}
+  {\em
+  ``Fazer é a melhor forma de dizer.''
+  \par
+  Autor desconhecido
+  }
+\end{flushright}
 
 %%==============================================================================
 %% Resumo geral (português)

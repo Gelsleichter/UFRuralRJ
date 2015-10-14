@@ -124,6 +124,9 @@
 \newcommand{\trabalhoNumero}[1] {\gdef\@trabalhoNumero{#1}}
 \newcommand{\local}[3]{\gdef\@city{#1}\gdef\@state{#2}\gdef\@country{#3}}
 
+%% Institutos
+\def\IA{Instituto de Agronomia}
+
 %% Definição do tamanho da fonte
 \newcommand\LargeA{\@setfontsize\LargeA{24pt}{24.1pt}}
 \newcommand\LargeB{\@setfontsize\LargeB{20pt}{20.1pt}}
@@ -172,11 +175,25 @@
 %% Margens do texto
 %%=============================================================================
 
+%% Original
 \newlength{\mdt@topmargin}\setlength{\mdt@topmargin}{30mm}
-\newlength{\mdt@pagenummargin}\setlength{\mdt@pagenummargin}{20mm}
 \newlength{\mdt@bottommargin}\setlength{\mdt@bottommargin}{20mm}
+% \newlength{\mdt@pagenummargin}\setlength{\mdt@pagenummargin}{20mm}
 \newlength{\mdt@sidemargin}\setlength{\mdt@sidemargin}{30mm}
 \setlength{\marginparwidth}{25mm}
+
+%% MDT (margem interna diferente da margem externa)
+\newlength{\mdt@insidemargin}\setlength{\mdt@insidemargin}{30mm}
+\newlength{\mdt@outsidemargin}\setlength{\mdt@outsidemargin}{20mm}
+
+%% Otimizada
+%% Margens menores, todas elas de 25 mm. O número da página fica a
+%% 15 mm da borda da página.
+% \newlength{\mdt@topmargin}\setlength{\mdt@topmargin}{25mm}
+% \newlength{\mdt@bottommargin}\setlength{\mdt@bottommargin}{25mm}
+\newlength{\mdt@pagenummargin}\setlength{\mdt@pagenummargin}{15mm}
+% \newlength{\mdt@sidemargin}\setlength{\mdt@sidemargin}{25mm}
+
 
 %% Ajuste das medidas verticais
 \setlength{\topmargin}{\mdt@pagenummargin}
@@ -189,13 +206,18 @@
 \addtolength{\textheight}{-\mdt@topmargin}
 \addtolength{\textheight}{-\mdt@bottommargin}
 \setlength{\footskip}{\mdt@bottommargin}
+\addtolength{\footskip}{-\mdt@pagenummargin}
 
 %% Ajuste das medidas horizontais
-\setlength{\oddsidemargin}{\mdt@sidemargin}
+% \setlength{\oddsidemargin}{\mdt@sidemargin}
+\setlength{\oddsidemargin}{\mdt@insidemargin} %% MDR
 \addtolength{\oddsidemargin}{-1in}
-\setlength{\evensidemargin}{\oddsidemargin}
+% \setlength{\evensidemargin}{\oddsidemargin}
+\setlength{\evensidemargin}{\mdt@outsidemargin} %% MDT
 \setlength{\textwidth}{\paperwidth}
-\addtolength{\textwidth}{-2\mdt@sidemargin}
+% \addtolength{\textwidth}{-2\mdt@sidemargin}
+\addtolength{\textwidth}{-\mdt@insidemargin} %% MDT
+\addtolength{\textwidth}{-\mdt@outsidemargin} %% MDT
 \setlength{\marginparsep}{\mdt@sidemargin}
 \addtolength{\marginparsep}{-\marginparwidth}
 \setlength{\marginparsep}{.5\marginparsep}
@@ -206,22 +228,25 @@
 %%==============================================================================
 %% Numeração das páginas
 %%==============================================================================
+%% O número da página é colocado no canto superior direito porque a margem 
+%% superior, que é de 30 mm, possui mais espaço para acomodar o número da página
+%% do que a margem inferior, que é de 20 mm.
 
 %% Canto direito superior
-\def\ps@UFRuralRJ{
-  \let\@oddfoot\@empty
-  \let\@evenfoot\@empty
-  \def\@evenhead{{\small\thepage}}
-  \def\@oddhead{\hspace*{\fill}{\small\thepage}}
-}
+% \def\ps@UFRuralRJ{
+%   \let\@oddfoot\@empty
+%   \let\@evenfoot\@empty
+%   \def\@evenhead{{\small\thepage}}
+%   \def\@oddhead{\hspace*{\fill}{\small\thepage}}
+% }
 
 %% Canto direito inferior
-% \def\ps@UFRuralRJ{
-%   \def\@oddfoot{\hspace*{\fill}{\small\thepage}}
-%   \def\@evenfoot{{\small\thepage}}
-%   \let\@evenhead\@empty
-%   \let\@oddhead\@empty
-% }
+\def\ps@UFRuralRJ{
+  \def\@oddfoot{\hspace*{\fill}{\small\thepage}}
+  \def\@evenfoot{{\small\thepage}}
+  \let\@evenhead\@empty
+  \let\@oddhead\@empty
+}
 
 \pagestyle{empty}
 \let\ps@plain\ps@empty
@@ -330,7 +355,8 @@
 }
 \date{\monthname}{\number\year}
 
-% \newcommand{\dateingles}[2]{{#1}~$\text{\@publday}^{\text{#2}}$,~\@publyear} %% Obsoleto
+%% Obsoleto
+% \newcommand{\dateingles}[2]{{#1}~$\text{\@publday}^{\text{#2}}$,~\@publyear}
 
 %%=============================================================================
 %% Definições comuns à capa e à folha de rosto.
