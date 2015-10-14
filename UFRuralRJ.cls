@@ -126,6 +126,15 @@
 
 %% Institutos
 \def\IA{Instituto de Agronomia}
+\def\IB{Instituto de Ciências Biológicas e da Saúde}
+\def\ICE{Instituto de Ciências Exatas}
+\def\ICHS{Instituto de Ciências Humanas e Sociais}
+\def\IE{Instituto de Educação}
+\def\IF{Instituto de Florestas}
+\def\IM{Instituto Multidisciplinar}
+\def\IT{Instituto de Tecnologia}
+\def\IV{Instituto de Veterinária}
+\def\IZ{Instituto de Zootecnia}
 
 %% Definição do tamanho da fonte
 \newcommand\LargeA{\@setfontsize\LargeA{24pt}{24.1pt}}
