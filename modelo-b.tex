@@ -248,25 +248,33 @@ deste trabalho.}
 \setlength{\baselineskip}{\baselineskip}
 
 %%=============================================================================
-%% Referências
+%% Apêndices
 %%=============================================================================
+%% IMPORTANTE:
+%% O Manual da UFRRJ não prevê a inclusão de apêndices, mas apenas anexos. O 
+%% problema disso é que apêndices e anexos são completamente diferentes. 
+%% O anexo pode constituir de qualquer material, não necessariamente de sua 
+%% autoria ou fundamental para o entendimento do seu documento como um todo, 
+%% ao contrário do apêndice. Assim, o apêndice deve ser inserido antes da lista 
+%% de referências bibliográficas.
+%% NOTA:
+%% Caso seja necessário inserir seção ou subseção dentro do apêndice, use o
+%% comando \tocless para não adicioná-los no Sumário.
+%% Exemplo: \tocless\section{Histórico}
 
-%% O arquivo 'biblio' com as referências bibliográficas deve estar no formato
-%% BibTeX.
-\bibliographystyle{abnt}
-\bibliography{referencias-b/biblio}
-
-%%=============================================================================
-%% Apêndices e anexos
-%% Se precisar usar alguma seção ou subseção dentro dos apêndices ou
-%% anexos, utilizar o comando \tocless para não adicionar no Sumário
-%% Exemplos: 
-%% \tocless\section{Histórico}
-%%=============================================================================
-
-\appendix %% Apêndices
+\appendix %% Comando para criar o apêndice
 \include{capitulos-b/apendicea} %% Incluir apêndice A
 % \include{capitulos-b/apendiceb} %% Incluir apêndice B
+
+%%=============================================================================
+%% Referências
+%%=============================================================================
+%% O arquivo 'biblio' com as referências bibliográficas deve estar no formato
+%% BibTeX.
+%\bibliographystyle{abnt}
+\bibliography{referencias-b/biblio}
+
+
 
 %\annex %% Anexos
 %\include{capitulos-b/anexoa} %% Incluir anexo A
