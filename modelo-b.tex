@@ -1,5 +1,5 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Modelo de tese com capítulos individuais
+% Modelo de tese com capítulos individuais (artigos)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %% Tipo de documento e a classe a ser usada para sua formatação.
@@ -24,7 +24,7 @@
 %%==============================================================================
 
 \usepackage{amsmath,latexsym,amssymb}
-\usepackage{siunitx}                  %% Sistema Internacional de Unidades
+\usepackage{siunitx} %% Sistema Internacional de Unidades
 
 %%==============================================================================
 %% Pacotes - formatação de figuras
@@ -40,7 +40,7 @@
 \usepackage{wrapfig}
 
 %%==============================================================================
-%% Pacotes - formatação de hyperlinks
+%% Pacotes - formatação de hyperlinks e urls
 %%==============================================================================
 %% Opção 'hidelinks' disponível no pacote 'hyperref' a partir da versão 
 %% 2011-02-05  6.82a. 'hidelinks' retira os retângulos do entorno das palavras
@@ -55,6 +55,9 @@
             pdfkeywords={LaTeX, UFRuralRJ, Documentos acadêmicos}
             ]{hyperref}
 
+%% Pacote para lidar com url longa, deve ser carregado depois do pacote 'hyperref'
+\usepackage[hyphenbreaks]{breakurl}
+
 %% Definição das margens
 % \usepackage[inner = 30mm, outer = 20mm, top = 30mm, bottom = 20mm]{geometry}
 
@@ -62,6 +65,15 @@
 %% hora de montar o sumário da lista de figuras e tabelas. Comente a linha se o
 %% pacote 'hyperref' não foi carregado.
 \input{macros/bugcaption}
+
+%%==============================================================================
+%% Pacotes - formatação da bibliografia de acordo com as normas da ABNT
+%%==============================================================================
+% O pacote 'abntex2cite' precisa, obrigatoriamente, ser carregado depois do 
+% pacote 'hyperref'. Mais informações podem ser obtidas na página do pacote no
+% GitHub: https://github.com/abntex/abntex2
+
+\usepackage[alf]{abntex2cite}
 
 %%==============================================================================
 %% Pacotes - formatação de verbatim
