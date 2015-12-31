@@ -183,7 +183,7 @@
 \fi
 \RequirePackage{lastpage}
 \RequirePackage{indentfirst} 
-\RequirePackage{natbib}
+% \RequirePackage{natbib}
 \RequirePackage{eso-pic} % para importar arquivos .pdf (catalogação \includeCIP{})
 \RequirePackage{color, xcolor}
 \RequirePackage{fix-cm} % para funcionar corretamente o tamanho das fontes da capa
@@ -1093,9 +1093,10 @@
 %% Ajuste do formato das citações e referências
 %%=============================================================================
 
-\setlength{\bibhang}{0pt}
-\let\cite\citep
-{}
+% Necessário para o pacote 'natbib'
+% \setlength{\bibhang}{0pt}
+% \let\cite\citep
+% {}
 
 %%=============================================================================
 %% Formatação dos Apêndices 
