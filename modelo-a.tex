@@ -55,6 +55,9 @@
             pdfkeywords={LaTeX, UFRuralRJ, Documentos acadêmicos}
             ]{hyperref}
 
+%% Pacote para lidar com url longa, deve ser carregado depois do pacote 'hyperref'
+\usepackage[hyphenbreaks]{breakurl}
+
 %% Definição das margens
 \usepackage[inner = 30mm, outer = 20mm, top = 30mm, bottom = 20mm]{geometry}
 
@@ -62,6 +65,15 @@
 %% hora de montar o sumário da lista de figuras e tabelas. Comente a linha se o
 %% pacote 'hyperref' não foi carregado.
 \input{macros/bugcaption}
+
+%%==============================================================================
+%% Pacotes - formatação da bibliografia de acordo com as normas da ABNT
+%%==============================================================================
+% O pacote 'abntex2cite' precisa, obrigatoriamente, ser carregado depois do 
+% pacote 'hyperref'. Mais informações podem ser obtidas na página do pacote no
+% GitHub: https://github.com/abntex/abntex2
+
+\usepackage[alf]{abntex2cite}
 
 %%==============================================================================
 %% Pacotes - formatação de verbatim
@@ -254,6 +266,25 @@ Autor desconhecido
 \setlength{\baselineskip}{\baselineskip}
 
 %%=============================================================================
+%% Apêndices
+%%=============================================================================
+%% IMPORTANTE:
+%% O Manual da UFRRJ não prevê a inclusão de apêndices, mas apenas anexos. O 
+%% problema disso é que apêndices e anexos são completamente diferentes. 
+%% O anexo pode constituir de qualquer material, não necessariamente de sua 
+%% autoria ou fundamental para o entendimento do seu documento como um todo, 
+%% ao contrário do apêndice. Assim, o apêndice deve ser inserido antes da lista 
+%% de referências bibliográficas.
+%% NOTA:
+%% Caso seja necessário inserir seção ou subseção dentro do apêndice, use o
+%% comando \tocless para não adicioná-los no Sumário.
+%% Exemplo: \tocless\section{Histórico}
+
+\appendix %% Apêndices
+\include{capitulos-a/apendicea} %% Incluir apêndice A
+% \include{capitulos-a/apendiceb} %% Incluir apêndice B
+
+%%=============================================================================
 %% Referências
 %%=============================================================================
 
@@ -261,18 +292,8 @@ Autor desconhecido
 %% BibTeX.
 
 \bibliography{referencias-a/biblio}
-\bibliographystyle{abnt}
-%%=============================================================================
-%% Apêndices e anexos
-%% Se precisar usar alguma seção ou subseção dentro dos apêndices ou
-%% anexos, utilizar o comando \tocless para não adicionar no Sumário
-%% Exemplos: 
-%% \tocless\section{Histórico}
-%%=============================================================================
+%\bibliographystyle{abnt}
 
-\appendix %% Apêndices
-\include{capitulos-a/apendicea} %% Incluir apêndice A
-% \include{capitulos-a/apendiceb} %% Incluir apêndice B
 
 %\annex %% Anexos
 %\include{capitulos-a/anexoa} %% Incluir anexo A
