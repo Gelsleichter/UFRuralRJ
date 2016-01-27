@@ -49,15 +49,8 @@
 %% Tese de doutorado
 \DeclareOption{tese}{
   \AtEndOfClass{
-%     \newcommand{\titlepagespecificinfo}{\tesespecificinfo}
-    \newcommand{\titlepagespecificinfo}{
-    Tese submetida como requisito parcial para obten\c{c}{\~a}o do grau de
-    %\textbf{\@grau}, \@altCurso, {\'A}rea de Concentra\c{c}{\~a}o em
-    \textbf{\@grau}, \@curso, {\'A}rea de Concentra\c{c}{\~a}o em \@area.
-    }
+    \newcommand{\titlepagespecificinfo}{\tesespecificinfo}
     \def\doctypename{\tesename}
-%     \def\doctypename{Tese}
-%     \def\doctypenameIngles{Thesis}
     \def\doctypearticle{a}
     \def\doctypenameCIP{Tese (Doutorado)}
   }
@@ -69,7 +62,8 @@
     \newcommand{\titlepagespecificinfo}{
       Monografia submetida como requisito parcial para obten{\c{c}}{\~a}o do 
       %grau de \textbf{\@grau}, \@altCurso, {\'A}rea de Concentra\c{c}{\~a}o em
-      grau de \textbf{\@grau}, \@curso, {\'A}rea de Concentra\c{c}{\~a}o em \@area.
+      grau de \textbf{\@grau}, \@curso, {\'A}rea de Concentra\c{c}{\~a}o em
+      \@area.
     }
     \def\doctypename{Monografia de Especializa{\c{c}}{\~a}o}
     \def\doctypearticle{a}
@@ -98,17 +92,10 @@
 %% Dissertação de mestrado
 \DeclareOption{diss}{
   \AtEndOfClass{
-%     \newcommand{\titlepagespecificinfo}{\dissspecificinfo}
-    \newcommand{\titlepagespecificinfo}{
-        Disserta{\c{c}}{\~a}o submetida como requisito parcial para
-        %obten{\c{c}}{\~a}o do grau de \textbf{\@grau}, \@altCurso,
-        obten{\c{c}}{\~a}o do grau de \textbf{\@grau}, \@curso,
-        \'{A}rea de Concentra{\c{c}}{\~a}o em \@area.
-    }
-%     \def\doctypename{Disserta{\c{c}}{\~a}o}
+    \newcommand{\titlepagespecificinfo}{\dissspecificinfo}
     \def\doctypename{\dissname}
     \def\doctypearticle{a}
-%     \def\doctypenameIngles{Master's Dissertation}
+    \def\doctypenameIngles{Master's Dissertation}
     \def\doctypenameCIP{Disserta{\c{c}}{\~a}o (Mestrado)}
   }
 }
