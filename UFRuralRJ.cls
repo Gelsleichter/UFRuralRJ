@@ -539,7 +539,7 @@
       \sobcoorienta\par{\LargeE\textbf{\@coadvisora}}} %% Co-orientador 1
 
     \@ifundefined{@coadvisorb}{}{
-      \par\textit{\and}\par\textbf{\LargeE\@coadvisorb}} %% Co-orientador 2
+      \par\textit{\andname}\par\textbf{\LargeE\@coadvisorb}} %% Co-orientador 2
     \vspace{15mm}
     \begin{flushright}
       \hspace{80mm}
@@ -549,7 +549,7 @@
     \end{flushright}
     \vspace{15mm}
     \centerline{\LargeE\@city,~\@state,~\@country} %% Cidade, estado e país
-    \centerline{\LargeE\@publmonth~\of~\@publyear} %% Mês e ano
+    \centerline{\LargeE\@publmonth~\ofname~\@publyear} %% Mês e ano
   }
 }
 
