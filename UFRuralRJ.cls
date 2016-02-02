@@ -129,7 +129,7 @@
 \newcommand{\area}[1]{\gdef\@area{#1}}
 \newcommand{\instituto}[1]{\gdef\@instituto{#1}}
 % \newcommand{\grau}[1]{\gdef\@grau{#1}}
-\newcommand{\nivel}[1]{\gdef\@nivel{#1}}
+% \newcommand{\nivel}[1]{\gdef\@nivel{#1}}
 \newcommand{\trabalhoNumero}[1] {\gdef\@trabalhoNumero{#1}}
 \newcommand{\local}[3]{\gdef\@city{#1}\gdef\@state{#2}\gdef\@country{#3}}
 
@@ -835,15 +835,17 @@
 \newcommand{\generalabstractbheaderbox}[1]{%
   \parbox[t]{\textwidth}{
     \MakeUppercase{\@authoralast}, \@authorafirst. \textbf{\@generalabstracttitulo}.
-    \@publyear. \pageref{LastPage}\folhas. \doctypename~(\@nivel).
+    % \@publyear. \pageref{LastPage}\folhas. \doctypename~(\@nivel).
+    \@publyear. \pageref{LastPage}\folhas. \doctypename~(\@generalabstractnivel).
     \@instituto, \ufrrjlongo, \@city, RJ, \@publyear.
     \vfill\vspace{13mm}
   }
 }
-\newenvironment{generalabstract}[3]{
+\newenvironment{generalabstract}[4]{
   \if@openright\cleardoublepage\else\clearpage\fi%
     \gdef\@generalabstractbkeywords{#3}
     \gdef\@generalabstracttitulo{#2}
+    \gdef\@generalabstractnivel{#4}
   \begin{otherlanguage}{#1}
     \ifgeneralabstract
       \chapter*{\LargeF\generalabstractname} %% general abstract
