@@ -3,8 +3,8 @@
 %
 \@namedef{captionsenglish}{%
 \def\bibname{Bibliographic References}%
-\def\abstractname{Abstract}%
-\def\generalabstractname{General abstract}%
+\def\abstractname{ABSTRACT}%
+\def\generalabstractname{GENERAL ABSTRACT}%
 \def\appendixname{Appendix}%
 \def\contentsname{Contents}%
 \def\listfigurename{List of Figures}%

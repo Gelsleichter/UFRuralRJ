@@ -3,8 +3,8 @@
 %
 \@namedef{captionsbrazilian}{%
 \def\bibname{Refer{\^e}ncias bibliogr{\'a}ficas}%
-\def\abstractname{Resumo}%
-\def\generalabstractname{Resumo geral}%
+\def\abstractname{RESUMO}%
+\def\generalabstractname{RESUMO GERAL}%
 \def\appendixname{Ap{\^e}ndice}%
 % \def\appendixsname{Ap{\^e}ndices}%
 \def\contentsname{Sum{\'a}rio}%
