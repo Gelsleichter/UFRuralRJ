@@ -872,13 +872,20 @@
     \setlength{\baselineskip}{0.67\baselineskip} %% Espaçamento simples
     \vspace*{-14mm} %% Alinhamento superior
     \vspace*{10mm}  %% Coloca o resumo a 10 mm da margem superior
-    % \section*{\centering\MakeUppercase{\abstractname}} %% Título centralizado
-    %% O 'resumo' e o 'abstract' são numerados com qualquer outra seção dentro do texto
-    \section{\centering\MakeUppercase{\abstractname}}
-    %% Adiciona o resumo ao sumário sem numerar seção
-    % NOTA: Há incompatibilidade entre \MakeUppercase e \addcontentsline
-    %\addcontentsline{toc}{section}{\MakeUppercase{\abstractname}}
-    \addcontentsline{toc}{section}{\uppercase{\abstractname}}
+    
+    %\section*{\centering\MakeUppercase{\abstractname}} %% Título centralizado
+    \addtocounter{section}{1} %% adicionar numeração ao 'resumo' no corpo do texto
+    \section*{\centering{\thesection~\abstractname}}
+    
+    %% Adicionar 'resumo' ao sumário numerado com qualquer outra seção dentro do texto
+    %% ASR: Há incompatibilidade entre \MakeUppercase e \addcontentsline
+    %% ASR: Na verdade, não é necessário usar \MakeUppercase ou \uppercase. Basta definir \abstractname
+    %%      usando os arquivos de idioma do pacote babel, dado que \abstractname aparece sempre em maiúsculas.
+    % \addcontentsline{toc}{section}{\MakeUppercase{\abstractname}}
+    % \addcontentsline{toc}{section}{\uppercase{\abstractname}}
+    % \addcontentsline{toc}{section}{\uppercase{\protect\numberline{\thesection}\abstractname}}
+    \addcontentsline{toc}{section}{\protect\numberline{\thesection}\abstractname}
+    
     \vspace{2mm} %% Espaço do título até o corpo do texto
     \parindent0em
 }{\par\vspace{6mm} %% Espaço do corpo do texto até as palavras-chave
@@ -922,8 +929,7 @@
         \fi
       \fi
       \refstepcounter{chapter}%
-      \ifchap\addcontentsline{toc}{chapter}{
-        \protect\numberline{\@chapapp\thechapter}#1}\fi%
+      \ifchap\addcontentsline{toc}{chapter}{\protect\numberline{\@chapapp\thechapter}#1}\fi%
       \addtocontents{lof}{\protect\addvspace{0\p@}}%original = 10\p@ 
       \addtocontents{lot}{\protect\addvspace{0\p@}}%
       %\pagestyle{UFRuralRJ}\let\ps@plain\ps@UFRuralRJ%
