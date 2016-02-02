@@ -530,15 +530,16 @@
     {\LargeE\textbf{\MakeUppercase{\@titulo}}}\par    % Título
     \vspace{25mm}
     {\LargeE\textbf{\MakeUppercase{\@authora}}}\\[15mm] % Autor do documento
-    \soborienta\par
+    
+    {\LargeE\soborienta\par}
     \@ifundefined{@advisor}{}{
       \vfill{\LargeE\textbf{\@advisor}}}\\ %% Orientador(a)
     \@ifundefined{@coadvisora}{}{
       \vspace{2ex}
-      \sobcoorienta\par{\LargeE\textbf{\@coadvisora}}} %% Co-orientador 1
+      {\LargeE\sobcoorienta\par{\textbf{\@coadvisora}}}} %% Co-orientador 1
 
     \@ifundefined{@coadvisorb}{}{
-      \par\textit{\andname}\par\textbf{\LargeE\@coadvisorb}} %% Co-orientador 2
+      {\LargeE\par\textit{\andname}\par\textbf{\@coadvisorb}}} %% Co-orientador 2
     \vspace{15mm}
     \begin{flushright}
       \hspace{80mm}
