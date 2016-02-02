@@ -49,6 +49,7 @@
 \DeclareOption{tese}{
   \AtEndOfClass{
     \newcommand{\titlepagespecificinfo}{\tesespecificinfo}
+    \def\grau{\tesegrau}
     \def\doctypename{\tesename}
     \def\doctypearticle{a}
     \def\doctypenameCIP{Tese (Doutorado)}
@@ -62,6 +63,7 @@
       Monografia submetida como requisito parcial para obten{\c{c}}{\~a}o do 
       %grau de \textbf{\@grau}, \@altCurso, {\'A}rea de Concentra\c{c}{\~a}o em
       grau de \textbf{\@grau}, \@curso, {\'A}rea de Concentra\c{c}{\~a}o em
+      
       \@area.
     }
     \def\doctypename{Monografia de Especializa{\c{c}}{\~a}o}
@@ -126,7 +128,7 @@
 % \newcommand{\altCurso}[1]{\gdef\@altCurso{#1}} %% Obsoleto
 \newcommand{\area}[1]{\gdef\@area{#1}}
 \newcommand{\instituto}[1]{\gdef\@instituto{#1}}
-\newcommand{\grau}[1]{\gdef\@grau{#1}}
+% \newcommand{\grau}[1]{\gdef\@grau{#1}}
 \newcommand{\nivel}[1]{\gdef\@nivel{#1}}
 \newcommand{\trabalhoNumero}[1] {\gdef\@trabalhoNumero{#1}}
 \newcommand{\local}[3]{\gdef\@city{#1}\gdef\@state{#2}\gdef\@country{#3}}
@@ -658,7 +660,8 @@
 	  \@ifundefined{@authord}{}{\textbf{\@authord}\\}%
 	  \vspace{1.5cm}
 		 {como requisito parcial para obten{\c{c}}{\~a}o do grau de} \\
-		 \textbf{\@grau}
+		 % \textbf{\@grau}
+		 \textbf{\grau}
   }
 }
 
