@@ -51,12 +51,12 @@
 %% sequência para possível uso futuro.
 %% ============================================================================================================
 \def\tesespecificinfo{% 
-Tese submetida como requisito parcial para obten\c{c}{\~a}o do grau de \textbf{\@grau}, \@curso, {\'A}rea de 
-Concentra\c{c}{\~a}o em \@area.
+Tese submetida como requisito parcial para obten\c{c}{\~a}o do grau de \textbf{\@grau}, 
+no \@curso, {\'A}rea de Concentra\c{c}{\~a}o em \@area.
 }%
 \def\dissspecificinfo{%
 Disserta{\c{c}}{\~a}o submetida como requisito parcial para obten{\c{c}}{\~a}o do grau de \textbf{\@grau}, 
-\@curso, \'{A}rea de Concentra{\c{c}}{\~a}o em \@area.
+no \@curso, \'{A}rea de Concentra{\c{c}}{\~a}o em \@area.
 }%
 \def\aprovadoem{Documento aprovado em}%
 \def\soborienta{\textit{Sob orienta\c{c}{\~a}o~de}}%
