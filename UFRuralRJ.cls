@@ -39,8 +39,7 @@
 %% Identificação
 %%==============================================================================
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{UFRuralRJ}[21/10/2015 v.0.4 Formatação de documentos acadêmicos 
-                          da UFRuralRJ]
+\ProvidesClass{UFRuralRJ}[21/10/2015 v.0.4 Formatação de documentos acadêmicos da UFRuralRJ]
 
 %%==============================================================================
 %% Declaração de opções da classe
@@ -873,7 +872,9 @@
     \setlength{\baselineskip}{0.67\baselineskip} %% Espaçamento simples
     \vspace*{-14mm} %% Alinhamento superior
     \vspace*{10mm}  %% Coloca o resumo a 10 mm da margem superior
-    \section*{\centering\MakeUppercase{\abstractname}} %% Título centralizado
+    % \section*{\centering\MakeUppercase{\abstractname}} %% Título centralizado
+    %% O 'resumo' e o 'abstract' são numerados com qualquer outra seção dentro do texto
+    \section{\centering\MakeUppercase{\abstractname}}
     %% Adiciona o resumo ao sumário sem numerar seção
     % NOTA: Há incompatibilidade entre \MakeUppercase e \addcontentsline
     %\addcontentsline{toc}{section}{\MakeUppercase{\abstractname}}
