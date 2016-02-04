@@ -734,10 +734,15 @@
   \endgroup
 }
 
-\renewcommand*{\l@section}[2]{\@dottedtocline{1}{0em}{1.7em}{\textbf{#1}}{\hss #2}}
-\renewcommand*{\l@subsection}{\@dottedtocline{2}{0em}{2.4em}}
-\renewcommand*{\l@subsubsection}{\@dottedtocline{3}{0em}{3em}}
-\renewcommand*{\l@paragraph}{\@dottedtocline{4}{0em}{3.8em}}
+%% ASR: O comando \@dottedtocline espera os seguintes parâmetros:
+%%      \@dottedtocline{<level>}{<indentation>}{<numwidth>}
+%%      Não existe definição oficial do nível de indentação das seções. Os valores usados aqui são baseados
+%%      na dimensão da letra 'M' maiúscula na fonte atual, conforme expresso pelo comando 'em'.
+\renewcommand*{\l@section}[2]{\@dottedtocline{1}{1em}{1.7em}{\textbf{#1}}{\hss #2}}
+\renewcommand*{\l@subsection}{\@dottedtocline{2}{2em}{2.4em}}
+\renewcommand*{\l@subsubsection}{\@dottedtocline{3}{3em}{3em}}
+\renewcommand*{\l@paragraph}{\@dottedtocline{4}{4em}{3.8em}}
+
 \newif\if@aftertoc
 \@aftertocfalse
 \renewcommand{\tableofcontents}{%
@@ -946,6 +951,7 @@
       
       %% Adicionar 10 pontos de espaço vertical apos o titulo de cada capitulo no sumario
       \addtocontents{toc}{\protect\addvspace{10\p@}}% table of contents
+      
       \addtocontents{lof}{\protect\addvspace{0\p@}}% list of figures
       \addtocontents{lot}{\protect\addvspace{0\p@}}% list of tables
       
