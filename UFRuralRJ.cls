@@ -948,10 +948,17 @@
       %%      eficiente de fazer isso.
       %% ASR: São adicionados 10 pontos de espaço vertical antes e após o titulo de cada capitulo no sumario.
       %%      COmo não existe definição oficial, a decisão de adicionar 10 pontos é completamente arbitrária.
+      %% ASR: É preciso verificar como adicionar a numeração correta do capítulo/artigo usando \Roman. A
+      %%      versão atual usa a mesma numeração sequencial atribuída ao capítulo.
       \ifchap%
        \addtocontents{toc}{\protect\addvspace{10\p@}}%
-       % \ifchap\addcontentsline{toc}{chapter}{\protect\numberline{\@chapapp\thechapter}#1}\fi%
-       \addcontentsline{toc}{chapter}{\protect\numberline{\@chapapp\thechapter}~#1}%
+        \ifartigo
+         \addcontentsline{toc}{chapter}{%
+         \protect\numberline{\@chapapp\thechapter}~\chaptername~\Roman{chapter}.~#1}%
+        \else
+         % \ifchap\addcontentsline{toc}{chapter}{\protect\numberline{\@chapapp\thechapter}#1}\fi%
+         \addcontentsline{toc}{chapter}{\protect\numberline{\@chapapp\thechapter}~#1}%
+        \fi
        \addtocontents{toc}{\protect\addvspace{10\p@}}%
       \fi
       
@@ -965,7 +972,7 @@
 
 %% Colocar título de capítulos no formato de artigo 
 %% Posição: 20 mm abaixo da margem superior
-\newif\ifartigo 
+\newif\ifartigo
 
 \def\@makechapterhead#1{%
   %% Colocar título dos itens principais do documento a 10 mm da margem superior
