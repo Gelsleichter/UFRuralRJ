@@ -941,16 +941,19 @@
       \fi
       \refstepcounter{chapter}%
       
+      %% FORMATAÇÃO DO TÍTULOS DOS CAPÍTULOS NO SUMÁRIO
       %% ASR: É preciso adicionar um espaço em '~#1' para evitar que o título fique sobre o número
       %%      quando o número do capítulo possui dois ou mais dígitos. Contudo, isso aumenta em demasia
-      %%      o espaçamento quando o número do capítulo possui apenas um dígito.
-      % \ifchap\addcontentsline{toc}{chapter}{\protect\numberline{\@chapapp\thechapter}#1}\fi%
+      %%      o espaçamento quando o número do capítulo possui apenas um dígito. Deve haver maneira mais
+      %%      eficiente de fazer isso.
+      %% ASR: São adicionados 10 pontos de espaço vertical antes e após o titulo de cada capitulo no sumario.
+      %%      COmo não existe definição oficial, a decisão de adicionar 10 pontos é completamente arbitrária.
       \ifchap%
+       \addtocontents{toc}{\protect\addvspace{10\p@}}%
+       % \ifchap\addcontentsline{toc}{chapter}{\protect\numberline{\@chapapp\thechapter}#1}\fi%
        \addcontentsline{toc}{chapter}{\protect\numberline{\@chapapp\thechapter}~#1}%
+       \addtocontents{toc}{\protect\addvspace{10\p@}}%
       \fi
-      
-      %% Adicionar 10 pontos de espaço vertical apos o titulo de cada capitulo no sumario
-      \addtocontents{toc}{\protect\addvspace{10\p@}}% table of contents
       
       \addtocontents{lof}{\protect\addvspace{0\p@}}% list of figures
       \addtocontents{lot}{\protect\addvspace{0\p@}}% list of tables
