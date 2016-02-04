@@ -940,10 +940,15 @@
       %%      quando o número do capítulo possui dois ou mais dígitos. Contudo, isso aumenta em demasia
       %%      o espaçamento quando o número do capítulo possui apenas um dígito.
       % \ifchap\addcontentsline{toc}{chapter}{\protect\numberline{\@chapapp\thechapter}#1}\fi%
-      \ifchap\addcontentsline{toc}{chapter}{\protect\numberline{\@chapapp\thechapter}~#1}\fi%
+      \ifchap%
+       \addcontentsline{toc}{chapter}{\protect\numberline{\@chapapp\thechapter}~#1}%
+      \fi
       
-      \addtocontents{lof}{\protect\addvspace{0\p@}}%original = 10\p@ 
-      \addtocontents{lot}{\protect\addvspace{0\p@}}%
+      %% Adicionar 10 pontos de espaço vertical apos o titulo de cada capitulo no sumario
+      \addtocontents{toc}{\protect\addvspace{10\p@}}% table of contents
+      \addtocontents{lof}{\protect\addvspace{0\p@}}% list of figures
+      \addtocontents{lot}{\protect\addvspace{0\p@}}% list of tables
+      
       %\pagestyle{UFRuralRJ}\let\ps@plain\ps@UFRuralRJ%
       \pagestyle{UFRuralRJ}\let\ps@empty\ps@UFRuralRJ% Omitir número de página
       \@makechapterhead{#2}\@afterheading
