@@ -1036,35 +1036,38 @@
 %% Formatação das seções
 %%==============================================================================
 
+%% ASR: Os títulos das seções e subseções são precedidos por espaçamento de 20 pontos, e sucedidos por 
+%%      espaçamento de 10 pontos.
+
 %\renewcommand{\section}{%name, level, indent, beforeskip, afterskip,style
 %        \@startsection{section}{1}{0pt}{18pt}{18pt}{\reset@font\bfseries\@setfontsize\Large{12}{20}}
 %}
 
 \renewcommand\section{\@startsection{section}{1}{0pt}%
-                                   {18pt}%
-                                   {18pt}%
+                                   {20pt}%
+                                   {10pt}%
                                    {\centering\reset@font\bfseries\@setfontsize
-                                      \Large{12}{20}}}
+                                     \Large{12}{20}}}
 \renewcommand\subsection{\@startsection{subsection}{2}{0pt}%
-                                   {12pt}%
-                                   {18pt}%
+                                   {20pt}%
+                                   {10pt}%
                                    {\reset@font\bfseries\@setfontsize
-                                      \Large{12}{20}}}
+                                     \Large{12}{20}}}
 \renewcommand\subsubsection{\@startsection{subsubsection}{3}{0pt}%
-                                   {12pt}%
-                                   {18pt}%
+                                   {20pt}%
+                                   {10pt}%
                                    {\reset@font\bfseries\@setfontsize
-                                      \Large{12}{20}}}
+                                     \Large{12}{20}}}
 \renewcommand\paragraph{\@startsection{paragraph}{4}{0pt}%
-                                   {12pt}%
-                                   {18pt}%
+                                   {20pt}%
+                                   {10pt}%
                                    {\reset@font\bfseries\@setfontsize
-                                      \Large{12}{20}}}	
+                                     \Large{12}{20}}}	
 \renewcommand\subparagraph{\@startsection{subparagraph}{5}{0pt}%
                                    {1ex}%
                                    {-1em}%
                                    {\reset@font\bfseries\@setfontsize
-                                      \Large{12}{20}}}
+                                     \Large{12}{20}}}
 
 %%=============================================================================
 %% TODO: Lista de quadros
