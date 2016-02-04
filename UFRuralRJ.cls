@@ -935,7 +935,13 @@
         \fi
       \fi
       \refstepcounter{chapter}%
-      \ifchap\addcontentsline{toc}{chapter}{\protect\numberline{\@chapapp\thechapter}#1}\fi%
+      
+      %% ASR: É preciso adicionar um espaço em '~#1' para evitar que o título fique sobre o número
+      %%      quando o número do capítulo possui dois ou mais dígitos. Contudo, isso aumenta em demasia
+      %%      o espaçamento quando o número do capítulo possui apenas um dígito.
+      % \ifchap\addcontentsline{toc}{chapter}{\protect\numberline{\@chapapp\thechapter}#1}\fi%
+      \ifchap\addcontentsline{toc}{chapter}{\protect\numberline{\@chapapp\thechapter}~#1}\fi%
+      
       \addtocontents{lof}{\protect\addvspace{0\p@}}%original = 10\p@ 
       \addtocontents{lot}{\protect\addvspace{0\p@}}%
       %\pagestyle{UFRuralRJ}\let\ps@plain\ps@UFRuralRJ%
