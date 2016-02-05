@@ -1179,7 +1179,9 @@
    %% ASR: \hspace*{0.35em} é uma solução rápida e suja para deixar todo mundo alinhado na toc
    % \addcontentsline{toc}{chapter}{\hspace*{0.35em}\appendixname}
    % \addcontentsline{toc}{chapter}{\thechapter~\appendixname}
+   \addtocontents{toc}{\protect\addvspace{10\p@}}
    \addcontentsline{toc}{chapter}{\protect\numberline{\thechapter}~\appendixname}
+   \addtocontents{toc}{\protect\addvspace{10\p@}}
   
   \vfil\newpage
   \if@twoside
@@ -1223,9 +1225,9 @@
   \if@restonecol\twocolumn\fi
 }
 
-%%==============================================================================
-%% Formatação dos Anexos
-%%==============================================================================
+%%=============================================================================================================
+%% FORMATAÇÃO DOS ANEXOS
+%%=============================================================================================================
 
 \newcommand{\annexpage}{%
   \if@openright\cleardoublepage\else\clearpage\fi
@@ -1248,7 +1250,9 @@
    %%      alfabético.
    \addtocounter{chapter}{+1}
    \LargeE\bfseries\thechapter~\MakeUppercase\annexname\par}%
+   \addtocontents{toc}{\protect\addvspace{10\p@}}
    \addcontentsline{toc}{chapter}{\protect\numberline{\thechapter}~\annexname}
+   \addtocontents{toc}{\protect\addvspace{10\p@}}
    
    
   \vfil\newpage
