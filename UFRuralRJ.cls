@@ -880,8 +880,15 @@
   \if@openright\cleardoublepage\else\clearpage\fi
     \gdef\@mykeywords{#2}
   \begin{otherlanguage}{#1}
-    % \setlength{\baselineskip}{0.67\baselineskip} %% Espaçamento simples (ASR: muito apertado!!!)
-    \setlength{\baselineskip}{\baselineskip} %% Espaçamento simples
+    
+    %% ASR: A definição do espaçamento entre linhas no resumo igual à '0.67\baselineskip' é baseada no uso
+    %%      de espaçamento '1.5\baselineskip' no resto do texto, que é equivalente ao espaçamento de um ponto
+    %%      e meio entre linhas. Tal opção pode ser usada na preparação da versão do documento que é enviada
+    %%      ao comitê examinador. Contudo, ela faz com que a formatação do resumo fique péssima quando da 
+    %%      preparação da versão final do documento. A melhor opção, no momento, parece ser eliminar a 
+    %%      definição do espaçamento entre linhas no ambiente 'chapterabstract'.
+    % \setlength{\baselineskip}{0.67\baselineskip} %% Espaçamento simples
+    
     \vspace*{-14mm} %% Alinhamento superior
     \vspace*{10mm}  %% Coloca o resumo a 10 mm da margem superior
     
