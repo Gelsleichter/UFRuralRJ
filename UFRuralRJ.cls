@@ -880,7 +880,8 @@
   \if@openright\cleardoublepage\else\clearpage\fi
     \gdef\@mykeywords{#2}
   \begin{otherlanguage}{#1}
-    \setlength{\baselineskip}{0.67\baselineskip} %% Espaçamento simples
+    % \setlength{\baselineskip}{0.67\baselineskip} %% Espaçamento simples (ASR: muito apertado!!!)
+    \setlength{\baselineskip}{\baselineskip} %% Espaçamento simples
     \vspace*{-14mm} %% Alinhamento superior
     \vspace*{10mm}  %% Coloca o resumo a 10 mm da margem superior
     
