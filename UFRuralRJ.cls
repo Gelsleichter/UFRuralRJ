@@ -699,7 +699,7 @@
       \normalsize\centerline{\parbox[t]{\textwidth}{\assina\@committeec}}}
     \vspace{18mm}
     \@ifundefined{@committeed}{}{
-      \normalsize\centerline{\parbox[t]{\textwidth}{\assina\@committeed}}}		
+      \normalsize\centerline{\parbox[t]{\textwidth}{\assina\@committeed}}}
     \vspace{18mm}
     \@ifundefined{@committeee}{}{
       \normalsize\centerline{\parbox[t]{\textwidth}{\assina\@committeee}}}
@@ -1288,3 +1288,12 @@
 %Sem indentação o texto da nota de rodapé  
 \renewcommand\@makefntext[1]{%
   \noindent\makebox[0.5em][r]{\@makefnmark}~~#1}
+
+%%=============================================================================================================
+%% FORMATAÇÃO DAS EQUAÇÕES
+%%=============================================================================================================
+
+%% ASR: O contador de equações está sendo redefinido para incluir apenas o número das seções (e não das 
+%%      subseções). As informações para redefinição estão no endereço
+%%      http://www.math.uh.edu/~torok/math_6298/latex/numbering.html
+\setcounter{equation}{0}
