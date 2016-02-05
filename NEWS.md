@@ -1,3 +1,25 @@
+# Versão 0.5 (05-Fev-2016)
+* A configuração do sumário foi melhorada significativamente. Isso inclui a adição de espaço vertical antes e
+  depois do título de cada capítulo, além da indentação sequencial das seções e subseções. Agora o Apêndice e o
+  Anexo também recebem numeração arábica na sequência dos capítulos anteriores. O mesmo ocorre com a lista de
+  Referências Bibliográficas, graças ao uso do pacote 'tocbibind'.
+    + No caso da inclusão de ambos Anexo e Apêndice, a segunda entrada aparece, erroneamente, com numeração
+    em estilo alfabético.
+* A formatação das primeiras páginas da tese (capa, folha de rosto, etc) foi melhorada usando o pacote babel.
+  Isso dispensa a necessidade de informar todos os dados no texto pois padrões internos foram definidos de
+  acordo com o tipo de documento. Erros de formatação (tamanho de fonte) também foram corrigidos.
+* A definição do espaçamento vertical antes e depois das seções no texto foi modificada com a finalidade de 
+  melhorar a aparência do texto. Agora, mais espaço vertical é deixado acima do que abaixo do título da seção.
+* O ambiente 'generalabstract' também foi melhorado. Ele agora inclui um quarto argumento (o primeiro define o
+  idioma, o segundo o título, e o terceiro as palavras-chave) dedicado à definição do título que será recebido.
+  Por exemplo: ```Doutor em Ciências```. Este quarto argumento é necessário para atender às necessidades dos
+  diferentes idiomas em que o 'generalabstract' é escrito.
+* O ambiente 'chapterabstract' foi modificado no que diz respeito à definição do espaçamento entre linhas. 
+  Anteriormente, o espaçamento entre linhas no 'chapterabstract' (simples) era definido em função do espaçamento 
+  entre linhas do texto no carpo do documento. Isso resultava eficiente quando o texto no corpo do documento 
+  estava com espaçamento entre linhas de 1,5. Agora o 'chapterabstract' e o resto do texto possuem o mesmo 
+  espaçamento entre linhas.
+
 # Versão 0.4 (21-Out-2015)
 * Duas novas opções para a classe foram criadas: `header`, para incluir um
   cabeçalho com um título curto do capítulo (`\shorttitle{}`), e `newmargins`,
