@@ -1141,6 +1141,10 @@
 % \let\cite\citep
 % {}
 
+%% Numeração (como capítulo) da lista de 'Referências Bibliográficas'
+%% http://ftp.math.purdue.edu/mirrors/ctan.org/macros/latex/contrib/tocbibind/tocbibind.pdf
+\usepackage[nottoc, notlot, notlof, numbib]{tocbibind}
+
 %%=============================================================================================================
 %% FORMATAÇÃO DOS APÊNDICES
 %%=============================================================================================================
