@@ -1176,7 +1176,8 @@
    \LargeE\bfseries\thechapter~\MakeUppercase\appendixname\par}%
    %% ASR: \hspace*{0.35em} é uma solução rápida e suja para deixar todo mundo alinhado na toc
    % \addcontentsline{toc}{chapter}{\hspace*{0.35em}\appendixname}
-   \addcontentsline{toc}{chapter}{\thechapter~\appendixname}
+   % \addcontentsline{toc}{chapter}{\thechapter~\appendixname}
+   \addcontentsline{toc}{chapter}{\protect\numberline{\thechapter}~\appendixname}
   
   \vfil\newpage
   \if@twoside
