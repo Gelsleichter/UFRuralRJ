@@ -1141,9 +1141,9 @@
 % \let\cite\citep
 % {}
 
-%%=============================================================================
-%% Formatação dos Apêndices 
-%%=============================================================================
+%%=============================================================================================================
+%% FORMATAÇÃO DOS APÊNDICES
+%%=============================================================================================================
 
 \newcommand{\appendixpage}{%
   \if@openright\cleardoublepage\else\clearpage\fi
@@ -1155,10 +1155,17 @@
   {\centering
    \interlinepenalty \@M
    \normalfont
-   \LargeE\bfseries\MakeUppercase\appendixname\par}%
-  %% ASR: \hspace*{0.35em} é uma solução rápida e suja para deixar todo 
-  %%      mundo alinhado na toc
-  \addcontentsline{toc}{chapter}{\hspace*{0.35em}\appendixname}	
+   
+   %% ASR: O comando '\thechapter' é usado para adicionar numeração ao apêndice, seguindo a sequência
+   %%      dos capítulos anteriores. Mas para que o comando '\thechapter' funcione, é necessário aumentar
+   %%      em um a contagem do contador de capítulos.
+   % \LargeE\bfseries\MakeUppercase\appendixname\par}%
+   \addtocounter{chapter}{+1}
+   \LargeE\bfseries\thechapter~\MakeUppercase\appendixname\par}%
+   %% ASR: \hspace*{0.35em} é uma solução rápida e suja para deixar todo mundo alinhado na toc
+   % \addcontentsline{toc}{chapter}{\hspace*{0.35em}\appendixname}
+   \addcontentsline{toc}{chapter}{\thechapter~\appendixname}
+  
   \vfil\newpage
   \if@twoside
     \if@openright
