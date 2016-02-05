@@ -128,8 +128,8 @@
 % \newcommand{\altCurso}[1]{\gdef\@altCurso{#1}} %% Obsoleto
 \newcommand{\area}[1]{\gdef\@area{#1}}
 \newcommand{\instituto}[1]{\gdef\@instituto{#1}}
-% \newcommand{\grau}[1]{\gdef\@grau{#1}}
-% \newcommand{\nivel}[1]{\gdef\@nivel{#1}}
+% \newcommand{\grau}[1]{\gdef\@grau{#1}} %% Obsoleto
+% \newcommand{\nivel}[1]{\gdef\@nivel{#1}} %% Obsoleto
 \newcommand{\trabalhoNumero}[1] {\gdef\@trabalhoNumero{#1}}
 \newcommand{\local}[3]{\gdef\@city{#1}\gdef\@state{#2}\gdef\@country{#3}}
 
