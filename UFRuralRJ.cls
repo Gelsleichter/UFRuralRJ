@@ -1172,6 +1172,8 @@
    %%      dos capítulos anteriores. Mas para que o comando '\thechapter' funcione, é necessário aumentar
    %%      em um a contagem do contador de capítulos.
    % \LargeE\bfseries\MakeUppercase\appendixname\par}%
+   %% ASR: Há um problema na numeração se houver apêndice e anexo: a segunda entrada aparece em estilo
+   %%      alfabético.
    \addtocounter{chapter}{+1}
    \LargeE\bfseries\thechapter~\MakeUppercase\appendixname\par}%
    %% ASR: \hspace*{0.35em} é uma solução rápida e suja para deixar todo mundo alinhado na toc
@@ -1237,10 +1239,18 @@
   {\centering
    \interlinepenalty \@M
    \normalfont
-   \LargeF \bfseries \MakeUppercase\annexname\par}%
+   
+   % \LargeF \bfseries \MakeUppercase\annexname\par}%
    %% ASR: \hspace*{0.35em} é uma solução rápida e suja para deixar todo 
    %%      mundo alinhado na toc
-   \addcontentsline{toc}{chapter}{\hspace*{0.35em}\annexname}
+   % \addcontentsline{toc}{chapter}{\hspace*{0.35em}\annexname}
+   %% ASR: Há um problema na numeração se houver apêndice e anexo: a segunda entrada aparece em estilo
+   %%      alfabético.
+   \addtocounter{chapter}{+1}
+   \LargeE\bfseries\thechapter~\MakeUppercase\annexname\par}%
+   \addcontentsline{toc}{chapter}{\protect\numberline{\thechapter}~\annexname}
+   
+   
   \vfil\newpage
   \if@twoside
     \if@openright
