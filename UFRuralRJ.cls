@@ -929,6 +929,9 @@
 %% formatação dos títulos propriamente ditos.
 %%=============================================================================
 
+%% Para capítulos baseados em artigos, ou seja, documento na forma de capítulos
+\newif\ifartigo
+
 %% Título curto para cabeçalho (header)
 \newcommand{\shorttitle}[1]{\gdef\@shorttitle{#1}}
 
@@ -980,8 +983,6 @@
 
 %% Colocar título de capítulos no formato de artigo 
 %% Posição: 20 mm abaixo da margem superior
-\newif\ifartigo
-
 \def\@makechapterhead#1{%
   %% Colocar título dos itens principais do documento a 10 mm da margem superior
   \vspace*{5.5mm} 
