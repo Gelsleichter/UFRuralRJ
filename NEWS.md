@@ -1,3 +1,11 @@
+# Versão 0.6 (08-Fev-2016)
+* A formatação da numeração alfabética dos apêndices e anexos foi aprimorada usando contadores próprios para 
+cada um deles.
+* A numeração romana dos capítulos quando do documento em forma de capítulos (possivelmente baseados em 
+artigos) foi otimizada usando um contador específico.
+* O novo comando ```\chapternote``` foi criado para adicionar nota de rodapé não numerada ao título dos 
+capítulos quando do documento organizado na forma de capítulos.
+
 # Versão 0.5 (05-Fev-2016)
 * A configuração do sumário foi melhorada significativamente. Isso inclui a adição de espaço vertical antes e
   depois do título de cada capítulo, além da indentação sequencial das seções e subseções. Agora o Apêndice e o
