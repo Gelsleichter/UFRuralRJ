@@ -1370,7 +1370,7 @@
 %% Notas de rodapé
 %%=============================================================================
 
-% Numeração sequencial ao longo do texto
+%% Numeração sequencial ao longo de todo o texto
 \def\@removefromreset#1#2{{%
   \expandafter\let\csname c@#1\endcsname\@removefromreset
   \def\@elt##1{%
@@ -1383,15 +1383,24 @@
 	
 \@removefromreset{footnote}{chapter}	
 
-% Filete de 3cm a partir da margem esquerda
+%% Filete de 3 cm acima da nota de rodapé a partir da margem esquerda
 \renewcommand\footnoterule{%
   \kern-3\p@
   \hrule\@width.19\columnwidth
   \kern2.6\p@}
 
-%Sem indentação o texto da nota de rodapé  
+%% Sem indentação o texto da nota de rodapé  
 \renewcommand\@makefntext[1]{%
   \noindent\makebox[0.5em][r]{\@makefnmark}~~#1}
+
+%% Informações sobre o capítulo, geralmente usado no caso de documento no formato de capítulos.
+%% A nota é adicionada na mesma página onde aparece o título do capítulo, sem interferir na numeração.
+\newcommand\chapternote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{\hspace{-1em}*~#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
 
 %%=============================================================================================================
 %% FORMATAÇÃO DAS EQUAÇÕES
