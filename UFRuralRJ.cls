@@ -1061,14 +1061,16 @@
   
   %% Formatação dos apêndices e anexos na lista de apêndices e na lista de anexos, respectivamente.
   \ifappendix
+    \addtocontents{loap}{\protect\addvspace{10\p@}}
     \addcontentsline{loap}{section}{
-      % \MakeUppercase{\@chapapp}\thechapter\hspace{0.5em}--\hspace{0.5em}\MakeUppercase{#1}}
       \MakeUppercase{\@chapapp}\theappendix\hspace{0.5em}--\hspace{0.5em}\MakeUppercase{#1}}
+    \addtocontents{loap}{\protect\addvspace{10\p@}}
   \fi
   \ifannex
+    \addtocontents{loan}{\protect\addvspace{10\p@}}
     \addcontentsline{loan}{section}{
-      % \MakeUppercase{\@chapapp}\thechapter\hspace{0.5em}--\hspace{0.5em}\MakeUppercase{#1}}
       \MakeUppercase{\@chapapp}\theannex\hspace{0.5em}--\hspace{0.5em}\MakeUppercase{#1}}
+    \addtocontents{loan}{\protect\addvspace{10\p@}}
   \fi
   \addvspace{25pt}
 }
@@ -1254,15 +1256,11 @@
   \annexfalse
   \appendixpage
   
-  % \addtocounter{appendix}{+1}% TESTE
-  % \setcounter{appendix}{0}% TESTE
-  % \setcounter{chapter}{0}% TESTE
-  
+  % \setcounter{chapter}{0}%
   \setcounter{section}{0}%
   % \renewcommand{\thechapter}{\LargeF\Alph{chapter}}% Tamanho agora definido em @chapter
-  
-  % \renewcommand{\thechapter}{\Alph{chapter}}% TESTE
-  \renewcommand{\theappendix}{\Alph{appendix}}% TESTE
+  % \renewcommand{\thechapter}{\Alph{chapter}}%
+  \renewcommand{\theappendix}{\Alph{appendix}}%
   
   \setcounter{tocdepth}{0}%
   \@captionlistingfalse%
@@ -1337,10 +1335,8 @@
   \annexpage
   
   % \setcounter{chapter}{0}%
-  
   \setcounter{section}{0}%
   % \renewcommand{\thechapter}{\LargeF\Alph{chapter}}% Tamanho agora definido em @chapter
-  
   % \renewcommand{\thechapter}{\Alph{chapter}}%
   \renewcommand{\theannex}{\Alph{annex}}%
   
@@ -1361,7 +1357,7 @@
          {\MakeUppercase\listannexname}%
     \@starttoc{loan}%
     \if@restonecol\twocolumn\fi
-}	
+}%
 
 %%=============================================================================
 %% Notas de rodapé
