@@ -932,6 +932,11 @@
 %% Para capítulos baseados em artigos, ou seja, documento na forma de capítulos
 \newif\ifartigo
 
+%% Novo contador para artigos, ou seja, para os capítulos dos documentos na forma de capítulos
+%% Este contador facilita a inserção de numeração romana para os capítulos.
+\newcounter{artigo}
+\renewcommand{\theartigo}{\Roman{artigo}}%
+
 %% Título curto para cabeçalho (header)
 \newcommand{\shorttitle}[1]{\gdef\@shorttitle{#1}}
 
@@ -954,7 +959,8 @@
           \gdef\@chaptertitle{\@chapapp\theannex.~\@shorttitle}%
         \else
           \ifartigo
-            \gdef\@chaptertitle{\@chapapp\thechapter~\chaptername~.~\@shorttitle}%
+            % \gdef\@chaptertitle{\@chapapp\thechapter~\chaptername~.~\@shorttitle}%
+            \gdef\@chaptertitle{\@chapapp\thechapter~\chaptername~\theartigo.~\@shorttitle}%
           \else
             \gdef\@chaptertitle{\@chapapp\thechapter.~\@shorttitle}%
           \fi
@@ -970,14 +976,14 @@
       %%      eficiente de fazer isso.
       %% ASR: São adicionados 10 pontos de espaço vertical antes e após o titulo de cada capitulo no sumario.
       %%      COmo não existe definição oficial, a decisão de adicionar 10 pontos é completamente arbitrária.
-      %% ASR: É preciso verificar como adicionar a numeração correta do capítulo/artigo usando \Roman. A
-      %%      versão atual usa a mesma numeração sequencial atribuída ao capítulo.
       \ifchap%
        \addtocontents{toc}{\protect\addvspace{10\p@}}%
         
         \ifartigo
+         \addtocounter{artigo}{+1}
          \addcontentsline{toc}{chapter}{%
-         \protect\numberline{\@chapapp\thechapter}~\chaptername~\Roman{chapter}.~#1}%
+         % \protect\numberline{\@chapapp\thechapter}~\chaptername~\Roman{chapter}.~#1}%
+         \protect\numberline{\@chapapp\thechapter}~\chaptername~\theartigo.~#1}%
         
         \else
          % \ifchap\addcontentsline{toc}{chapter}{\protect\numberline{\@chapapp\thechapter}#1}\fi%
@@ -1011,10 +1017,12 @@
       %% devem receber a numeração sequencial do sumário, mas também a palavra
       %% 'CAPÍTULO' seguida do número do capítulo ou artigo usando algarismos 
       %% romanos.
+      % \addtocounter{artigo}{+1}
       \ii@chapterfont
-      \centering\textbf{\@chapapp\thechapter~\MakeUppercase{\chaptername}~
-      \addtocounter{chapter}{-1}\Roman{chapter}\\
-      \addtocounter{chapter}{+1}
+      % \centering\textbf{\@chapapp\thechapter~\MakeUppercase{\chaptername}~
+      % \addtocounter{chapter}{-1}\Roman{chapter}\\
+      % \addtocounter{chapter}{+1}
+      \centering\textbf{\@chapapp\thechapter~\MakeUppercase{\chaptername}~\theartigo\\
       \vspace*{20mm}
       \hspace{0.5em}\MakeUppercase{#1}}
     
