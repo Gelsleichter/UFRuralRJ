@@ -1052,6 +1052,13 @@
       \reset@font\noindent{\ii@chapterfont\centering\textbf{
         \LargeF\MakeUppercase{\@chapapp}\theappendix\hspace{0.5em}--\hspace{0.5em}\MakeUppercase{#1}}
         \par}
+      
+      %% Formatação do título do anexo na lista de apêndices
+      \addtocontents{loap}{\protect\addvspace{10\p@}}
+      \addcontentsline{loap}{section}{
+      \MakeUppercase{\@chapapp}\theappendix\hspace{0.5em}--\hspace{0.5em}\MakeUppercase{#1}}
+      \addtocontents{loap}{\protect\addvspace{10\p@}}
+      
     \else
       \ifannex
         \addtocounter{annex}{+1}%
@@ -1059,6 +1066,13 @@
         \reset@font\noindent{\ii@chapterfont\centering\textbf{
           \LargeF\MakeUppercase{\@chapapp}\theannex\hspace{0.5em}--\hspace{0.5em}\MakeUppercase{#1}}
           \par}
+        
+        %% Formatação do título do anexo na lista de anexos
+        \addtocontents{loan}{\protect\addvspace{10\p@}}%
+        \addcontentsline{loan}{section}{%
+        \MakeUppercase{\@chapapp}\theannex\hspace{0.5em}--\hspace{0.5em}\MakeUppercase{#1}}%
+        \addtocontents{loan}{\protect\addvspace{10\p@}}%
+        
       \else
         \reset@font\noindent{\ii@chapterfont\centering\textbf{
           \LargeF\MakeUppercase{\@chapapp}\thechapter\hspace{0.5em}--\hspace{0.5em}\MakeUppercase{#1}}
@@ -1066,21 +1080,6 @@
       \fi
     \fi
   \fi
-  
-  %% Formatação dos apêndices e anexos na lista de apêndices e na lista de anexos, respectivamente.
-  \ifappendix
-    \addtocontents{loap}{\protect\addvspace{10\p@}}
-    \addcontentsline{loap}{section}{
-      \MakeUppercase{\@chapapp}\theappendix\hspace{0.5em}--\hspace{0.5em}\MakeUppercase{#1}}
-    \addtocontents{loap}{\protect\addvspace{10\p@}}
-  \fi
-  \ifannex
-    \addtocontents{loan}{\protect\addvspace{10\p@}}
-    \addcontentsline{loan}{section}{
-      \MakeUppercase{\@chapapp}\theannex\hspace{0.5em}--\hspace{0.5em}\MakeUppercase{#1}}
-    \addtocontents{loan}{\protect\addvspace{10\p@}}
-  \fi
-  \addvspace{25pt}
 }
 
 %% Formatação da versão estrelada (*) dos capítulos
