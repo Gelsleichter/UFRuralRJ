@@ -1,9 +1,14 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Modelo de tese com capítulos individuais (artigos)
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Modelo de tese com capítulos individuais
+%% 
+%% Neste formato, cada capítulo é preparado de maneira que possa ser lido individualmente, muitas vezes baseado
+%% em trabalho publicado em revista científica na forma de artigo. Assim sendo, cada capítulo possui 
+%% aproximadamente a mesma estrutura de um artigo, quais sejam: resumo, abstract, introdução, material e 
+%% métodos, resultados, discussão, e conclusões.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %% Tipo de documento e a classe a ser usada para sua formatação.
-\documentclass[tese,header,newmargins]{UFRuralRJ}
+\documentclass[tese, header, newmargins]{UFRuralRJ}
 
 %% A opção 'openright' força inícios de capítulos em páginas ímpares
 %\documentclass[openright]{UFRuralRJ}
@@ -47,12 +52,12 @@
 %% com links.
 
 \usepackage[%hidelinks%, 
-            bookmarksopen=true,linktoc=none,colorlinks=true,
-            linkcolor=blue,citecolor=blue,filecolor=magenta,urlcolor=blue,
-            pdftitle={Este título é muito legal para uma tese escrita em português},
-            pdfauthor={Nome do Melhor Estudante da Rural},
-            pdfsubject={Tese de Doutorado},
-            pdfkeywords={LaTeX, UFRuralRJ, Documentos acadêmicos}
+            bookmarksopen=true, linktoc=page, colorlinks=true,
+            linkcolor =blue, citecolor=blue, filecolor=magenta, urlcolor=blue,
+            pdftitle = {UFRuralRJ -- Classe LaTeX para formatação de documentos acadêmicos na UFRRJ},
+            pdfauthor = {Graziela Barroso},
+            pdfsubject = {Tese de Doutorado},
+            pdfkeywords = {LaTeX, UFRuralRJ, Documentos acadêmicos}
             ]{hyperref}
 
 %% Pacote para lidar com url longa, deve ser carregado depois do pacote 'hyperref'
@@ -96,89 +101,94 @@
 
 \usepackage{blindtext} %% Amostra de texto (\blindtext[1])
 
-%%==============================================================================
+%%=============================================================================================================
 %% Identificação do trabalho
-%%==============================================================================
-\titulo{Este título é muito legal para uma tese escrita em português} %% Título
-\author{Rural}{Nome da Melhor Estudante da} %% Autor: sobrenome, nome
+%%=============================================================================================================
+\titulo{UFRuralRJ -- Classe \LaTeX{} para Formatação de Documentos Acadêmicos na UFRRJ} %% Título
+\author{Barroso}{Graziela} %% Autor: sobrenome, nome
 \autoratrue %% Usar no caso de uma AUTORA
-\instituto{Instituto da Rural} %% Instituto
-\curso{Curso de Pós-Graduação da Rural} %% Curso de pós-graduação
-\area{Ciências} %% Área de concentração
-\grau{Doutor em Ciências} %% Grau obtido
-\nivel{Doutorado em Ciências} %% Nível do curso
-\local{Serop\'edica}{RJ}{Brasil} %% Local da defesa
+\instituto{Instituto de Agronomia} %% Instituto
+\curso{Curso de Pós-Graduação em Agronomia -- Ciência do Solo} %% Curso de pós-graduação
+\area{Ciência do Solo} %% Área de concentração
+\local{Seropédica}{RJ}{Brasil} %% Local da defesa
 
-%%==============================================================================
+%%=============================================================================================================
 %% Identificação dos orientadores
-%%==============================================================================
-\advisor[Professor]{Dr.}{Rural}{Melhor Orientador da}{UFRRJ} %% Orientador
-%\orientadoratrue %% Usar no caso de uma ORIENTADORA
-\coadvisor[Pesquisador]{Dr.}{Rural}{Melhor Co-orientador da} %% Co-orientador
-\coadvisor[Professora]{Dra.}{Rural}{Melhor Co-orientadora da} %% Co-orientadora
+%%=============================================================================================================
+\advisor[Professora]{Dra.}{Dobereimer}{Johana}{UFRRJ} %% Orientadora
+\orientadoratrue %% Usar no caso de uma ORIENTADORA
+\coadvisor[Pesquisador]{Dr.}{Salles}{Hilton} %% Co-orientador
+\coadvisor[Professor]{Dr.}{Costa}{Fernando} %% Co-orientador
 \coorientadorestrue %% Usar no caso de dois ou mais co-orientadores(as)
 
-%%==============================================================================
+%%=============================================================================================================
 %% Informações sobre a defesa
-%%==============================================================================
-\committee[Dr.]{Banca}{Melhor Presidente da}{UFRRJ} %% Presidente
-\committee[Dra.]{Banca}{Melhor Integrante da}{UFRRJ} %% Examinador
-\committee[Dr.]{Banca}{Melhor Integrante da}{UFRRJ} %% Examinador
-\committee[Dra.]{Banca}{Outra Melhor Integrante da}{MEFR} %% Examinador
-\committee[Dr.]{Banca}{Outro Melhor Integrante da}{MEFR} %% Examinador
-\date{30}{Fevereiro}{2016} %% Data da defesa
+%%=============================================================================================================
+\committee[Dr.]{Raithe}{Waldemar}{UFRRJ} %% Presidente
+\committee[Dra.]{Campos}{Maria Aparecida}{UFRRJ} %% Examinadora
+\committee[Dr.]{Peçanha}{Gilberto Gastim}{UFRRJ} %% Examinador
+\committee[Dra.]{Souza}{Tânia Maria Melquiades de}{UFRRJ} %% Examinadora
+\committee[Dr.]{Groszman}{Américo}{UFRRJ} %% Examinador
+\date{30}{Fevereiro}{2001} %% Data da defesa
 
-%%==============================================================================
+%%=============================================================================================================
 %% Início do documento
-%%==============================================================================
+%%=============================================================================================================
 \begin{document}
 
-%%==============================================================================
+%%=============================================================================================================
 %% Capa e folha de rosto
-%%==============================================================================
+%%=============================================================================================================
 \maketitle
 
-%%=============================================================================
+%%=============================================================================================================
 % Folha de aprovação
-%%=============================================================================
+%%=============================================================================================================
 \makeapprove
 
-%%=============================================================================
+%%=============================================================================================================
 %% Dedicatória (opcional)
-%%=============================================================================
+%%
+%% NOTA: Usar versão estrelada de 'chapter'
+%%=============================================================================================================
 \chapter*{}
 \vfill
 \begin{flushright}
   {\em
-  Àqueles que financiaram meus estudos...
+  Àqueles que financiaram meu trabalho...
   \par
   ...DEDICO!
   }
 \end{flushright}
 
-%%=============================================================================
+%%=============================================================================================================
 %% Agradecimentos (opcional)
-%%=============================================================================
+%%
+%% NOTA: Usar versão estrelada de 'chapter'
+%%=============================================================================================================
 \chapter*{Agradecimentos}
 
-\noindent{À Universidade Federal Rural do Rio de Janeiro (UFRuralRJ).}
+\noindent{À Universidade Federal Rural do Rio de Janeiro.}
 
 \noindent{Às agências de fomento.}
 
 \noindent{Aos orientadores.}
 
-\noindent{À todos que, direta ou indiretamente, contribuíram para a construção 
-deste trabalho.}
+\noindent{À todos que, direta ou indiretamente, contribuíram para a construção deste trabalho.}
 
-%%=============================================================================
+%%=============================================================================================================
 %% Biografia (opcional)
-%%=============================================================================
+%%
+%% NOTA: Usar versão estrelada de 'chapter'
+%%=============================================================================================================
 \chapter*{Biografia}
 \noindent{O autor nasceu, cresceu e escreveu uma tese.}
 
-%%=============================================================================
+%%=============================================================================================================
 %% Epígrafe (opcional)
-%%=============================================================================
+%%
+%% NOTA: Usar versão estrelada de 'chapter'
+%%=============================================================================================================
 \chapter*{}
 \vfill
 \begin{flushright}
@@ -189,39 +199,39 @@ deste trabalho.}
   }
 \end{flushright}
 
-%%==============================================================================
+%%=============================================================================================================
 %% Resumo geral (português)
-%%==============================================================================
-\def\tituloportugues{Este título é muito legal para uma tese escrita em português} %% Título em português
-\def\chavesportugues{LaTeX, UFRuralRJ, Documentos acadêmicos} %% Palavras-chave em português
+%%=============================================================================================================
+\def\tituloPT{UFRuralRJ -- Classe \LaTeX{} para formatação de documentos acadêmicos na UFRRJ}
+\def\chavesPT{\LaTeX. UFRuralRJ. Documentos acadêmicos} %% Palavras-chave em português
+\def\nivelPT{Doutorado em Agronomia, Ciência do Solo} %% Nível do curso ou grau obtido em português
 
 \generalabstracttrue %% Usar para o caso de um RESUMO GERAL
-\begin{generalabstract}{brazilian}{\tituloportugues}{\chavesportugues} %% Resumo geral em português
-  Este é o resumo em português de minha tese escrita em português. Claramente, 
-  este é o melhor resumo que já foi escrito em um documento acadêmico produzido
-  na UFRuralRJ.
+\begin{generalabstract}{brazilian}{\tituloPT}{\chavesPT}{\nivelPT} %% Resumo geral em português
+Este é o resumo geral em português de minha tese organizada na forma de capítulos individuais. Claramente, 
+este é o melhor resumo que já foi escrito em um documento acadêmico produzido na UFRuralRJ.
 \end{generalabstract}
 
-%%==============================================================================
+%%=============================================================================================================
 %% General abstract (inglês)
-%%==============================================================================
-\def\tituloingles{This is a cool title for a thesis written in Portuguese} %% Título em inglês
-\def\chavesingles{LaTeX, UFRuralRJ, Academical documents} %% Palavras-chave em inglês
+%%=============================================================================================================
+\def\tituloEN{UFRuralRJ -- \LaTeX{} class for formatting academic documents at UFRRJ}
+\def\chavesEN{\LaTeX. UFRuralRJ. Academical documents} %% Palavras-chave em inglês
+\def\nivelEN{Doctor of Science in Agronomy, Soil Science} %% Nível do curso ou grau obtido em inglês
 
 \generalabstracttrue
-\begin{generalabstract}{english}{\tituloingles}{\chavesingles} %% Resumo geral em inglês
-  This is the English abstract of my thesis written in Portuguese. Obviously this
-  is the best abstract that has ever been written in an academic document produced
-  at UFRuralRJ.
+\begin{generalabstract}{english}{\tituloEN}{\chavesEN}{\nivelEN} %% Resumo geral em inglês
+This is the English abstract of my thesis organized in the form of individual chapters. Obviously this is the 
+best abstract that has ever been written in an academic document produced at UFRuralRJ.
 \end{generalabstract}
 
-%%=============================================================================
+%%=============================================================================================================
 %% Listas (comentar se não houver) e sumário
-%%=============================================================================
+%%=============================================================================================================
 
 \listoffigures %% Lista de figuras
 % \listoftables %% Lista de tabelas
-% \listofappendix %% Lista de apêndices
+\listofappendix %% Lista de apêndices
 % \listofannex %% Lista de anexos
 
 \begin{listofabbrv}{UbiComp} %% Lista de abreviaturas e siglas
@@ -237,19 +247,27 @@ deste trabalho.}
 
 \tableofcontents %% Sumário
 
-%%=============================================================================
+%%=============================================================================================================
 %% Início da tese
-%%=============================================================================
+%%=============================================================================================================
 
-\setlength{\baselineskip}{1.5\baselineskip}
-\include{capitulos-b/chapter00} %% Incluir capítulo 00
+\include{capitulos-b/chapter00} %% Incluir Introdução Geral
 \include{capitulos-b/chapter01} %% Incluir capítulo 01
 \include{capitulos-b/chapter02} %% Incluir capítulo 02
-\setlength{\baselineskip}{\baselineskip}
+\include{capitulos-b/chapter03} %% Incluir Conclusão Geral
 
-%%=============================================================================
+%%=============================================================================================================
+%% Referências
+%%=============================================================================================================
+%% O arquivo 'biblio' com as referências bibliográficas deve estar no formato
+%% BibTeX.
+%\bibliographystyle{abnt}
+\shorttitle{Referências bibliográficas}
+\bibliography{referencias-b/biblio}
+
+%%=============================================================================================================
 %% Apêndices
-%%=============================================================================
+%%=============================================================================================================
 %% IMPORTANTE:
 %% O Manual da UFRRJ não prevê a inclusão de apêndices, mas apenas anexos. O 
 %% problema disso é que apêndices e anexos são completamente diferentes. 
@@ -265,16 +283,6 @@ deste trabalho.}
 \appendix %% Comando para criar o apêndice
 \include{capitulos-b/apendicea} %% Incluir apêndice A
 % \include{capitulos-b/apendiceb} %% Incluir apêndice B
-
-%%=============================================================================
-%% Referências
-%%=============================================================================
-%% O arquivo 'biblio' com as referências bibliográficas deve estar no formato
-%% BibTeX.
-%\bibliographystyle{abnt}
-\bibliography{referencias-b/biblio}
-
-
 
 %\annex %% Anexos
 %\include{capitulos-b/anexoa} %% Incluir anexo A

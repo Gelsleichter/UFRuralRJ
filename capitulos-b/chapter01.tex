@@ -1,23 +1,30 @@
 \artigotrue
-\chapter{Título do primeiro artigo}
-\shorttitle{Artigo 1}
+\chapter{TÍTULO DO PRIMEIRO ARTIGO}
+\chapternote{Este capítulo é baseado em um artigo que eu ainda não publiquei.}
+\shorttitle{Primeiro artigo}
 \label{chap:chapter01}
 
-\begin{chapterabstract}{brazilian}{Palavra-chave 1, Palavra-chave 2, Palavra-chave 3}
-Este é o resumo do primeiro artigo da tese.
+\begin{chapterabstract}{brazilian}{Palavra-chave 1. Palavra-chave 2. Palavra-chave 3}
+Este é o resumo do primeiro artigo da tese. Note que as palavras-chave devem ser separadas com um \emph{ponto} 
+ao invés de \emph{vírgula}.
 \end{chapterabstract}
 
-\begin{chapterabstract}{english}{Key-word 1, Key-word 2, Key-word 3}
-This is the abstract of the first article of the thesis.
+\begin{chapterabstract}{english}{Keyword 1. Keyword 2. Keyword 3}
+This is the abstract of the first article of the thesis. Note that the keywords must be separated with a 
+\emph{dot} instead of a \emph{comma}.
 \end{chapterabstract}
 
 \formatchapter
 
-\section{Introdução}
+\section{INTRODUÇÃO}
 
 \blindtext[2]
 
-\section{Material e métodos}
+\subsection{Hipótese e Objetivos}
+
+\blindtext[2]
+
+\section{MATERIAL E MÉTODOS}
 
 Este é um texto bem formatado, escrito em Seropédica, RJ. \blindtext[1]
 
@@ -49,7 +56,7 @@ E estas são as equações de Maxwell:
 \end{align}
 \end{subequations}
 
-\section{Resultados}
+\section{RESULTADOS}
 
 Aqui está mais um texto bem formatado. \blindtext[1]
 
@@ -57,18 +64,28 @@ Que tal fazer um link para a figura \autoref{fig:ocio}? E também citar o \citeo
 link para a localização da referência bibliográfica?
 
 \begin{figure}[!ht]
+\label{fig:ocio}
 \centering
 \includegraphics[width=16cm]{figura02}
-\caption{\label{fig:ocio}O ócio criativo. Fonte: \url{http://r1.ufrrj.br/graduacao/img/acesso-2012/o-ocio-criativo.jpg}}
+\caption[O ócio criativo.]{O ócio criativo. Fonte: 
+\url{http://r1.ufrrj.br/graduacao/img/acesso-2012/o-ocio-criativo.jpg}}
 \end{figure}
 
-\section{Discussão}
+\subsection{Outros Resultados}
+
+\blindtext[1]
+
+\subsubsection{Ainda outros resultados}
+
+\blindtext[1]
+
+\section{DISCUSSÃO}
 
 Aqui está o último texto muito bem formatado. \blindtext[2]
 
 Que tal fazer um link para a equação \autoref{eq:maxwell}?
 
-\section{Conclusões}
+\section{CONCLUSÕES}
 
 \begin{itemize}
   \item Está é uma conclusão importante.
