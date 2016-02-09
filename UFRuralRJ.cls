@@ -727,9 +727,11 @@
   \hskip -\leftskip
   % esta é a definicao original da classe report:
   %#1\nobreak\hfil \nobreak\hb@xt@\@pnumwidth{\hss #2}\par
-  %% ASR: -0.35em é uma solução rápida e suja para deixar todo 
-  %%      mundo alinhado na toc
-  \@dottedtocline{0}{-0.35em}{\ii@chapnumindent}{\MakeUppercase{#1}}{#2}
+  
+  %% ASR: em uma versao anterior, -0.35em foi a solução encontrada para deixar todo mundo alinhado na toc.
+  % \@dottedtocline{0}{-0.35em}{\ii@chapnumindent}{\MakeUppercase{#1}}{#2}
+  \@dottedtocline{0}{0em}{\ii@chapnumindent}{\MakeUppercase{#1}}{#2}
+  
   \penalty\@highpenalty
   \endgroup
 }
@@ -1059,10 +1061,14 @@
         \par}
       \addvspace{25pt}
       
-      %% Formatação do título do anexo na lista de apêndices
+      %% Formatação do título do apêndice na lista de apêndices
       \addtocontents{loap}{\protect\addvspace{10\p@}}
-      \addcontentsline{loap}{section}{
-      \MakeUppercase{\@chapapp}\theappendix\hspace{0.5em}--\hspace{0.5em}\MakeUppercase{#1}}
+      %% ASR: Por alguma razão, os apêndices eram adicionados à lista de apêndices usando a formatação 
+      %%      definida para 'section'. Isso resultava no alinhamento incorreto de cada item na lista. Agora 
+      %%      usa-se a formatação definida para 'chapter'.
+      % \addcontentsline{loap}{section}{%
+      \addcontentsline{loap}{chapter}{%
+        \MakeUppercase{\@chapapp}\theappendix\hspace{0.5em}--\hspace{0.5em}\MakeUppercase{#1}}
       \addtocontents{loap}{\protect\addvspace{10\p@}}
       
     \else
@@ -1076,8 +1082,12 @@
         
         %% Formatação do título do anexo na lista de anexos
         \addtocontents{loan}{\protect\addvspace{10\p@}}%
-        \addcontentsline{loan}{section}{%
-        \MakeUppercase{\@chapapp}\theannex\hspace{0.5em}--\hspace{0.5em}\MakeUppercase{#1}}%
+        %% ASR: Por alguma razão, os apêndices eram adicionados à lista de apêndices usando a formatação 
+        %%      definida para 'section'. Isso resultava no alinhamento incorreto de cada item na lista. Agora 
+        %%      usa-se a formatação definida para 'chapter'.
+        % \addcontentsline{loan}{section}{%
+        \addcontentsline{loan}{chapter}{%
+          \MakeUppercase{\@chapapp}\theannex\hspace{0.5em}--\hspace{0.5em}\MakeUppercase{#1}}%
         \addtocontents{loan}{\protect\addvspace{10\p@}}%
         
       \else
