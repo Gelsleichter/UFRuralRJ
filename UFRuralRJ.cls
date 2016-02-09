@@ -1,45 +1,42 @@
-%%==============================================================================
+%%=============================================================================================================
 %% UFRuralRJ.cls
-%% Classe LaTeX2e para formatação de documentos acadêmicos da
-%% Universidade Federal Rural do Rio de Janeiro (UFRuralRJ)
+%% Classe LaTeX2e para formatação de documentos acadêmicos da Universidade Federal Rural do Rio de Janeiro 
+%% (UFRuralRJ)
 %%
-%% Este programa é software livre. Você pode redistribuí-lo e/ou modificá-lo 
-%% sob os termos da GNU General Public License versão 2 conforme publicada pela
-%% Free Software Foundation.
+%% Este programa é software livre. Você pode redistribuí-lo e/ou modificá-lo sob os termos da GNU General 
+%% Public License versão 2 conforme publicada pela Free Software Foundation.
 %%
-%% Este programa é distribuído na esperança que será útil, mas SEM QUALQUER 
-%% GARANTIA, sem mesmo a garantia implícita de COMERCIALIZAÇÃO ou ADEQUAÇÃO 
-%% PARA UM PROPÓSITO PARTICULAR. Veja a GNU General Public License para mais 
-%% detalhes (http://www.gnu.org/licenses/gpl.html).
+%% Este programa é distribuído na esperança que será útil, mas SEM QUALQUER GARANTIA, sem mesmo a garantia
+%% implícita de COMERCIALIZAÇÃO ou ADEQUAÇÃO PARA UM PROPÓSITO PARTICULAR. Veja a GNU General Public License
+%% para mais detalhes (http://www.gnu.org/licenses/gpl.html).
 %%
-%% Você deve ter recebido uma cópia da Licença Pública Geral GNU, sob o título 
-%% 'LICENCE.md', junto com este programa. Caso contrário, escreva para a Free 
-%% Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, 
-%% MA 02111-1307 USA.
+%% Você deve ter recebido uma cópia da Licença Pública Geral GNU, sob o título 'LICENCE', junto com este
+%% programa. Caso contrário, escreva para a Free Software Foundation, Inc., 59 Temple Place, Suite 330, 
+%% Boston, MA 02111-1307 USA.
 %%
 %% Créditos:
 %%
-%% Esta classe é uma adaptação livre de mdtufsm.cls, contida no pacore 
-%% mdtufsm-ppgi v.1.4 (https://code.google.com/p/mdtufsm-ppgi/), desenvolvido 
-%% pela Informática da Universidade Federal de Santa Maria 
-%% (http://www.inf.ufsm.br), que é uma adaptação livre de iiufrgs.cls,
-%% contida pacote iiufrgs-4.3.1, desenvolvido pelo UFRGS TeX Users Group
-%% (http://www.inf.ufrgs.br/utug).
+%% Esta classe é uma adaptação livre da class mdtufsm.cls, contida no pacote 'mdtufsm-ppgi', em sua versão 
+%% 1.4 (https://code.google.com/p/mdtufsm-ppgi/), desenvolvido pela Informática da Universidade Federal de
+%% Santa Maria (http://www.inf.ufsm.br). O último é uma adaptação livre da class 'iiufrgs.cls', contida 
+%% pacote 'iiufrgs-4.3.1', desenvolvido pelo UFRGS TeX Users Group (http://www.inf.ufrgs.br/utug).
+%% As adaptações para atender às normas da UFRuralRJ foram realizadas por:
+%% - Alessandro Samuel-Rosa (Curso de Pós-Graduação em Agronomia -- Ciência do Solo): 2012-Atual
+%% - Alessandro Bandeira Duarte (Departamento de Filosofia): 2015-Atual
 %%
 %% Informação:
 %%
-%% A formatação de documentos acadêmicos segue as recomendações contidas na
-%% terceira edição do Manual de instruções para organização e apresentação de 
-%% dissertações e teses na UFRRJ, Seropédica: UFRRJ, 25p, 2006, disponível em
-%% http://www.ufrrj.br/portal/modulo/dppg/Formularios_normas/manual_teses.pdf
+%% A formatação de documentos acadêmicos segue as recomendações contidas na terceira edição do Manual de
+%% instruções para organização e apresentação de dissertações e teses na UFRRJ, Seropédica: UFRRJ, 25p, 2006,
+%% disponível em http://www.ufrrj.br/portal/modulo/dppg/Formularios_normas/manual_teses.pdf
 %% 
-%%==============================================================================
+%%=============================================================================================================
 
 %%==============================================================================
 %% Identificação
 %%==============================================================================
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{UFRuralRJ}[08/02/2016 v.0.6 Formatação de documentos acadêmicos da UFRuralRJ]
+\ProvidesClass{UFRuralRJ}[09/02/2016 v.0.7 Formatação de documentos acadêmicos da UFRuralRJ]
 
 %%==============================================================================
 %% Declaração de opções da classe
@@ -52,7 +49,7 @@
     \def\grau{\tesegrau}
     \def\doctypename{\tesename}
     \def\doctypearticle{a}
-    \def\doctypenameCIP{Tese (Doutorado)}
+    % \def\doctypenameCIP{Tese (Doutorado)}
   }
 }
 
@@ -63,8 +60,7 @@
     \def\grau{\dissgrau}
     \def\doctypename{\dissname}
     \def\doctypearticle{a}
-    % \def\doctypenameIngles{Master's Dissertation}
-    \def\doctypenameCIP{Disserta{\c{c}}{\~a}o (Mestrado)}
+    % \def\doctypenameCIP{Disserta{\c{c}}{\~a}o (Mestrado)}
   }
 }
 

@@ -1,13 +1,18 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Modelo de tese com capítulos individuais
 %% 
-%% Neste formato, cada capítulo é preparado de maneira que possa ser lido individualmente, muitas vezes baseado
-%% em trabalho publicado em revista científica na forma de artigo. Assim sendo, cada capítulo possui 
-%% aproximadamente a mesma estrutura de um artigo, quais sejam: resumo, abstract, introdução, material e 
-%% métodos, resultados, discussão, e conclusões.
+%% Neste formato, cada capítulo é preparado de maneira que possa ser lido individualmente, muitas vezes sendo 
+%% baseado em trabalho publicado em revista científica na forma de artigo, revisão bibliográfica, ou nota 
+%% científica. Assim sendo, cada capítulo possui aproximadamente a mesma estrutura de um desses tipos de 
+%% comunicação científica, quais sejam: resumo, abstract, introdução, material e métodos, resultados, 
+%% discussão, e conclusões.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%% Tipo de documento e a classe a ser usada para sua formatação.
+%%=============================================================================================================
+%% Definições gerais
+%%=============================================================================================================
+
+%% Tipo de documento e a classe a ser usada para sua formatação
 \documentclass[tese, header, newmargins]{UFRuralRJ}
 
 %% A opção 'openright' força inícios de capítulos em páginas ímpares
@@ -16,24 +21,23 @@
 %% Use a opção 'twoside' para gerar uma versão frente-e-verso
 %\documentclass[twoside]{UFRuralRJ}
 
-%%==============================================================================
+%%=============================================================================================================
 %% Pacotes - língua, codificação e fonte
-%%==============================================================================
+%%=============================================================================================================
 \usepackage[brazilian]{babel} %% use 'english' para documento escrito em inglês
 \usepackage[T1]{fontenc} %% Conjunto de caracteres correto
-%\usepackage{times} %% Usar fonte Adobe Times Roman
 \usepackage[utf8]{inputenc} %% Para acentuação correta
 
-%%==============================================================================
+%%=============================================================================================================
 %% Pacotes - formatação de equações e números
-%%==============================================================================
+%%=============================================================================================================
 
 \usepackage{amsmath,latexsym,amssymb}
 \usepackage{siunitx} %% Sistema Internacional de Unidades
 
-%%==============================================================================
+%%=============================================================================================================
 %% Pacotes - formatação de figuras
-%%==============================================================================
+%%=============================================================================================================
 
 %% Importar figuras corretamente
 \usepackage{graphicx}
@@ -44,17 +48,17 @@
 \usepackage{float}
 \usepackage{wrapfig}
 
-%%==============================================================================
+%%=============================================================================================================
 %% Pacotes - formatação de hyperlinks e urls
-%%==============================================================================
-%% Opção 'hidelinks' disponível no pacote 'hyperref' a partir da versão 
-%% 2011-02-05  6.82a. 'hidelinks' retira os retângulos do entorno das palavras
-%% com links.
+%%=============================================================================================================
+
+%% Opção 'hidelinks' disponível no pacote 'hyperref' a partir da versão 2011-02-05  6.82a. 'hidelinks' retira 
+%% os retângulos do entorno das palavras com links.
 
 \usepackage[%hidelinks%, 
             bookmarksopen=true, linktoc=page, colorlinks=true,
-            linkcolor =blue, citecolor=blue, filecolor=magenta, urlcolor=blue,
-            pdftitle = {UFRuralRJ -- Classe LaTeX para formatação de documentos acadêmicos na UFRRJ},
+            linkcolor=blue, citecolor=blue, filecolor=magenta, urlcolor=blue,
+            pdftitle={UFRuralRJ -- Classe LaTeX para formatação de documentos acadêmicos na UFRRJ},
             pdfauthor={Graziela Barroso},
             pdfsubject={Tese de Doutorado},
             pdfkeywords={LaTeX, UFRuralRJ, Documentos acadêmicos}
@@ -63,26 +67,22 @@
 %% Pacote para lidar com url longa, deve ser carregado depois do pacote 'hyperref'
 \usepackage[hyphenbreaks]{breakurl}
 
-%% Definição das margens
-% \usepackage[inner = 30mm, outer = 20mm, top = 30mm, bottom = 20mm]{geometry}
-
 %% Se o pacote 'hyperref' acima foi carregado, a linha abaixo corrige um bug na 
 %% hora de montar o sumário da lista de figuras e tabelas. Comente a linha se o
 %% pacote 'hyperref' não foi carregado.
 \input{macros/bugcaption}
 
-%%==============================================================================
+%%=============================================================================================================
 %% Pacotes - formatação da bibliografia de acordo com as normas da ABNT
-%%==============================================================================
-% O pacote 'abntex2cite' precisa, obrigatoriamente, ser carregado depois do 
-% pacote 'hyperref'. Mais informações podem ser obtidas na página do pacote no
-% GitHub: https://github.com/abntex/abntex2
+%%=============================================================================================================
+% O pacote 'abntex2cite' precisa, obrigatoriamente, ser carregado depois do pacote 'hyperref'.
+% Mais informações podem ser obtidas na página do pacote no GitHub: https://github.com/abntex/abntex2
 
-\usepackage[alf]{abntex2cite}
+\usepackage[alf, abnt-and-type=&, abnt-etal-cite=2, abnt-etal-list = 0]{abntex2cite}
 
-%%==============================================================================
+%%=============================================================================================================
 %% Pacotes - formatação de verbatim
-%%==============================================================================
+%%=============================================================================================================
 %% O ambiente verbatim é o ambiente onde são inseridos exemplos de código fonte.
 %% Está opção adiciona cor de fundo ao ambiente verbatim.
 %% Comente para desabilitar.
@@ -93,9 +93,9 @@
 \def\endverbatim{\oldendv\egroup\fboxsep0pt 
                  \noindent\colorbox[gray]{0.8}{\usebox0}\par}
 
-%%==============================================================================
+%%=============================================================================================================
 %% Pacotes - outros
-%%==============================================================================
+%%=============================================================================================================
 
 % \usepackage{showframe}
 
@@ -273,8 +273,7 @@ best abstract that has ever been written in an academic document produced at UFR
 %% problema disso é que apêndices e anexos são completamente diferentes. 
 %% O anexo pode constituir de qualquer material, não necessariamente de sua 
 %% autoria ou fundamental para o entendimento do seu documento como um todo, 
-%% ao contrário do apêndice. Assim, o apêndice deve ser inserido antes da lista 
-%% de referências bibliográficas.
+%% ao contrário do apêndice.
 %% NOTA:
 %% Caso seja necessário inserir seção ou subseção dentro do apêndice, use o
 %% comando \tocless para não adicioná-los no Sumário.
