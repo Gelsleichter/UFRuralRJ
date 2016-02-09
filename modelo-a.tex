@@ -47,19 +47,19 @@
 %% com links.
 
 \usepackage[%hidelinks%, 
-           bookmarksopen=true,linktoc=none,colorlinks=true,
-           linkcolor=blue,citecolor=blue,filecolor=magenta,urlcolor=blue,
-            pdftitle={Este título é muito legal para uma tese escrita em português},
-            pdfauthor={Nome do Melhor Estudante da Rural},
-            pdfsubject={Tese de Doutorado},
-            pdfkeywords={LaTeX, UFRuralRJ, Documentos acadêmicos}
-            ]{hyperref}
+           bookmarksopen = true, linktoc=page, colorlinks=true,
+           linkcolor = blue, citecolor=blue, filecolor=magenta, urlcolor=blue,
+           pdftitle = {Princípio de Hume: Possibilidade de uma Filosofia (Neo) Fregeana da Aritmética?},
+           pdfauthor={Alessandro Bandeira Duarte},
+           pdfsubject={Dissetação de Mestrado},
+           pdfkeywords={LaTeX, UFRuralRJ, Documentos acadêmicos}
+           ]{hyperref}
 
 %% Pacote para lidar com url longa, deve ser carregado depois do pacote 'hyperref'
 \usepackage[hyphenbreaks]{breakurl}
 
 %% Definição das margens
-\usepackage[inner = 30mm, outer = 20mm, top = 30mm, bottom = 20mm]{geometry}
+% \usepackage[inner = 30mm, outer = 20mm, top = 30mm, bottom = 20mm]{geometry}
 
 %% Se o pacote 'hyperref' acima foi carregado, a linha abaixo corrige um bug na 
 %% hora de montar o sumário da lista de figuras e tabelas. Comente a linha se o
@@ -103,9 +103,7 @@
 \instituto{Instituto de Ciências Humanas e Sociais} %% Instituto
 \curso{Curso de Pós-Graduação em Filosofia} %% Curso de pós-graduação
 \area{Filosofia} %% Área de concentração
-\grau{Mestre em Filosofia} %% Grau obtido
-\nivel{Mestrado em Filosofia} %% Nível do curso
-\local{Serop\'edica}{RJ}{Brasil} %% Local da defesa
+\local{Seropédica}{RJ}{Brasil} %% Local da defesa
 
 %%==============================================================================
 %% Identificação dos orientadores
@@ -122,7 +120,7 @@
 %%==============================================================================
 
 % Ex.: \committee[Título]{Sobrenome}{Nome}{Instituição}
-\committee[Dr.]{Dedekindbr}{Richard}{UFRRJ} %% Presidente
+\committee[Dr.]{Dedekind}{Richard}{UFRRJ} %% Presidente
 \committee[Dr.]{Frege}{Gottlob}{UFRRJ} %% Examinador
 \committee[Dra.]{Maddy}{Peneloppy}{UFRGT} %% Examinador
 %\committee[Dra.]{Banca}{Outra Melhor Integrante da}{MEFR} %% Examinador
@@ -198,11 +196,12 @@ Autor desconhecido
 %%==============================================================================
 %% Resumo geral (português)
 %%==============================================================================
-\def\tituloportugues{Princípio de Hume: Possibilidade de uma Filosofia (Neo) Fregeana da Aritmética?}
-\def\chavesportugues{Frege, Princípios de Abstração, Princípio de Hume} %% Palavras-chave em português
+\def\tituloPT{Princípio de Hume: Possibilidade de uma Filosofia (Neo) Fregeana da Aritmética?}
+\def\chavesPT{Frege. Princípios de Abstração. Princípio de Hume} %% Palavras-chave em português
+\def\nivelPT{Mestrado em Filosofia}
 
 %\generalabstracttrue
-\begin{generalabstract}{brazilian}{\tituloportugues}{\chavesportugues} %% Resumo geral em português
+\begin{generalabstract}{brazilian}{\tituloPT}{\chavesPT}{\nivelPT} %% Resumo geral em português
   A dissertação apresenta e discute as idéias desenvolvidas por Crispin Wright 
   no livro \textit{Frege’s Conception of Numbers as Objects} (1983), em 
   particular, a tese segundo a qual a aritmética é analítica. Wright deposita 
@@ -217,12 +216,12 @@ Autor desconhecido
 %%==============================================================================
 %% General abstract (inglês)
 %%==============================================================================
-\def\tituloingles{Hume's Principle: Possibility of a (Neo) Fregean Philosophy 
-  of Arithmetic?} %% Título em inglês
-\def\chavesingles{Frege, Abstraction Principles, Hume's Principle} %% Palavras-chave em inglês
+\def\tituloEN{Hume's Principle: Possibility of a (Neo) Fregean Philosophy of Arithmetic?} %% Título em inglês
+\def\chavesEN{Frege. Abstraction Principles. Hume's Principle} %% Palavras-chave em inglês
+\def\nivelEN{Master of Philosophy}
 
 %\generalabstracttrue
-\begin{generalabstract}{english}{\tituloingles}{\chavesingles} %% Resumo geral em inglês
+\begin{generalabstract}{english}{\tituloEN}{\chavesEN}{\nivelEN} %% Resumo geral em inglês
   The dissertation presents and discusses the ideas developed by Crispin Wright
   in his book \textit{Frege's Conception of Numbers as Objects} (1983), in 
   particular his thesis that arithmetic is analytic. Wright concentrates all 
@@ -259,11 +258,16 @@ Autor desconhecido
 %% Início da tese
 %%=============================================================================
 
-\setlength{\baselineskip}{1.5\baselineskip}
 \include{capitulos-a/chapter00} %% Incluir capítulo 00
 \include{capitulos-a/chapter01} %% Incluir capítulo 01
 \include{capitulos-a/chapter02} %% Incluir capítulo 02
-\setlength{\baselineskip}{\baselineskip}
+
+%%=============================================================================
+%% Referências
+%%=============================================================================
+%% O arquivo 'biblio' com as referências bibliográficas deve estar no formato
+%% BibTeX.
+\bibliography{referencias-a/biblio}
 
 %%=============================================================================
 %% Apêndices
@@ -273,8 +277,7 @@ Autor desconhecido
 %% problema disso é que apêndices e anexos são completamente diferentes. 
 %% O anexo pode constituir de qualquer material, não necessariamente de sua 
 %% autoria ou fundamental para o entendimento do seu documento como um todo, 
-%% ao contrário do apêndice. Assim, o apêndice deve ser inserido antes da lista 
-%% de referências bibliográficas.
+%% ao contrário do apêndice.
 %% NOTA:
 %% Caso seja necessário inserir seção ou subseção dentro do apêndice, use o
 %% comando \tocless para não adicioná-los no Sumário.
@@ -283,17 +286,6 @@ Autor desconhecido
 \appendix %% Apêndices
 \include{capitulos-a/apendicea} %% Incluir apêndice A
 % \include{capitulos-a/apendiceb} %% Incluir apêndice B
-
-%%=============================================================================
-%% Referências
-%%=============================================================================
-
-%% O arquivo 'biblio' com as referências bibliográficas deve estar no formato
-%% BibTeX.
-
-\bibliography{referencias-a/biblio}
-%\bibliographystyle{abnt}
-
 
 %\annex %% Anexos
 %\include{capitulos-a/anexoa} %% Incluir anexo A

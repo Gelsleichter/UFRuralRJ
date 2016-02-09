@@ -56,6 +56,18 @@
   }
 }
 
+%% Dissertação de mestrado
+\DeclareOption{diss}{
+  \AtEndOfClass{
+    \newcommand{\titlepagespecificinfo}{\dissspecificinfo}
+    \def\grau{\dissgrau}
+    \def\doctypename{\dissname}
+    \def\doctypearticle{a}
+    % \def\doctypenameIngles{Master's Dissertation}
+    \def\doctypenameCIP{Disserta{\c{c}}{\~a}o (Mestrado)}
+  }
+}
+
 %% Monografia de especialização
 \DeclareOption{espec}{
   \AtEndOfClass{
@@ -88,17 +100,6 @@
 	  \def\doctypenameCIP{Monografia (Gradua{\c{c}}{\~a}o)}
   }
 
-}
-
-%% Dissertação de mestrado
-\DeclareOption{diss}{
-  \AtEndOfClass{
-    \newcommand{\titlepagespecificinfo}{\dissspecificinfo}
-    \def\doctypename{\dissname}
-    \def\doctypearticle{a}
-    \def\doctypenameIngles{Master's Dissertation}
-    \def\doctypenameCIP{Disserta{\c{c}}{\~a}o (Mestrado)}
-  }
 }
 
 \DeclareOption{english}{
