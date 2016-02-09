@@ -1,6 +1,7 @@
 # Versão 0.7 (09-Fev-2016)
 * Várias pequenas correções na formatação do sumário e numeração de itens ao longo do texto foram feitas.
 * Os dois modelos de documento foram atualizados levando em conta as últimas modificações da classe.
+* O manual de uso da classe foi criado.
 
 # Versão 0.6 (08-Fev-2016)
 * A formatação da numeração alfabética dos apêndices e anexos foi aprimorada usando contadores próprios para 
