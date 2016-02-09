@@ -152,7 +152,7 @@
 
 %% Definições de gênero
 \newif\ifautora %% 'autora' em vez de 'autor'
-\newif\iforientadora %% 'orientadora' em vez de 'orientador'
+% \newif\iforientadora %% 'orientadora' em vez de 'orientador'
 % \newif\ifcoorientadora %% 'co-orientadora' em vez de 'co-orientador'. Obsoleto
 
 %% Definições de capítulo
@@ -495,7 +495,7 @@
 %%==============================================================================
 
 %% Para saber se há mais de um(a) co-orientador(a)
-\newif\ifcoorientadores
+% \newif\ifcoorientadores
 
 %% Definição do texto de apresentação do(a) orientador(a) e do(s) 
 %% co-orientador(es)
