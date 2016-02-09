@@ -1273,6 +1273,7 @@
   
   % \setcounter{chapter}{0}%
   \setcounter{section}{0}%
+  \numberwithin{section}{appendix}
   % \renewcommand{\thechapter}{\LargeF\Alph{chapter}}% Tamanho agora definido em @chapter
   % \renewcommand{\thechapter}{\Alph{chapter}}%
   \renewcommand{\theappendix}{\Alph{appendix}}%
@@ -1351,6 +1352,7 @@
   
   % \setcounter{chapter}{0}%
   \setcounter{section}{0}%
+  \numberwithin{section}{annex}
   % \renewcommand{\thechapter}{\LargeF\Alph{chapter}}% Tamanho agora definido em @chapter
   % \renewcommand{\thechapter}{\Alph{chapter}}%
   \renewcommand{\theannex}{\Alph{annex}}%
