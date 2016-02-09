@@ -1039,7 +1039,12 @@
       \fi
     \fi
     \par}
-  
+    
+    %% Espaço vertical adicionado apos o título de cada item do documento. No formato de capitulos individuais,
+    %% aplica-se aos itens Introduçao Geral e Conclusao Geral. Trata-se do mesmo espaçamento vertical 
+    %% adicionado apos cada seçao e subseçao do texto ('afterskip') conforme definido abaixo.
+    \addvspace{10pt}
+    
   \else
     
     %% Definição do conteúdo do título de cada apêndice, anexo e capítulo (nesta ordem).
@@ -1052,6 +1057,7 @@
       \reset@font\noindent{\ii@chapterfont\centering\textbf{
         \LargeF\MakeUppercase{\@chapapp}\theappendix\hspace{0.5em}--\hspace{0.5em}\MakeUppercase{#1}}
         \par}
+      \addvspace{25pt}
       
       %% Formatação do título do anexo na lista de apêndices
       \addtocontents{loap}{\protect\addvspace{10\p@}}
@@ -1066,6 +1072,7 @@
         \reset@font\noindent{\ii@chapterfont\centering\textbf{
           \LargeF\MakeUppercase{\@chapapp}\theannex\hspace{0.5em}--\hspace{0.5em}\MakeUppercase{#1}}
           \par}
+        \addvspace{25pt}
         
         %% Formatação do título do anexo na lista de anexos
         \addtocontents{loan}{\protect\addvspace{10\p@}}%
@@ -1077,6 +1084,7 @@
         \reset@font\noindent{\ii@chapterfont\centering\textbf{
           \LargeF\MakeUppercase{\@chapapp}\thechapter\hspace{0.5em}--\hspace{0.5em}\MakeUppercase{#1}}
           \par}
+        \addvspace{10pt}
       \fi
     \fi
   \fi
@@ -1105,7 +1113,7 @@
 %% ASR: Os títulos das seções e subseções são precedidos por espaçamento de 20 pontos, e sucedidos por 
 %%      espaçamento de 10 pontos.
 
-%\renewcommand{\section}{%name, level, indent, beforeskip, afterskip,style
+%\renewcommand{\section}{%name, level, indent, beforeskip, afterskip, style
 %        \@startsection{section}{1}{0pt}{18pt}{18pt}{\reset@font\bfseries\@setfontsize\Large{12}{20}}
 %}
 
