@@ -6,6 +6,7 @@
 \def\abstractname{ABSTRACT}%
 \def\generalabstractname{GENERAL ABSTRACT}%
 \def\appendixname{Appendix}%
+\def\artigoname{Chapter}% Uso de \autoref em documentos organizados na forma de capítulos individuais
 \def\contentsname{Contents}%
 \def\listfigurename{List of Figures}%
 \def\listtablename{List of Tables}%

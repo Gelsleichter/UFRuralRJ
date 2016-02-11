@@ -1,3 +1,7 @@
+# Versão 0.8 (11-Fev-2016)
+* Melhoria dos contadores de artigos (documentos organizados na forma de capítulos individuais), apêndices e 
+anexos a fim de usar corretamente comandos como `\label` e `\autoref`.
+
 # Versão 0.7 (09-Fev-2016)
 * Várias pequenas correções na formatação do sumário e numeração de itens ao longo do texto foram feitas.
 * Os dois modelos de documento foram atualizados levando em conta as últimas modificações da classe.

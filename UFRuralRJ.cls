@@ -979,7 +979,7 @@
        \addtocontents{toc}{\protect\addvspace{10\p@}}%
         
         \ifartigo
-         \addtocounter{artigo}{+1}
+         \refstepcounter{artigo}
          \addcontentsline{toc}{chapter}{%
          % \protect\numberline{\@chapapp\thechapter}~\chaptername~\Roman{chapter}.~#1}%
          \protect\numberline{\@chapapp\thechapter}~\chaptername~\theartigo.~#1}%
@@ -1051,7 +1051,7 @@
     %% continuar a numeração correta dos capítulos subsequentes.
     %\@setfontsize\Large{12}{20} se for o padrão da seção
     \ifappendix
-      \addtocounter{appendix}{+1}%
+      \refstepcounter{appendix}
       \addtocounter{chapter}{-1}%
       \reset@font\noindent{\ii@chapterfont\centering\textbf{
         \LargeF\MakeUppercase{\@chapapp}\theappendix\hspace{0.5em}--\hspace{0.5em}\MakeUppercase{#1}}
@@ -1070,7 +1070,7 @@
       
     \else
       \ifannex
-        \addtocounter{annex}{+1}%
+        \refstepcounter{annex}%
         \addtocounter{chapter}{-1}%
         \reset@font\noindent{\ii@chapterfont\centering\textbf{
           \LargeF\MakeUppercase{\@chapapp}\theannex\hspace{0.5em}--\hspace{0.5em}\MakeUppercase{#1}}

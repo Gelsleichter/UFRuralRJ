@@ -6,6 +6,7 @@
 \def\abstractname{RESUMO}%
 \def\generalabstractname{RESUMO GERAL}%
 \def\appendixname{Ap{\^e}ndice}%
+\def\artigoname{Cap\'itulo}% Uso de \autoref em documentos organizados na forma de capítulos individuais
 % \def\appendixsname{Ap{\^e}ndices}%
 \def\contentsname{Sum{\'a}rio}%
 \def\listfigurename{Lista de Figuras}%
