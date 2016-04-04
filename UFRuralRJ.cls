@@ -733,11 +733,16 @@
   \endgroup
 }
 
-%% ASR: O comando \@dottedtocline espera os seguintes parâmetros:
-%%      \@dottedtocline{<level>}{<indentation>}{<numwidth>}
-%%      Não existe definição oficial do nível de indentação das seções. Os valores usados aqui são baseados
-%%      na dimensão da letra 'M' maiúscula na fonte atual, conforme expresso pelo comando 'em'.
-\renewcommand*{\l@section}[2]{\@dottedtocline{1}{1em}{1.7em}{\textbf{#1}}{\hss #2}}
+%% O comando \@dottedtocline espera os seguintes parâmetros:
+%% \@dottedtocline{<level>}{<indentation>}{<numwidth>}
+%% - <indentation> define o nível de indentação das seções no sumário. Note que não existe definição oficial 
+%%   do nível de indentação das seções. Os valores usados aqui são baseados na dimensão da letra 'M' maiúscula 
+%%   na fonte atual, conforme expresso pelo comando 'em'.
+%% - <numwidth> define a largura da númeração no sumário. Esse parâmetro é importante porque, à medida que 
+%%   o número das seções aumenta, a distância entre o número e o texto fica menor, algumas vezes resultando em
+%%   sobreposição.
+% \renewcommand*{\l@section}[2]{\@dottedtocline{1}{1em}{1.7em}{\textbf{#1}}{\hss #2}}
+\renewcommand*{\l@section}[2]{\@dottedtocline{1}{1em}{2.4em}{\textbf{#1}}{\hss #2}}
 \renewcommand*{\l@subsection}{\@dottedtocline{2}{2em}{2.4em}}
 \renewcommand*{\l@subsubsection}{\@dottedtocline{3}{3em}{3em}}
 \renewcommand*{\l@paragraph}{\@dottedtocline{4}{4em}{3.8em}}
