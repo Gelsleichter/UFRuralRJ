@@ -36,7 +36,7 @@
 %% Identificação
 %%==============================================================================
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{UFRuralRJ}[11/02/2016 v.0.8 Formatação de documentos acadêmicos da UFRuralRJ]
+\ProvidesClass{UFRuralRJ}[15/04/2016 v.0.9 Formatação de documentos acadêmicos da UFRuralRJ]
 
 %%==============================================================================
 %% Declaração de opções da classe
@@ -124,13 +124,14 @@
 \def\ufrrjcurto{UFRRJ}
 \newcommand{\titulo}[1]{\gdef\@titulo{#1}}
 \newcommand{\curso}[1]{\gdef\@curso{#1}}
-% \newcommand{\altCurso}[1]{\gdef\@altCurso{#1}} %% Obsoleto
 \newcommand{\area}[1]{\gdef\@area{#1}}
 \newcommand{\instituto}[1]{\gdef\@instituto{#1}}
+\newcommand{\local}[3]{\gdef\@city{#1}\gdef\@state{#2}\gdef\@country{#3}}
+
+% \newcommand{\altCurso}[1]{\gdef\@altCurso{#1}} %% Obsoleto
 % \newcommand{\grau}[1]{\gdef\@grau{#1}} %% Obsoleto
 % \newcommand{\nivel}[1]{\gdef\@nivel{#1}} %% Obsoleto
 \newcommand{\trabalhoNumero}[1] {\gdef\@trabalhoNumero{#1}}
-\newcommand{\local}[3]{\gdef\@city{#1}\gdef\@state{#2}\gdef\@country{#3}}
 
 %% Institutos
 \def\IA{Instituto de Agronomia}
@@ -221,14 +222,16 @@
   \addtolength{\marginparsep}{-\marginparwidth}
   \setlength{\marginparsep}{.5\marginparsep}
 \else
+
   %% Definições gerais
   \newlength{\mdt@topmargin}\setlength{\mdt@topmargin}{30mm}
   \newlength{\mdt@bottommargin}\setlength{\mdt@bottommargin}{20mm}
-  \newlength{\mdt@sidemargin}\setlength{\mdt@sidemargin}{30mm}
+  \newlength{\mdt@sidemargin}\setlength{\mdt@sidemargin}{30mm}       % ASR: Qual é a tua utilidade???
   \newlength{\mdt@pagenummargin}\setlength{\mdt@pagenummargin}{15mm}
-  \setlength{\marginparwidth}{25mm}
+  \setlength{\marginparwidth}{25mm}                                  % ASR: Qual é a tua utilidade???
   \newlength{\mdt@insidemargin}\setlength{\mdt@insidemargin}{30mm}
   \newlength{\mdt@outsidemargin}\setlength{\mdt@outsidemargin}{20mm}
+  
   %% Ajuste das medidas verticais
   \setlength{\topmargin}{\mdt@pagenummargin}
   \addtolength{\topmargin}{-1em}
@@ -241,10 +244,14 @@
   \addtolength{\textheight}{-\mdt@bottommargin}
   \setlength{\footskip}{\mdt@bottommargin}
   \addtolength{\footskip}{-\mdt@pagenummargin}
+  
   %% Ajuste das medidas horizontais
   \setlength{\oddsidemargin}{\mdt@insidemargin}
-  \addtolength{\oddsidemargin}{-1in}
+  \addtolength{\oddsidemargin}{-\marginparwidth} % twoside: Controla a margem direita quando esta for a menor
+  
   \setlength{\evensidemargin}{\mdt@outsidemargin}
+  \addtolength{\evensidemargin}{-\marginparwidth} % twoside: Controla a margem esquerda quando esta for a menor
+  
   \setlength{\textwidth}{\paperwidth}
   \addtolength{\textwidth}{-\mdt@insidemargin}
   \addtolength{\textwidth}{-\mdt@outsidemargin}
