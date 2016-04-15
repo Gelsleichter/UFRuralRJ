@@ -482,8 +482,16 @@
     \thetitlepage
   \end{titlepage}
   \clearpage
-  \secondtitlepage
-  \setcounter{page}{2}
+  \if@twoside
+    \null
+    \thispagestyle{empty}%
+    \setcounter{page}{2}%
+    \newpage
+    \secondtitlepage
+  \else
+    \secondtitlepage
+    \setcounter{page}{2}%
+  \fi
 }
 
 %%=============================================================================
@@ -585,7 +593,14 @@
 
 \newcommand{\makeapprove}{%
   \clearpage
-  \theapprovepage
+  \if@twoside
+    \null
+    \thispagestyle{empty}% 
+    \newpage
+    \secondtitlepage
+  \else
+    \secondtitlepage
+  \fi
 }
 \newcommand{\theapprovepage}{%
   \noindent

@@ -1,3 +1,10 @@
+# Versão 0.9 (15-Abr-2016)
+* Corrige texto de definição da data de aprovação do documento acadêmico.
+* Automatiza conversão da data numérica para nominal (mês).
+* Ajusta o posicionamento da nota de rodapé usada com o título do capítulo (`\chapternote{<footnote>}`).
+* Corrige a largura da numeração das seções no sumário (`<numwidth>`) a fim de evitar a sobrepocição 
+  número/texto quando a numeração da seção atinge mais do que dois dígitos.
+
 # Versão 0.8 (11-Fev-2016)
 * Melhoria dos contadores de artigos (documentos organizados na forma de capítulos individuais), apêndices e 
 anexos a fim de usar corretamente comandos como `\label` e `\autoref`.
