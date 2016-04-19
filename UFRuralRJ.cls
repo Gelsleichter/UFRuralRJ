@@ -962,6 +962,7 @@
     % \addcontentsline{toc}{section}{\MakeUppercase{\abstractname}}
     % \addcontentsline{toc}{section}{\uppercase{\abstractname}}
     % \addcontentsline{toc}{section}{\uppercase{\protect\numberline{\thesection}\abstractname}}
+    
     \addcontentsline{toc}{section}{\protect\numberline{\thesection}\abstractname}
     
     \vspace{2mm} %% Espaço do título até o corpo do texto
@@ -1044,6 +1045,22 @@
       %%      COmo não existe definição oficial, a decisão de adicionar 10 pontos é completamente arbitrária.
       \ifchap%
        \addtocontents{toc}{\protect\addvspace{10\p@}}%
+       
+       %% Verificar se o documento será impresso em frente e verso.
+       %% Em caso positivo, os itens do sumário são impressos apenas nas páginas ímpares (lado direito) 
+       %% do documento.
+       \addtocontents{toc}{
+         \protect\if@twoside
+           \protect\if@openright
+             \protect\checkoddpage
+             \protect\ifoddpage
+               \protect\vspace{0mm}
+             \protect\else
+               \protect\cleardoublepage
+             \protect\fi
+           \protect\fi
+         \protect\fi
+       }
         
         \ifartigo
          \refstepcounter{artigo}
@@ -1192,12 +1209,8 @@
     \if@openright
       \checkoddpage
       \ifoddpage
-        % \null
         \clearpage
       \else
-        % \null
-        % \thispagestyle{empty}%
-        % \newpage
         \cleardoublepage
       \fi
     \fi
@@ -1231,28 +1244,23 @@
 \renewcommand\section{\@startsection{section}{1}{0pt}%
                                    {20pt}%
                                    {10pt}%
-                                   {\centering\reset@font\bfseries\@setfontsize
-                                     \Large{12}{20}}}
+                                   {\centering\reset@font\bfseries\@setfontsize\Large{12}{20}}}
 \renewcommand\subsection{\@startsection{subsection}{2}{0pt}%
                                    {20pt}%
                                    {10pt}%
-                                   {\reset@font\bfseries\@setfontsize
-                                     \Large{12}{20}}}
+                                   {\reset@font\bfseries\@setfontsize\Large{12}{20}}}
 \renewcommand\subsubsection{\@startsection{subsubsection}{3}{0pt}%
                                    {20pt}%
                                    {10pt}%
-                                   {\reset@font\bfseries\@setfontsize
-                                     \Large{12}{20}}}
+                                   {\reset@font\bfseries\@setfontsize\Large{12}{20}}}
 \renewcommand\paragraph{\@startsection{paragraph}{4}{0pt}%
                                    {20pt}%
                                    {10pt}%
-                                   {\reset@font\bfseries\@setfontsize
-                                     \Large{12}{20}}}	
+                                   {\reset@font\bfseries\@setfontsize\Large{12}{20}}}	
 \renewcommand\subparagraph{\@startsection{subparagraph}{5}{0pt}%
                                    {1ex}%
                                    {-1em}%
-                                   {\reset@font\bfseries\@setfontsize
-                                     \Large{12}{20}}}
+                                   {\reset@font\bfseries\@setfontsize\Large{12}{20}}}
 
 %%=============================================================================
 %% TODO: Lista de quadros
