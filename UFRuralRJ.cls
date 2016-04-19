@@ -1087,7 +1087,7 @@
   \fi
   
   %% Colocar título dos itens principais do documento a 10 mm da margem superior
-  \vspace*{5.5mm} 
+  % \vspace*{5.5mm}
   \ifchap
     %% Colocar o termo 'CAPÍTULO' 20 mm abaixo da margem superior
     \ifartigo\vspace*{8mm}\else\vspace*{0mm}\fi
