@@ -949,7 +949,7 @@
     % \setlength{\baselineskip}{0.67\baselineskip} %% Espaçamento simples
     
     \vspace*{-14mm} %% Alinhamento superior
-    \vspace*{10mm}  %% Coloca o resumo a 10 mm da margem superior
+    % \vspace*{10mm}  %% Coloca o resumo a 10 mm da margem superior
     
     %\section*{\centering\MakeUppercase{\abstractname}} %% Título centralizado
     \addtocounter{section}{1} %% adicionar numeração ao 'resumo' no corpo do texto
@@ -980,8 +980,10 @@
   %% \if@openright\cleardoublepage\else\clearpage\fi
   \clearpage
   
-  \vspace*{-13.5mm}
-  \vspace*{10mm}
+  %% Os comandos a seguir colocavam o inicio do primeiro item do texto 4 cm abaixo da margem superior da 
+  %% pagina.
+  % \vspace*{-13.5mm}
+  % \vspace*{10mm}
 }
 
 %%=============================================================================
