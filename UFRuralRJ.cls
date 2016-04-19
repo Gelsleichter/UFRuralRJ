@@ -930,7 +930,13 @@
 %% primeira seção primária ficará 10 mm abaixo da margem superior.
 
 \newenvironment{chapterabstract}[2]{
-  \if@openright\cleardoublepage\else\clearpage\fi
+  
+  %% ASR: O comando a seguir faz com que os dois resumos de um mesmo capítulo sejam colocados sempre no lado 
+  %% direito quando o documento é impresso em frente e verso. Isso cria uma página em branco entre eles.
+  %% Até onde vai meu conhecimento, isso não é necessário.
+  %% \if@openright\cleardoublepage\else\clearpage\fi
+  \clearpage
+  
     \gdef\@mykeywords{#2}
   \begin{otherlanguage}{#1}
     
@@ -968,7 +974,12 @@
 }
 
 \newcommand{\formatchapter}{
-  \if@openright\cleardoublepage\else\clearpage\fi
+  %% ASR: O comando a seguir faz com que os dois resumos de um mesmo capítulo sejam colocados sempre no lado 
+  %% direito quando o documento é impresso em frente e verso. Isso cria uma página em branco entre eles.
+  %% Até onde vai meu conhecimento, isso não é necessário.
+  %% \if@openright\cleardoublepage\else\clearpage\fi
+  \clearpage
+  
   \vspace*{-13.5mm}
   \vspace*{10mm}
 }
@@ -1056,6 +1067,21 @@
 %% Colocar título de capítulos no formato de artigo 
 %% Posição: 20 mm abaixo da margem superior
 \def\@makechapterhead#1{%
+  
+  %% Verificar se o documento será impresso em frente e verso.
+  \if@twoside
+    \if@openright
+      \checkoddpage
+      \ifoddpage
+        \null
+      \else
+        \null
+        \thispagestyle{empty}%
+        \newpage
+      \fi
+    \fi
+  \fi
+  
   %% Colocar título dos itens principais do documento a 10 mm da margem superior
   \vspace*{5.5mm} 
   \ifchap
