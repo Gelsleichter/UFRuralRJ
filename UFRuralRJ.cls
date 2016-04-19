@@ -189,6 +189,10 @@
 \RequirePackage{color, xcolor}
 \RequirePackage{fix-cm} % para funcionar corretamente o tamanho das fontes da capa
 
+%% Pacote para identificar se está em página par ou ímpar.
+\RequirePackage{changepage}
+\strictpagecheck
+
 %%=============================================================================
 %% Margens do texto
 %%=============================================================================
@@ -1148,7 +1152,25 @@
 }
 
 %% Formatação da versão estrelada (*) dos capítulos
+%% A versão estrelada dos capítulos é usada para definir os itens da parte preliminar do documento acadêmico.
+%% Aqui não deve-se empregar o verso do papel quando o documento é impresso em frente e verso (exceto para a
+%% ficha catalográfica).
 \def\@schapter#1{%
+  
+  %% Verificar se o documento será impresso em frente e verso.
+  \if@twoside
+    \if@openright
+      \checkoddpage
+      \ifoddpage
+        \null
+      \else
+        \null
+        \thispagestyle{empty}%
+        \newpage
+      \fi
+    \fi
+  \fi
+  
   %% ASR: \hspace*{0.35em} é uma solução rápida e suja para deixar todo 
   %%      mundo alinhado na toc
   \ifchap\if@aftertoc\addcontentsline{toc}{chapter}{\hspace*{0.35em}#1}\fi\fi%
