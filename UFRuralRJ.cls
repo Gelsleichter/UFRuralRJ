@@ -1073,11 +1073,13 @@
     \if@openright
       \checkoddpage
       \ifoddpage
-        \null
+        % \null
+        \clearpage
       \else
-        \null
-        \thispagestyle{empty}%
-        \newpage
+        % \null
+        % \thispagestyle{empty}%
+        % \newpage
+        \cleardoublepage
       \fi
     \fi
   \fi
@@ -1188,11 +1190,13 @@
     \if@openright
       \checkoddpage
       \ifoddpage
-        \null
+        % \null
+        \clearpage
       \else
-        \null
-        \thispagestyle{empty}%
-        \newpage
+        % \null
+        % \thispagestyle{empty}%
+        % \newpage
+        \cleardoublepage
       \fi
     \fi
   \fi
@@ -1358,11 +1362,19 @@
    \addtocontents{toc}{\protect\addvspace{10\p@}}
   
   \vfil\newpage
+  %% Verificar se o documento será impresso em frente e verso.
   \if@twoside
     \if@openright
-      \null
-      \thispagestyle{empty}%
-      \newpage
+      \checkoddpage
+      \ifoddpage
+        % \null
+        \clearpage
+      \else
+        % \null
+        % \thispagestyle{empty}%
+        % \newpage
+        \cleardoublepage
+      \fi
     \fi
   \fi
   \if@tempswa
@@ -1437,11 +1449,19 @@
    
    
   \vfil\newpage
+  %% Verificar se o documento será impresso em frente e verso.
   \if@twoside
     \if@openright
-      \null
-      \thispagestyle{empty}%
-      \newpage
+      \checkoddpage
+      \ifoddpage
+        % \null
+        \clearpage
+      \else
+        % \null
+        % \thispagestyle{empty}%
+        % \newpage
+        \cleardoublepage
+      \fi
     \fi
   \fi
   \if@tempswa
