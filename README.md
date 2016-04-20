@@ -1,18 +1,22 @@
-# UFRuralRJ.cls
+# UFRuralRJ
 
 Classe LaTeX2e para formatação de documentos acadêmicos da Universidade Federal
 Rural do Rio de Janeiro (UFRuralRJ) de acordo com as recomendações contidas na
 terceira edição do *Manual de instruções para organização e apresentação de
-dissertações e teses na UFRRJ* (doravante referido como MANUAL), Seropédica: 
-UFRRJ, 25p, 2006, disponível em
-http://www.ufrrj.br/portal/modulo/dppg/Formularios_normas/manual_teses.pdf
+dissertações e teses na UFRRJ*, Seropédica: UFRRJ, 25p, 2006, disponível em
+http://www.ufrrj.br/portal/modulo/dppg/Formularios_normas/manual_teses.pdf.
+
+## Manual de uso
+
+A versão preliminar do manual de uso da classe `UFRuralRJ` está disponível
+em http://samuel-rosa.github.io/UFRuralRJ/_book/.
 
 ## Créditos
 
-Esta classe é uma adaptação livre de `mdtufsm.cls`, contida no pacore
+`UFRuralRJ` é uma adaptação livre de `mdtufsm`, contida no pacote
 **mdtufsm-ppgi v.1.4** (https://code.google.com/p/mdtufsm-ppgi/), desenvolvido
 pela Informática da Universidade Federal de Santa Maria
-(http://www.inf.ufsm.br), que é uma adaptação livre de `iiufrgs.cls`,
+(http://www.inf.ufsm.br), que é uma adaptação livre de `iiufrgs`,
 contida pacote **iiufrgs-4.3.1**, desenvolvido pelo UFRGS TeX Users Group
 (http://www.inf.ufrgs.br/utug).
 
@@ -67,7 +71,7 @@ apêndices, abreviaturas e símbolos.
 
 ## Como contribuir
 
-A classe `UFRuralRJ.cls` é um projeto em desenvolvimento. Muito ainda pode ser
+A classe `UFRuralRJ` é um projeto em desenvolvimento. Muito ainda pode ser
 melhorado. Sua contribuição é fundamental para que isso ocorra.
 
 Para contribuir basta fazer uma cópia (`fork`) deste repositório para a sua
