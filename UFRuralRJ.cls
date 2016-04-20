@@ -36,7 +36,7 @@
 %% Identificação
 %%==============================================================================
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{UFRuralRJ}[15/04/2016 v.0.9 Formatação de documentos acadêmicos da UFRuralRJ]
+\ProvidesClass{UFRuralRJ}[20/04/2016 v.0.9 Formatação de documentos acadêmicos da UFRuralRJ]
 
 %%==============================================================================
 %% Declaração de opções da classe
@@ -204,6 +204,7 @@
   \newlength{\mdt@pagenummargin}\setlength{\mdt@pagenummargin}{15mm}
   \newlength{\mdt@sidemargin}\setlength{\mdt@sidemargin}{20mm}
   \setlength{\marginparwidth}{25mm}
+  
   %% Ajuste das medidas verticais
   \setlength{\topmargin}{\mdt@pagenummargin}
   \addtolength{\topmargin}{-1em}
@@ -216,6 +217,7 @@
   \addtolength{\textheight}{-\mdt@bottommargin}
   \setlength{\footskip}{\mdt@bottommargin}
   \addtolength{\footskip}{-\mdt@pagenummargin}
+  
   %% Ajuste das medidas horizontais
   \setlength{\oddsidemargin}{\mdt@sidemargin}
   \addtolength{\oddsidemargin}{-1in}
@@ -314,27 +316,22 @@
 %indentar em 1,25 o primeiro parágrafo
 \setlength{\parindent}{1.25cm}%
 
-%%==============================================================================
-%% Numeração das páginas
-%%==============================================================================
-%% O número da página é colocado no canto superior direito porque a margem 
-%% superior, que é de 30 mm, possui mais espaço para acomodar o número da página
-%% do que a margem inferior, que é de 20 mm.
+%%=============================================================================================================
+%% Numeração das páginas e cabeçalho
+%%=============================================================================================================
+%% Na formatação padrão, o número da página é colocado no canto inferior direito das páginas do documento
+%% acadêmico. Quando o documento acadêmico é impresso em frente e verso, o número da página é colocado no 
+%% canto inferior externo das páginas. Isso significa o lado esquerdo para páginas pares, e o lado direito
+%% para páginas ímpares.
+%% A formatação do cabeçalho, usando quando a opção 'header' é declarada, é semelhante à formatação do número
+%% da página. O texto do cabeçalho é colocado no canto superior externo das páginas, sendo o espaço restante
+%% ocupado com uma barra horizontal.
 
-%% Canto direito superior
-% \def\ps@UFRuralRJ{
-%   \let\@oddfoot\@empty
-%   \let\@evenfoot\@empty
-%   \def\@evenhead{{\small\thepage}}
-%   \def\@oddhead{\hspace*{\fill}{\small\thepage}}
-% }
-
-%% Canto direito inferior
 \def\ps@UFRuralRJ{
   \def\@oddfoot{\hspace*{\fill}{\small\thepage}}
   \def\@evenfoot{{\small\thepage}}
   \if@header
-    \def\@evenhead{\hrulefill~\scriptsize\@chaptertitle}
+    \def\@evenhead{\scriptsize\@chaptertitle~\hrulefill}
     \def\@oddhead{\hrulefill~\scriptsize\@chaptertitle}
   \else
     \let\@evenhead\@empty
