@@ -1,9 +1,14 @@
-# Versão 0.9 (15-Abr-2016)
+# Versão 0.9 (20-Abr-2016)
 * Corrige texto de definição da data de aprovação do documento acadêmico.
 * Automatiza conversão da data numérica para nominal (mês).
 * Ajusta o posicionamento da nota de rodapé usada com o título do capítulo (`\chapternote{<footnote>}`).
 * Corrige a largura da numeração das seções no sumário (`<numwidth>`) a fim de evitar a sobrepocição 
   número/texto quando a numeração da seção atinge mais do que dois dígitos.
+* Inclui as opções da classe `twoside` e `openright` para formatação do documento acadêmico quando o mesmo
+  é impresso em frente e verso.
+* Corrige o tamanho da margem superior da página inicial dos itens principais do corpo do texto (1 cm abaixo 
+  da margem superior).
+* Inclui exemplo de documento acadêmico impresso em frente e verso.
 
 # Versão 0.8 (11-Fev-2016)
 * Melhoria dos contadores de artigos (documentos organizados na forma de capítulos individuais), apêndices e 

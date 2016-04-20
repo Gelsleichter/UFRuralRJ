@@ -1,7 +1,7 @@
 ---
 title: "UFRuralRJ -- Classe LaTeX para formatação de documentos acadêmicos na UFRuralRJ"
 author: "Alessandro Samuel-Rosa"
-date: "9 Fevereiro 2016"
+date: "20 Abril de 2016"
 output: html_document
 ---
 
@@ -11,37 +11,70 @@ A classe `UFRuralRJ` constitui um classe LaTeX2e para formatação de documentos
 Federal Rural do Rio de Janeiro (UFRuralRJ) de acordo com as recomendações contidas na terceira edição do 
 *Manual de instruções para organização e apresentação de dissertações e teses na UFRRJ* (doravante referido 
 como [MANUAL][manual]), Seropédica: UFRRJ, 25p, 2006. Trata-se de uma adaptação livre da class `mdtufsm.cls`, 
-contida no pacore [`mdtufsm-ppgi v.1.4`][mdtufsm], desenvolvido pela Informática da Universidade Federal de 
+contida no pacote [`mdtufsm-ppgi v.1.4`][mdtufsm], desenvolvido pela Informática da Universidade Federal de 
 Santa Maria ([UFSM][inf]), que é uma adaptação livre da classe `iiufrgs.cls`, contida pacote
 [`iiufrgs-4.3.1`][iiufrgs], desenvolvido pelo UFRGS TeX Users Group. A meta é construir uma classe que atenda 
 à (quase) totalidade das normas para formatação dos diferentes tipos de documentos acadêmicos produzidos na 
 UFRuralRJ.
 
-# Organização do uso do LaTeX
+# Organização do documento acadêmico
 
 A construção do nosso documento acadêmico depende da criação de um diretório contendo a seguinte estrutura:
 
     UFRuralRJ
     |- capitulos
+    |  |- capitulo-01.tex
+    |  |- capitulo-02.tex
+    |  |- capitulo-03.tex
+    |
     |- figuras
+    |
     |- referencias
+    |  |- referencias.bib
+    |
     |- principal.tex
+    |- UFRuralRJ.cls
 
 ## Preâmbulo
 
 O preâmbulo é a parte do documento `principal.tex` onde você define os principais aspectos relacionados
-à formatação final do seu documento acadêmico. 
+à formatação final do seu documento acadêmico.
 
 ### Definições gerais e pacotes
 
 A primeira, e mais importante, definição feita no preâmbulo do documento `principal.tex` é quanto ao tipo de 
 documento acadêmico suportado pela classe `UFRuralRJ`. Isso é feito usando o comando 
 `\documentclass[<opções>]{<classe>}`. No momento a classe `UFRuralRJ` suporta dois tipos de documento 
-acadêmicos: dissertação e tese. Se você estiver trabalhando em sua *tese*, use a opção `tese` conforme abaixo. 
-Do contrário, use a opção `diss`.
+acadêmico: dissertação e tese. Se você estiver trabalhando em sua *tese*, use a opção `tese`; do contrário, 
+use a opção `diss`.
 
     %% Definições gerais - tipo de documento
     \documentclass[tese]{UFRuralRJ}
+
+Outras quatro opções auxiliares estão disponíveis para esses dois tipos de documento acadêmico:
+
+* `twoside` e `openright`: Essas duas opções devem ser sempre usadas em conjunto a fim de formatar o 
+  documento acadêmico de acordo com o MANUAL quando o mesmo será impresso em frente e verso. Todos os itens da
+  parte preliminar são impressos sempre na página ímpar, ou seja, na página do lado direito. Da mesma forma, 
+  a primeira página de cada item principal do corpo do documento acadêmico sempre é impressa na página ímpar, 
+  ou seja, na página do lado direito.
+* `header`: Adiciona cabeçalho às páginas do documento acadêmico, exceto na parte preliminar (sumário, 
+  prefácio etc) e na página inicial de cada item principal do corpo do documento acadêmico. O cabeçalho é
+  constituído por uma barra horizontal e por uma versão curta do título to respectivo item principal 
+  (capítulo). Veja abaixo o comando `\shorttitle{}` usado para definir a versão curta do título dos itens 
+  principais. Note que o MANUAL não prevê a inclusão de cabeçalho nas páginas dos documentos acadêmicos.
+* `newmargins`: Redefine as dimensões das margens das páginas do documento acadêmico a fim de redistribuir
+  melhor o conteúdo na página usando alinhamento centralizado. Para isso, as margens originais superior e 
+  interior (30 mm), e inferior e exterior (20 mm) são redefinidas da seguinte maneira: superior e inferior = 
+  25 mm; interior e exterior (laterais) = 20 mm. Essa opção é útil na produção do arquivo em formato PDF que
+  será usado para disponibilizar o documento acadêmico em meio digital. Note que o MANUAL não prevê essas 
+  dimensões para as margens das páginas.
+
+O exemplo a seguir declara que estamos preparando uma tese que será impressa em frente e verso, e cujas
+páginas contém cabeçalho:
+
+    %% Definições gerais - tipo de documento
+    \documentclass[tese, header, twoside, openright]{UFRuralRJ}
 
 A seguir, é preciso carregar os pacotes que darão suporte adicional à formatação do seu documento acadêmico.
 Isso é feito usando o comando `\usepackage[<opções>]{<pacote>}`. Vários pacotes estão disponíveis, mas aqui 
@@ -54,8 +87,8 @@ alguns exemplos:
     \usepackage[T1]{fontenc}
     \usepackage[utf8]{inputenc}
 
-Outro pacote de grande utilidade é [`hyperref`][hyperref], o qual permite inserir hyperlinks no documento 
-acadêmico. Hyperlinks são de grande utilidade quando o documento é publicado no formato PDF. Para carregar
+Outro pacote de grande utilidade é [`hyperref`][hyperref], o qual permite inserir hiperlinks no documento 
+acadêmico. Hiperlinks são de grande utilidade quando o documento é publicado no formato PDF. Para carregar
 o pacote `hyperref` usa-se o seguinte comando:
 
     %% Pacotes - formatação de hyperlinks e urls
@@ -69,10 +102,10 @@ o pacote `hyperref` usa-se o seguinte comando:
                 ]{hyperref}
 
 O pacote `hyperref` possui uma série de opções, as quais são definidas dentro do espaço delimitado pelos 
-colchetes no comando `\usepackage`. Essas opções permitem, por exemplo, definir a cor dos hyperlinks no texto,
+colchetes no comando `\usepackage`. Essas opções permitem, por exemplo, definir a cor dos hiperlinks no texto,
 bem como atribuir propriedades ao documento PDF resultante tais como o seu título e autor.
 
-Finalmente, um importante pacote usado para formtar as citações no texto e a lista de referências 
+Finalmente, um importante pacote usado para formatar as citações no texto e a lista de referências 
 bibliográficas no final do documento conforme as normas da ABNT: [`abntex2cite`][abntex2cite].
 
     %% Pacotes - formatação da bibliografia de acordo com as normas da ABNT
@@ -112,7 +145,7 @@ basta remover o comando `\autoratrue` do documento, ou substituí-lo pelo comand
 A utilidade do próximo comando usado na identificação do trabalho é bastante óbvia. 
 `\instituto{<nome do instituto>}` refere-se ao nome do instituto da UFRRJ no qual o curso de pós-graduação está
 lotado. No exemplo acima o nome do instituto foi inserido por extenso. Contudo, também poderia ter sido usada o
-comando `\IA`, ou seja, `\instituto{\IA}`. Outros comandos disponíveis para definir o nome do instituto sâo:
+comando `\IA`, ou seja, `\instituto{\IA}`. Outros comandos disponíveis para definir o nome do instituto são:
 
 * `\IA`: Instituto de Agronomia
 * `\IB`: Instituto de Ciências Biológicas e da Saúde
@@ -146,7 +179,7 @@ seus orientadores devem ser informados da seguinte maneira:
 Todas as informações a cerca do orientador são passadas à `UFRuralRJ` usando o comando `\advisor[]{}{}{}{}`. 
 Isso inclui, nesta ordem, o cargo ocupado na Universidade (Professor, Pesquisador), o maior título acadêmico 
 (Dr., Dra., MSc.), e a sigla da instituição onde está lotado. Note que, assim como no nome do autor do 
-documento academico, primeiro informa-se o sobrenome e depois o nome do orientador. As mesmas regras valem 
+documento acadêmico, primeiro informa-se o sobrenome e depois o nome do orientador. As mesmas regras valem 
 para os coorientadores, cujas informações são passadas à `UFRuralRJ` usando o comando `\coadvisor[]{}{}{}`. A
 diferença aqui é que não há necessidade de informar a sigla da instituição onde seus coorientadores estão
 lotados. (NOTA: num futuro próximo não haverá necessidade de informar o cargo ocupado na Universidade, nem
@@ -248,7 +281,7 @@ Depois em inglês:
 
 Primeiro, vejamos qual a diferença entre o *resumo geral* e o *resumo simples*. Note, nos exemplos acima, a
 macro `\generalabstracttrue`. É esta macro a responsável por informar à `UFRuralRJ` que o resumo que estamos
-construíndo é do tipo geral ao invés de simples. Assim, no caso de *resumo simples*, basta remover a macro
+construindo é do tipo geral ao invés de simples. Assim, no caso de *resumo simples*, basta remover a macro
 `\generalabstracttrue`, ou usar `\generalabstractfalse`. Simples assim!!!
 
 Vejamos agora os outros elementos usados para definir o resumo de nosso documento acadêmico. Para ambos o 
@@ -260,7 +293,7 @@ palavras-chave, o nível do grau obtido, e o texto do resumo.
     <texto>
     \end{generalabstract}
 
-Com excessão do texto do resumo, todas as outras informações são passadas entre chaves, conforme demonstrado
+Com exceção do texto do resumo, todas as outras informações são passadas entre chaves, conforme demonstrado
 acima. A soma dessas informações geralmente resulta em um linha bastante longa. A fim de facilitar a
 manipulação e leitura de nosso documento, podemos usar as funcionalidades do LaTeX e criar definições para
 cada um dos itens do resumo usando o comando [`\def`][def]. Aqui, o comando `\def` recebe dois argumentos: o 
