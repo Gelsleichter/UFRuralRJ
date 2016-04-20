@@ -1,0 +1,17 @@
+# Pré-requisitos {#pre}
+
+A construção do nosso documento acadêmico depende da criação de um diretório contendo a seguinte estrutura:
+
+    UFRuralRJ
+    |- capitulos
+    |  |- capitulo-01.tex
+    |  |- capitulo-02.tex
+    |  |- capitulo-03.tex
+    |
+    |- figuras
+    |
+    |- referencias
+    |  |- referencias.bib
+    |
+    |- principal.tex
+    |- UFRuralRJ.cls

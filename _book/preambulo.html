@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Classe LaTeX para formatação de documentos acadêmicos da UFRuralRJ</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta name="description" content="Manual de uso da classe LaTeX UFRuralRJ para formatação de documentos acadêmicos da Universidade Federal Rural do Rio de Janeiro.">
+  <meta name="generator" content="bookdown 0.0.65 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Classe LaTeX para formatação de documentos acadêmicos da UFRuralRJ" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Manual de uso da classe LaTeX UFRuralRJ para formatação de documentos acadêmicos da Universidade Federal Rural do Rio de Janeiro." />
+  <meta name="github-repo" content="samuel-rosa/UFRuralRJ" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Classe LaTeX para formatação de documentos acadêmicos da UFRuralRJ" />
+  
+  <meta name="twitter:description" content="Manual de uso da classe LaTeX UFRuralRJ para formatação de documentos acadêmicos da Universidade Federal Rural do Rio de Janeiro." />
+  
+
+<meta name="author" content="Alessandro Samuel-Rosa">
+
+<meta name="date" content="2016-04-20">
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="pre.html">
+<link rel="next" href="corpo-do-documento-academico.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Formatação de documentos acadêmicos da UFRuralRJ</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Apresentação</a></li>
+<li class="chapter" data-level="2" data-path="pre.html"><a href="pre.html"><i class="fa fa-check"></i><b>2</b> Pré-requisitos</a></li>
+<li class="chapter" data-level="3" data-path="preambulo.html"><a href="preambulo.html"><i class="fa fa-check"></i><b>3</b> Preâmbulo</a><ul>
+<li class="chapter" data-level="3.1" data-path="preambulo.html"><a href="preambulo.html#definicoes-gerais-e-pacotes"><i class="fa fa-check"></i><b>3.1</b> Definições gerais e pacotes</a></li>
+<li class="chapter" data-level="3.2" data-path="preambulo.html"><a href="preambulo.html#dados-para-os-elementos-pre-textuais"><i class="fa fa-check"></i><b>3.2</b> Dados para os elementos pré-textuais</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="corpo-do-documento-academico.html"><a href="corpo-do-documento-academico.html"><i class="fa fa-check"></i><b>4</b> Corpo do Documento Acadêmico</a><ul>
+<li class="chapter" data-level="4.0.1" data-path="corpo-do-documento-academico.html"><a href="corpo-do-documento-academico.html#elementos-pre-textuais-obrigatorios"><i class="fa fa-check"></i><b>4.0.1</b> Elementos pré-textuais obrigatórios</a></li>
+<li class="chapter" data-level="4.0.2" data-path="corpo-do-documento-academico.html"><a href="corpo-do-documento-academico.html#elementos-pre-textuais-opcionais"><i class="fa fa-check"></i><b>4.0.2</b> Elementos pré-textuais opcionais</a></li>
+<li class="chapter" data-level="4.0.3" data-path="corpo-do-documento-academico.html"><a href="corpo-do-documento-academico.html#mais-elementos-pre-textuais-obrigatorios"><i class="fa fa-check"></i><b>4.0.3</b> Mais elementos pré-textuais obrigatórios</a></li>
+<li class="chapter" data-level="4.0.4" data-path="corpo-do-documento-academico.html"><a href="corpo-do-documento-academico.html#corpo-principal-do-documento-academico"><i class="fa fa-check"></i><b>4.0.4</b> Corpo principal do documento acadêmico</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Publicado com bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Classe LaTeX para formatação de documentos acadêmicos da UFRuralRJ</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="preambulo" class="section level1">
+<h1><span class="header-section-number">Capítulo 3</span> Preâmbulo</h1>
+<p>O preâmbulo é a parte do documento <code>principal.tex</code> onde você define os principais aspectos relacionados à formatação final do seu documento acadêmico.</p>
+<div id="definicoes-gerais-e-pacotes" class="section level2">
+<h2><span class="header-section-number">3.1</span> Definições gerais e pacotes</h2>
+<p>A primeira, e mais importante, definição feita no preâmbulo do documento <code>principal.tex</code> é quanto ao tipo de documento acadêmico suportado pela classe <code>UFRuralRJ</code>. Isso é feito usando o comando <code>\documentclass[&lt;opções&gt;]{&lt;classe&gt;}</code>. No momento a classe <code>UFRuralRJ</code> suporta dois tipos de documento acadêmico: dissertação e tese. Se você estiver trabalhando em sua <em>tese</em>, use a opção <code>tese</code>; do contrário, use a opção <code>diss</code>.</p>
+<pre><code>%% Definições gerais - tipo de documento
+\documentclass[tese]{UFRuralRJ}</code></pre>
+<p>Outras quatro opções auxiliares estão disponíveis para esses dois tipos de documento acadêmico:</p>
+<ul>
+<li><code>twoside</code> e <code>openright</code>: Essas duas opções devem ser sempre usadas em conjunto a fim de formatar o documento acadêmico de acordo com o MANUAL quando o mesmo será impresso em frente e verso. Todos os itens da parte preliminar são impressos sempre na página ímpar, ou seja, na página do lado direito. Da mesma forma, a primeira página de cada item principal do corpo do documento acadêmico sempre é impressa na página ímpar, ou seja, na página do lado direito.</li>
+<li><code>header</code>: Adiciona cabeçalho às páginas do documento acadêmico, exceto na parte preliminar (sumário, prefácio etc) e na página inicial de cada item principal do corpo do documento acadêmico. O cabeçalho é constituído por uma barra horizontal e por uma versão curta do título to respectivo item principal (capítulo). Veja abaixo o comando <code>\shorttitle{}</code> usado para definir a versão curta do título dos itens principais. Note que o MANUAL não prevê a inclusão de cabeçalho nas páginas dos documentos acadêmicos.</li>
+<li><code>newmargins</code>: Redefine as dimensões das margens das páginas do documento acadêmico a fim de redistribuir melhor o conteúdo na página usando alinhamento centralizado. Para isso, as margens originais superior e interior (30 mm), e inferior e exterior (20 mm) são redefinidas da seguinte maneira: superior e inferior = 25 mm; interior e exterior (laterais) = 20 mm. Essa opção é útil na produção do arquivo em formato PDF que será usado para disponibilizar o documento acadêmico em meio digital. Note que o MANUAL não prevê essas dimensões para as margens das páginas.</li>
+</ul>
+<p>O exemplo a seguir declara que estamos preparando uma tese que será impressa em frente e verso, e cujas páginas contém cabeçalho:</p>
+<pre><code>%% Definições gerais - tipo de documento
+\documentclass[tese, header, twoside, openright]{UFRuralRJ}</code></pre>
+<p>A seguir, é preciso carregar os pacotes que darão suporte adicional à formatação do seu documento acadêmico. Isso é feito usando o comando <code>\usepackage[&lt;opções&gt;]{&lt;pacote&gt;}</code>. Vários pacotes estão disponíveis, mas aqui apenas alguns de maior importância serão apresentados. Por exemplo, o fato de usamos acentuação na língua portuguesa requer que usemos pacotes que identifiquem corretamente os símbolos usados para a acentuação. Veja alguns exemplos:</p>
+<pre><code>%% Pacotes - língua, codificação e fonte
+\usepackage[brazilian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}</code></pre>
+<p>Outro pacote de grande utilidade é <a href="https://en.wikibooks.org/wiki/LaTeX/Hyperlinks"><code>hyperref</code></a>, o qual permite inserir hiperlinks no documento acadêmico. Hiperlinks são de grande utilidade quando o documento é publicado no formato PDF. Para carregar o pacote <code>hyperref</code> usa-se o seguinte comando:</p>
+<pre><code>%% Pacotes - formatação de hyperlinks e urls
+\usepackage[%hidelinks%, 
+            bookmarksopen=true, linktoc=page, colorlinks=true,
+            linkcolor=blue, citecolor=blue, filecolor=magenta, urlcolor=blue,
+            pdftitle={UFRuralRJ -- Classe LaTeX para formatação de documentos acadêmicos na UFRRJ},
+            pdfauthor={Graziela Barroso},
+            pdfsubject={Tese de Doutorado},
+            pdfkeywords={LaTeX, UFRuralRJ, Documentos acadêmicos}
+            ]{hyperref}</code></pre>
+<p>O pacote <code>hyperref</code> possui uma série de opções, as quais são definidas dentro do espaço delimitado pelos colchetes no comando <code>\usepackage</code>. Essas opções permitem, por exemplo, definir a cor dos hiperlinks no texto, bem como atribuir propriedades ao documento PDF resultante tais como o seu título e autor.</p>
+<p>Finalmente, um importante pacote usado para formatar as citações no texto e a lista de referências bibliográficas no final do documento conforme as normas da ABNT: <a href="http://www.abntex.net.br/"><code>abntex2cite</code></a>.</p>
+<pre><code>%% Pacotes - formatação da bibliografia de acordo com as normas da ABNT
+\usepackage[alf, abnt-etal-cite=2, abnt-etal-list = 0]{abntex2cite}</code></pre>
+<p>Com o uso do pacote <code>abntex2cite</code> você está livre do árduo trabalho de formatar as citações e a lista de referências bibliográficas. A única exigência, é claro, é que você tenha todos os dados de suas referências bibliográficas organizados em uma base de dados. (Note que o pacote <code>abntex2cite</code> precisa, obrigatoriamente, ser carregado depois do pacote <code>hyperref</code>.)</p>
+</div>
+<div id="dados-para-os-elementos-pre-textuais" class="section level2">
+<h2><span class="header-section-number">3.2</span> Dados para os elementos pré-textuais</h2>
+<p>Ainda no preâmbulo do documento definimos uma série de parâmetros que serão usados pela <code>UFRuralRJ</code> para construir as páginas iniciais do documento acadêmico, ou seja, a capa, a folha de rosto, a folha de aprovação, e o resumo. Esses são os elementos pré-textuais do documento acadêmico. Considere o seguinte exemplo de dados de identificação do trabalho:</p>
+<pre><code>%% Identificação do trabalho
+\titulo{UFRuralRJ -- Classe \LaTeX{} para Formatação de Documentos Acadêmicos na UFRRJ}
+\author{Barroso}{Graziela}
+\autoratrue
+\instituto{Instituto de Agronomia}
+\curso{Curso de Pós-Graduação em Agronomia -- Ciência do Solo}
+\area{Ciência do Solo}
+\local{Seropédica}{RJ}{Brasil}</code></pre>
+<p>O comando <code>\titulo{&lt;titulo do documento&gt;}</code> é utilizada para definir o título do trabalho acadêmico, enquanto o comando <code>\author{&lt;sobrenome do autor&gt;}{&lt;nome do autor&gt;}</code> serve para identificar o autor, sendo informado primeiro o sobrenome, e depois o nome. Note que após a definição do nome do autor, usamos o comando <code>\autoratrue</code>. Esse comando serve para informar a <code>UFRuralRJ</code> que o autor é do gênero feminino, ou seja, trata-se de uma autora. Qual a importância disso? Bem, a <code>UFRuralRJ</code> foi arquitetada de maneira a lidar, automaticamente, com as definições relacionadas ao gênero do autor. Por exemplo, no caso de uma tese elaborada por um autor do gênero feminino, <code>UFRuralRJ</code> identificará automaticamente que o título atribuído é de <em>doutora</em> ao invés de <em>doutor</em>, desde que o comando <code>\autoratrue</code> seja utilizado. Caso o autor seja do gênero masculino, basta remover o comando <code>\autoratrue</code> do documento, ou substituí-lo pelo comando contrário <code>\autorafalse</code>.</p>
+<p>A utilidade do próximo comando usado na identificação do trabalho é bastante óbvia. <code>\instituto{&lt;nome do instituto&gt;}</code> refere-se ao nome do instituto da UFRRJ no qual o curso de pós-graduação está lotado. No exemplo acima o nome do instituto foi inserido por extenso. Contudo, também poderia ter sido usada o comando <code>\IA</code>, ou seja, <code>\instituto{\IA}</code>. Outros comandos disponíveis para definir o nome do instituto são:</p>
+<ul>
+<li><code>\IA</code>: Instituto de Agronomia</li>
+<li><code>\IB</code>: Instituto de Ciências Biológicas e da Saúde</li>
+<li><code>\ICE</code>: Instituto de Ciências Exatas</li>
+<li><code>\ICHS</code>: Instituto de Ciências Humanas e Sociais</li>
+<li><code>\IE</code>: Instituto de Educação</li>
+<li><code>\IF</code>: Instituto de Florestas</li>
+<li><code>\IM</code>: Instituto Multidisciplinar</li>
+<li><code>\IT</code>: Instituto de Tecnologia</li>
+<li><code>\IV</code>: Instituto de Veterinária</li>
+<li><code>\IZ</code>: Instituto de Zootecnia</li>
+</ul>
+<p>O comando <code>\curso{\nome do curso&gt;}</code>, como pode-se adivinhar, serve para definir o nome do seu curso de pós-graduação. Talvez, num futuro próximo, <code>UFRuralRJ</code> também incluirá comandos com os nomes dos cursos de pós-graduação assim como mostrado acima para os institutos. Segue-se que <code>\area{&lt;area de concentracao&gt;}</code> serve para definir a área de concentração do trabalho acadêmico e/ou do curso de pós-graduação. Enquanto isso, <code>\local{&lt;cidade&gt;}{&lt;estado&gt;}{&lt;país&gt;}</code> especifica o local da defesa, o qual deve estar na seguinte ordem: cidade, estado, país. Note que a opção da classe <code>UFRuralRJ</code> é por não traduzir nomes próprios em português para outras línguas. Assim, o nome da universidade, do instituto, e do curso de pós-graduação aparecem sempre em português.</p>
+<p>Na sequência, é preciso informar <code>UFRuralRJ</code> a cerca dos seus orientadores. Esses dados são usados para construir a folha de rosto do seu documento acadêmico. Suponhamos que o seu orientador seja do gênero feminino, ou seja, uma orientadora, e que, além dela, você possua dos orientadores. Nesse caso, os dados a cerca dos seus orientadores devem ser informados da seguinte maneira:</p>
+<pre><code>%% Identificação dos orientadores
+\advisor[Professora]{Dra.}{Dobereimer}{Johana}{UFRRJ}
+\coadvisor[Pesquisador]{Dr.}{Salles}{Hilton}
+\coadvisor[Professor]{Dr.}{Costa}{Fernando}</code></pre>
+<p>Todas as informações a cerca do orientador são passadas à <code>UFRuralRJ</code> usando o comando <code>\advisor[]{}{}{}{}</code>. Isso inclui, nesta ordem, o cargo ocupado na Universidade (Professor, Pesquisador), o maior título acadêmico (Dr., Dra., MSc.), e a sigla da instituição onde está lotado. Note que, assim como no nome do autor do documento acadêmico, primeiro informa-se o sobrenome e depois o nome do orientador. As mesmas regras valem para os coorientadores, cujas informações são passadas à <code>UFRuralRJ</code> usando o comando <code>\coadvisor[]{}{}{}</code>. A diferença aqui é que não há necessidade de informar a sigla da instituição onde seus coorientadores estão lotados. (NOTA: num futuro próximo não haverá necessidade de informar o cargo ocupado na Universidade, nem a sigla da instituição onde está lotado.)</p>
+<p>Finalmente, as informações a cerca da defesa são passadas à <code>UFRuralRJ</code> usando dois comandos: <code>\committee[]{}{}{}</code> e <code>\date{}{}{}</code>. Veja o exemplo abaixo onde o comitê examinador possui cinco membros:</p>
+<pre><code>%% Informações sobre a defesa
+\committee[Dr.]{Raithe}{Waldemar}{UFRRJ}
+\committee[Dra.]{Campos}{Maria Aparecida}{UFRRJ}
+\committee[Dr.]{Peçanha}{Gilberto Gastim}{UFRRJ}
+\committee[Dra.]{Souza}{Tânia Maria Melquiades de}{UFRRJ}
+\committee[Dr.]{Groszman}{Américo}{UFRRJ}
+\date{30}{Fevereiro}{2001}</code></pre>
+<p>O comando <code>\committee[]{}{}{}</code> espera quadro informações, nesta ordem: o maior título acadêmico (Dr., Dra., MSc.), o sobrenome, o nome, e a sigla da instituição onde está lotado. Note que <code>\committee[]{}{}{}</code> pode ser usado tantas vezes quantos forem os membros do comitê examinador, sendo importante observar que a primeira ocorrência define o presidente do comitê examinador. Em geral, o presidente do comitê examinador é o seu próprio orientador. E o comando <code>\date{&lt;dia&gt;}{&lt;mes&gt;}{&lt;ano&gt;}</code>, conforme pode-se adivinhar, serve para informar a data da defesa do documento acadêmico (na ordem dia, mês, ano), lembrando que o nome do mês deve ser redigido sempre em português.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="pre.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="corpo-do-documento-academico.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/02-preambulo.Rmd",
+"text": null
+},
+"download": ["ufrrj-class.pdf", "ufrrj-class.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
