@@ -1044,24 +1044,8 @@
       %% ASR: São adicionados 10 pontos de espaço vertical antes e após o titulo de cada capitulo no sumario.
       %%      COmo não existe definição oficial, a decisão de adicionar 10 pontos é completamente arbitrária.
       \ifchap%
-       \addtocontents{toc}{\protect\addvspace{10\p@}}%
        
-       %% Verificar se o documento será impresso em frente e verso.
-       %% Em caso positivo, os itens do sumário são impressos apenas nas páginas ímpares (lado direito) 
-       %% do documento.
-       \addtocontents{toc}{
-         \protect\if@twoside
-           \protect\if@openright
-             \protect\checkoddpage
-             \protect\ifoddpage
-               \protect\vspace{0mm}
-             \protect\else
-               \protect\cleardoublepage
-             \protect\fi
-           \protect\fi
-         \protect\fi
-       }
-        
+       \addtocontents{toc}{\protect\addvspace{10\p@}}%
         \ifartigo
          \refstepcounter{artigo}
          \addcontentsline{toc}{chapter}{%
@@ -1073,8 +1057,8 @@
          \addcontentsline{toc}{chapter}{\protect\numberline{\@chapapp\thechapter}~#1}%
         \fi
        \addtocontents{toc}{\protect\addvspace{10\p@}}%
+       
       \fi
-      
       \addtocontents{lof}{\protect\addvspace{0\p@}}% list of figures
       \addtocontents{lot}{\protect\addvspace{0\p@}}% list of tables
       
@@ -1092,12 +1076,8 @@
     \if@openright
       \checkoddpage
       \ifoddpage
-        % \null
         \clearpage
       \else
-        % \null
-        % \thispagestyle{empty}%
-        % \newpage
         \cleardoublepage
       \fi
     \fi
@@ -1216,8 +1196,7 @@
     \fi
   \fi
   
-  %% ASR: \hspace*{0.35em} é uma solução rápida e suja para deixar todo 
-  %%      mundo alinhado na toc
+  %% ASR: \hspace*{0.35em} é uma solução rápida e suja para deixar todo mundo alinhado na toc
   \ifchap\if@aftertoc\addcontentsline{toc}{chapter}{\hspace*{0.35em}#1}\fi\fi%
   \addtocontents{lof}{\protect\addvspace{0\p@}}%Original = 10\p@
   \addtocontents{lot}{\protect\addvspace{0\p@}}%
@@ -1358,6 +1337,9 @@
    \interlinepenalty \@M
    \normalfont
    
+   %% Cabeçalho dos apêndice usado quando a opção 'twoside' é declarada
+   \shorttitle{\appendixname}
+   
    %% ASR: O comando '\thechapter' é usado para adicionar numeração ao apêndice, seguindo a sequência
    %%      dos capítulos anteriores. Mas para que o comando '\thechapter' funcione, é necessário aumentar
    %%      em um a contagem do contador de capítulos.
@@ -1372,17 +1354,14 @@
    \addtocontents{toc}{\protect\addvspace{10\p@}}
   
   \vfil\newpage
+  
   %% Verificar se o documento será impresso em frente e verso.
   \if@twoside
     \if@openright
       \checkoddpage
       \ifoddpage
-        % \null
         \clearpage
       \else
-        % \null
-        % \thispagestyle{empty}%
-        % \newpage
         \cleardoublepage
       \fi
     \fi
@@ -1445,6 +1424,9 @@
    \interlinepenalty \@M
    \normalfont
    
+   %% Cabeçalho dos apêndice usado quando a opção 'twoside' é declarada
+   \shorttitle{\annexname}
+   
    % \LargeF \bfseries \MakeUppercase\annexname\par}%
    %% ASR: \hspace*{0.35em} é uma solução rápida e suja para deixar todo 
    %%      mundo alinhado na toc
@@ -1464,12 +1446,8 @@
     \if@openright
       \checkoddpage
       \ifoddpage
-        % \null
         \clearpage
       \else
-        % \null
-        % \thispagestyle{empty}%
-        % \newpage
         \cleardoublepage
       \fi
     \fi
