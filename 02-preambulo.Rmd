@@ -147,7 +147,7 @@ nome do instituto são:
 * `\IV`: Instituto de Veterinária
 * `\IZ`: Instituto de Zootecnia
 
-O comando `\curso{\nome do curso>}`, como pode-se adivinhar, serve para definir o nome do seu curso de
+O comando `\curso{<nome do curso>}`, como pode-se adivinhar, serve para definir o nome do seu curso de
 pós-graduação. Talvez, num futuro próximo, `UFRuralRJ` também incluirá comandos com os nomes dos cursos de 
 pós-graduação assim como mostrado acima para os institutos. Segue-se que `\area{<area de concentracao>}` serve
 para definir a área de concentração do trabalho acadêmico e/ou do curso de pós-graduação. Enquanto isso, 
