@@ -1,0 +1,54 @@
+--- 
+title: "UFRuralRJ -- Classe LaTeX para formatação de documentos acadêmicos da Universidade Federal Rural do 
+        Rio de Janeiro"
+author: "Alessandro Samuel-Rosa & Alessandro Bandeira Duarte"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+github-repo: samuel-rosa/UFRuralRJ
+description: "Manual de uso da classe LaTeX UFRuralRJ para formatação de documentos acadêmicos da Universidade
+              Federal Rural do Rio de Janeiro."
+---
+
+# Apresentação
+
+A classe `UFRuralRJ` constitui um classe LaTeX2e para formatação de documentos acadêmicos na Universidade 
+Federal Rural do Rio de Janeiro (UFRuralRJ) de acordo com as recomendações contidas na terceira edição do 
+*Manual de instruções para organização e apresentação de dissertações e teses na UFRRJ* (doravante referido 
+como [MANUAL][manual]), Seropédica: UFRRJ, 25p, 2006.
+
+Essa classe é uma adaptação livre da class `mdtufsm.cls`, contida no pacote [`mdtufsm-ppgi v.1.4`][mdtufsm],
+desenvolvido pela Informática da Universidade Federal de Santa Maria ([UFSM][inf]), que é uma adaptação livre 
+da classe `iiufrgs.cls`, contida pacote [`iiufrgs-4.3.1`][iiufrgs], desenvolvido pelo UFRGS TeX Users Group.
+
+A meta é construir uma classe que atenda à (quase) totalidade das normas para formatação dos diferentes tipos 
+de documentos acadêmicos produzidos na UFRuralRJ.
+
+## Como contribuir
+
+A classe `UFRuralRJ.cls` é um projeto em desenvolvimento. Muito ainda pode ser melhorado. Sua contribuição é
+fundamental para que isso ocorra.
+
+Para contribuir basta fazer uma cópia (`fork`) deste repositório para a sua conta. Vá para a sua conta, procure
+pelo `fork` que acabou de fazer, e faça um `clone` para seu computador. Pronto, agora é só começar a trabalhar.
+Submeta suas contribuições fazendo um `pull request` e aguarde a avaliação do administrador do projeto.
+
+Um bom exemplo sobre como contribuir para projetos do GitHub pode ser encontrado em
+https://clairtonluz.github.io/blog/2014/06/2014061099.html.
+
+[abntex2cite]: http://www.abntex.net.br/
+[bibtex]: https://en.wikibooks.org/wiki/LaTeX/Bibliography_Management#BibTeX
+[bibliography]: https://en.wikibooks.org/wiki/LaTeX/Bibliography_Management
+[def]: https://en.wikibooks.org/wiki/TeX/def
+[iiufrgs]: http://www.inf.ufrgs.br/utug
+[inf]: http://www.inf.ufsm.br
+[include]: https://en.wikibooks.org/wiki/LaTeX/Modular_Documents#Getting_LaTeX_to_process_multiple_files
+[hyperref]: https://en.wikibooks.org/wiki/LaTeX/Hyperlinks
+[manual]: http://www.ufrrj.br/portal/modulo/dppg/Formularios_normas/manual_teses.pdf
+[mdtufsm]: https://code.google.com/p/mdtufsm-ppgi/
+[toc]: https://en.wikibooks.org/wiki/LaTeX/Document_Structure#Table_of_contents
+

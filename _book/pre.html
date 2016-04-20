@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Classe LaTeX para formatação de documentos acadêmicos da UFRuralRJ</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta name="description" content="Manual de uso da classe LaTeX UFRuralRJ para formatação de documentos acadêmicos da Universidade Federal Rural do Rio de Janeiro.">
+  <meta name="generator" content="bookdown 0.0.65 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Classe LaTeX para formatação de documentos acadêmicos da UFRuralRJ" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Manual de uso da classe LaTeX UFRuralRJ para formatação de documentos acadêmicos da Universidade Federal Rural do Rio de Janeiro." />
+  <meta name="github-repo" content="samuel-rosa/UFRuralRJ" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Classe LaTeX para formatação de documentos acadêmicos da UFRuralRJ" />
+  
+  <meta name="twitter:description" content="Manual de uso da classe LaTeX UFRuralRJ para formatação de documentos acadêmicos da Universidade Federal Rural do Rio de Janeiro." />
+  
+
+<meta name="author" content="Alessandro Samuel-Rosa">
+
+<meta name="date" content="2016-04-20">
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="index.html">
+<link rel="next" href="preambulo.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Formatação de documentos acadêmicos da UFRuralRJ</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Apresentação</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#como-contribuir"><i class="fa fa-check"></i><b>1.1</b> Como contribuir</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="pre.html"><a href="pre.html"><i class="fa fa-check"></i><b>2</b> Pré-requisitos</a></li>
+<li class="chapter" data-level="3" data-path="preambulo.html"><a href="preambulo.html"><i class="fa fa-check"></i><b>3</b> Preâmbulo</a><ul>
+<li class="chapter" data-level="3.1" data-path="preambulo.html"><a href="preambulo.html#tipo-de-documento"><i class="fa fa-check"></i><b>3.1</b> Tipo de documento</a></li>
+<li class="chapter" data-level="3.2" data-path="preambulo.html"><a href="preambulo.html#pacotes"><i class="fa fa-check"></i><b>3.2</b> Pacotes</a></li>
+<li class="chapter" data-level="3.3" data-path="preambulo.html"><a href="preambulo.html#dados-para-elementos-pre-textuais"><i class="fa fa-check"></i><b>3.3</b> Dados para elementos pré-textuais</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="corpo-do-documento-academico.html"><a href="corpo-do-documento-academico.html"><i class="fa fa-check"></i><b>4</b> Corpo do Documento Acadêmico</a><ul>
+<li class="chapter" data-level="4.1" data-path="corpo-do-documento-academico.html"><a href="corpo-do-documento-academico.html#elementos-pre-textuais-obrigatorios"><i class="fa fa-check"></i><b>4.1</b> Elementos pré-textuais obrigatórios</a></li>
+<li class="chapter" data-level="4.2" data-path="corpo-do-documento-academico.html"><a href="corpo-do-documento-academico.html#elementos-pre-textuais-opcionais"><i class="fa fa-check"></i><b>4.2</b> Elementos pré-textuais opcionais</a></li>
+<li class="chapter" data-level="4.3" data-path="corpo-do-documento-academico.html"><a href="corpo-do-documento-academico.html#mais-elementos-pre-textuais-obrigatorios"><i class="fa fa-check"></i><b>4.3</b> Mais elementos pré-textuais obrigatórios</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="corpo-do-documento-academico.html"><a href="corpo-do-documento-academico.html#resumo-do-documento-academico"><i class="fa fa-check"></i><b>4.3.1</b> Resumo do documento acadêmico</a></li>
+<li class="chapter" data-level="4.3.2" data-path="corpo-do-documento-academico.html"><a href="corpo-do-documento-academico.html#listas-e-sumario"><i class="fa fa-check"></i><b>4.3.2</b> Listas e sumário</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="corpo-do-documento-academico.html"><a href="corpo-do-documento-academico.html#corpo-principal-do-documento-academico"><i class="fa fa-check"></i><b>4.4</b> Corpo principal do documento acadêmico</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Publicado com bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Classe LaTeX para formatação de documentos acadêmicos da UFRuralRJ</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="pre" class="section level1">
+<h1><span class="header-section-number">Capítulo 2</span> Pré-requisitos</h1>
+<p>A construção do nosso documento acadêmico depende da criação de um diretório contendo a seguinte estrutura:</p>
+<pre><code>MEU-D0C-ACADEMICO
+|- capitulos
+|  |- capitulo-01.tex
+|  |- capitulo-02.tex
+|  |- capitulo-03.tex
+|
+|- figuras
+|
+|- referencias
+|  |- referencias.bib
+|
+|- principal.tex
+|- UFRuralRJ.cls</code></pre>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="preambulo.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/01-pre.Rmd",
+"text": null
+},
+"download": ["ufrrj-class.pdf", "ufrrj-class.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+# Pré-requisitos {#pre-requisitos}
+
+## Estrutura de arquivos
+
+A construção do nosso documento acadêmico depende da criação de um diretório contendo a seguinte estrutura:
+
+    MEU-D0C-ACADEMICO
+    |- capitulos
+    |  |- introducao.tex
+    |  |- capitulo-01.tex
+    |  |- capitulo-02.tex
+    |  |- conclusao.tex
+    |
+    |- figuras
+    |
+    |- referencias
+    |  |- referencias.bib
+    |
+    |- principal.tex
+    |- UFRuralRJ.cls
+
+## Suporte para (La)TeX
+
+Preparar um documento acadêmico em (La)TeX exige a escolha de um editor. Existem inúmeros editores de (La)TeX, 
+alguns dos quais são de operação *online* (veja a seguir). Além do nível de conhecimento de (La)TeX, a escolha 
+do editor depende do sistema operacional com o qual estamos trabalhando (Linux, Mac OC, ou Windows). Editores 
+simples como Gedit (Linux) e Notepad (Windows) são suficientes se o objetivo for apenas ler o documento, fazer 
+pequenas edições do texto, e adicionar comentários (tais editores também são suficientes se o usuário possuir 
+um conhecimento muito profundo de (La)TeX e não precisar de qualquer tipo de suporte).
+
+Os editores de (La)TeX mais usados são aqueles que oferecem alguma ajuda ao usuário, tais como uma interface 
+gráfica mais amigável, com menus com os comandos mais comuns, além de opções para compilar documentos em 
+diferentes formatos. Cada editor possui vantagens e desvantagens (veja [aqui][texeditors] uma lista delas). 
+Para facilitar as coisas, decidimos sugerir apenas dois editores, os quais são (supostamente) compatíveis com 
+Linux, Mac OC e Windows. São eles o [LyX][lyx] e o [Texmaker][texmaker]. A principal diferença entre os dois é 
+que o LyX possui uma interface mais amigável do que o Texmaker, mostrando na tela uma aproximação de como o 
+texto será apresentado no documento gerado. Enquanto isso, o Texmaker mostra apenas o código fonte. Ambos 
+possuem corretores ortográficos e suporte para BibTeX, software usado para o gerenciamento de referências
+bibliográficas (veja mais a seguir).
+
+[lyx]: https://en.wikipedia.org/wiki/LyX
+[texmaker]: https://en.wikipedia.org/wiki/Texmaker
+[texeditors]: https://en.wikipedia.org/wiki/Comparison_of_TeX_editors
+
+Livros sobre (La)TeX:
+
+* Wikibook: https://en.wikibooks.org/wiki/LaTeX
+* Uma não tão pequena introdução ao LATEX2ε: ftp://ctan.tug.org/tex-archive/info/lshort/portuguese/pt-lshort-a5.pdf
+
+### Plataformas para trabalho colaborativo
+
+Documentos acadêmicos geralmente são produzidos, de maneira colaborativa, por mais de dois autores e/ou com
+orientadores e co-orientadores. Em geral, os autores trocam entre si, por e-mail, as diferentes versões do 
+documento. O autor principal é responsável por garantir que as alterações de cada coautor sejam aplicadas 
+apropriadamente, e que os todos os coautores sejam informados sobre tais alterações. O processo não é nada 
+fácil e, com sorte, o autor principal não perderá em meio à longa lista de mensagens de e-mail trocadas e 
+versões do arquivo geradas.
+
+Uma solução para esse problema operacional são as plataformas *online* para trabalho colaborativo. Tais 
+plataformas permitem o trabalho concomitante dos diversos autores de um documento, sendo toda alteração 
+aplicada e comunicada imediatamente a todos os demais coautores. Três exemplos de plataformas para trabalho
+colaborativo são (em ordem alfabética):
+
+* Authorea: https://www.authorea.com e https://en.wikipedia.org/wiki/Authorea
+* Overleaf: https://www.overleaf.com
+* ShareLaTeX: https://www.sharelatex.com e https://en.wikipedia.org/wiki/ShareLaTeX
+ 
+## Gerenciador de referências bibliográficas
+
+Para mais informações:
+
+* JabRef: http://jabref.sourceforge.net e https://en.wikipedia.org/wiki/JabRef e http://goo.gl/9G4n81
+* Mendeley: https://www.mendeley.com e https://en.wikipedia.org/wiki/Mendeley
+* Zotero: https://www.zotero.org e https://en.wikipedia.org/wiki/Zotero
+* Outros gerenciadores: https://en.wikipedia.org/wiki/Comparison_of_reference_management_software

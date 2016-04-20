@@ -1,0 +1,42 @@
+# Corpo principal {#corpo}
+
+O corpo principal do documento acadêmico é constituído pelo texto propriamente dito, isto é, aquilo que você 
+escreveu a cerca de suas experiências científicas ao longo dos anos de seu curso. A forma de organização desse 
+texto pode variar conforme descrito acima. Também existem diferentes maneiras de você gerenciar esse texto. 
+Uma delas é redigindo todo o texto no próprio documento `principal.tex`. Contudo, do ponto de vista 
+organizacional, essa não é uma boa estratégia pois o seu documento `principal.tex` ficará extremamente longo, 
+dificultando a navegação ao longo do mesmo. Além disso, um documento muito longo acaba usando grande 
+quantidade da memória do seu computador.
+
+A melhor estratégia para gerenciar o texto de seu documento acadêmico é usar um arquivo individual para cada 
+parte ou capítulo. Especificamente, você usa um arquivo `*.tex` individual para escrever a *Introdução Geral*,
+outro arquivo `*.tex` para o *Capítulo I*, outro arquivo `*.tex` para as *Conclusões Gerais*, e assim por 
+diante. Apesar do exemplo ser para documentos acadêmicos organizados na forma de capítulos individuais, o 
+mesmo se aplica a documentos em texto corrido. Por exemplo, imagine que você escreveu tese com seis grandes 
+partes principais: *Introdução* , *Revisão da Literatura*, *Material e Métodos*, *Resultados*, *Discussão*, e 
+*Conclusões*. Basta escrever cada uma dessas grandes partes principais em um arquivo `*.tex` individual.
+
+Os arquivos `*.tex` individuais usados para redigir cada capítulo ou cada grande parte principal do documento
+acadêmico devem ser armazenados em um diretório também individual a fim de garantir a melhor organização do 
+trabalho. Feito isso, basta usar o comando [`\include`][include], conforme segue:
+
+    %% Incluir texto do corpo principal
+    \include{capitulos/introducao.tex}
+    \include{capitulos/capitulo01.tex}
+    \include{capitulos/capitulo02.tex}
+    \include{capitulos/conclusao.tex}
+
+No nosso exemplo, todos os arquivos `*.tex` individuais estão armazenados em um diretório chamado `capitulos`.
+Os nomes dos arquivos permitem adivinhar o seu conteúdo. Aqui, o comando `\include{<caminho>}` cumprirá a 
+tarefa de incluir, exatamente neste ponto do documento, o conteúdo da *Introdução Geral*, dos dois capítulos, 
+e da *Conclusão Geral*. Se, por acaso, mais tarde, você e seus orientadores decidirem modificar a ordem dos 
+capítulos no documento acadêmico, basta alterar a ordem em que cada arquivo `*.tex` é incluído. Simples assim!
+
+O último item do corpo principal do documento acadêmico é a lista de referências bibliográficas. Para inserir 
+essa lista no seu documento acadêmico basta usar o comando [`\bibliography`][bibliography]:
+
+    %% Inserir lista de referências bibliográficas
+    \bibliography{referencias/biblio.bib}
+
+onde `referencias` é o nome do diretório onde se encontra sua base de dados de referências bibliográficas no 
+formato [BibTeX][bibtex], e `biblio.bib` é o nome dessa base de dados de referências bibliográficas.
