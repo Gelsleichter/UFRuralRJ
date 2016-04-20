@@ -198,6 +198,7 @@
 %%=============================================================================
 
 \if@newmargins
+  
   %% Definições gerais
   \newlength{\mdt@topmargin}\setlength{\mdt@topmargin}{25mm}
   \newlength{\mdt@bottommargin}\setlength{\mdt@bottommargin}{25mm}
@@ -254,10 +255,8 @@
   %% Ajuste das medidas horizontais
   \setlength{\oddsidemargin}{\mdt@insidemargin}
   \addtolength{\oddsidemargin}{-\marginparwidth} % twoside: Controla a margem direita quando esta for a menor
-  
   \setlength{\evensidemargin}{\mdt@outsidemargin}
   \addtolength{\evensidemargin}{-\marginparwidth} % twoside: Controla a margem esquerda quando esta for a menor
-  
   \setlength{\textwidth}{\paperwidth}
   \addtolength{\textwidth}{-\mdt@insidemargin}
   \addtolength{\textwidth}{-\mdt@outsidemargin}
