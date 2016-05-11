@@ -598,11 +598,13 @@
   \clearpage
   \if@twoside
     \null
-    \thispagestyle{empty}% 
+    \thispagestyle{empty}%
     \newpage
-    \secondtitlepage
+%     \secondtitlepage
+    \theapprovepage
   \else
-    \secondtitlepage
+%     \secondtitlepage
+    \theapprovepage
   \fi
 }
 \newcommand{\theapprovepage}{%
