@@ -71,6 +71,8 @@
 %% pacote 'hyperref' não foi carregado.
 \input{macros/bugcaption}
 
+\usepackage{afterpage}
+
 %%=============================================================================================================
 %% Pacotes - formatação da bibliografia de acordo com as normas da ABNT
 %%=============================================================================================================
@@ -148,53 +150,70 @@
 %%
 %% NOTA: Usar versão estrelada de 'chapter'
 %%=============================================================================================================
-\chapter*{}
-\vfill
-\begin{flushright}
-  {\em
-  Àqueles que financiaram meu trabalho...
-  \par
-  ...DEDICO!
-  }
-\end{flushright}
+% \chapter*{}
+% \vfill
+% \begin{flushright}
+%   {\em
+%   Àqueles que financiaram meu trabalho...
+%   \par
+%   ...DEDICO!
+%   }
+% \end{flushright}
 
 %%=============================================================================================================
 %% Agradecimentos (opcional)
 %%
 %% NOTA: Usar versão estrelada de 'chapter'
 %%=============================================================================================================
-\chapter*{Agradecimentos}
-
-\noindent{À Universidade Federal Rural do Rio de Janeiro.}
-
-\noindent{Às agências de fomento.}
-
-\noindent{Aos orientadores.}
-
-\noindent{À todos que, direta ou indiretamente, contribuíram para a construção deste trabalho.}
+% \chapter*{Agradecimentos}
+% 
+% \noindent{À Universidade Federal Rural do Rio de Janeiro.}
+% 
+% \noindent{Às agências de fomento.}
+% 
+% \noindent{Aos orientadores.}
+% 
+% \noindent{À todos que, direta ou indiretamente, contribuíram para a construção deste trabalho.}
 
 %%=============================================================================================================
 %% Biografia (opcional)
 %%
 %% NOTA: Usar versão estrelada de 'chapter'
 %%=============================================================================================================
-\chapter*{Biografia}
-\noindent{O autor nasceu, cresceu e escreveu uma tese.}
+% \chapter*{Biografia}
+% \noindent{O autor nasceu, cresceu e escreveu uma tese.}
 
 %%=============================================================================================================
 %% Epígrafe (opcional)
 %%
 %% NOTA: Usar versão estrelada de 'chapter'
 %%=============================================================================================================
-\chapter*{}
-\vfill
-\begin{flushright}
-  {\em
-  ``Fazer é a melhor forma de dizer.''
-  \par
-  Autor desconhecido
-  }
-\end{flushright}
+% \chapter*{}
+% \vfill
+% \begin{flushright}
+%   {\em
+%   ``Fazer é a melhor forma de dizer.''
+%   \par
+%   Autor desconhecido
+%   }
+% \end{flushright}
+
+%%=============================================================================================================
+%% Prefácio (opcional)
+%%
+%% NOTA: Usar versão estrelada de 'chapter'
+%%=============================================================================================================
+\chapter*{Prefácio}
+
+\afterpage{\mbox{}\clearpage}
+
+\blindtext[2]
+
+\blindtext[2]
+
+\blindtext[2]
+
+\blindtext[2]
 
 %%=============================================================================================================
 %% Resumo geral (português)
@@ -246,7 +265,6 @@ best abstract that has ever been written in an academic document produced at UFR
 %%=============================================================================================================
 %% Início da tese
 %%=============================================================================================================
-
 \include{capitulos-b/chapter00} %% Incluir Introdução Geral
 \include{capitulos-b/chapter01} %% Incluir capítulo 01
 \include{capitulos-b/chapter02} %% Incluir capítulo 02

@@ -1041,6 +1041,24 @@
       %%      COmo não existe definição oficial, a decisão de adicionar 10 pontos é completamente arbitrária.
       \ifchap%
        
+       %% Verificar se o documento será impresso em frente e verso.
+       %% Em caso positivo, os itens do sumário são impressos apenas nas páginas ímpares (lado direito)
+       %% do documento.
+%        \addtocontents{toc}{
+%          \protect\if@twoside
+%            \protect\if@openright
+%              \protect\checkoddpage
+%              \protect\ifoddpage
+% %                \protect\vspace{0mm}
+%                \protect\afterpage{\mbox{}\clearpage}
+%              \protect\else
+% %                \protect\cleardoublepage
+%                \protect\vspace{0mm}
+%              \protect\fi
+%             \protect\fi
+%            \protect\fi
+%        }
+       
        \addtocontents{toc}{\protect\addvspace{10\p@}}%
         \ifartigo
          \refstepcounter{artigo}
