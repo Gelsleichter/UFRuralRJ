@@ -600,10 +600,8 @@
     \null
     \thispagestyle{empty}%
     \newpage
-%     \secondtitlepage
     \theapprovepage
   \else
-%     \secondtitlepage
     \theapprovepage
   \fi
 }
