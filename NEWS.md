@@ -1,4 +1,12 @@
-# Versão 0.9 (20-Abr-2016)
+# Versão 0.10 (11-Maio-2016)
+* Automatiza a formatação dos itens da parte preliminar do documento acadêmico quando usadas as opções 
+  'twoside' e 'openright'. Quando usadas essas opções, os itens da parte preliminar do documento acadêmico
+  devem ser impressos somente nas páginas do lado direito (páginas ímpares), ficando as páginas do lado 
+  esquerdo (páginas pares) em branco. A solução implementada usa o pacote `afterpage`, sendo completamente
+  eficiente apenas quando os itens da parte preliminar do documento acadêmico tiverem, no máximo, duas páginas.
+  Soluções manuais deverão ser implementadas quando o número de páginas for superior à dois.
+
+# Versão 0.9 (20-Abril-2016)
 * Corrige texto de definição da data de aprovação do documento acadêmico.
 * Automatiza conversão da data numérica para nominal (mês).
 * Ajusta o posicionamento da nota de rodapé usada com o título do capítulo (`\chapternote{<footnote>}`).
@@ -11,16 +19,16 @@
 * Inclui exemplo de documento acadêmico impresso em frente e verso.
 * Inclui nova versão do manual de uso em http://samuel-rosa.github.io/UFRuralRJ/_book/.
 
-# Versão 0.8 (11-Fev-2016)
+# Versão 0.8 (11-Fevereiro-2016)
 * Melhoria dos contadores de artigos (documentos organizados na forma de capítulos individuais), apêndices e 
 anexos a fim de usar corretamente comandos como `\label` e `\autoref`.
 
-# Versão 0.7 (09-Fev-2016)
+# Versão 0.7 (09-Fevereiro-2016)
 * Várias pequenas correções na formatação do sumário e numeração de itens ao longo do texto foram feitas.
 * Os dois modelos de documento foram atualizados levando em conta as últimas modificações da classe.
 * O manual de uso da classe foi criado.
 
-# Versão 0.6 (08-Fev-2016)
+# Versão 0.6 (08-Fevereiro-2016)
 * A formatação da numeração alfabética dos apêndices e anexos foi aprimorada usando contadores próprios para 
 cada um deles.
 * A numeração romana dos capítulos quando do documento em forma de capítulos (possivelmente baseados em 
@@ -28,7 +36,7 @@ artigos) foi otimizada usando um contador específico.
 * O novo comando ```\chapternote``` foi criado para adicionar nota de rodapé não numerada ao título dos 
 capítulos quando do documento organizado na forma de capítulos.
 
-# Versão 0.5 (05-Fev-2016)
+# Versão 0.5 (05-Fevereiro-2016)
 * A configuração do sumário foi melhorada significativamente. Isso inclui a adição de espaço vertical antes e
   depois do título de cada capítulo, além da indentação sequencial das seções e subseções. Agora o Apêndice e o
   Anexo também recebem numeração arábica na sequência dos capítulos anteriores. O mesmo ocorre com a lista de
