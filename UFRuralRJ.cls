@@ -193,6 +193,10 @@
 \RequirePackage{changepage}
 \strictpagecheck
 
+%% Pacote para garantir a impressão dos itens da parte preliminar do documento acadêmico
+%% na página da direita quando usadas as opções 'twoside' e 'openright'
+\RequirePackage{afterpage}
+
 %%=============================================================================
 %% Margens do texto
 %%=============================================================================
@@ -1214,6 +1218,21 @@
   \ifchap\if@aftertoc\addcontentsline{toc}{chapter}{\hspace*{0.35em}#1}\fi\fi%
   \addtocontents{lof}{\protect\addvspace{0\p@}}%Original = 10\p@
   \addtocontents{lot}{\protect\addvspace{0\p@}}%
+  
+  %% Verificar se o documento será impresso em frente e verso.
+  %% Em caso positivo os itens da parte preliminar do documento acadêmico devem ser impressos na página do
+  %% lado direito, ficando a página do lado esquerdo em branco.
+  %% Note que o comando abaixo só será eficiente quando os itens da parte preliminar do documento acadêmico
+  %% tiverem um máximo de duas páginas.
+  \if@twoside
+    \if@openright
+      \afterpage{\mbox{}\clearpage}
+    \else
+      \vspace*{0mm}
+    \fi
+  \fi 
+  
+  
   \@makeschapterhead{#1}\@afterheading
 }
 
