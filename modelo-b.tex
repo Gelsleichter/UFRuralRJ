@@ -115,6 +115,7 @@
 %% Identificação dos orientadores
 %%=============================================================================================================
 \advisor[Professora]{Dra.}{Dobereimer}{Johana}{UFRRJ} %% Orientadora
+\orientadoratrue
 \coadvisor[Pesquisador]{Dr.}{Salles}{Hilton} %% Co-orientador
 \coadvisor[Professor]{Dr.}{Costa}{Fernando} %% Co-orientador
 
@@ -137,6 +138,21 @@
 %% Capa e folha de rosto
 %%=============================================================================================================
 \maketitle
+
+%%=============================================================================
+%% Ficha catalográfica
+%%=============================================================================
+% Como a CIP vai ser impressa atrás da página de rosto, as margens inner e outer	
+% devem ser invertidas.
+%\newgeometry{inner=20mm,outer=30mm,top=30mm,bottom=20mm}
+\authorbirthyear{1985}
+\advisorbirthyear{1957}
+\makeCIP{graziela@ufrrj.br} % email do autor
+%\restoregeometry
+
+%Se for usar a catalogação gerada pelo gerador do site da biblioteca comentar as linhas
+%acima e utilizar o comando abaixo
+%\includeCIP{CIP.pdf}
 
 %%=============================================================================================================
 % Folha de aprovação

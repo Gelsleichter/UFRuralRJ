@@ -50,7 +50,7 @@
     \def\doctypename{\tesename}%
     \def\doctypearticle{a}%
     \def\aprovadoem{Tese aprovada em}%
-    % \def\doctypenameCIP{Tese (Doutorado)}
+    \def\doctypenameCIP{Tese (Doutorado)}
   }
 }
 
@@ -62,7 +62,7 @@
     \def\doctypename{\dissname}
     \def\doctypearticle{a}
     \def\aprovadoem{Disserta{\c{c}}{\~a}o aprovada em}%
-    % \def\doctypenameCIP{Disserta{\c{c}}{\~a}o (Mestrado)}
+    \def\doctypenameCIP{Disserta{\c{c}}{\~a}o (Mestrado)}
   }
 }
 
@@ -156,7 +156,7 @@
 
 %% Definições de gênero
 \newif\ifautora %% 'autora' em vez de 'autor'
-% \newif\iforientadora %% 'orientadora' em vez de 'orientador'
+\newif\iforientadora %% 'orientadora' em vez de 'orientador'
 % \newif\ifcoorientadora %% 'co-orientadora' em vez de 'co-orientador'. Obsoleto
 
 %% Definições de capítulo
@@ -596,19 +596,21 @@
 }
 
 %%==============================================================================
-%% Definição padrão da folha de aprovação e CIP
+%% Definição padrão da folha de aprovação
 %%==============================================================================
 
 \newcommand{\makeapprove}{%
+  %% Não é preciso pular uma página quando o documento é impresso em frente e verso porque
+  %% a página anterior deve conter a ficha catalográfica.
   \clearpage
-  \if@twoside
-    \null
-    \thispagestyle{empty}%
-    \newpage
+%   \if@twoside
+%     \null
+%     \thispagestyle{empty}%
+%     \newpage
+%     \theapprovepage
+%   \else
     \theapprovepage
-  \else
-    \theapprovepage
-  \fi
+%   \fi
 }
 \newcommand{\theapprovepage}{%
   \noindent
@@ -631,11 +633,18 @@
   }
 }
 
+%==============================================================================================================
+% Ficha catalográfica
+%==============================================================================================================
+
+\newcommand{\authorbirthyear}[1]{\gdef\@authorbirthyear{#1}}
+\newcommand{\advisorbirthyear}[1]{\gdef\@advisorbirthyear{#1}}
+
 \newcommand{\makeCIP}[1]{
   \clearpage
-  \mbox{} \vfill
+  \vspace*{\fill}
   \@cipwindow
-	\vspace{2ex}
+  \vspace*{\fill}
   \nominata{#1}
   %% se for impresso, não deve contar a página, pois será impressa no verso da
   %% folha de aprovação
@@ -649,39 +658,43 @@
     \vspace*{2ex}
     \setlength{\parindent}{2em}%
     \setlength{\parskip}{1.4ex}%
-    \noindent \@authoralast, \@authorafirst\par
-    %\@title\ / por \@authora.\ -- \@publyear.\\
-    \@titulo\ / \byname \@authora.\ -- \@publyear.\\
-                \indent\pageref{LastPage}~f.: il.; 30~cm. \par
-				\indent\iforientadora\advisornamef\else
-				 \advisorname\fi: \@advisorfirst\ \@advisorlast
-				\@ifundefined{@coadvisor}{}{\\ \indent
-				 \ifcoorientadora\coadvisornamef\else
-				 \coadvisorname\fi: \@coadvisorfirst\ 
-				 \@coadvisorlast} \\
-				\indent \doctypenameCIP \ - \ufrrjlongo, \@instituto,
-				\@altCurso, RJ, \@publyear. \par
-                \@cipkw I.~\@advisorlast, \@advisorfirst. 
-                \@ifundefined{@coadvisorfirst}{II.~T\'{\i}tulo.}{II.~
-                \@coadvisorlast, \@coadvisorfirst. III.~T\'{\i}tulo.}\par
+    \noindent \textcolor{red}{
+      Consulte a Biblioteca Central da UFRRJ para obter a ficha catalogr\'{a}fica do seu documento 
+      acad\^{e}mico.} \par
+    \noindent \@authoralast, \@authorafirst, \@authorbirthyear--\par
+    % \@titulo\ / \byname~\@authora.\ -- \@publyear.\\
+    \@titulo\ / \@authora.\ --\@publyear.\\
+    % \indent\pageref{LastPage}~f.: il.; 30~cm. \par
+    \indent\pageref{LastPage}~f.: il.\par
+    \indent\iforientadora\advisornamef\else\advisorname\fi:~\@advisorfirst~\@advisorlast\\
+% 				\@ifundefined{@coadvisor}{}{\\ \indent
+% 				 \ifcoorientadora\coadvisornamef\else
+% 				 \coadvisorname\fi: \@coadvisorfirst\ 
+% 				 \@coadvisorlast} \\
+    \indent\doctypenameCIP \ -- \ufrrjlongo, \@instituto, \@curso, RJ, \@publyear. \par
+%                 \@cipkw I.~\@advisorlast, \@advisorfirst. 
+%                 \@ifundefined{@coadvisorfirst}{II.~T\'{\i}tulo.}{II.~
+%                 \@coadvisorlast, \@coadvisorfirst. III.~T\'{\i}tulo.}\par
+        I. \@advisorlast, \@advisorfirst, \@advisorbirthyear--. II. \ufrrjlongo. \@curso. III. T\'{i}tulo.
         \vspace{4ex}
         \end{minipage}%
         }%
     }
 
+%% Direitos autorais e e-mail do autor
 \newcommand{\nominata}[1]{
- \vspace{3ex}
- % \noindent
- % Ficha catalográfica elaborada por \\
- % {#1} \\
- % Biblioteca Central da UFSM \\
+  \vspace{3ex}
   \hrule
   \vskip 10\p@
   \noindent \copyright \ \@publyear \\
-  Todos os direitos autorais reservados a \@authora. A reprodu{\c{c}}{\~a}o de
-  partes ou do todo deste trabalho s\'{o} poder\'{a} ser feita mediante a 
-  cita{\c{c}}{\~a}o da fonte. \\
-  E-mail: {#1}
+  Todos os direitos autorais reservados a \@authora. A reprodu{\c{c}}{\~a}o de partes ou do todo deste 
+  documento s\'{o} poder\'{a} ser feita mediante a cita{\c{c}}{\~a}o da fonte. \\ 
+  E-mail: \href{mailto:#1}{#1}\\
+  \\
+  \noindent
+  Este documento foi criado usando o sistema \LaTeX{} de prepara{\c{c}}{\~a}o de documentos para
+  composi{\c{c}}{\~a}o de alta qualidade originalmente desenvolvido por Leslie Lamport a partir do sistema de 
+  formata{\c{c}}{\~a}o \TeX{} criado por Donald Knuth.
 }
 
 \newcommand{\includeCIP}[1]{
@@ -693,24 +706,24 @@
    \ClearShipoutPicture
 }
 
-\def\@authorbox{%
-  \parbox[t]{\textwidth}{%
-    \centering
-    \vspace{2cm}
-    \LargeC{A Comiss\~{a}o Examinadora, abaixo assinada,} \\
-	  {aprova \doctypearticle~\doctypename} \\[2cm]
-	  \MakeUppercase{\LargeC\textbf{\@titulo}}\\[1,5cm]
-	  elaborad\doctypearticle~por\\
-	  \textbf{\@authora}\\
-	  \@ifundefined{@authorb}{}{\textbf{\@authorb}\\}%
-	  \@ifundefined{@authorc}{}{\textbf{\@authorc}\\}%
-	  \@ifundefined{@authord}{}{\textbf{\@authord}\\}%
-	  \vspace{1.5cm}
-		 {como requisito parcial para obten{\c{c}}{\~a}o do grau de} \\
-		 % \textbf{\@grau}
-		 \textbf{\grau}
-  }
-}
+% \def\@authorbox{%
+%   \parbox[t]{\textwidth}{%
+%     \centering
+%     \vspace{2cm}
+%     \LargeC{A Comiss\~{a}o Examinadora, abaixo assinada,} \\
+% 	  {aprova \doctypearticle~\doctypename} \\[2cm]
+% 	  \MakeUppercase{\LargeC\textbf{\@titulo}}\\[1,5cm]
+% 	  elaborad\doctypearticle~por\\
+% 	  \textbf{\@authora}\\
+% 	  \@ifundefined{@authorb}{}{\textbf{\@authorb}\\}%
+% 	  \@ifundefined{@authorc}{}{\textbf{\@authorc}\\}%
+% 	  \@ifundefined{@authord}{}{\textbf{\@authord}\\}%
+% 	  \vspace{1.5cm}
+% 		 {como requisito parcial para obten{\c{c}}{\~a}o do grau de} \\
+% 		 % \textbf{\@grau}
+% 		 \textbf{\grau}
+%   }
+% }
 
 %%==============================================================================
 %% Informações do comitê de avaliação do trabalho
