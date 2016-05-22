@@ -90,7 +90,7 @@
       Trabalho de Gradua{\c{c}}{\~a}o apresentado ao \@curso{} da \ufrrjlongo{}
       (UFRRJ, RJ), como requisito parcial para a obten{\c{c}}{\~a}o do grau de
       %\\[6pt]
-      \textbf{\@grau}
+      %\textbf{\@grau}
     }
     \def\doctypename{Trabalho de Gradua{\c{c}}{\~a}o}
     \def\doctypenameIngles{Undergraduate Final Work}
