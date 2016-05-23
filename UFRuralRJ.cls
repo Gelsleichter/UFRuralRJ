@@ -90,12 +90,13 @@
       Trabalho de Gradua{\c{c}}{\~a}o apresentado ao \@curso{} da \ufrrjlongo{}
       (UFRRJ, RJ), como requisito parcial para a obten{\c{c}}{\~a}o do grau de
       %\\[6pt]
-      \textbf{\@grau}
+      \textbf{\@Mgrau}
     }
     \def\doctypename{Trabalho de Gradua{\c{c}}{\~a}o}
     \def\doctypenameIngles{Undergraduate Final Work}
     \def\doctypearticle{o}
 	  \def\doctypenameCIP{Monografia (Gradua{\c{c}}{\~a}o)}
+	  \def\aprovadoem{Monografia aprovada em}%
   }
 
 }
@@ -130,7 +131,7 @@
 \newcommand{\local}[3]{\gdef\@city{#1}\gdef\@state{#2}\gdef\@country{#3}}
 
 % \newcommand{\altCurso}[1]{\gdef\@altCurso{#1}} %% Obsoleto
-% \newcommand{\grau}[1]{\gdef\@grau{#1}} %% Obsoleto
+\newcommand{\Mgrau}[1]{\gdef\@Mgrau{#1}} %% Obsoleto
 % \newcommand{\nivel}[1]{\gdef\@nivel{#1}} %% Obsoleto
 \newcommand{\trabalhoNumero}[1] {\gdef\@trabalhoNumero{#1}}
 
