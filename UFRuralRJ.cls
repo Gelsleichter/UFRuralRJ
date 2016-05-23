@@ -17,7 +17,7 @@
 %% Créditos:
 %%
 %% Esta classe é uma adaptação livre da class mdtufsm.cls, contida no pacote 'mdtufsm-ppgi', em sua versão 
-%% 1.4 (https://code.google.com/p/mdtufsm-ppgi/), desenvolvido pela Informática da Universidade Federal de
+%%1.4 (https://code.google.com/p/mdtufsm-ppgi/), desenvolvido pela Informática da Universidade Federal de
 %% Santa Maria (http://www.inf.ufsm.br). O último é uma adaptação livre da class 'iiufrgs.cls', contida 
 %% pacote 'iiufrgs-4.3.1', desenvolvido pelo UFRGS TeX Users Group (http://www.inf.ufrgs.br/utug).
 %% As adaptações para atender às normas da UFRuralRJ foram realizadas por:
@@ -57,12 +57,13 @@
 %% Dissertação de mestrado
 \DeclareOption{diss}{
   \AtEndOfClass{
-    \newcommand{\titlepagespecificinfo}{\dissspecificinfo}
+%    \newcommand{\titlepagespecificinfo}{\dissspecificinfo}
     \def\grau{\dissgrau}
     \def\doctypename{\dissname}
     \def\doctypearticle{a}
     \def\aprovadoem{Disserta{\c{c}}{\~a}o aprovada em}%
     % \def\doctypenameCIP{Disserta{\c{c}}{\~a}o (Mestrado)}
+    
   }
 }
 
@@ -90,12 +91,13 @@
       Trabalho de Gradua{\c{c}}{\~a}o apresentado ao \@curso{} da \ufrrjlongo{}
       (UFRRJ, RJ), como requisito parcial para a obten{\c{c}}{\~a}o do grau de
       %\\[6pt]
-      %\textbf{\@grau}
+      \textbf{\@grau}
     }
     \def\doctypename{Trabalho de Gradua{\c{c}}{\~a}o}
     \def\doctypenameIngles{Undergraduate Final Work}
     \def\doctypearticle{o}
 	  \def\doctypenameCIP{Monografia (Gradua{\c{c}}{\~a}o)}
+	  \def\aprovadoem{Monografia aprovada em}%
   }
 
 }
@@ -130,7 +132,7 @@
 \newcommand{\local}[3]{\gdef\@city{#1}\gdef\@state{#2}\gdef\@country{#3}}
 
 % \newcommand{\altCurso}[1]{\gdef\@altCurso{#1}} %% Obsoleto
-% \newcommand{\grau}[1]{\gdef\@grau{#1}} %% Obsoleto
+\newcommand{\grau}[1]{\gdef\@grau{#1}} %% Obsoleto
 % \newcommand{\nivel}[1]{\gdef\@nivel{#1}} %% Obsoleto
 \newcommand{\trabalhoNumero}[1] {\gdef\@trabalhoNumero{#1}}
 
@@ -660,7 +662,8 @@
 				 \coadvisorname\fi: \@coadvisorfirst\ 
 				 \@coadvisorlast} \\
 				\indent \doctypenameCIP \ - \ufrrjlongo, \@instituto,
-				\@altCurso, RJ, \@publyear. \par
+				\@altCurso,
+				 RJ, \@publyear. \par
                 \@cipkw I.~\@advisorlast, \@advisorfirst. 
                 \@ifundefined{@coadvisorfirst}{II.~T\'{\i}tulo.}{II.~
                 \@coadvisorlast, \@coadvisorfirst. III.~T\'{\i}tulo.}\par
@@ -724,7 +727,7 @@
   \vfill
   \parbox[t]{\textwidth}{
     % \MakeUppercase{\aprovadoem~\@date.}
-    \MakeUppercase{\aprovadoem~\dataAprova.}
+    \MakeUppercase{\aprovadoem ~\dataAprova.}
     }
     \vfill
     \vspace{18mm}
