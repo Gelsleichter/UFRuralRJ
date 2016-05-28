@@ -21,7 +21,7 @@
 %% Santa Maria (http://www.inf.ufsm.br). O último é uma adaptação livre da class 'iiufrgs.cls', contida 
 %% pacote 'iiufrgs-4.3.1', desenvolvido pelo UFRGS TeX Users Group (http://www.inf.ufrgs.br/utug).
 %% As adaptações para atender às normas da UFRuralRJ foram realizadas por:
-%% - Alessandro Samuel-Rosa (Curso de Pós-Graduação em Agronomia -- Ciência do Solo): 2012-Atual
+%% - Alessandro Samuel-Rosa (Curso de Pós-Graduação em Agronomia -- Ciência do Solo): 2012-2016
 %% - Alessandro Bandeira Duarte (Departamento de Filosofia): 2015-Atual
 %%
 %% Informação:
@@ -638,74 +638,102 @@
 % Ficha catalográfica
 %==============================================================================================================
 
-\newcommand{\authorbirthyear}[1]{\gdef\@authorbirthyear{#1}}
-\newcommand{\advisorbirthyear}[1]{\gdef\@advisorbirthyear{#1}}
+% \newcommand{\authorbirthyear}[1]{\gdef\@authorbirthyear{#1}}
+% \newcommand{\advisorbirthyear}[1]{\gdef\@advisorbirthyear{#1}}
 
 \newcommand{\makeCIP}[1]{
-  \clearpage
-  \vspace*{\fill}
-  \@cipwindow
-  \vspace*{\fill}
-  \nominata{#1}
+%   \clearpage
+%   \vspace*{\fill}
+%   \@cipwindow
+%   \vspace*{\fill}
+%   \nominata{#1}
   %% se for impresso, não deve contar a página, pois será impressa no verso da
   %% folha de aprovação
   %\setcounter{page}{2}
+  
+  %% ASR: Usando o pacote tikz para adicionar Ficha Catalográfica fornecida pela Biblioteca Central da UFRRJ
+  %% com nota no final da página sobre direitos autorais e sistema usado para produção e formatação do 
+  %% documento.
+  \includepdf[pagecommand={\begin{tikzpicture}[remember picture, overlay]\node[anchor=south west] at 
+(-1.45,-\textheight+25) {\nominata{#1}};\end{tikzpicture}}, width=210mm, height=297mm]{cip.pdf}
 }
 
-\def\@cipwindow{%
-  \noindent
-  \framebox[140mm]{
-  \begin{minipage}{120mm}%
-    \vspace*{2ex}
-    \setlength{\parindent}{2em}%
-    \setlength{\parskip}{1.4ex}%
-    \noindent \textcolor{red}{
-      Consulte a Biblioteca Central da UFRRJ para obter a ficha catalogr\'{a}fica do seu documento 
-      acad\^{e}mico.} \par
-    \noindent \@authoralast, \@authorafirst, \@authorbirthyear--\par
-    % \@titulo\ / \byname~\@authora.\ -- \@publyear.\\
-    \@titulo\ / \@authora.\ --\@publyear.\\
-    % \indent\pageref{LastPage}~f.: il.; 30~cm. \par
-    \indent\pageref{LastPage}~f.: il.\par
-    \indent\iforientadora\advisornamef\else\advisorname\fi:~\@advisorfirst~\@advisorlast\\
+% \def\@cipwindow{%
+%   \noindent
+%   \framebox[140mm]{
+%   \begin{minipage}{120mm}%
+%     \vspace*{2ex}
+%     \setlength{\parindent}{2em}%
+%     \setlength{\parskip}{1.4ex}%
+%     \noindent \textcolor{red}{
+%       Consulte a Biblioteca Central da UFRRJ para obter a ficha catalogr\'{a}fica do seu documento 
+%       acad\^{e}mico.} \par
+%     \noindent \@authoralast, \@authorafirst, \@authorbirthyear--\par
+%     % \@titulo\ / \byname~\@authora.\ -- \@publyear.\\
+%     \@titulo\ / \@authora.\ --\@publyear.\\
+%     % \indent\pageref{LastPage}~f.: il.; 30~cm. \par
+%     \indent\pageref{LastPage}~f.: il.\par
+%     \indent\iforientadora\advisornamef\else\advisorname\fi:~\@advisorfirst~\@advisorlast\\
 % 				\@ifundefined{@coadvisor}{}{\\ \indent
 % 				 \ifcoorientadora\coadvisornamef\else
 % 				 \coadvisorname\fi: \@coadvisorfirst\ 
 % 				 \@coadvisorlast} \\
-    \indent\doctypenameCIP \ -- \ufrrjlongo, \@instituto, \@curso, RJ, \@publyear. \par
+%     \indent\doctypenameCIP \ -- \ufrrjlongo, \@instituto, \@curso, RJ, \@publyear. \par
 %                 \@cipkw I.~\@advisorlast, \@advisorfirst. 
 %                 \@ifundefined{@coadvisorfirst}{II.~T\'{\i}tulo.}{II.~
 %                 \@coadvisorlast, \@coadvisorfirst. III.~T\'{\i}tulo.}\par
-        I. \@advisorlast, \@advisorfirst, \@advisorbirthyear--. II. \ufrrjlongo. \@curso. III. T\'{i}tulo.
-        \vspace{4ex}
-        \end{minipage}%
-        }%
-    }
+%         I. \@advisorlast, \@advisorfirst, \@advisorbirthyear--. II. \ufrrjlongo. \@curso. III. T\'{i}tulo.
+%         \vspace{4ex}
+%         \end{minipage}%
+%         }%
+%     }
 
 %% Direitos autorais e e-mail do autor
 \newcommand{\nominata}[1]{
-  \vspace{3ex}
-  \hrule
-  \vskip 10\p@
-  \noindent \copyright \ \@publyear \\
-  Todos os direitos autorais reservados a \@authora. A reprodu{\c{c}}{\~a}o de partes ou do todo deste 
-  documento s\'{o} poder\'{a} ser feita mediante a cita{\c{c}}{\~a}o da fonte. \\ 
-  E-mail: \href{mailto:#1}{#1}\\
-  \\
-  \noindent
-  Este documento foi criado usando o sistema \LaTeX{} de prepara{\c{c}}{\~a}o de documentos para
-  composi{\c{c}}{\~a}o de alta qualidade originalmente desenvolvido por Leslie Lamport a partir do sistema de 
-  formata{\c{c}}{\~a}o \TeX{} criado por Donald Knuth.
+%   \vspace{3ex}
+%   \hrule
+%   \vskip 10\p@
+%   \noindent \copyright \ \@publyear \\
+%   Todos os direitos autorais reservados a \@authora. A reprodu{\c{c}}{\~a}o de partes ou do todo deste 
+%   documento s\'{o} poder\'{a} ser feita mediante a cita{\c{c}}{\~a}o da fonte. \\ 
+%   E-mail: \href{mailto:#1}{#1}\\
+%   \\
+%   \noindent
+%   Este documento foi criado usando o sistema \LaTeX{} de prepara{\c{c}}{\~a}o de documentos para
+%   composi{\c{c}}{\~a}o de alta qualidade originalmente desenvolvido por Leslie Lamport a partir do sistema de 
+%   formata{\c{c}}{\~a}o \TeX{} criado por Donald Knuth.
+
+%% ASR: Nota a ser adicionada no final da página contendo a Ficha Catalográfica sobre direitos autorais e 
+%% sistema usado para produção e formatação do documento.
+\begin{minipage}{\textwidth}
+\vspace{3ex}
+\hrule
+\vskip 10\p@
+\noindent \copyright \ \@publyear \\
+Todos os direitos autorais reservados a \@authora. A reprodu{\c{c}}{\~a}o de partes ou do todo deste 
+documento s\'{o} poder\'{a} ser feita mediante a cita{\c{c}}{\~a}o da fonte. \\ 
+E-mail: \href{mailto:#1}{#1}\\
+\\
+\noindent
+Este documento foi criado usando o sistema \LaTeX{} de prepara{\c{c}}{\~a}o de documentos para
+composi{\c{c}}{\~a}o de alta qualidade originalmente desenvolvido por Leslie Lamport a partir do sistema de 
+formata{\c{c}}{\~a}o \TeX{} criado por Donald Knuth.\\
+O formato final deste documento foi obtido usando a classe \texttt{UFRuralRJ}, uma adapta{\c{c}}{\~a}o livre 
+das classes \texttt{mdtufsm} e \texttt{iiufrgs} para a formata{\c{c}}{\~a}o de documentos acad\^{e}micos 
+produzidos na Universidade Federal Rural do Rio de Janeiro (UFRRJ) de acordo com as recomenda{\c{c}}{\~o}es 
+contidas na terceira edi{\c{c}}{\~a}o do \textit{Manual de instru{\c{c}}{\~o}es para organiza{\c{c}}{\~a}o e 
+apresenta{\c{c}}{\~a}o de disserta{\c{c}}{\~o}es e teses na UFRRJ}, publicado no ano de 2006.
+\end{minipage}
 }
 
-\newcommand{\includeCIP}[1]{
+% \newcommand{\includeCIP}[1]{
    %impresso no verso da folha de rosto, nesse caso não deve contar a página
    %\setcounter{page}{1}
-   \clearpage\mbox{}
-   \AddToShipoutPicture{\includegraphics{#1}}
-   \clearpage
-   \ClearShipoutPicture
-}
+%    \clearpage\mbox{}
+%    \AddToShipoutPicture{\includegraphics{#1}}
+%    \clearpage
+%    \ClearShipoutPicture
+% }
 
 % \def\@authorbox{%
 %   \parbox[t]{\textwidth}{%
