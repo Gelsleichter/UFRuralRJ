@@ -199,6 +199,11 @@
 %% na página da direita quando usadas as opções 'twoside' e 'openright'
 \RequirePackage{afterpage}
 
+%% Formatação da Ficha Catalográfica
+\RequirePackage{tikz}
+\usetikzlibrary{calc}
+\RequirePackage{pdfpages}
+
 %%=============================================================================
 %% Margens do texto
 %%=============================================================================
